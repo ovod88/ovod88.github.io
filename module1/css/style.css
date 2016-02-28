@@ -1,0 +1,54 @@
+body {
+	background: #FCF5F5;
+}
+
+div#wrapper {
+	width: 1200px;
+	margin: 0 auto;
+}
+
+h2 {
+	margin-bottom: 20px;
+	margin-top: 10px;
+	text-align: center;
+	font-family: 'Times New Roman', Times, serif;
+}
+
+img {
+	width: 20%;
+	margin: auto;
+	margin-bottom: 5px;
+	display: block;
+}
+
+hr {
+	margin-left: 60px;
+	margin-right: 60px;
+	color: 	rgb(220,220,220);
+}
+
+div.links {
+	margin-top: 0;
+}
+
+ul {
+	padding-left: 30px;
+	margin-top: 25px;
+}
+
+p, a, ul {
+	margin-left: 75px;
+	margin-bottom: 0;
+}
+
+p,a, li {
+	font: normal 1.25em/1.4 'Times New Roman', Times, serif;
+}
+
+.contacts {
+	margin-bottom: 15px;
+}
+
+.footer {
+	margin-bottom: 45px;
+}
