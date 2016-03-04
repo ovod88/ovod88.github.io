@@ -1,15 +1,12 @@
-
-
 @font-face {
     font-family: Google Open Sans;
     src: url(../fonts/OpenSans-Regular.ttf);
 }
 
-
-
 body, html {
 	background-color: #f9f9f9;
 	height: 950px;
+	font-family: Google Open Sans;
 }
 
 #wrapper{
@@ -18,7 +15,7 @@ body, html {
 }
 
 #body {
-	width: 77.6%;
+	width: 1060px;
 	height: 100%;
 	margin: 0 auto;
 	background: white;
@@ -28,39 +25,73 @@ header {
 	padding-top: 50px;
 }
 
-ul {
+header ul {
 	margin-top: 40px;
-	margin-bottom: 40px;
+	width: 966px;
 	height: 40px;
-	padding: 0;
-	font-size:0;
-    line-height:0;
 	background-color: #535353;
-    letter-spacing:-1px;
-    list-style-type: none;
 }
 
-li {
+header li {
     float: left;
     display: flex;
     height: 100%;
 }
 
-li a {
+header li a {
 	padding-left: 25px;
 	padding-top: 14px;
 	padding-right: 85px;
-    font-family: Google Open Sans;
     color: white;
     font-size:14px;
     text-align: center;
-    text-decoration: none;
-    line-height:normal;
-    letter-spacing:normal;
-    display: -moz-inline-stack!important;
 }
 
-li a:hover {
+header li a:hover {
     background-color: #404040;
 }
+
+.content {
+	margin-top: 40px;
+	margin-bottom: 60px;
+	width: 100%;
+}
+
+.menu_left {
+	float: left;
+	width: 240px;
+}
+
+.menu_left li {
+	border: 1px solid #c8c8c8;
+}
+
+.menu_left li a {
+	display: block;
+	height: 40px;
+	padding-left: 25px;
+	padding-top: 14px;
+	color: #656363;
+}
+
+.menu_left li a:hover {
+	background-color: #f9f9f9;
+	color: black;
+}
+
+.product {
+	position: relative;
+	float: right;
+	border: 1px solid #c8c8c8;
+	width: 678px;
+	height: 400px;
+}
+
+.product img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
 
