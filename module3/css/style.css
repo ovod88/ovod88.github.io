@@ -1,17 +1,66 @@
 
+
+@font-face {
+    font-family: Google Open Sans;
+    src: url(../fonts/OpenSans-Regular.ttf);
+}
+
+
+
 body, html {
 	background-color: #f9f9f9;
 	height: 950px;
 }
 
+#wrapper{
+	padding-left: 45px;
+	padding-right: 48px;
+}
+
 #body {
-	background: #ffffff;
 	width: 77.6%;
 	height: 100%;
 	margin: 0 auto;
+	background: white;
 }
 
 header {
 	padding-top: 50px;
-	padding-left: 45px;
 }
+
+ul {
+	margin-top: 40px;
+	margin-bottom: 40px;
+	height: 40px;
+	padding: 0;
+	font-size:0;
+    line-height:0;
+	background-color: #535353;
+    letter-spacing:-1px;
+    list-style-type: none;
+}
+
+li {
+    float: left;
+    display: flex;
+    height: 100%;
+}
+
+li a {
+	padding-left: 25px;
+	padding-top: 14px;
+	padding-right: 85px;
+    font-family: Google Open Sans;
+    color: white;
+    font-size:14px;
+    text-align: center;
+    text-decoration: none;
+    line-height:normal;
+    letter-spacing:normal;
+    display: -moz-inline-stack!important;
+}
+
+li a:hover {
+    background-color: #404040;
+}
+
