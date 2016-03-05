@@ -110,4 +110,39 @@ footer {
 	height: 40px;
 }
 
+footer .footer_menu_left {
+	float: left;
+}
+
+footer .footer_menu_left li {
+	display: inline;
+}
+
+footer .footer_menu_left li a {
+	display: inline-block;
+	padding-left: 20px;
+	padding-top: 16px;
+	padding-right: 85px;
+	color: black;
+}
+
+footer .footer_menu_left li a:hover {
+	text-decoration: underline;
+}
+
+footer .footer_menu_right {
+	float: right;
+}
+
+footer .footer_menu_right li {
+	display: inline;
+	display: inline-block;
+	padding-top: 16px;
+	padding-right: 20px;
+	color: black;
+}
+
+
+
+
 
