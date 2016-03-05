@@ -27,24 +27,21 @@ header {
 
 header ul {
 	margin-top: 40px;
-	width: 966px;
 	height: 40px;
+	line-height: 40px;
 	background-color: #535353;
 }
 
 header li {
     float: left;
-    display: flex;
-    height: 100%;
 }
 
 header li a {
-	padding-left: 25px;
-	padding-top: 14px;
-	padding-right: 85px;
+	display: block;
     color: white;
     font-size:14px;
-    text-align: center;
+    padding-left: 25px;
+	padding-right: 85px;
 }
 
 header li a:hover {
@@ -135,7 +132,6 @@ footer .footer_menu_right {
 }
 
 footer .footer_menu_right li {
-	display: inline;
 	display: inline-block;
 	padding-top: 16px;
 	padding-right: 20px;
