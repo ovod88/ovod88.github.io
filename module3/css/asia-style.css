@@ -21,6 +21,8 @@ header {
 }
 
 .logo {
+	position: relative;
+	background-color: green;
 	float: left;
     width: 276px;
     height: 147px;
@@ -32,23 +34,33 @@ header {
     height: 147px;
 }
 
+.logo p {
+	font-size: 0.8em;
+	color: white;
+	position: absolute;
+	bottom: 10px;
+	margin: 0px 0 0 -25%;
+  	left: 50%;
+}
+
 header .contacts {
 	float: right;
 	height: 147px;
 	width: 276px;
 	position: relative;
+	background-color: blue;
 }
 
 
 header .contacts .text {
 	position: absolute;
 	width: auto;
-	bottom: 0;
+	bottom: 10px;
 	right: 0;
 }
 
 header .contacts p span {
-	font-size: 1.5em;
+	font-size: 1.1em;
 }
 header .contacts p {
 	line-height: 1.5;
