@@ -71,7 +71,7 @@ header .contacts p {
 	margin-top: 14px;
 	clear:both;
 	overflow: hidden;
-	margin-bottom: 100px;
+	margin-bottom: 20%;
 }
 
 .item {
@@ -107,6 +107,15 @@ header .contacts p {
 	border: 3px solid #c9c9c9;
 }
 
+footer {
+	margin-bottom: 40px;
+}
+
+footer p {
+	color: white;
+	text-align: center;
+}
+
 
 @media screen and (max-width:770px) {
 	header .contacts {
@@ -122,13 +131,25 @@ header .contacts p {
 	header {
 		text-align: center;
 	}
-
+	
+	.item {
+		width: 50%;
+		padding-bottom: 50%;
+	}
 
 	.inline {
 		display: inline-block;
 		float: none;
 		margin-top: -2px;
 		margin-bottom: -2px;
+	}
+
+	.first {
+		transform: translateX(0px);
+	}
+
+	.third {
+		transform: translateX(0px);
 	}
 
 
