@@ -1,0 +1,91 @@
+html {
+	background: url(../img/Asia_background.png) no-repeat center fixed;
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover; 
+  	font-family: Tahoma;
+}
+
+.wrapper {
+	width: 85%;
+	margin: 0 auto;
+}
+
+.inline { 
+    display: inline-block; 
+}
+
+header {
+	background-color: red;
+	overflow: grey;
+}
+
+.logo {
+	background-color: blue;
+	float: left;
+    width: 276px;
+    height: 147px;
+}
+
+/* resize images */
+.logo img {
+    width: 100%;
+    height: 147px;
+}
+
+header .contacts {
+	background-color: green;
+	float: right;
+	height: 147px;
+	width: 276px;
+	position: relative;
+}
+
+
+header .contacts .text {
+	position: absolute;
+	width: auto;
+	bottom: 0;
+	right: 0;
+}
+
+header .contacts p span {
+	font-size: 1.5em;
+}
+header .contacts p {
+	line-height: 1.5;
+	color: white;
+	font-size: 0.7em;
+}
+
+
+@media screen and (max-width:770px) {
+	header .contacts {
+		width: 117px;
+		float:right;
+	}
+
+}
+
+
+	
+@media screen and (max-width:530px) {
+	header {
+		background-color: white;
+	}
+
+
+	.inline {
+		display: block;
+	}
+
+
+	header .contacts {
+		width: 276px;
+	}
+
+}
+
+
+
