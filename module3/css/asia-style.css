@@ -154,7 +154,9 @@ footer p {
 
 
 	header .contacts {
+		overflow: hidden;
 		width: 276px;
+		height: 70px;
 		float: none;
 	}
 
