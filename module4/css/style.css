@@ -18,8 +18,8 @@ body {
 	content: '';
 	position: absolute;
 	display: block;
-	top: 20px;
-  	height: 100px;
+	top: 30px;
+  	height: 134px;
 	width: 100%;
 	background-image: linear-gradient(#17cee2, white);
 	z-index: 1;
@@ -83,7 +83,6 @@ header .contacts p span {
 header .contacts ul {
 	position: absolute;
 	width: 355px;
-	clear: both;
 	bottom: 10px;
 }
 
@@ -103,6 +102,12 @@ header .contacts ul a {
 
 header .contacts ul a:hover {
     text-decoration: none;
+}
+
+.main_image {
+	width: 100%;
+	border-bottom: 1px solid blue;
+	border-top: 1px solid blue;
 }
 
 footer p {
