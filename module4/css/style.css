@@ -3,25 +3,25 @@ body {
 
 .bg {
 	position: relative;
-	background: green;
+	background: linear-gradient(to bottom, rgba(18,138,167,0.95) 2%,rgba(62,195,209,0.95) 7%,rgba(12,115,160,1) 100%);
 	z-index: -1;
 }
 
 .bg:after {
-	z-index: 1;
 	content: '';
 	position: absolute;
 	display: block;
 	top: 20px;
   	height: 100px;
 	width: 100%;
-	background: red;
+	background-image: linear-gradient(#17cee2, white);
+	z-index: 1;
 }
 
 .wrapper {
 	z-index: 3;
 	position: relative;
-	background: blue;
+	background: white;
 	width: 85%;
 	height: 90%;
 	margin: 0 auto;
