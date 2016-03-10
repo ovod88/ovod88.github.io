@@ -1,9 +1,16 @@
 body {
+	font-family: Tahoma;
+}
+
+.clearfix:after {
+	content: '';
+	clear: both;
+	display: block;
 }
 
 .bg {
 	position: relative;
-	background: linear-gradient(to bottom, rgba(18,138,167,0.95) 2%,rgba(62,195,209,0.95) 7%,rgba(12,115,160,1) 100%);
+	background: linear-gradient(to bottom, rgba(18,138,167,0.95) 30px,rgba(62,195,209,0.95) 7%,rgba(12,115,160,1) 100%);
 	z-index: -1;
 }
 
@@ -26,6 +33,57 @@ body {
 	height: 90%;
 	margin: 0 auto;
 }
+
+header {
+	position: relative;
+}
+
+header .logo {
+	position: relative;
+	float: left;
+	width: 283px;
+    height: 164px;
+}
+
+header .logo img {
+	width: 100%;
+}
+
+header .logo p {
+	color: #128aa7;
+	font-size: 0.9em;
+	position: absolute;
+	bottom: 53px;
+	margin: 0 0 0 20%;
+}
+
+header .contacts {
+	box-sizing: border-box;
+	float: right;
+	width: 375px;
+	padding-right: 20px;
+	height: 164px;
+}
+
+header .contacts .text {
+	padding-top: 5px;
+	float: right;
+	width: 45%;
+}
+
+header .contacts p {
+	color: #128aa7;
+	font-size: 0.9em;
+}
+
+header .contacts p span {
+	font-size: 1.1em;
+}
+
+header .contacts ul {
+	clear: both;
+}
+
 
 footer p {
 	position: relative;
