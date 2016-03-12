@@ -98,11 +98,12 @@ header .contacts ul li {
 	box-sizing: border-box;
 	float: left;
 	width: 59px;
-	font-size: 0.7em;
-	text-align: center;
 }
 
 header .contacts ul a {
+	display: block;
+	text-align: center;
+	font-size: 0.7em;
 	text-decoration: underline;
 	color: #71aec1;
 }
