@@ -8,6 +8,11 @@ body {
 	display: block;
 }
 
+.clearcontent:after {
+	content: '.';
+	visibility: hidden;
+}
+
 .bg {
 	position: relative;
 	background: linear-gradient(to bottom, rgba(18,138,167,0.95) 30px,rgba(62,195,209,0.95) 7%,rgba(12,115,160,1) 100%);
@@ -109,21 +114,22 @@ header .contacts ul a:hover {
 	border-top: 1px solid blue;
 }
 
-.content ul {
+.content>ul {
 	background: #333333;
 	display: table;
 	height: 30px;
 	line-height: 30px;
 	width: 100%;
+	border-bottom: 1px solid black;
 }
 
-.content ul>li {
+.content>ul>li {
 	display: table-cell;
 	position: relative;
 	vertical-align: middle;
 }
 
-.content ul>li>a {
+.content>ul>li>a {
 	display: block;
 	height: 100%;
 	color: white;
@@ -131,15 +137,15 @@ header .contacts ul a:hover {
 }
 
 
-.content ul>li>a:hover {
+.content>ul>li>a:hover {
 	background: blue;
 }
 
-.content ul>li:first-child a{
+.content>ul>li:first-child>a{
 	padding-left: 65px;
 }
 
-.content ul>li a.link_with_submenu:after {
+.content>ul>li>a.link_with_submenu:after {
 	content: url('../img/triangle.png');
 	position: relative;
 	display: inline;
@@ -147,13 +153,77 @@ header .contacts ul a:hover {
 	top: -1px;
 }
 
-.colons {
-	height: 100px;
+ul.submenu  {
+	display: none;
+	position: absolute;
+	border-top: 1px solid black;
+}
+
+.content>ul>li:hover>ul {
+	position: absolute;
+	top: 30px;
+	background: #333333;
+	display: block;
 	width: 100%;
+}
+
+/*ul.submenu>li {
+	display: block;
+}*/
+
+ul.submenu>li>a {
+	display: block;
+	color: white;
+}
+
+.colons {
+	width: 100%;
+	overflow: hidden;
+	color: #424c43;
+}
+
+.colons>div {
+	padding-bottom: 20000px;
+	margin-bottom: -20000px;
+}
+
+.colons h3 {
+	font-weight: bold;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.colons .article {
+	padding-left: 10px;
+	padding-right: 10px;
+	text-align: justify;
+}
+
+.colons .leftColumn {
+	width: 20%;
+	float: left;
+	background: #edeef0;
+}
+
+.colons .centerColumn {
+	width: 60%;
+	float: left;
+}
+
+.colons .rightColumn {
+	float: left;
+	width: 20%;
+	background: #edeef0;
+}
+
+footer {
+	margin:10px 0;
 }
 
 footer p {
 	position: relative;
 	clear: both;
 	text-align: center;
+	color: white;
 }
