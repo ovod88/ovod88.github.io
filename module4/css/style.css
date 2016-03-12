@@ -37,6 +37,9 @@ body {
 	width: 85%;
 	height: 90%;
 	margin: 0 auto;
+	-webkit-box-shadow: 0px 5px 7px -1px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 5px 7px -1px rgba(0,0,0,0.75);
+	box-shadow: 0px 5px 7px -1px rgba(0,0,0,0.75);
 }
 
 header {
@@ -204,6 +207,8 @@ ul.submenu>li>a {
 	width: 20%;
 	float: left;
 	background: #edeef0;
+	margin-right: -1px;
+	border-right: 1px solid #c7cacf;
 }
 
 .colons .centerColumn {
@@ -215,6 +220,8 @@ ul.submenu>li>a {
 	float: left;
 	width: 20%;
 	background: #edeef0;
+	margin-left: -1px;
+	border-left: 1px solid #c7cacf;
 }
 
 footer {
