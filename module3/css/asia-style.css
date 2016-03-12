@@ -154,13 +154,30 @@ footer p {
 
 
 	header .contacts {
-		overflow: hidden;
 		width: 276px;
 		height: 70px;
 		float: none;
 	}
 
 }
+
+@media screen and (max-width: 480px) {
+	.logo {
+		width: 218px;
+	}
+
+	header .contacts {
+		width: 218px;
+	}
+
+	.item {
+		display: block;
+		width: 100%;
+		margin-bottom: 25%;
+	}
+}
+
+
 
 
 
