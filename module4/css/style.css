@@ -172,9 +172,9 @@ ul.submenu  {
 	width: 100%;
 }
 
-/*ul.submenu>li {
-	display: block;
-}*/
+ul.submenu>li {
+	padding-left: 10px;
+}
 
 ul.submenu>li>a {
 	display: block;
