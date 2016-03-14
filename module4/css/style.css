@@ -186,6 +186,7 @@ ul.submenu>li>a {
 	width: 100%;
 	overflow: hidden;
 	color: #424c43;
+	z-index: 1;
 }
 
 .colons>div {
