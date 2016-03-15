@@ -84,3 +84,10 @@ footer ul.mainMenu li>p a{
 footer ul.mainMenu li>p a {
 	text-decoration: underline;
 }
+
+.bg {
+	width: 100%;
+	height: 1028px;
+	background: url("../img/Cadastre-bg.png") no-repeat center center fixed;
+	background-size: cover;
+}
