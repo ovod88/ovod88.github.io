@@ -90,4 +90,19 @@ footer ul.mainMenu li>p a {
 	height: 1028px;
 	background: url("../img/Cadastre-bg.png") no-repeat center center fixed;
 	background-size: cover;
+	position: relative;
+}
+
+.form {
+	width: 560px;
+	height: 580px;
+	background-color: black;
+
+	position: fixed;
+	top:35px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	
+	margin: auto;
 }
