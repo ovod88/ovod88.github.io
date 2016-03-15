@@ -109,16 +109,68 @@ footer ul.mainMenu li>p a {
 	position: relative;
 }
 
-.form {
-	width: 560px;
-	height: 580px;
-	background-color: black;
-
+.central_block {
+	text-align: center;
+	width: 40%;
+	max-height: 580px;
+	background-color: rgba(0, 0, 0, 0.6);
 	position: fixed;
 	top:35px;
 	bottom: 0;
 	left: 0;
 	right: 0;
-	
 	margin: auto;
 }
+
+
+.central_block .head {
+	width: 100%;
+	height: 65px;
+	border-bottom: 1px solid #c3c7c6;
+	line-height: 65px;
+}
+
+.central_block .head p {
+	color: white;
+	font-size: 2em;
+	margin: 0 auto;
+	vertical-align: middle;
+}
+
+.central_block .form {
+	margin: 0 auto;
+	width: 50%;
+	height: 20px;
+	margin-top: 35px;
+}
+
+.central_block .form .facebook img{
+	width: 100%;
+	padding: 0;
+}
+
+.central_block p.lined_text {
+	margin-top: 35px;
+	color: #666666;
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
+}
+
+.central_block p.lined_text:before,
+.central_block p.lined_text:after {
+	border-top: 1px solid #666666;
+	content: "";
+	position: absolute;
+	width: 50%;
+	top: 50%; 
+	 overflow: hidden;
+}
+
+.central_block p.lined_text:before {
+	margin-left: -50%;
+}
+
+.central_block p.lined_text span {
+}
+
