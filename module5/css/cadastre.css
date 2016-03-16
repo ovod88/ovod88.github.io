@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 @font-face {
     font-family: 'Helvetica';
     src: url('../fonts/helveticaneue-thin-webfont.eot');
@@ -145,12 +144,64 @@ footer ul.mainMenu li>p a {
 	margin-top: 20px;
 }
 
-.central_block .form .facebook img{
-	width: 100%;
-	padding: 0;
+.central_block .form .facebook {
+	overflow: hidden;
+	border-radius: 3px;
+	background: linear-gradient(to bottom, #1e5799 0%,#207cca 0%,#3e5598 0%,#2e4579 100%);
+}
+
+.central_block .form .facebook div {
+	float: left;
+	height: 30px;
+}
+
+.central_block .form .facebook .logo {
+	box-sizing: border-box;
+	width: 15%;
+	border-right: 1px solid #213b6c;
+	border-top: 1px solid #7889b7;
+}
+
+.central_block .form .facebook .logo p {
+	height: 30px;
+}
+
+.central_block .form .facebook .logo p img {
+	margin-top: 4px;
+}
+
+.central_block .form .facebook .logo p a {
+	display: block;
+}
+
+.central_block .form .facebook .link {
+	box-sizing: border-box;
+	width: 85%;
+	border-top: 1px solid #7889b7;
+	border-left: 1px solid #7889b7;
+}
+
+.central_block .form .facebook .link p {
+	height: 30px;
+	margin-top: 5px;
+}
+
+.central_block .form .facebook .link a:after {
+	content: url(../img/facebook-arrow.png);
+	margin-left: 25px;
+}
+
+.central_block .form .facebook .link p span {
+	font-weight: bold;
+}
+
+.central_block .form .facebook .link p a {
+	color: white;
+	display: block;
 }
 
 .central_block p.lined_text {
+	clear: both;
 	margin-top: 20px;
 	color: #666666;
 	position: relative;
