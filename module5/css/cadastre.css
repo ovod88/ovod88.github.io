@@ -113,7 +113,7 @@ footer ul.mainMenu li>p a {
 .central_block {
 	text-align: center;
 	width: 40%;
-	max-height: 580px;
+	max-height: 540px;
 	background-color: rgba(0, 0, 0, 0.6);
 	position: fixed;
 	top:35px;
@@ -142,7 +142,6 @@ footer ul.mainMenu li>p a {
 	text-align: center;
 	margin: 0 auto;
 	width: 50%;
-	height: 20px;
 	margin-top: 20px;
 }
 
@@ -183,12 +182,16 @@ footer ul.mainMenu li>p a {
 
 .central_block form>input {
 	width: 100%;
+	box-sizing: border-box;
 	height: 30px;
 	margin-bottom: 15px;
 	background: black;
 	border: none;
 	color: white;
 	padding-left: 15px;
+}
+
+.central_block form>input::-webkit-input-placeholder {
 }
 
 .central_block form>input:focus {
@@ -202,6 +205,10 @@ footer ul.mainMenu li>p a {
 	color: white;
 }
 
+.central_block form input[type=checkbox] {
+	margin-left: -15px;
+}
+
 .central_block form input[type=checkbox]+span { 
 	font-size: 14px;
 	color: #cccccc;
@@ -211,10 +218,18 @@ footer ul.mainMenu li>p a {
 .central_block form input[type=submit] {
 	margin-top: 15px;
 	background: linear-gradient(to bottom, #1e5799 0%,#207cca 0%,#4faddb 0%,#2f7bc5 100%);
-	font-weight: bold;
 	letter-spacing: 0.1px;
-	width: 60%;
+	width: 55%;
 	padding-left: 0px;
 	padding-right: 0px;
+	border-radius: 3px;
+}
+
+.central_block p.policy {
+	color: white;
+	font-size: 0.75em;
+	width: 60%;
+	margin: 0 auto;
+	margin-top: 20px;
 }
 
