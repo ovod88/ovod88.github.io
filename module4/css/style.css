@@ -17,6 +17,7 @@ body {
 	position: relative;
 	background: linear-gradient(to bottom, rgba(18,138,167,0.95) 30px,rgba(62,195,209,0.95) 7%,rgba(12,115,160,1) 100%);
 	z-index: 0;
+	min-height: 991px;
 }
 
 .bg:after {
@@ -34,7 +35,7 @@ body {
 	z-index: 3;
 	position: relative;
 	background: white;
-	width: 85%;
+	max-width: 1018px;
 	height: 90%;
 	margin: 0 auto;
 	-webkit-box-shadow: 0px 5px 7px -1px rgba(0,0,0,0.75);
@@ -139,13 +140,14 @@ header .contacts ul a:hover {
 
 .content>ul>li>a {
 	display: block;
-	height: 100%;
+	font-size: 0.9em;
 	color: white;
-	padding-right: 65px;
 }
 
 .content>ul>li:first-child>a{
-	padding-left: 65px;
+	text-align: center;
+	padding-left: 20px;
+	padding-right: 20px;
 }
 
 .content>ul>li>a.link_with_submenu:after {
@@ -205,6 +207,8 @@ ul.submenu>li>a {
 	padding-left: 10px;
 	padding-right: 10px;
 	text-align: justify;
+	font-size: 14px;
+	line-height: 1.5;
 }
 
 .colons .leftColumn {
@@ -229,7 +233,7 @@ ul.submenu>li>a {
 }
 
 footer {
-	margin:10px 0;
+	margin:20px 0;
 }
 
 footer p {
