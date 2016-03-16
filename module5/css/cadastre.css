@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @font-face {
     font-family: 'Helvetica';
     src: url('../fonts/helveticaneue-thin-webfont.eot');
@@ -29,6 +30,7 @@ footer ul.mainMenu {
 	height: 100%;
 	float: right;
 	margin-right: 20px;
+	margin-right: 15px;
 }
 
 footer ul.mainMenu li {
@@ -52,7 +54,6 @@ footer ul.mainMenu li>a:hover {
 	background-color: #4eabda;
 	color: white;
 }
-
 
 footer ul li.vl {
 	position: relative;
@@ -216,5 +217,4 @@ footer ul.mainMenu li>p a {
 	padding-left: 0px;
 	padding-right: 0px;
 }
-
 
