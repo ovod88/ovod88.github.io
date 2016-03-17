@@ -1,0 +1,29 @@
+body, html {
+	font-family: Arial, sans-serif;
+}
+
+main {
+	width: 90%;
+	height: 1000px;
+	margin: 0 auto;
+	margin-top: 17px;
+}
+main>header {
+	width: 100%;
+	float: left;
+}
+
+main>header>p.tel_number {
+	height: 22px;
+	line-height: 22px;
+	color: #5e696d;
+	font-size: 18px;
+}
+
+main>header>p.tel_number>img {
+	vertical-align: middle;
+}
+
+main>header>p.tel_number>span {
+	vertical-align: middle;
+}
