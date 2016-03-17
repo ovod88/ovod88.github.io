@@ -242,9 +242,6 @@ footer ul.mainMenu li>p a {
 	padding-left: 15px;
 }
 
-.central_block form>input::-webkit-input-placeholder {
-}
-
 .central_block form>input:focus {
 	background: #1b5288;
 	-webkit-box-shadow: 0px 0px 7px 3px rgba(6,137,188,1);

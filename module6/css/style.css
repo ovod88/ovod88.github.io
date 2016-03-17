@@ -2,22 +2,31 @@ body, html {
 	font-family: Arial, sans-serif;
 }
 
+.clearfix:after {
+	content: '';
+	clear: both;
+	display: block;
+}
+
 main {
-	width: 90%;
-	height: 1000px;
+	background: #F0F0F0;
+	width: 909px;
+	height: 1310px;
 	margin: 0 auto;
 	margin-top: 17px;
 }
 main>header {
 	width: 100%;
-	float: left;
+	padding-left: 9px;
 }
 
 main>header>p.tel_number {
 	height: 22px;
-	line-height: 22px;
+	max-width: 302px;
 	color: #5e696d;
 	font-size: 18px;
+	float: left;
+	padding-right: 17px;
 }
 
 main>header>p.tel_number>img {
@@ -26,4 +35,82 @@ main>header>p.tel_number>img {
 
 main>header>p.tel_number>span {
 	vertical-align: middle;
+}
+
+main>header section.login {
+	border-radius: 3px;
+	float: left;
+	background: linear-gradient(to bottom, #1e5799 0%,#207cca 0%,#1e6383 0%,#0d365a 100%);
+	width: 474px;
+	height: 24px;
+}
+
+main>header section.login img {
+	float: left;
+	padding-top: 2px;
+	padding-left: 8px;
+	padding-right: 5px;
+}
+
+main>header section.login input[type=text] {
+	float: left;
+	max-width: 113px;
+	max-height: 16px;
+	box-sizing: border-box;
+	padding-left: 5px;
+	margin-top: 4px;
+	margin-right: 7px;
+}
+
+main>header section.login .vl{
+	float: left;
+	width: 1px;
+	height: 40%;
+	background: white;
+	margin-left: 3px;
+	margin-right: 3px;
+	margin-top: 7px;
+}
+
+main>header section.login a.regitration {
+	font-size: 11px;
+	float: left;
+	color: white;
+	margin-top: 7px;
+}
+
+main>header section.login a.forget_password {
+	color: #bfbfbf;
+	font-size: 11px;
+	text-decoration: underline;
+	margin-left: 20px;
+	margin-top: 7px;
+	float: left;
+}
+
+main>header section.common_links {
+	float: left;
+	width: 76px;
+	border: 1px solid #c1c8cb;
+	margin-left: 17px;
+	height: 24px;
+	border-radius: 12px;
+}
+
+main>header section.common_links a{
+	float: left;
+	width: 33%;
+	height: 100%;
+	display: block;
+	position: relative;
+}
+
+main>header section.common_links img {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	
+	margin: auto;
 }
