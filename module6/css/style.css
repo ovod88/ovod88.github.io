@@ -18,15 +18,16 @@ main {
 main>header {
 	width: 100%;
 	padding-left: 9px;
+	height: 27px;
+	line-height: 27px;
 }
 
 main>header>p.tel_number {
-	height: 22px;
-	max-width: 302px;
 	color: #5e696d;
-	font-size: 18px;
-	float: left;
+	font-family: Arial;
 	padding-right: 17px;
+	float: left;
+	font-size: 18px;
 }
 
 main>header>p.tel_number>img {
@@ -76,7 +77,6 @@ main>header section.login a.regitration {
 	font-size: 11px;
 	float: left;
 	color: white;
-	margin-top: 7px;
 }
 
 main>header section.login a.forget_password {
@@ -84,7 +84,6 @@ main>header section.login a.forget_password {
 	font-size: 11px;
 	text-decoration: underline;
 	margin-left: 20px;
-	margin-top: 7px;
 	float: left;
 }
 
@@ -115,7 +114,7 @@ main>header section.common_links img {
 	margin: auto;
 }
 
-section.menu img {
+section.menu>img {
 	margin-left: 0;
 	margin-top: 11px;
 	margin-bottom: 5px;
@@ -154,4 +153,32 @@ section.menu div.main_menu nav.left_list a:hover {
 	border-radius: 17px;
 	vertical-align: middle;
 	color: white;
+}
+
+section.menu div.main_menu div.right_list {
+	float: right;
+	margin-right: 13px;
+}
+
+section.menu div.main_menu div.right_list nav.right_list {
+	float: left;
+	height: 34px;
+	line-height: 34px;
+}
+
+section.menu div.main_menu div.right_list nav.right_list img {
+	
+}
+
+section.menu div.main_menu div.right_list nav.right_list * {
+	vertical-align: middle;
+	display: inline-block;
+}
+
+section.menu div.main_menu div.right_list nav.right_list p {
+	color: #929b9f;
+	font-size: 10px;
+}
+section.menu div.main_menu div.right_list nav.right_list span {
+	color: #0d5a8f;
 }
