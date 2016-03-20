@@ -20,6 +20,7 @@ main {
 	margin: 0 auto;
 	margin-top: 17px;
 }
+
 main>header {
 	width: 100%;
 	padding-left: 9px;
@@ -68,7 +69,7 @@ main>header section.login input[type=text] {
 	margin-right: 7px;
 }
 
-main>header section.login .vl{
+main>header section.login .vl {
 	float: left;
 	width: 1px;
 	height: 40%;
@@ -101,7 +102,7 @@ main>header section.common_links {
 	border-radius: 12px;
 }
 
-main>header section.common_links a{
+main>header section.common_links a {
 	float: left;
 	width: 33%;
 	height: 100%;
@@ -115,7 +116,6 @@ main>header section.common_links img {
 	right: 0;
 	bottom: 0;
 	top: 0;
-	
 	margin: auto;
 }
 
@@ -173,7 +173,6 @@ section.menu div.main_menu div.right_list nav.right_list {
 }
 
 section.menu div.main_menu div.right_list nav.right_list img {
-	
 }
 
 section.menu div.main_menu div.right_list nav.right_list * {
@@ -185,6 +184,7 @@ section.menu div.main_menu div.right_list nav.right_list p {
 	color: #929b9f;
 	font-size: 10px;
 }
+
 section.menu div.main_menu div.right_list nav.right_list span {
 	color: #0d5a8f;
 }
@@ -217,10 +217,11 @@ section.menu section.search .search_disks {
 	width: 268px;
 	background: #c9c9c9;
 	height: 100%;
-} 
+}
 
 section.catalog {
 	overflow: hidden;
+	margin-bottom: 40px;
 }
 
 section.catalog>div {
@@ -229,8 +230,7 @@ section.catalog>div {
 }
 
 section.catalog div.left_catalog,
-section.catalog div.right_catalog
-{
+section.catalog div.right_catalog {
 	width: 181px;
 	float: left;
 }
@@ -240,8 +240,7 @@ section.catalog div.right_catalog {
 }
 
 section.catalog div.left_catalog div.product,
-section.catalog div.right_catalog div.product 
-{
+section.catalog div.right_catalog div.product {
 	border: 1px solid #909ba0;
 	height: 25px;
 	line-height: 25px;
@@ -287,7 +286,6 @@ section.catalog div.right_catalog dt * {
 	float: left;
 }
 
-
 section.catalog div.left_catalog dt>img,
 section.catalog div.right_catalog dt>img {
 	margin-left: 3px;
@@ -321,7 +319,7 @@ section.catalog div.right_catalog dd {
 
 section.catalog div.left_catalog dd>a {
 	position: relative;
-	left:-6px;
+	left: -6px;
 	color: #465961;
 }
 
@@ -342,10 +340,10 @@ section.catalog div.right_catalog dd input[type=checkbox] + span {
 
 section.catalog div.right_catalog dd input[type=checkbox]:checked + span:before {
 	content: '✓';
-  	display: block;
-  	width: 7px;
-  	line-height: 8px;
-  	text-align: center;
+	display: block;
+	width: 7px;
+	line-height: 8px;
+	text-align: center;
 }
 
 section.catalog div.right_catalog input[type=submit] {
@@ -368,10 +366,8 @@ section.catalog div.left_catalog dd>a:hover {
 	font-family: "Arial Bold", sans-serif;
 }
 
-
-
 section.catalog div.tires {
-	width:527px;
+	width: 527px;
 	float: left;
 	background: linear-gradient(to bottom, #1e5799 0%,#207cca 0%,#e4e7e8 0%,#95a8b1 100%);
 	border-radius: 2px;
@@ -396,7 +392,7 @@ section.catalog div.tires figure figcaption>p.head {
 	text-transform: capitalize;
 }
 
-section.catalog div.tires figure figcaption>p.head>span{
+section.catalog div.tires figure figcaption>p.head>span {
 	text-transform: capitalize;
 	font-size: 15px;
 	color: #206988;
@@ -429,6 +425,7 @@ section.catalog div.tires figure div p img {
 	padding-bottom: 10px;
 }
 
+
 section.catalog div.tires figure div p a {
 	font-size: 17px;
 	color: #114165;
@@ -445,7 +442,57 @@ section.catalog div.tires figure div p a span {
 	font-size: 12px;
 }
 
-section.catalog div.right_catalog {
-	width: 181px;
-	float: left;
+footer div.partners {
+	text-align: center;
+}
+
+footer div.partners span {
+	margin-left: -18px;
+}
+
+footer div.partners img {
+	padding-left: 8px;
+}
+
+footer div.partners {
+	margin-bottom: 27px;
+}
+
+footer div.footer_links {
+	height: 100px;
+	width: 100%;
+	background: #213a4d;
+	text-align: center;
+}
+
+footer div.footer_links ul {
+	padding-top: 15px;
+}
+
+footer div.footer_links ul li{
+	display: inline;
+}
+
+footer div.footer_links ul li>a {
+	color: white;
+	padding-left: 12px;
+	padding-right: 12px;
+}
+
+footer div.footer_links ul li:before {
+	content: "|";
+	color: white;
+}
+
+footer div.footer_links ul li:first-child:before {
+	content: "";
+}
+
+footer div.footer_links ul li>a:hover {
+	color: #52abcb;
+}
+
+footer div.footer_links p {
+	margin-top: 19px;
+	color: #7f4740;
 }
