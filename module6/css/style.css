@@ -228,11 +228,20 @@ section.catalog>div {
 	margin-bottom: -20000px;
 }
 
-section.catalog div.left_catalog {
+section.catalog div.left_catalog,
+section.catalog div.right_catalog
+{
 	width: 181px;
 	float: left;
 }
-section.catalog div.left_catalog div.product {
+
+section.catalog div.right_catalog {
+	margin-left: 7px;
+}
+
+section.catalog div.left_catalog div.product,
+section.catalog div.right_catalog div.product 
+{
 	border: 1px solid #909ba0;
 	height: 25px;
 	line-height: 25px;
@@ -242,21 +251,25 @@ section.catalog div.left_catalog div.product {
 	margin-bottom: 15px;
 }
 
-section.catalog div.left_catalog div.product * {
+section.catalog div.left_catalog div.product *,
+section.catalog div.right_catalog div.product * {
 	float: left;
 }
 
-section.catalog div.left_catalog div.product>img {
+section.catalog div.left_catalog div.product>img,
+section.catalog div.right_catalog div.product>img {
 	margin-left: 3px;
 	margin-top: 1px;
 }
 
-section.catalog div.left_catalog div.product>p {
+section.catalog div.left_catalog div.product>p,
+section.catalog div.right_catalog div.product>p {
 	margin-top: 1px;
 	margin-left: 5px;
 }
 
-section.catalog div.left_catalog dt {
+section.catalog div.left_catalog dt,
+section.catalog div.right_catalog dt {
 	width: 148px;
 	height: 25px;
 	line-height: 25px;
@@ -265,15 +278,24 @@ section.catalog div.left_catalog dt {
 	margin-bottom: 4px;
 }
 
-section.catalog div.left_catalog dt * {
+section.catalog div.right_catalog dt {
+	margin-left: 13px;
+}
+
+section.catalog div.left_catalog dt *,
+section.catalog div.right_catalog dt * {
 	float: left;
 }
-section.catalog div.left_catalog dt>img {
+
+
+section.catalog div.left_catalog dt>img,
+section.catalog div.right_catalog dt>img {
 	margin-left: 3px;
 	margin-top: 1px;
 }
 
-section.catalog div.left_catalog dt>p {
+section.catalog div.left_catalog dt>p,
+section.catalog div.right_catalog dt>p {
 	font-size: 14px;
 	margin-top: 1px;
 	margin-left: 5px;
@@ -281,12 +303,18 @@ section.catalog div.left_catalog dt>p {
 	text-transform: uppercase;
 }
 
-section.catalog div.left_catalog dd {
+section.catalog div.left_catalog dd,
+section.catalog div.right_catalog dd {
 	display: list-item;
 	list-style-type: circle;
 	font-size: 13px;
 	line-height: 1.7;
 	margin-left: 49px;
+}
+
+section.catalog div.right_catalog dd {
+	margin-left: 40px;
+	list-style-type: square;
 }
 
 section.catalog div.left_catalog dd>a {
@@ -295,7 +323,13 @@ section.catalog div.left_catalog dd>a {
 	color: #465961;
 }
 
-section.catalog div.left_catalog dd>a:hover {
+section.catalog div.right_catalog dd span {
+	position: relative;
+	left:-6px;
+}
+
+section.catalog div.left_catalog dd>a:hover,
+section.catalog div.right_catalog dd>a:hover {
 	color: #0c3256;
 	text-decoration: underline;
 	font-size: 14px;
@@ -303,6 +337,7 @@ section.catalog div.left_catalog dd>a:hover {
 	font-weight: bold;
 	font-family: "Arial Bold", sans-serif;
 }
+
 
 
 section.catalog div.tires {
