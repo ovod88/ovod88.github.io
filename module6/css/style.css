@@ -1,5 +1,5 @@
 body, html {
-	font-family: "Lucida Sans Unicode", Arial, sans-se;
+	font-family: "Lucida Sans Unicode", Arial, sans-serif;
 }
 
 .clearfix:after {
@@ -156,10 +156,10 @@ section.menu>img {
 
 section.menu div.main_menu {
 	width: 100%;
-	height: 34px;
+	height: 35px;
 	border-radius: 4px;
 	background: black;
-	margin-bottom: 14px;
+	margin-bottom: 9px;
 }
 
 section.menu div.main_menu nav.left_list {
@@ -226,7 +226,7 @@ section.menu section.search {
 
 section.menu section.search .search_auto {
 	float: left;
-	width: 414px;
+	width: 415px;
 	height: 100%;
 	background: grey;
 	margin-right: 16px;
@@ -243,14 +243,14 @@ section.menu section.search .search_tires {
 
 section.menu section.search .search_disks {
 	float: left;
-	width: 268px;
+	width: 266px;
 	background: #c9c9c9;
 	height: 100%;
 }
 
 section.catalog {
 	overflow: hidden;
-	margin-bottom: 40px;
+	margin-bottom: 27px;
 }
 
 section.catalog>div {
@@ -276,7 +276,10 @@ section.catalog div.right_catalog div.product {
 	border-radius: 12px;
 	font-size: 12px;
 	text-transform: uppercase;
-	margin-bottom: 15px;
+	margin-bottom: 18px;
+	margin-top: 3px;
+	margin-left: 6px;
+	width: 178px;
 }
 
 section.catalog div.left_catalog div.product *,
@@ -286,28 +289,30 @@ section.catalog div.right_catalog div.product * {
 
 section.catalog div.left_catalog div.product>img,
 section.catalog div.right_catalog div.product>img {
-	margin-left: 3px;
+	margin-left: 1px;
 	margin-top: 1px;
 }
 
 section.catalog div.left_catalog div.product>p,
 section.catalog div.right_catalog div.product>p {
 	margin-top: 1px;
-	margin-left: 5px;
+	letter-spacing: 0.5px;
+	padding-left: 3px;
 }
 
 section.catalog div.left_catalog dt,
 section.catalog div.right_catalog dt {
-	width: 148px;
+	width: 137px;
 	height: 25px;
 	line-height: 25px;
 	border: 1px solid #a6afb3;
 	border-radius: 12px;
-	margin-bottom: 4px;
+	margin-bottom: 0px;
+	margin-top: -4px;;
 }
 
 section.catalog div.right_catalog dt {
-	margin-left: 13px;
+	margin-left: 16px;
 }
 
 section.catalog div.left_catalog dt *,
@@ -317,7 +322,7 @@ section.catalog div.right_catalog dt * {
 
 section.catalog div.left_catalog dt>img,
 section.catalog div.right_catalog dt>img {
-	margin-left: 3px;
+	margin-left: 6px;
 	margin-top: 1px;
 }
 
@@ -335,15 +340,19 @@ section.catalog div.right_catalog dd {
 	display: list-item;
 	list-style-type: circle;
 	font-size: 13px;
-	line-height: 1.7;
-	margin-left: 49px;
+	line-height: 2;
+	margin-left: 53px;
+}
+
+section.catalog div.right_catalog dl {
+	margin-bottom: 12px;
 }
 
 section.catalog div.right_catalog dd {
-	margin-left: 19px;
+	margin-left: 23px;
 	list-style-type: none;
 	font-size: 13px;
-	line-height: 1.7;
+	line-height: 2;
 }
 
 section.catalog div.left_catalog dd>a {
@@ -379,11 +388,11 @@ section.catalog div.right_catalog input[type=submit] {
 	background: #0e3a5e;
 	height: 26px;
 	width: 80px;
-	margin-left: 22px;
+	margin-left: 28px;
 	color: white;
 	border-radius: 12px;
 	border: none;
-	margin-top: 22px;
+	margin-top: 6px;
 }
 
 section.catalog div.left_catalog dd>a:hover {
@@ -400,12 +409,12 @@ section.catalog div.tires {
 	float: left;
 	background: linear-gradient(to bottom, #1e5799 0%,#207cca 0%,#e4e7e8 0%,#95a8b1 100%);
 	border-radius: 2px;
-	margin-left: 6px;
+	margin-left: 8px;
 }
 
 section.catalog div.tires div.tires_internal {
 	margin-left: 24px;
-	margin-top: 18px;
+	margin-top: 15px;
 	margin-bottom: 30px;
 }
 
@@ -413,7 +422,7 @@ section.catalog div.tires figure {
 	float: left;
 	text-align: center;
 	margin-left: 30px;
-	margin-bottom: 44px;
+	margin-bottom: 48px;
 }
 
 section.catalog div.tires figure figcaption>p.head {
@@ -432,11 +441,6 @@ section.catalog div.tires figure.left {
 	margin-left: 0;
 }
 
-section.catalog div.tires figure a {
-	display: block;
-	text-align: center;
-}
-
 section.catalog div.tires figure div {
 	width: 137px;
 	height: 127px;
@@ -448,27 +452,31 @@ section.catalog div.tires figure div p {
 	padding-top: 4px;
 }
 
-section.catalog div.tires figure div p img {
-	display: block;
-	margin: 0 auto;
-	padding-bottom: 10px;
-}
-
-
 section.catalog div.tires figure div p a {
 	font-size: 17px;
 	color: #114165;
 	font-weight: bold;
 	font-style: italic;
 	font-family: "Arial";
+	position: relative;	
+}
+
+section.catalog div.tires figure div p a img {
+	display: block;
+	margin: 0 auto;
+	padding-bottom: 13px;
+}
+
+section.catalog div.tires figure div p span {
+	font-size: 12px;
 }
 
 section.catalog div.tires figure div p a:visited {
-	color: #37748f;
+	color: #95a8b1;
 }
 
-section.catalog div.tires figure div p a span {
-	font-size: 12px;
+section.catalog div.tires figure div p a:hover img {
+	padding-bottom: 20px;
 }
 
 footer div.partners {
@@ -495,7 +503,8 @@ footer div.footer_links {
 }
 
 footer div.footer_links ul {
-	padding-top: 15px;
+	padding-top: 5px;
+	padding-left: 22px;
 }
 
 footer div.footer_links ul li{
