@@ -91,4 +91,22 @@
 	.common_links__navigation a:hover {
 		border-bottom: 2px solid #edbfff;
 	}
+
+	.slider {
+		background: rgba(0,0,0, 0.5);
+		width: 100%;
+		margin-top: 182px;
+		position: absolute;
+		height: 400px;
+	}
+	
+	.center_text_feature {
+		position: relative;
+		top: 50%; 
+  		transform: translate(0,-50%);
+	}
+	
+	.slider__text {
+		width: 55%;
+	}
 }
