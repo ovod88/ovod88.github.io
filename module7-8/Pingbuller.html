@@ -5,11 +5,21 @@
 		<title>Pingbuller</title>
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/bootstrap.css">
+		 <script src="js/jquery-2.2.2.js"></script>
+		 <script>
+			$(document).ready(function(){
+    			$(".slider_navigation span").click(function(){
+    				$(".slider_navigation span").removeClass('active');
+        			$(this).toggleClass('active');
+    		});
+});
+</script>
 	</head>
 	<body>
-		<footer>
+		<header>
 			<!-- <img class="header_bg" src="img/Header_bg_optimized.jpg" alt=""> -->
-			<div class="center_content center_width relative clearfix">
+			<div class="center_content clearfix">
 				<div class="logo">
 					<p class="logo__word">Pingbull<span>er</span></p>
 				</div>
@@ -24,12 +34,12 @@
 				</div>
 			</div>
 			<div class="slider_bg">
-				<div class="center_content center_width slider relative">
-					<div class="slider_text_vert_centering clearfix">
-						<article class="slider__text">
-							<p class="main_article_header">lorem ipsum dolor</p>
-							<p class="article_header">It will make all of your dreams come true</p>
-							<p class="article_text">
+				<div class="center_content full_height clearfix">
+					<div class="slider_text article">
+						<article>
+							<p class="article__main_header">lorem ipsum dolor</p>
+							<p class="article__header">It will make all of your dreams come true</p>
+							<p class="article__text">
 								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia odit sint ratione maiores nemo odio enim, voluptatem hic iure deleniti dolor architecto qui natus totam aliquam doloribus perspiciatis tempora. Id.
 								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae dolorem nisi fuga quae et quaerat esse laudantium quidem enim mollitia nesciunt ab perspiciatis facere qui, cumque suscipit labore porro ex.
 							</p>
@@ -39,7 +49,64 @@
 						<img src="img/Iphone.png" alt="">
 					</div>
 				</div>
-			</div>	
-		</footer>
+			</div>
+			<nav class="slider_navigation">
+				<span class="active"></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</nav>	
+		</header>
+		<section class="publications">
+			<div class="about_company_bg ">
+				<div class="center_content full_height">
+					<div class="col-sm-4 article">
+						<article class="clearfix">
+							<span class="publications__icons"></span>
+							<div class="publications_article">
+								<p class="article__header white">about our company</p>
+								<p class="article__text">
+									Nunc turpis neque, feugiat eget eleifend et, lacinia non neque. Praesent rhoncus ultrices posuere. Pellentesque vel lacus eget nisi convallis auctor. Nam vitae 
+								</p>
+								<nav class="common_links__navigation highlight">
+									<a href="#" class="common_links common_links__navigation">read more</a>
+								</nav>
+							</div>
+						</article>
+					</div>
+					<div class="col-sm-4 article">
+						<article class="clearfix">
+							<span class="publications__icons comment"></span>
+							<div class="publications_article">
+								<p class="article__header white">about our company</p>
+								<p class="article__text">
+									Nunc turpis neque, feugiat eget eleifend et, lacinia non neque. Praesent rhoncus ultrices posuere. Pellentesque vel lacus eget nisi convallis auctor. Nam vitae 
+								</p>
+								<nav class="common_links__navigation highlight">
+									<a href="#" class="common_links common_links__navigation">read more</a>
+								</nav>
+							</div>
+						</article>
+					</div>
+					<div class="col-sm-4 article">
+						<article class="clearfix">
+							<span class="publications__icons music"></span>
+							<div class="publications_article">
+								<p class="article__header white">about our company</p>
+								<p class="article__text">
+									Nunc turpis neque, feugiat eget eleifend et, lacinia non neque. Praesent rhoncus ultrices posuere. Pellentesque vel lacus eget nisi convallis auctor. Nam vitae 
+								</p>
+								<nav class="common_links__navigation highlight">
+									<a href="#" class="common_links common_links__navigation">read more</a>
+								</nav>
+							</div>
+						</article>
+					</div>
+				</div>
+			</div>
+			<div class="updates"></div>
+			<div class="comments"></div>
+		</section>
+		<footer></footer>
 	</body>
 </html>
