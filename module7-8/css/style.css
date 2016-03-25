@@ -26,17 +26,17 @@
 	display: block;
 }
 
-/*body {
-	background: url(../img/Header_bg_optimized.jpg);
-	background-repeat: no-repeat;
-	background-size: contain;
-	background-position: right top;
-}*/
+.relative {
+	position: relative;
+}
 
-@media screen and (min-width: 960px) {
+@media screen and (min-width: 20px) {
 	.center_content {
-		width: 960px;
 		margin: 0 auto;
+	}
+
+	.center_width {
+		width: 960px;
 	}
 
 	footer {
@@ -51,6 +51,7 @@
 	.logo {
 		position: absolute;
 		top: 70px;
+		margin-left: -10px;
 	}
 
 	.logo__word {
@@ -70,10 +71,6 @@
 		float: right;
 	}
 
-	.common_links__navigation {
-		margin-top: 78px;
-	}
-
 
 	.common_links__navigation a {
 		font-family: 'Legue Gohic Regular', Arial, sans-serif;
@@ -88,25 +85,59 @@
 		margin-left: 0px;
 	}
 
-	.common_links__navigation a:hover {
+	.header_links {
+		margin-top: 78px;
+	}
+
+	.header_links a:hover {
 		border-bottom: 2px solid #edbfff;
 	}
 
-	.slider {
+	.slider_bg {
 		background: rgba(0,0,0, 0.5);
 		width: 100%;
 		margin-top: 182px;
-		position: absolute;
 		height: 400px;
 	}
+
+	.slider {
+		height: 100%;
+	}
 	
-	.center_text_feature {
+	.slider_text_vert_centering {
 		position: relative;
+		width: 55%;
 		top: 50%; 
   		transform: translate(0,-50%);
+  		margin-left: -10px;
 	}
 	
 	.slider__text {
-		width: 55%;
+		line-height: 1.2;
+	}
+
+	.main_article_header {
+		font-family: 'Legue Gohic Regular', Arial, sans-serif;
+		color: white;
+		font-size: 46px;
+		text-transform: capitalize;
+	}
+
+	.article_header {
+		font-family: 'Legue Gohic Regular', Arial, sans-serif;
+		color: #edbfff;
+		font-size: 32px;
+		text-transform: uppercase;
+	}
+
+	.article_text {
+		font-family: 'Open Sans', Arial, sans-serif;
+		font-size: 18px;
+		color: #d0ced1;
+	}
+	.slider_image {
+		position: absolute;
+		top: -18px;
+		right: 76px;
 	}
 }
