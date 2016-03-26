@@ -11,12 +11,23 @@
 
 @font-face {
     font-family: 'Open Sans';
-    src: url('../fonts/OpenSans/opensans-regular-webfont.eot');
-    src: url('../fonts/OpenSans/opensans-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/OpenSans/opensans-regular-webfont.woff2') format('woff2'),
-         url('../fonts/OpenSans/opensans-regular-webfont.woff') format('woff'),
-         url('../fonts/OpenSans/opensans-regular-webfont.ttf') format('truetype');
+    src: url('../fonts/OpenSans/Regular/opensans-regular-webfont.eot');
+    src: url('../fonts/OpenSans/Regular/opensans-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans/Regular/opensans-regular-webfont.woff2') format('woff2'),
+         url('../fonts/OpenSans/Regular/opensans-regular-webfont.woff') format('woff'),
+         url('../fonts/OpenSans/Regular/opensans-regular-webfont.ttf') format('truetype');
     font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/OpenSans/ExtraBold/opensans-extrabold-webfont.eot');
+    src: url('../fonts/OpenSans/ExtraBold/opensans-extrabold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans/ExtraBold/opensans-extrabold-webfont.woff2') format('woff2'),
+         url('../fonts/OpenSans/ExtraBold/opensans-extrabold-webfont.woff') format('woff'),
+         url('../fonts/OpenSans/ExtraBold/opensans-extrabold-webfont.ttf') format('truetype');
+    font-weight: bold;
     font-style: normal;
 }
 
@@ -24,6 +35,14 @@
 	content: '';
 	clear: both;
 	display: block;
+}
+
+.absolute {
+	position: absolute;
+}
+
+.relative {
+	position: relative;
 }
 
 @media screen and (min-width: 20px) {
@@ -214,8 +233,12 @@
 		color: white;
 	}
 
-	.black {
+	.black, .black a {
 		color: black;
+	}
+
+	.greyish {
+		color: #454545;
 	}
 
 	.highlight {
@@ -226,7 +249,7 @@
 		background: url(../img/Update.png) no-repeat center center;
     	background-size: 100% 100%;
     	margin-top: 100px;
-    	margin-left: 22px;
+    	padding-left: 22px;
 	}
 
 	.author_icon {
@@ -237,5 +260,33 @@
 
 	.centrilized {
 		margin: 33px 27px 62px 25px;
+	}
+
+	.recent_updates {
+		margin-top: 130px;
+		padding-left: 45px;
+	}
+	.article_recent_update {
+		float: left;
+		margin-left: 66px;
+	}
+
+	.article__text_update {
+		color: #454545;
+		font-weight: bold;
+		padding-top: 0;
+		font-size: 14px;
+	}
+
+	.post {
+		margin-top: 22px;
+	}
+
+	.fontlight {
+		font-weight: normal;
+	} 
+
+	.update_read_more {
+		margin-top: 29px;
 	}
 }
