@@ -55,13 +55,12 @@
 	height: 100%;
 } 
 
-.white_header .article__header {
+.article__header .white{
 	color: white;
 }
 
-.greyish_header .article__header span,
-.greyish_header .article__text,
-.article__header .greyish, .comment_style_logo {
+.article__text .greyish,
+.article__header .greyish {
 	color: #454545;
 }
 
@@ -69,7 +68,7 @@
 	color: #787878;
 }
 
-.comment_style_logo span {
+.article__header .greyish3 {
  	color: #b9b9b9;
 }
 
