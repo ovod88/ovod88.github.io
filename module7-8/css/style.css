@@ -61,10 +61,17 @@
 
 .greyish_header .article__header span,
 .greyish_header .article__text,
-.article__header .greyish {
+.article__header .greyish, .comment_style_logo {
 	color: #454545;
 }
 
+.article__text .greyish2 {
+	color: #787878;
+}
+
+.comment_style_logo span {
+ 	color: #b9b9b9;
+}
 
 @media screen and (min-width: 20px) {
 	.center_content {
@@ -93,6 +100,14 @@
 	.logo__word span {
 		text-shadow: none;
 		color: #553c61;
+	}
+
+	.comment_style_logo {
+		color: #454545;
+	}
+
+	.comment_style_logo span {
+ 		color: #b9b9b9;
 	}
 
 	.header__logo_position {
@@ -357,47 +372,39 @@
 		width: 84px;
 	}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
-	.article {
-		position: relative;
-		top: 50%; 
-  		transform: translate(0,-50%);
+	.comments_bg {
+		height: 397px;
+		width: 100%;
+		background: #ececec;
 	}
 
+	.copyright {
+		font-family: Georgia, Arial, sans-serif;
+		color: #c5c5c5;
+		font-style: italic;
+		text-shadow: 0px 1px 0px rgba(255, 255, 255, 1);
+	}
 
+	footer {
+		width: 100%;
+		height: 114px;
+		background: url(../img/footer_bg.jpg);
+	}
 
+	.footer_links {
+		display: inline-block;
+	}
 
+	.design {
+		color: white;
+		float: right;
+		position: relative;
+		transform: translate(0,50%);
+	}
 
-
-
-
-
-
-
-
-
-
+	.design span {
+		font-weight: bold;
+	}
 
 	.article__text_update {
 		color: #454545;
@@ -410,61 +417,10 @@
 	.fontlight {
 		font-weight: normal;
 	} 
-
-
-
-	.comments_bg {
-		height: 397px;
-		width: 100%;
-		background: #ececec;
-	}
-
-	footer {
-		width: 100%;
-		height: 114px;
-		background: url(../img/footer_bg.jpg);
-	}
-
-	.design {
-		color: white;
-		float: right;
-		position: relative;
-		transform: translate(0,50%);
-	}
-
-	.footer_links {
-		display: inline-block;
-	}
-}
-
-.copyright {
-	font-family: Georgia, Arial, sans-serif;
-	color: #c5c5c5;
-	font-style: italic;
-	text-shadow: 0px 1px 0px rgba(255, 255, 255, 1);
 }
 
 
-.greyish2 {
-	color: #787878;
-}
 
-.black, .black a {
-	color: black;
-}
 
-.greyish3 {
-	color: #b9b9b9;
-}
 
-.text_upper {
-	text-transform: uppercase;
-}
 
-.font18px {
-	font-size: 18px;
-}
-
-.bold {
-	font-weight: bold;
-}
