@@ -45,6 +45,15 @@
 	position: relative;
 }
 
+.vertical_centering {
+	position: relative;
+	top: 50%;
+    transform: translate(0,-50%);
+}
+
+
+
+
 @media screen and (min-width: 20px) {
 	.center_content {
 		margin: 0 auto;
@@ -58,11 +67,6 @@
 	    background: url(../img/Header_bg_optimized.jpg);
 		background-position: center;
 		background-repeat: no-repeat;
-	}
-
-	.logo {
-		float: left;
-		margin-top: 70px;
 	}
 
 	.logo__word {
@@ -79,18 +83,40 @@
 		color: #553c61;
 	}
 
-	.common_links {
-		float: right;
+	.header_logo_position {
+		float: left;
+		margin-top: 70px;
 	}
-
-
-	.common_links__navigation a{
+	
+	.site_navigation a {
 		font-family: 'Legue Gohic Regular', Arial, sans-serif;
 		font-size: 24px;
 		color: white;
 		text-transform: uppercase;
 		margin-left: 50px;
 		text-decoration: none;
+	}
+
+	.site_navigation a:first-child, nav span:first-child {
+		margin-left: 0px;
+	}
+
+
+
+
+
+
+
+
+
+
+	.common_links {
+		float: right;
+	}
+
+
+	.common_links__navigation a{
+
 	}
 
 	.common_links__navigation a:first-child, nav span:first-child {
