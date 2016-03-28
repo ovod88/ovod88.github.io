@@ -2,6 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Pingbuller</title>
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/style.css">
@@ -13,6 +14,11 @@
     				$(".slider_navigation span").removeClass('active');
         			$(this).toggleClass('active');
     			});
+
+    			var change_link = window.matchMedia( "screen and (max-width: 768px)" );
+    			if (change_link.matches) {
+    				$(".read_more").html("more blog posts");
+    			}
 			});
 		</script>
 	</head>
@@ -28,6 +34,7 @@
 						<a href="#">home</a>
 						<a href="#">about</a>
 						<a href="#">blog</a>
+						<a href="#">products</a>
 						<a href="#">lorem ipsum</a>
 						<a href="#">dolores sit amet</a>
 					</nav>
@@ -156,7 +163,7 @@
 								</div>
 							</div>
 							<nav class="site_navigation recent_update_navigation">
-								<a class="recent_update_link" href="#">read more here</a>
+								<a href="#"><span class="read_more">read more here</span</a>
 							</nav>
 						</div>
 					</div>
@@ -175,7 +182,7 @@
 				</div>
 			</section>
 			<section class="comments_bg">
-				<div class="center_content full_height">
+				<div class="center_content full_height shadow_effect">
 					<div class="col-sm-4 vertical_centering">
 						<article>
 							<p class="logo__word comment_style_logo white_shadow">pingbull<span class="greyish3 white_shadow">er</span></p>
@@ -223,6 +230,7 @@
 						<a href="#">home</a>
 						<a href="#">about</a>
 						<a href="#">blog</a>
+						<a href="#">products</a>
 						<a href="#">lorem ipsum</a>
 						<a href="#">dolores sit amet</a>
 					</nav>
