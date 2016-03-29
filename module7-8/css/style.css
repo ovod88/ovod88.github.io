@@ -51,7 +51,7 @@ header {
 }
 
 .slider_bg {
-	background: rgba(0,0,0, 0.3);
+	background: rgba(0,0,0, 0.2);
 	width: 100%;
 	margin-top: 172px;
 	height: 400px;
@@ -111,7 +111,7 @@ header {
     top: 50%;
     bottom: 0;
     left: 0px;
-    width: 960px;
+    width: 100%;
     border-radius: 300px / 6px;
 }
 
@@ -180,12 +180,16 @@ footer {
 	font-size: 24px;
 	color: white;
 	text-transform: uppercase;
-	margin-left: 50px;
 	text-decoration: none;
 	text-shadow: 0px 1px 1px black;
 }
 
-.site_navigation a:first-child, nav span:first-child {
+.site_navigation li {
+	float: left;
+	margin-left: 50px;
+}
+
+.site_navigation li:first-child, nav span:first-child {
 	margin-left: 0px;
 }
 
@@ -452,14 +456,14 @@ article .white_shadow {
 	font-weight: normal;
 } 
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 960px) {
 	.center_content {
 		margin: 0 auto;
 		max-width: 960px;
 	}
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 960px){
 	.center_content {
 		margin: 0 auto;
 		max-width: 768px;
@@ -468,6 +472,7 @@ article .white_shadow {
 	.header__links_position {
 		float: left;
 		margin-top: 38px;
+		clear: both;
 	}
 
 	header {
@@ -478,7 +483,7 @@ article .white_shadow {
 		margin-top: 80px;
 	}
 
-	.site_navigation a {
+	.site_navigation li {
 		margin-left: 42px;
 	}
 
@@ -492,10 +497,6 @@ article .white_shadow {
 
 	footer {
 		height: 200px;
-	}
-
-	.shadow_effect:after, .shadow_effect:before {
-		left: -96px;
 	}
 
 	.footer_links {
@@ -514,6 +515,181 @@ article .white_shadow {
 
 	.article__header .greyish {
 		display: block;
+	}
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px) {
+	.center_content {
+		margin: 0 auto;
+		max-width: 480px;
+	}
+
+	header {
+		height: 549px;
+	}
+
+	.header__logo_position {
+		float: none;
+		margin-top: 70px;
+	}
+
+	.logo__word {
+		text-align: center;
+	}
+	
+	.header__links_position {
+		position: absolute;
+		z-index: 1;
+		margin-top: 23px;
+		width: 242px;
+		transform: translate(50%, 0);
+	}
+
+	.site_navigation {
+		text-align: center;
+	}
+
+	.site_navigation li {
+		margin-left: 0px;
+		float: none;
+		background: rgba(59, 46, 67, 0.5);
+		border-bottom: 1px solid #523e5a;
+	}
+
+	.site_navigation li:first-child {
+		border-radius: 7px 7px 0 0;
+	}
+
+	.site_navigation li:last-child,  
+	.site_navigation li:last-child a{
+		border-radius: 0 0 7px 7px;
+	}
+	
+	.site_navigation li:first-child a {
+		height: 51px;
+		line-height: 51px;
+		border-radius: 7px 7px 0 0;
+	}
+
+	.site_navigation a {
+		display: block;
+		width: 242px;
+		height: 42px;
+		line-height: 42px;
+	}
+
+	.site_navigation a:hover {
+		background: #2b2230;
+		border-bottom: 2px solid #edbfff;
+
+	}
+
+	.slider_bg {
+		height: 246px;
+		margin-top: 95px;
+	}
+
+	.screen_480 {
+		font-size: 16px;
+	}
+
+	.article__main_header {
+		font-size: 36px;
+	}
+
+	.slider__text_size {
+		margin-left: 42px;
+		width: 45%;
+	}
+
+	.slider__image_position {
+		right: 30px;
+		width: 192px;
+		height: 304px;
+		bottom: 8px;
+	}
+
+	.iphone {
+		height: 100%;
+	}
+
+	.slider__buttons_position  {
+		transform: translate(50%, 0);
+		right: 50%;
+	}
+
+	.about_company_bg {
+		height: 100%;
+		padding-top: 82px;
+		padding-bottom: 70px;
+	}
+
+	.updates_bg  {
+		height: 100%;
+		padding-bottom: 90px;
+		padding-top: 71px;
+	}
+
+	.vertical_centering {
+		top: 0;
+		transform: none;
+	}
+
+	.about_company_navigation  a, 
+	.recent_update_navigation a {
+		font-family: 'Legue Gohic Regular', Arial, sans-serif;
+		font-size: 18px;
+		color: white;
+		text-transform: uppercase;
+    	text-decoration: none;
+	}
+
+	.about_company_navigation a:hover {
+		border-bottom: none;
+    	text-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
+	}
+
+	.full_width {
+		width: 100%;
+	}
+
+	.article_padding {
+		padding-bottom: 30px;
+	}
+
+	.recent_updates_position {
+		margin-top: 71px;
+	}
+
+	.recent_update_navigation a {
+		color: #454545;
+	}
+
+	.logos_bg {
+		height: 100%;
+	}
+
+	.logos {
+		padding-top: 36px;
+		display: block;
+    	width: 320px;
+    	margin: 0 auto;
+    	transform: none;
+    	left: 0;
+    	padding-bottom: 14px;
+	}
+
+	.logos span {
+		margin-left: 56px;
+		margin-bottom: 26px;
+	}
+
+	.logos span.left {
+		margin-left: -13px;
+	}
+
+	.logos span.right {
+		margin-right: -24px;
 	}
 }
 
