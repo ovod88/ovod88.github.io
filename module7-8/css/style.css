@@ -519,6 +519,11 @@ article .white_shadow {
 }
 
 @media screen and (min-width: 480px) and (max-width: 767px) {
+
+	.text_centering {
+		text-align: center;
+	}
+
 	.center_content {
 		margin: 0 auto;
 		max-width: 480px;
@@ -690,6 +695,54 @@ article .white_shadow {
 
 	.logos span.right {
 		margin-right: -24px;
+	}
+
+	.comments_bg {
+		height: auto;
+	}
+
+	.pingbuller_copyright {
+		padding-top: 83px;
+		padding-bottom: 65px;
+	}
+
+	.div_new_categories {
+		padding-top: 65px;
+		padding-bottom: 90px;
+	}
+
+	.comments {
+		height: 847px;
+	}
+
+	footer {
+		height: auto;
+	}
+
+	.design {
+		float: none;
+		transform: none;
+		font-size: 14px;
+		padding-top: 40px;
+		padding-bottom: 88px;
+	}
+
+	.footer_links {
+		margin-top: 48px;
+	}
+
+	.footer_links li{
+		float: left;
+		padding-left: 24px;
+	}
+
+	.footer_links a {
+		font-family: 'Legue Gohic Regular', Arial, sans-serif;
+    	font-size: 18px;
+    	color: white;
+    	text-transform: uppercase;
+    	text-decoration: none;
+    	text-shadow: 0px 1px 1px black;
 	}
 }
 

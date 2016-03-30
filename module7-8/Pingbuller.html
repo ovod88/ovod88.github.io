@@ -24,6 +24,9 @@
     				$(".slider_text").html("");
     				$("nav.about_company_navigation").removeClass("site_navigation");
     				$("nav.recent_update_navigation").removeClass("site_navigation");
+    				var htmlString = $(".new_categories").html();
+    				$(".pingbuller_copyright").html(htmlString);
+    				$("nav.footer_links").removeClass("site_navigation");
     			}
 			});
 		</script>
@@ -193,7 +196,7 @@
 		<section class="comments">
 			<div class="comments_bg">
 				<div class="center_content full_height">
-					<div class="col-sm-4 vertical_centering">
+					<div class="col-sm-4 vertical_centering pingbuller_copyright">
 						<article>
 							<p class="logo__word comment_style_logo white_shadow">pingbull<span class="greyish3 white_shadow">er</span></p>
 							<p class="article__text copyright white_shadow">
@@ -217,8 +220,8 @@
 							</p>
 						</article>
 					</div>
-					<div class="col-sm-4 vertical_centering">
-						<article>
+					<div class="col-sm-4 vertical_centering div_new_categories">
+						<article class="new_categories">
 							<p class="article__header"><span class="greyish white_shadow">new categories</span></p>
 							<p class="article__text greyish">
 								<span class="greyish2 white_shadow">
@@ -240,7 +243,7 @@
 		</section>
 		<footer>
 			<div class="center_content full_height">
-				<div class="vertical_centering">
+				<div class="vertical_centering text_centering">
 					<nav class="site_navigation footer_links">
 						<ul>
 							<li><a href="#">home</a></li>
