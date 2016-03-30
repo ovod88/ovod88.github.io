@@ -28,6 +28,14 @@
     				$(".pingbuller_copyright").html(htmlString);
     				$("nav.footer_links").removeClass("site_navigation");
     			}
+    			var delete_text_320 = window.matchMedia( "screen and (min-width: 320px) and (max-width: 479px)" );
+    			if (delete_text_320.matches) {
+    				$(".header__links_position .site_navigation li:not(:first-child").remove();
+    				$(".slider__image_position").remove();
+    				$(".article__text.slider_text").remove();
+    				$(".comments_bg").remove();
+    				$("footer .footer_links").remove();
+    			}
 			});
 		</script>
 	</head>
@@ -56,7 +64,7 @@
 					<div class="slider__text_size vertical_centering">
 						<article>
 							<p class="article__main_header">lorem ipsum dolor</p>
-							<p class="article__header screen_480">It will make all of your dreams come true</p>
+							<p class="article__header screen_font_size">It will make all of your dreams come true</p>
 							<p class="article__text slider_text">
 							<span class="shadow_back">
 								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia odit sint ratione maiores nemo odio enim, voluptatem hic iure deleniti dolor architecto qui natus totam aliquam doloribus perspiciatis tempora. Id.
@@ -181,14 +189,14 @@
 				</div>
 			</div>
 		</section>
-		<section class="logos_bg">
+		<section class="logos_bg text_centering">
 			<div class="center_content full_height">
-				<nav class="logos clearfix">
+				<nav class="logos text_centering clearfix">
 					<span class="LOGO logo_1"></span>
 					<span class="LOGO logo_2"></span>
 					<span class="LOGO logo_3"></span>
 					<span class="LOGO logo_4 left"></span>
-					<span class="LOGO logo_5"></span>
+					<span class="LOGO logo_5 5th"></span>
 					<span class="LOGO logo_6 right"></span>
 				</nav>
 			</div>

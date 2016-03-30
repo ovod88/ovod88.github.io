@@ -594,7 +594,7 @@ article .white_shadow {
 		margin-top: 95px;
 	}
 
-	.screen_480 {
+	.screen_font_size {
 		font-size: 16px;
 	}
 
@@ -728,7 +728,7 @@ article .white_shadow {
 	}
 
 	.footer_links {
-		margin-top: 48px;
+		padding-top: 48px;
 	}
 
 	.footer_links li{
@@ -743,6 +743,178 @@ article .white_shadow {
     	text-transform: uppercase;
     	text-decoration: none;
     	text-shadow: 0px 1px 1px black;
+	}
+}
+
+@media screen and (min-width: 320px) and (max-width: 479px) {
+	.text_centering {
+		text-align: center;
+	}
+
+	.logo__word {
+    	text-align: center;
+	}
+
+	.center_content {
+		margin: 0 auto;
+		max-width: 320px;
+	}
+
+	header {
+		height: 520px;
+	}
+
+	.header__logo_position {
+    	float: none;
+    	margin-top: 70px;
+	}
+
+	.header__links_position {
+		float: none;
+		margin-top: 41px;
+	}
+
+	.site_navigation {
+    	text-align: center;
+	}
+
+	.site_navigation li {
+		margin-right: 0;
+		float: none;
+	}
+
+	.slider_bg {
+		margin-top: 120px;
+		background: none;
+		height: 217px;
+	}
+
+	.screen_font_size {
+		font-size: 16px;
+	}
+
+	.slider__text_size {
+		text-align: center;
+		float: none;
+		width: 100%;
+	}
+
+	.slider__text_size.vertical_centering {
+		position: relative;
+		transform: none;
+		top: 0;
+	}
+
+	.slider__buttons_position {
+    	transform: translate(50%, 0);
+    	right: 50%;
+	}
+
+	.about_company_bg {
+		height: 100%;
+	}
+
+	.about_company_bg .center_content {
+		padding-top: 70px;
+		padding-bottom: 67px;
+	}
+
+	.about_company_bg .col-sm-4 {
+		padding-top: 27px;
+		padding-bottom: 27px;
+	}
+
+	.about_company_bg .vertical_centering,
+	.updates_bg .vertical_centering {
+		top:0;
+		transform: none;
+	}
+
+	.full_width {
+		width: 100%;
+	}
+
+	.updates_bg {
+		height: 100%;
+	}
+
+	.updates_bg .col-xs-6:first-child {
+		margin-top: 70px;
+	}
+
+	.updates_bg .col-xs-6:last-child {
+		margin-top: 50px;
+		margin-bottom: 90px;
+	}
+
+	.logos_bg {
+		height: 100%;
+		position: relative;
+		z-index: 2;
+	}
+
+	.logos span {
+		margin-left: 54px;
+	}
+}
+
+	.logos {
+		width: 280px;
+		transform: none;
+		top: 0;
+		left: 0;
+		text-align: center;
+	}
+
+	.logos span {
+		margin: 0px 35px;
+	}
+
+	.logos span:first-child {
+		margin-left: 35px;
+		margin-top: 55px;
+		margin-bottom: 60px;
+	}
+
+	.logos span:nth-child(2) {
+		margin-top: 55px;
+		margin-bottom: 60px;
+	}
+
+	.logos span:nth-child(4) {
+		position: relative;
+		left: 15px;
+	}
+	
+	.logos span:nth-child(5) {
+		position: relative;
+		right: 2px;
+		margin: 45px 11px 70px 11px;
+	}
+
+	.logos span:nth-child(6) {
+		margin: 45px 11px 70px 11px;
+		position: relative;
+		left: 35px;
+	}
+
+	.comments {
+		height: 20px;
+	    width: 100%;
+	    position: relative;
+	    bottom: 20px;
+	    z-index: 1;	
+	}
+
+	footer {
+		position: relative;
+		bottom: 20px;
+	}
+
+
+	.design {
+		float: none;
+		top: -20px;
 	}
 }
 
