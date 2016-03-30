@@ -9,42 +9,44 @@
 		<link rel="stylesheet" href="css/style.css">
 		<script src="js/jquery-2.2.2.js"></script>
 		<script>
+			// function adjustCSS () {
+			// 	var modifier_768 = window.matchMedia( "screen and (max-width: 768px)" );
+   //  			var modifier_480 = window.matchMedia( "screen and (min-width: 480px) and (max-width: 767px)" );
+   //  			var modifier_320 = window.matchMedia( "screen and (min-width: 320px) and (max-width: 479px)" );
+
+   //  			if (modifier_768.matches) {
+   //  				$(".read_more").html("more blog posts");
+   //  			} else if (modifier_480.matches) {
+   //  				$(".slider_text").html("");
+   //  				$("nav.about_company_navigation").removeClass("site_navigation");
+   //  				$("nav.recent_update_navigation").removeClass("site_navigation");
+   //  				var htmlString = $(".new_categories").html();
+   //  				$(".pingbuller_copyright").html(htmlString);
+   //  				$("nav.footer_links").removeClass("site_navigation");
+   //  			} else if (modifier_320.matches) {
+   //  				$(".header__links_position .site_navigation li:not(:first-child").remove();
+   //  				$(".slider__image_position").remove();
+   //  				$(".article__text.slider_text").remove();
+   //  				$(".comments_bg").remove();
+   //  				$("footer .footer_links").remove();
+   //  			} else {
+   //  				location.reload();
+   //  			}
+			// }
+
 			$(document).ready(function(){
     			$(".slider_navigation span").click(function(){
     				$(".slider_navigation span").removeClass('active');
         			$(this).toggleClass('active');
     			});
-
-    			var change_link_768 = window.matchMedia( "screen and (max-width: 768px)" );
-    			if (change_link_768.matches) {
-    				$(".read_more").html("more blog posts");
-    			}
-    			var delete_text_480 = window.matchMedia( "screen and (min-width: 480px) and (max-width: 767px)" );
-    			if (delete_text_480.matches) {
-    				$(".slider_text").html("");
-    				$("nav.about_company_navigation").removeClass("site_navigation");
-    				$("nav.recent_update_navigation").removeClass("site_navigation");
-    				var htmlString = $(".new_categories").html();
-    				$(".pingbuller_copyright").html(htmlString);
-    				$("nav.footer_links").removeClass("site_navigation");
-    			}
-    			var delete_text_320 = window.matchMedia( "screen and (min-width: 320px) and (max-width: 479px)" );
-    			if (delete_text_320.matches) {
-    				$(".header__links_position .site_navigation li:not(:first-child").remove();
-    				$(".slider__image_position").remove();
-    				$(".article__text.slider_text").remove();
-    				$(".comments_bg").remove();
-    				$("footer .footer_links").remove();
-    			}
 			});
 		</script>
 	</head>
 	<body>
 		<header>
-			<!-- <img class="header_bg" src="img/Header_bg_optimized.jpg" alt=""> -->
-			<div class="center_content clearfix relative">
+			<div class="center_content clearfix">
 				<div class="header__logo_position">
-					<p class="logo__word">Pingbull<span>er</span></p>
+					<p class="logo_word">Pingbull<span>er</span></p>
 				</div>
 				<div class="header__links_position clearfix">
 					<nav class="site_navigation clearfix">
@@ -59,9 +61,15 @@
 					</nav>
 				</div>
 			</div>
+
+
+
+
+
+
 			<div class="slider_bg">
-				<div class="center_content full_height clearfix">
-					<div class="slider__text_size vertical_centering">
+				<div class="center_content clearfix">
+					<div class="slider__article_position vertical_centering">
 						<article>
 							<p class="article__main_header">lorem ipsum dolor</p>
 							<p class="article__header screen_font_size">It will make all of your dreams come true</p>
@@ -78,12 +86,17 @@
 					</div>
 				</div>
 			</div>
+
+
+
 			<nav class="slider_navigation slider__buttons_position">
 				<span class="active"></span>
 				<span></span>
 				<span></span>
 				<span></span>
 			</nav>	
+
+			
 		</header>
 		<section class="publications">
 			<div class="about_company_bg">
