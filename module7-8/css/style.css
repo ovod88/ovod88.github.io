@@ -37,11 +37,6 @@
 	display: block;
 }
 
-.make_invisible {
-	position: absolute;
-	z-index: -10;
-}
-
 .center_content {
 	position: relative;
 	margin: 0 auto;
@@ -99,7 +94,7 @@ header {
 	margin-left: 50px;
 }
 
-.site_navigation li:first-child, nav span:first-child {
+.site_navigation li:first-child {
 	margin-left: 0px;
 }
 
@@ -120,6 +115,9 @@ header {
 .slider__article_position {
 	width: 55%;
 	float: left;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
 }
 
 /*ARTICLE*/
@@ -288,6 +286,11 @@ header {
 	margin: 0 auto;
 	width: 84px;
 	margin-top: 5px;
+}
+
+.text_after_shrinking {
+	position: absolute;
+	z-index: -1;
 }
 
 /*UPDATES*/
@@ -501,7 +504,7 @@ footer {
 
 .footer_links {
 	display: inline-block;
-	height: 100%;
+	height: 114px;
 }
 
 .design {
@@ -515,16 +518,16 @@ footer {
 }
 
 
-/*MEDIA QUERY FOR SCREENS MORE 960px*/
+/*MEDIA QUERY FOR SCREENS MORE 960px INCLUDED*/
 @media screen and (min-width: 960px) {
 	.center_content {
 		max-width: 960px;
 	}
 }
 
-@media screen and (min-width: 768px) and (max-width: 960px){
+/*MEDIA QUERY FOR SCREENS LESS 960*/
+@media screen and (min-width: 768px) and (max-width: 959px){
 	.center_content {
-		margin: 0 auto;
 		max-width: 768px;
 	}
 
@@ -534,23 +537,49 @@ footer {
 		clear: both;
 	}
 
-	header {
-		height: 800px;
+	.site_navigation li {
+		margin-left: 42px;
 	}
-
+	
 	.slider_bg {
 		margin-top: 80px;
 	}
 
-	.site_navigation li {
-		margin-left: 42px;
+	.slider__image_position {
+		padding-right: 52px;
 	}
 
-	.slider__text_size {
+	.slider__article_position {
 		width: 45%;
 	}
 
-	.logos span {
+	.about_company__centering {
+		margin-bottom: 66px;
+	}
+
+	.comments {
+		height: 487px;
+	}
+
+	.comments_bg {
+		height: 100%;
+	}
+
+	.updates_centering {
+		padding-bottom: 75px;
+	}
+
+	.recent_update_navigation span.text_after_shrinking {
+		position: relative;
+		z-index: 0;
+	}
+
+	.recent_update_navigation span.default_text {
+		position: absolute;
+		z-index: -2;
+	}
+
+	.logos  li {
 		margin-left: 54px;
 	}
 
@@ -560,8 +589,6 @@ footer {
 
 	.footer_links {
 		display: block;
-		position: relative;
-    	top: -42px;
 	}
 
 	.footer_links a {
@@ -569,10 +596,8 @@ footer {
 	}
 
 	.design {
-		transform: none;
+		line-height: 100%;
 	}
-
-
 }
 
 @media screen and (min-width: 480px) and (max-width: 767px) {
