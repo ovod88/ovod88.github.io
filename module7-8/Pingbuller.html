@@ -48,8 +48,8 @@
 				<div class="header__logo_position">
 					<p class="logo_word">Pingbull<span>er</span></p>
 				</div>
-				<div class="header__links_position clearfix">
-					<nav class="site_navigation clearfix">
+				<div class="header__links_position">
+					<nav class="site_navigation header_navigation">
 						<ul>
 							<li><a href="#">home</a></li>
 							<li><a href="#">about</a></li>
@@ -69,10 +69,10 @@
 
 			<div class="slider_bg">
 				<div class="center_content clearfix">
-					<div class="slider__article_position vertical_centering">
+					<div class="slider__article_position">
 						<article>
 							<p class="article__main_header">lorem ipsum dolor</p>
-							<p class="article__header screen_font_size">It will make all of your dreams come true</p>
+							<p class="article__header article__header_modifier">It will make all of your dreams come true</p>
 							<p class="article__text slider_text">
 							<span class="shadow_back">
 								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia odit sint ratione maiores nemo odio enim, voluptatem hic iure deleniti dolor architecto qui natus totam aliquam doloribus perspiciatis tempora. Id.
@@ -84,10 +84,9 @@
 					<div class="slider__image_position">
 						<img class="iphone" src="img/Iphone.png" alt="">
 					</div>
+					<p>.</p>
 				</div>
 			</div>
-
-
 
 			<nav class="slider_navigation slider__buttons_position">
 				<span class="active"></span>
@@ -100,7 +99,6 @@
 
 
 		<section class="publications">
-
 
 			<div class="about_company_bg">
 				<div class="center_content clearfix">
@@ -159,7 +157,7 @@
 				<div class="updates_centering clearfix">
 
 
-					<div class="col-xs-6 updates_column_modifier full_width">
+					<div class="col-xs-6 updates_column_modifier">
 						<div class="author_comment_bg">
 							<img class="author_icon" src="img/author_icon.png" alt="">
 							<div class="author_comment_position">
@@ -181,7 +179,7 @@
 					</div>
 
 
-					<div class="col-xs-6 updates_column_modifier full_width">
+					<div class="col-xs-6 updates_column_modifier">
 						<div class="recent_updates">
 							<p class="article__header article_header_modifier"><span>recent updates</span></p>
 							<div class="post clearfix">
@@ -217,16 +215,16 @@
 		</section>
 
 
-		<section class="logos_bg text_centering">
+		<section class="logos_bg">
 			<div class="center_content clearfix">
-				<nav class="logos text_centering clearfix">
+				<nav class="logos">
 					<ul>
 						<li><span class="LOGO logo_1"></span></li>
 						<li><span class="LOGO logo_2"></span></li>
 						<li><span class="LOGO logo_3"></span></li>
-						<li><span class="LOGO logo_4 left"></span></li>
-						<li><span class="LOGO logo_5 5th"></span></li>
-						<li><span class="LOGO logo_6 right"></span></li>
+						<li><span class="LOGO logo_4"></span></li>
+						<li><span class="LOGO logo_5"></span></li>
+						<li><span class="LOGO logo_6"></span></li>
 					</ul>
 				</nav>
 			</div>
@@ -252,27 +250,35 @@
 							</article>
 						</div>
 
-						<div class="col-sm-4">
+						<div class="col-sm-4 hidden_text">
 							<article>
-								<p class="article__header"><span class="article__header_comments_header">recent comments</span></p>
+								<p class="article__header"><span class="article__header_comments_header">New categories</span></p>
 								<p class="article__text">
 									<span class="article__text_comments_text">
 										Nunc turpis neque, feugiat eget eleifend et, lacinia non neque. Praesent rhoncus ultrices posuere. Pellentesque vel lacus eget nisi convallis auctor. Nam vitae lectus eu libero pellentesque pulvinar. Quisque
-										auctor. Nam vitae lectus eu libero pellentesque pulvinar. Quisque
+										auctor. Nam vitae lectus eu libero pellentesque pulvinar. 
 									</span>
 								</p>
 							</article>
 						</div>
 
-						<div class="col-sm-4 div_new_categories">
+						<div class="col-sm-4 additional_padding">
+							<article>
+								<p class="article__header"><span class="article__header_comments_header">recent comments</span></p>
+								<p class="article__text">
+									<span class="article__text_comments_text">
+										Nunc turpis neque, feugiat eget eleifend et, lacinia non neque. Praesent rhoncus ultrices posuere. Pellentesque vel lacus eget nisi convallis auctor. Nam vitae lectus eu libero 
+									</span>
+								</p>
+							</article>
+						</div>
+
+						<div class="col-sm-4 additional_padding">
 							<article class="new_categories">
 								<p class="article__header"><span class="article__header_comments_header">new categories</span></p>
 								<p class="article__text">
 									<span class="article__text_comments_text">
 										Nunc turpis neque, feugiat eget eleifend et, lacinia non neque. Praesent rhoncus ultrices posuere. Pellentesque vel lacus eget nisi convallis auctor. Nam vitae lectus eu libero pellentesque pulvinar. Quisque
-										auctor. Nam vitae lectus eu libero pellentesque pulvinar. Quisque
-										auctor. Nam vitae lectus eu libero pellentesque pulvinar. Quisque
-										auctor. Nam vitae lectus eu libero pellentesque pulvinar. Quisque
 									</span>
 								</p>
 							</article>
@@ -291,10 +297,15 @@
 
 
 		<footer>
+			<div class="figured_bottom_shadow footer_shadow">
+				<div class="center_content">
+					<div class="shadow_effect"></div>
+				</div>
+			</div>
 			<div class="center_content clearfix">
-				<div class="footer_content_centering text_centering">
+				<div class="footer_content_centering">
 					<nav class="site_navigation footer_links clearfix">
-						<ul>
+						<ul class="clearfix">
 							<li><a href="#">home</a></li>
 							<li><a href="#">about</a></li>
 							<li><a href="#">blog</a></li>
