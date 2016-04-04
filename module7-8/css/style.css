@@ -1112,6 +1112,10 @@ footer {
 	}
 
 	.figured_bottom_shadow--footer_shadow {
+		height: auto;
+	}
+
+	.footer_shadow {
 		position: relative;
 		top: -10px;
 		width: 100%;
