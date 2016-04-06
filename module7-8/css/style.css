@@ -244,7 +244,7 @@ header {
 	position: absolute;
 	top: 14px;
 	left: 12px;
-	background: url(../img/png/icons.png);
+	background: url(../img/svg/icons.svg);
 }
 
 /*ARTICLE TEXT*/
@@ -273,13 +273,13 @@ header {
 }
 
 .comment_icon {
-	background-position: -39px -29px;
+	background-position: -42px -29px;
 	width: 43px;
 	height: 38px;
 }
 
 .music_icon {
-	background-position: -81px -32px;
+	background-position: -89px -35px;
 	width: 30px;
 	height: 32px;
 	left: 20px;
@@ -439,43 +439,43 @@ header {
 }
 
 .LOGO {
-	background: url('../img/png/icons.png') no-repeat;
+	background: url('../img/svg/icons.svg') no-repeat;
 }
 
 .logo_1 {
-	background-position: -112px 0;
-	height: 64px;
-	width: 69px;
+	background-position: -120px 0;
+    height: 70px;
+    width: 74px;
 }
 
 .logo_2 {
-	background-position: -182px 0;
-    height: 64px;
-    width: 72px;
+	background-position: -194px 0;
+    height: 70px;
+    width: 77px;
 }
 
 .logo_3 {
-	background-position: -255px 0;
-    height: 64px;
-    width: 65px;
+	background-position: -272px 0;
+    height: 70px;
+    width: 69px;
 }
 
 .logo_4 {
-	background-position: -320px 0;
-    height: 64px;
-    width: 47px;
+	background-position: -342px 0;
+    height: 70px;
+    width: 50px;
 }
 
 .logo_5 {
-	background-position: -368px 0;
-    height: 64px;
-    width: 129px;
+	background-position: -392px 0;
+    height: 70px;
+    width: 138px;
 }
 
 .logo_6 {
-	background-position: -498px 0;
-    height: 64px;
-    width: 78px;
+	background-position: -530px 0;
+    height: 70px;
+    width: 89px;
 }
 
 /***********************************COMMENTS********************************/
@@ -824,17 +824,24 @@ footer {
 	}
 
 	.logos li {
-		margin-left: 56px;
+		margin-left: 52px;
 		margin-bottom: 27px;
 	}
 
+	.logos li:nth-child(3) {
+		margin-left: 44px;
+	}
+
 	.logos li:nth-child(4) {
-		margin-left: -13px;
+		margin-left: -16px;
+	}
+	
+	.logos li:nth-child(5) {
+		margin-left: 40px;
 	}
 
 	.logos li:nth-child(6) {
-		margin-left: 29px;
-		margin-right: -6px;
+		margin-left: 19px;
 	}
 
 	.comments {
@@ -1052,7 +1059,8 @@ footer {
 	}
 
 	.updates--article_header_modifier {
-		font-size: 18px;
+		font-size: 32px;
+		line-height: 40px;
 	}
 	
 	.updates--article_header_modifier span {
