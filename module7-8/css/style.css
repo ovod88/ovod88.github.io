@@ -659,8 +659,12 @@ footer {
 		margin-bottom: 66px;
 	}
 
+	.article__header {
+		font-size: 24px;
+	}
+
 	.music_icon {
-		left: 22px;
+		left: 37px;
 	}
 
 	.comments {
@@ -811,6 +815,15 @@ footer {
 	.about_company--navigation_modifier a:hover {
 		background: none;
 		border-bottom: none;
+	}
+
+	.about_company--column_modifier:nth-child(2), 
+	.about_company--column_modifier:nth-child(3) {
+		padding-left: 0;
+	}
+
+	.comment_icon {
+		left: 12px;
 	}
 
 	.updates__centering {
@@ -1058,6 +1071,19 @@ footer {
 	.about_company__centering {
 		margin-top: 70px;
 		margin-bottom: 67px;
+	}
+
+	.about_company--column_modifier:nth-child(2), 
+	.about_company--column_modifier:nth-child(3) {
+		padding-left: 0;
+	}
+
+	.comment_icon {
+		left: 12px;
+	}
+
+	.music_icon {
+		left: 20px;
 	}
 
 	.about_company--column_modifier {
