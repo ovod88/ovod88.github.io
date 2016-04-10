@@ -662,8 +662,8 @@ footer {
 		height: 100%;
 	}
 
-	.updates__centering {
-		margin-bottom: 75px;
+	.updates__post__article {
+		width: 80%;
 	}
 
 	.updates_navigation span.updates_text_mobile {
