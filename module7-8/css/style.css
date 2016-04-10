@@ -263,6 +263,11 @@ header {
 	padding-left: 0;
 }
 
+.about_company--column_modifier:nth-child(2),
+.about_company--column_modifier:nth-child(3) {
+	padding-left: 20px;
+}
+
 /*.about_company--column_modifier:nth-child(2),
 .about_company--column_modifier:nth-child(3) {
 	padding-left: 20px;
@@ -287,13 +292,14 @@ header {
 	background-position: -42px -29px;
 	width: 43px;
 	height: 38px;
-/*	left: 27px;*/
+	left: 27px;
 }
 
 .music_icon {
 	background-position: -89px -35px;
 	width: 30px;
 	height: 32px;
+	left: 38px;
 }
 
 /*LINKS*/
