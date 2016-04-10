@@ -175,6 +175,11 @@ header {
 	float: left;
 	position: relative;
 	top: 50%;
+	-moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
 	transform: translateY(-50%);
 }
 
@@ -249,7 +254,7 @@ header {
 	position: absolute;
 	top: 14px;
 	left: 12px;
-	background: url(../img/png/icons.png);
+	background: url(../img/svg/icons.svg), url(../img/png/icons.png) no-repeat;
 }
 
 /*ARTICLE TEXT*/
@@ -469,7 +474,7 @@ header {
 }
 
 .LOGO {
-	background: url('../img/svg/icons.svg') no-repeat;
+	background: url('../img/svg/icons.svg'), url(../img/png/icons.png) no-repeat;
 }
 
 .logo_1 {
@@ -526,6 +531,11 @@ header {
 .comments__centering {
 	position: relative;
 	top: 50%;
+	-moz-transform: translate(0,-50%);
+    -ms-transform: translate(0,-50%);
+    -webkit-transform: translate(0,-50%);
+    -o-transform: translate(0,-50%);
+	-webkit-transform: translate(0,-50%);
     transform: translate(0,-50%);
 }
 
