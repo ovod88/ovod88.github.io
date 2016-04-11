@@ -146,7 +146,6 @@ header {
 
 .header--navigation_mobile li.home_link:hover .submenu_mobile li:hover {
 	background: #2b2230;
-	border-bottom: 2px solid #edbfff;
 }
 
 .header--navigation_mobile li.home_link:hover .submenu_mobile li:last-child a{
@@ -239,6 +238,10 @@ header {
 
 /*****************************ABOUT COMPANY SECTION**************************/
 .about_company_bg {
+	background: -moz-linear-gradient(to bottom, #1e5799 0%,#207cca 0%,#392b40 0%,#765384 100%);
+	background: -webkit-linear-gradient(to bottom, #1e5799 0%,#207cca 0%,#392b40 0%,#765384 100%);
+	background: -o-linear-gradient(to bottom, #1e5799 0%,#207cca 0%,#392b40 0%,#765384 100%);
+	background: -ms-linear-gradient(to bottom, #1e5799 0%,#207cca 0%,#392b40 0%,#765384 100%);
 	background: linear-gradient(to bottom, #1e5799 0%,#207cca 0%,#392b40 0%,#765384 100%);
 	width: 100%;
 	height: 100%;
