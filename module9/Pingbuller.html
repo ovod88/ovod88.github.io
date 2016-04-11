@@ -215,9 +215,11 @@
 		<![if !IE]></section><![endif]>
 
 
-		<!-- <section class="logos_bg">
+		<![if !IE]><section class="logos_bg"><![endif]>
+		<!--[if gte IE 8]><div class="logos_bg"><![endif]-->
 			<div class="center_content clearfix">
-				<nav class="logos">
+				<![if !IE]><nav class="logos"><![endif]>
+				<!--[if gte IE 8]><ul class="logos"><![endif]-->
 					<ul>
 						<li><span class="LOGO logo_1"></span></li>
 						<li><span class="LOGO logo_2"></span></li>
@@ -226,18 +228,21 @@
 						<li><span class="LOGO logo_5"></span></li>
 						<li><span class="LOGO logo_6"></span></li>
 					</ul>
-				</nav>
+				<!--[if gte IE 8]></ul><![endif]-->
+				<![if !IE]></nav><![endif]>
 			</div>
-		</section>
+		<!--[if gte IE 8]></div><![endif]-->
+		<![if !IE]></section><![endif]>
 
 
-		<section class="comments">
+		<![if !IE]><section class="comments"><![endif]>
+		<!--[if gte IE 8]><div class="comments"><![endif]-->
 			<div class="comments_bg">
 				<div class="center_content clearfix">
 					<div class="comments__centering clearfix">
 
 						<div class="col-sm-4 comments--column-modifier comments_copyright">
-							<article>
+							<![if !IE]><article><![endif]>
 								<p class="logo_word comments--style_logo">pingbull<span>er</span></p>
 								<p class="article__text copyright-style">
 									Copyright 2013, Pingbull AS
@@ -245,50 +250,52 @@
 								<p class="article__text article__text--comments_text">
 									Nunc turpis neque, feugiat eget eleifend et, lacinia non neque. Praesent rhoncus ultrices posuere. Pellentesque vel lacus eget nisi convallis auctor. Nam vitae lectus eu libero pellentesque pulvinar. Quisque
 								</p>
-							</article>
+							<![if !IE]></article><![endif]>
 						</div>
 
 						<div class="col-sm-4 comments--column-modifier hidden_text">
-							<article>
+							<![if !IE]><article><![endif]>
 								<p class="article__header"><span class="article__header_comments_header">New categories</span></p>
 								<p class="article__text article__text--comments_text">
 									Nunc turpis neque, feugiat eget eleifend et, lacinia non neque. Praesent rhoncus ultrices posuere. Pellentesque vel lacus eget nisi convallis auctor. Nam vitae lectus eu libero pellentesque pulvinar. Quisque
 									auctor. Nam vitae lectus eu libero pellentesque pulvinar. 
 								</p>
-							</article>
+							<![if !IE]></article><![endif]>
 						</div>
 
 						<div class="col-sm-4 comments--column-modifier additional_padding">
-							<article>
+							<![if !IE]><article><![endif]>
 								<p class="article__header"><span class="article__header_comments_header">recent comments</span></p>
 								<p class="article__text article__text--comments_text">
 									Nunc turpis neque, feugiat eget eleifend et, lacinia non neque. Praesent rhoncus ultrices posuere. Pellentesque vel lacus eget nisi convallis auctor. Nam vitae lectus eu libero 
 								</p>
-							</article>
+							<![if !IE]></article><![endif]>
 						</div>
 
-						<div class="col-sm-4 comments--column-modifier additional_padding">
+						<![if !IE]><div class="col-sm-4 comments--column-modifier additional_padding">
 							<article class="new_categories">
 								<p class="article__header"><span class="article__header_comments_header">new categories</span></p>
 								<p class="article__text article__text--comments_text">
 									Nunc turpis neque, feugiat eget eleifend et, lacinia non neque. Praesent rhoncus ultrices posuere. Pellentesque vel lacus eget nisi convallis auctor. Nam vitae lectus eu libero pellentesque pulvinar. Quisque
 								</p>
 							</article>
-						</div>
+						</div><![endif]>
 
 					</div>
 
 				</div>
 			</div>
-			<div class="figured_bottom_shadow">
+			<![if !IE]><div class="figured_bottom_shadow">
 				<div class="center_content">
 					<div class="shadow_effect"></div>
 				</div>
-			</div>
-		</section>
+			</div><![endif]>
+		<!--[if gte IE 8]></div><![endif]-->
+		<![if !IE]></section><![endif]>
 
 
-		<footer>
+		<![if !IE]><footer><![endif]>
+		<!--[if gte IE 8]><div class="footer"><![endif]-->
 			<div class="figured_bottom_shadow figured_bottom_shadow--footer_shadow">
 				<div class="center_content">
 					<div class="shadow_effect"></div>
@@ -309,7 +316,8 @@
 					<p class="design">Designed by <span>Pingbull AS</span></p>
 				</div>
 			</div>
-		</footer> -->
+		<!--[if gte IE 8]></div><![endif]-->
+		<![if !IE]></footer><![endif]>
 
 	</body>
 </html>

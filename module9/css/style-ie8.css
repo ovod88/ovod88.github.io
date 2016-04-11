@@ -353,3 +353,155 @@
 .updates_navigation a:hover {
     border-bottom: none;
 }
+
+/*LOGOS*/
+.logos_bg {
+    width: 100%;
+    height: 122px;
+    line-height: 122px;
+    text-align: center;
+    background: #f9f9f9;
+    border-top: 1px solid #e6e6e6;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.logos {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.logos li {
+    display: inline-block;
+    float: left;
+    margin-left: 65px;
+}
+
+.logos span {
+    display: block;
+}
+
+.LOGO {
+    background: url('../img/png/icons.png') no-repeat;
+}
+
+.logo_1 {
+    background-position: -120px 0;
+    height: 70px;
+    width: 74px;
+}
+
+.logo_2 {
+    background-position: -194px 0;
+    height: 70px;
+    width: 77px;
+}
+
+.logo_3 {
+    background-position: -272px 0;
+    height: 70px;
+    width: 69px;
+}
+
+.logo_4 {
+    background-position: -342px 0;
+    height: 70px;
+    width: 50px;
+}
+
+.logo_5 {
+    background-position: -392px 0;
+    height: 70px;
+    width: 138px;
+}
+
+.logo_6 {
+    background-position: -530px 0;
+    height: 70px;
+    width: 89px;
+}
+
+/***********************************COMMENTS********************************/
+.comments {
+    height: 397px;
+    width: 100%;
+    position: relative;
+}
+
+.comments_bg {
+    height: 397px;
+    width: 100%;
+    background: #ececec;
+}
+
+.comments__centering {
+    position: relative;
+    top: 90px;
+}
+
+.comments--column-modifier {
+    float: left;
+    width: 33.33333%;
+    box-sizing: border-box;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.comments--style_logo {
+    color: #454545;
+}
+
+.comments--style_logo span {
+    color: #b9b9b9;
+}
+
+.copyright-style {
+    font-family: Georgia, Arial, sans-serif;
+    color: #c5c5c5;
+    font-style: italic;
+}
+
+.article__text--comments_text {
+    color: #787878;
+}
+
+.article__header_comments_header {
+    color: #454545;
+}
+
+
+/********************************FOOTER*****************************/
+.footer {
+    width: 100%;
+    height: 116px;
+    line-height: 116px;
+    vertical-align: middle;
+    background: url(../img/png/footer_bg.jpg) no-repeat center center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer__content_centering {
+    height: 100%;
+}
+
+.footer__links {
+    display: inline-block;
+    height: 114px;
+}
+
+.design {
+    color: white;
+    float: right;
+    text-shadow: 0px 1px 1px black;
+}
+
+.design span {
+    font-weight: bold;
+}
+
+.figured_bottom_shadow--footer_shadow {
+    position: absolute;
+    z-index: -10;
+    display: none;
+}
