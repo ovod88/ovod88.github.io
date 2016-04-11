@@ -246,3 +246,110 @@
 .about_company--navigation_modifier a:hover {
     border-bottom: none;
 }
+
+/**************************************UPDATES SECTION****************************/
+/*COMMENTS*/
+.updates_bg {
+    height: 100%;
+    width: 100%;
+    background: #f9f9f9;
+}
+
+.updates__centering {
+    padding-top: 100px;
+    padding-bottom: 93px;
+}
+
+.author_icon {
+    position: absolute;
+    top: 18px;
+    left: 0;
+}
+
+.author_comment_position {
+    padding: 33px 42px 62px 48px;
+}
+
+.updates--article_header_modifier span {
+    color: #454545;
+}
+
+.comments_article__text_modifier {
+    color: #454545;
+}
+
+.comments_navigation span {
+    width: 18px;
+    height: 18px;
+    background: url(../img/png/Nav_buttons_black.png);
+}
+
+.comments_navigation {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 84px;
+    margin-top: 5px;
+}
+
+/*UPDATES*/
+.author_comment_bg {
+    background: url(../img/png/Update.png) no-repeat center center;
+    margin-left: 10px;
+    width: 100%;
+}
+
+.recent_updates {
+    margin-top: 33px;
+    padding-left: 45px;
+}
+
+.updates__post {
+    margin-top: 22px;
+}
+
+.updates__post img {
+    float: left;
+}
+
+.updates--column_modifier {
+    position: relative;
+    width: 50%;
+    float: left;
+}
+
+.updates__post__article {
+    float: left;
+    padding-left: 19px;
+}
+
+.updates__post__article--text_modifier {
+    color: #454545;
+    font-weight: bold;
+    padding-top: 0;
+    font-size: 14px;
+}
+
+.updates__post__article--text_modifier_2 {
+    color: #454545;
+    font-weight: normal;
+    padding-top: 0;
+    font-size: 14px;
+}
+
+.updates_navigation {
+    float: right;
+    margin-top: 29px;
+    margin-right: 10px;
+}
+
+.updates_navigation a {
+    font-size: 18px;
+    color: #454545;
+    text-shadow: none;
+}
+
+.updates_navigation a:hover {
+    border-bottom: none;
+}
