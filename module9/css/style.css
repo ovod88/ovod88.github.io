@@ -116,6 +116,7 @@ header {
 
 .header--navigation_mobile li.home_link {
 	float: none;
+	display: block;
 }
 
 .header--navigation_mobile li.home_link:hover {
@@ -123,6 +124,7 @@ header {
 	height: 51px;
 	line-height: 51px;
 	width: 242px;
+	background: rgb(59, 46, 67);
 	background: rgba(59, 46, 67, 0.5);
 	border-radius: 7px 7px 0 0;
 }
@@ -803,6 +805,11 @@ footer {
 	}
 
 	.slider__buttons_position  {
+		-moz-transform: translate(50%, 0);
+        -ms-transform: translate(50%, 0);
+        -webkit-transform: translate(50%, 0);
+        -o-transform: translate(50%, 0);
+	    -webkit-transform: translate(50%, 0);
 		transform: translate(50%, 0);
 		right: 50%;
 	}
@@ -922,6 +929,11 @@ footer {
 	.comments__centering {
 		margin-top: 80px;
 		margin-bottom: 90px;
+		-moz-transform: none;
+        -ms-transform: none;
+        -webkit-transform: none;
+        -o-transform: none;
+	    -webkit-transform: none;
 		transform: none;
 		top: 0;
 		text-align: left;
@@ -1088,6 +1100,11 @@ footer {
 
 
 	.slider__buttons_position {
+		-moz-transform: translate(50%);
+        -ms-transform: translate(50%);
+        -webkit-transform: translate(50%);
+        -o-transform: translate(50%);
+	    -webkit-transform: translate(50%);
     	transform: translateX(50%);
     	right: 50%;
 	}
