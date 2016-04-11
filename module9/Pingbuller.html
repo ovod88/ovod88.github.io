@@ -5,11 +5,12 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Pingbuller</title>
 		<link rel="stylesheet" href="css/reset.css">
-		<link rel="stylesheet" href="css/bootstrap.css">
+		<![if !IE]><link rel="stylesheet" href="css/bootstrap.css"><![endif]>
 		<![if !IE]><link rel="stylesheet" href="css/style.css"><![endif]>
 		<!--[if gte IE 8]><link rel="stylesheet" href="css/style-ie8.css" type="text/css"><![endif]-->
-		<script src="js/jquery-2.2.2.js"></script>
-		<script>
+		<![if !IE]><script src="js/jquery-2.2.2.js"></script><![endif]>
+		<!--[if gte IE 8]><script src="js/jquery-1.11.3.js"></script><![endif]-->
+		<script type="text/javascript">
 			$(document).ready(function(){
     			$(".slider_navigation span").click(function(){
     				$(".slider_navigation span").removeClass('active');
@@ -89,12 +90,13 @@
 		<![if !IE]></header><![endif]>
 
 
-		<!-- <section class="publications">
+		<![if !IE]><section class="publications"><![endif]>
+		<!--[if gte IE 8]><div class="publications"><![endif]-->
 			<div class="about_company_bg">
 				<div class="center_content clearfix">
 					<div class="about_company__centering clearfix">
 						<div class="col-sm-4 about_company--column_modifier clearfix">
-							<article>
+							<![if !IE]><article><![endif]>
 								<span class="about_company__icons screwdriver_icon"></span>
 								<div class="about_company__article">
 									<p class="article__header about_company__article--header_modifier">about our company</p>
@@ -105,10 +107,10 @@
 										<a href="#">read more</a>
 									</nav>
 								</div>
-							</article>
+							<![if !IE]></article><![endif]>
 						</div>
 						<div class="col-sm-4 about_company--column_modifier clearfix">
-							<article>
+							<![if !IE]><article><![endif]>
 								<span class="about_company__icons comment_icon"></span>
 								<div class="about_company__article">
 									<p class="article__header about_company__article--header_modifier">about our company</p>
@@ -119,10 +121,10 @@
 										<a href="#">read more</a>
 									</nav>
 								</div>
-							</article>
+							<![if !IE]></article><![endif]>
 						</div>
 						<div class="col-sm-4 about_company--column_modifier clearfix">
-							<article>
+							<![if !IE]><article><![endif]>
 								<span class="about_company__icons music_icon"></span>
 								<div class="about_company__article">
 									<p class="article__header about_company__article--header_modifier">about our company</p>
@@ -133,16 +135,17 @@
 										<a href="#">read more</a>
 									</nav>
 								</div>
-							</article>
+							<![if !IE]></article><![endif]>
 						</div>
 					</div>
 				</div>
 			</div>
-		</section>
+		<!--[if gte IE 8]></div><![endif]-->
+		<![if !IE]></section><![endif]>
 
 
 
-		<section class="updates_bg">
+<!-- 		<section class="updates_bg">
 			<div class="center_content clearfix">
 				<div class="updates__centering clearfix">
 
