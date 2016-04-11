@@ -6,7 +6,8 @@
 		<title>Pingbuller</title>
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/bootstrap.css">
-		<link rel="stylesheet" href="css/style.css">
+		<![if !IE]><link rel="stylesheet" href="css/style.css"><![endif]>
+		<!--[if gte IE 8]><link rel="stylesheet" href="css/style-ie8.css" type="text/css"><![endif]-->
 		<script src="js/jquery-2.2.2.js"></script>
 		<script>
 			$(document).ready(function(){
@@ -18,13 +19,15 @@
 		</script>
 	</head>
 	<body>
-		<header>
+		<![if !IE]><header><![endif]>
+		<!--[if gte IE 8]><div class="header"><![endif]-->
 			<div class="center_content clearfix">
 				<div class="header__logo_position">
 					<p class="logo_word">Pingbull<span>er</span></p>
 				</div>
 				<div class="header__links_position">
-					<nav class="site_navigation header--navigation">
+					<![if !IE]><nav class="site_navigation header--navigation"><![endif]>
+					<!--[if gte IE 8]><ul class="site_navigation header--navigation"><![endif]-->
 						<ul>
 							<li><a href="#">home</a></li>
 							<li><a href="#">about</a></li>
@@ -33,7 +36,9 @@
 							<li><a href="#">lorem ipsum</a></li>
 							<li><a href="#">dolores sit amet</a></li>
 						</ul>
-					</nav>
+						<!--[if gte IE 8]></ul><![endif]-->
+					<![if !IE]></nav><![endif]>
+					<![if !IE]>
 					<nav class="site_navigation header--navigation_mobile">
 						<ul>
 							<li class="home_link">
@@ -48,6 +53,7 @@
 							</li>
 						</ul>
 					</nav>
+					<![endif]>
 				</div>
 			</div>
 
@@ -71,17 +77,19 @@
 			</div>
 			<p class="clearcontent"></p>
 
-			<nav class="slider_navigation slider__buttons_position">
+			<![if !IE]><nav class="slider_navigation slider__buttons_position"><![endif]>
+			<!--[if gte IE 8]><ul class="slider_navigation slider__buttons_position"><![endif]-->
 				<span class="active"></span>
 				<span></span>
 				<span></span>
 				<span></span>
-			</nav>	
+			<![if !IE]></nav><![endif]>
+			<!--[if gte IE 8]></ul><![endif]-->
+		<!--[if gte IE 8]></div><![endif]-->
+		<![if !IE]></header><![endif]>
 
-		</header>
 
-
-		<section class="publications">
+		<!-- <section class="publications">
 			<div class="about_company_bg">
 				<div class="center_content clearfix">
 					<div class="about_company__centering clearfix">
@@ -290,7 +298,7 @@
 					<p class="design">Designed by <span>Pingbull AS</span></p>
 				</div>
 			</div>
-		</footer>
+		</footer> -->
 
 	</body>
 </html>

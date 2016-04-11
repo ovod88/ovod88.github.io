@@ -1,0 +1,176 @@
+@font-face {
+    font-family: 'Legue Gohic Regular';
+    src: url('../fonts/Gothic/leaguegothic-regular-webfont.eot');
+    src: url('../fonts/Gothic/leaguegothic-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Gothic/leaguegothic-regular-webfont.woff2') format('woff2'),
+         url('../fonts/Gothic/leaguegothic-regular-webfont.woff') format('woff'),
+         url('../fonts/Gothic/leaguegothic-regular-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/OpenSans/Regular/opensans-regular-webfont.eot');
+    src: url('../fonts/OpenSans/Regular/opensans-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans/Regular/opensans-regular-webfont.woff2') format('woff2'),
+         url('../fonts/OpenSans/Regular/opensans-regular-webfont.woff') format('woff'),
+         url('../fonts/OpenSans/Regular/opensans-regular-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/OpenSans/ExtraBold/opensans-extrabold-webfont.eot');
+    src: url('../fonts/OpenSans/ExtraBold/opensans-extrabold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans/ExtraBold/opensans-extrabold-webfont.woff2') format('woff2'),
+         url('../fonts/OpenSans/ExtraBold/opensans-extrabold-webfont.woff') format('woff'),
+         url('../fonts/OpenSans/ExtraBold/opensans-extrabold-webfont.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+.clearfix:after {
+    content: '';
+    clear: both;
+    display: block;
+}
+
+.clearcontent:after {
+    content: ".";
+    visibility: hidden;
+}
+
+.center_content {
+    position: relative;
+    margin: 0 auto;
+    height: 100%;
+    max-width: 960px;
+}
+
+/***********************HEADER STYLES COMMON***********************/
+.header {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/png/Header_bg_optimized.jpg');
+    background-position: center;
+    background-size: cover;
+    -ms-behavior: url(css//backgroundsize.min.htc);
+}
+
+/*LOGO*/
+.logo_word {
+    font-family: 'Legue Gohic Regular', Arial, sans-serif;
+    font-size: 48px;
+    color: white;
+    text-transform: uppercase;
+    line-height: 38px;
+}
+
+.logo_word span {
+    color: #553c61;
+}
+
+.header__logo_position {
+    float: left;
+    margin-top: 70px;
+}
+
+.header__links_position {
+    float: right;
+    margin-top: 70px;
+}
+
+/*LINKS*/
+.site_navigation a {
+    font-family: 'Legue Gohic Regular', Arial, sans-serif;
+    font-size: 24px;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-shadow: 0px 1px 1px black;
+}
+
+.site_navigation li {
+    float: left;
+    margin-left: 50px;
+}
+
+.site_navigation li:first-child {
+    margin-left: 0px;
+}
+
+.site_navigation a:hover {
+    border-bottom: 2px solid #edbfff;
+}
+
+/*SLIDER*/
+.slider_bg {
+    background: rgb(0,0,0);
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+    filter: alpha(opacity=20);
+    opacity: 0.2;
+    width: 100%;
+    margin-top: 172px;
+    height: 400px;
+    margin-bottom: 170px;
+}
+
+.slider__article_position {
+    width: 55%;
+    float: left;
+    position: relative;
+    margin-top: 70px;
+}
+
+/*ARTICLE*/
+.article__main_header {
+    font-family: 'Legue Gohic Regular', Arial, sans-serif;
+    color: white;
+    font-size: 46px;
+    text-transform: capitalize;
+    line-height: 46px;
+}
+
+.article__header {
+    font-family: 'Legue Gohic Regular', Arial, sans-serif;
+    color: #edbfff;
+    font-size: 32px;
+    line-height:32px;
+    text-transform: uppercase;
+}
+
+.article__text {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 16px;
+    color: white;
+    line-height: 1.4;
+    padding-top: 10px;
+}
+
+.slider__image_position {
+    position: relative;
+    float: right;
+    padding-right: 76px;
+    bottom: 22px;
+}
+
+/*SLIDER BUTTONS*/
+.slider_navigation span {
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    background: url(../img/png/Nav_buttons.png);
+}
+
+.slider__buttons_position {
+    position: absolute;
+    bottom: 60px;
+    right: 166px;
+}
+
+.slider_navigation span.active {
+    background-position: -18px 0;
+}
