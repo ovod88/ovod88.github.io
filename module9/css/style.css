@@ -279,11 +279,6 @@ header {
 	padding-left: 20px;
 }
 
-/*.about_company--column_modifier:nth-child(2),
-.about_company--column_modifier:nth-child(3) {
-	padding-left: 20px;
-}*/
-
 .about_company__article--header_modifier {
 	color: white;
 	text-shadow: 1px 1px 0px rgba(0, 0, 0, 1);

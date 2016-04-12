@@ -57,7 +57,7 @@
     background-image: url('../img/png/Header_bg_optimized.jpg');
     background-position: center;
     background-size: cover;
-    -ms-behavior: url(css//backgroundsize.min.htc);
+    -ms-behavior: url(css/backgroundsize.min.htc);
 }
 
 /*LOGO*/
@@ -66,11 +66,13 @@
     font-size: 48px;
     color: white;
     text-transform: uppercase;
+    text-shadow: 0px 1px 1px black;
     line-height: 38px;
 }
 
 .logo_word span {
     color: #553c61;
+    text-shadow: none;
 }
 
 .header__logo_position {
@@ -148,6 +150,7 @@
     color: white;
     line-height: 1.4;
     padding-top: 10px;
+    text-shadow: 0px 1px 1px black;
 }
 
 .slider__image_position {
@@ -177,6 +180,7 @@
 
 /*****************************ABOUT COMPANY SECTION**************************/
 .about_company_bg {
+    background-color: #392b40;
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#392b40', endColorstr='#765384',GradientType=0);
     width: 100%;
     height: 100%;
@@ -213,6 +217,11 @@
 
 .about_company__article--header_modifier {
     color: white;
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 1);
+}
+
+.about_company__article--text_modifier {
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 1);
 }
 
 .screwdriver_icon {
@@ -245,6 +254,7 @@
 
 .about_company--navigation_modifier a:hover {
     border-bottom: none;
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
 }
 
 /**************************************UPDATES SECTION****************************/
@@ -329,6 +339,7 @@
     font-weight: bold;
     padding-top: 0;
     font-size: 14px;
+    text-shadow: none;
 }
 
 .updates__post__article--text_modifier_2 {
@@ -336,6 +347,7 @@
     font-weight: normal;
     padding-top: 0;
     font-size: 14px;
+    text-shadow: none;
 }
 
 .updates_navigation {
@@ -448,24 +460,45 @@
 
 .comments--style_logo {
     color: #454545;
+    text-shadow: 0px 1px 0px rgba(255, 255, 255, 1);
 }
 
 .comments--style_logo span {
     color: #b9b9b9;
+    text-shadow: 0px 1px 0px rgba(255, 255, 255, 1);
+}
+
+.white_shadow {
+    text-shadow: 0px 1px 0px rgba(255, 255, 255, 1);
 }
 
 .copyright-style {
     font-family: Georgia, Arial, sans-serif;
     color: #c5c5c5;
     font-style: italic;
+    text-shadow: 0px 1px 0px rgba(255, 255, 255, 1);
 }
 
 .article__text--comments_text {
     color: #787878;
+    text-shadow: 0px 1px 0px rgba(255, 255, 255, 1);
 }
 
 .article__header_comments_header {
     color: #454545;
+    text-shadow: 0px 1px 0px rgba(255, 255, 255, 1);
+}
+
+.shadow_effect:after, .shadow_effect:before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    box-shadow: 0 0 10px rgba(0,0,0,0.8);
+    top: 50%;
+    bottom: 0;
+    left: 0px;
+    width: 100%;
+    border-radius: 300px / 6px;
 }
 
 
@@ -498,10 +531,4 @@
 
 .design span {
     font-weight: bold;
-}
-
-.figured_bottom_shadow--footer_shadow {
-    position: absolute;
-    z-index: -10;
-    display: none;
 }
