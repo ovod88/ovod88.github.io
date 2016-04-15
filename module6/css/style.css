@@ -257,11 +257,11 @@ section.menu section.search .search_disks_box {
 
 .right_disk_column {
 	float: left;
-	width: 70%;
+	width: 55%;
 }
 
 .right_disk_column .text {
-	width: 70px;
+	width: 74px;
 	float: left;
 	margin-top: 4px;
 	margin-left: 16px;
@@ -278,8 +278,64 @@ section.menu section.search .search_disks_box {
 }
 
 .right_disk_column .selects {
-	width: 58px;
+	width: 56px;
 	float: right;
+	margin-top: 7px;
+}
+
+.right_disk_column .selects select {
+	margin-bottom: 15px;
+}
+
+.right_disk_column .quantity {
+	-webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    height: 17px;
+	width: 50px;
+	background: url(../img/select_arrow.png) 100% / 45% no-repeat;
+}
+
+.right_disk_column .diameter,
+.right_disk_column .diameter_holes {
+	-webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    height: 17px;
+	width: 56px;
+	background: url(../img/select_arrow.png) 100% / 39% no-repeat;
+}
+
+.left_disk_column {
+	width: 75px;
+	float: right;
+	border-left: 1px solid #bdc6ca;
+	margin-right: 18px;
+	padding-left: 11px;
+	margin-top: -8px;
+}
+
+.left_disk_column .selection_text {
+	margin-bottom: 4px;
+}
+
+p.ET {
+	margin-top: 5px;
+}
+
+select.DCO,
+select.ET {
+	-webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+	height: 17px;
+	width: 56px;
+	background: url(../img/select_arrow.png) 100% / 39% no-repeat;
+}
+
+.search_disks_position {
+	position: relative;
+	right: 3px;
 }
 
 .disks_header {
@@ -391,6 +447,8 @@ section.menu section.search .search_disks_box {
   	text-transform: uppercase;
   	color: #154467;
   	cursor: pointer;
+  	width: 56px;
+  	height: 17px;
 	border: none;
 	float: right;
 	font-size: 10px;

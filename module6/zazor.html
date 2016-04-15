@@ -184,34 +184,56 @@
 					</div>
 					<div class="search_disks_box">
 						<p class="search_by_auto_header search_disks_header">поиск дисков</p>
-						<div class="right_disk_column">
-							<div class="text">
-								<p class="selection_text">Диаметр <span class="grey_colored inline">диска</span></p>
-								<p class="selection_text">Количество <span class="grey_colored">крепежных отверствий</span></p>
-								<p class="selection_text">Диаметр <span class="grey_colored">расположения крепежных отверствий</span></p>
+						<form action="#">
+							<div class="right_disk_column">
+								<div class="text">
+									<p class="selection_text">Диаметр <span class="grey_colored inline">диска:</span></p>
+									<p class="selection_text">Количество <span class="grey_colored">крепежных отверствий:</span></p>
+									<p class="selection_text">Диаметр <span class="grey_colored">расположения крепежных отверствий:</span></p>
+								</div>
+								<div class="selects">
+									<select class="diameter">
+										<option value=""></option>
+										<option value="14">14</option>
+										<option value="13">13</option>
+										<option value="12">12</option>
+									</select>
+									<select class="quantity">
+										<option value=""></option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+										<option value="5">5</option>
+									</select>
+									<select class="diameter_holes">
+										<option value=""></option>
+										<option value="12">12</option>
+										<option value="11">11</option>
+										<option value="10">10</option>
+									</select>
+								</div>
 							</div>
-							<div class="selects">
-								<select class="diameter">
-									<option value=""></option>
-									<option value="14"></option>
-									<option value="13"></option>
-									<option value="12"></option>
-								</select>
-								<select class="quantity">
-									<option value=""></option>
-									<option value="3"></option>
-									<option value="4"></option>
-									<option value="5"></option>
-								</select>
-								<select class="diameter_holes">
-									<option value=""></option>
-									<option value="12"></option>
-									<option value="11"></option>
-									<option value="10"></option>
-								</select>
+							<div class="left_disk_column">
+								<p class="selection_text">ДЦО<br><span class="grey_colored">(диаметр центрального отверствия):</span></p>
+								<div>
+									<select class="DCO" name="">
+										<option value=""></option>
+										<option value="12">12</option>
+										<option value="13">13</option>
+										<option value="14">14</option>
+									</select>
+								</div>
+								<p class="selection_text ET">ET<br><span class="grey_colored">(вылет диска):</span></p>
+								<div>
+									<select class="ET" name="">
+										<option value=""></option>
+										<option value="12">12</option>
+										<option value="13">13</option>
+										<option value="14">14</option>
+									</select>
+								</div>
 							</div>
-						</div>
-						<div class="left_dis_column"></div>
+							<input type="submit" class="submit_link search_disks_position" value="поиск...">
+						</form>
 					</div>
 				</section>
 			</section>
