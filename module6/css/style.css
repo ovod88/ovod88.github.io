@@ -96,7 +96,8 @@ main>header section.login a.regitration {
 	float: left;
 	color: white;
 	padding-left: 2px;
-	padding-top: -1px;
+	position: relative;
+    bottom: 2px;
 }
 
 main>header section.login a.forget_password {
@@ -106,7 +107,7 @@ main>header section.login a.forget_password {
 	margin-left: 19px;
 	float: left;
 	text-transform: lowercase;
-	margin-top: 0px;
+	margin-top: -2px;
 }
 
 main>header section.common_links {
@@ -201,9 +202,6 @@ section.menu div.main_menu div.right_list nav.right_list {
 	line-height: 34px;
 }
 
-section.menu div.main_menu div.right_list nav.right_list img {
-}
-
 section.menu div.main_menu div.right_list nav.right_list * {
 	vertical-align: middle;
 	display: inline-block;
@@ -224,28 +222,255 @@ section.menu section.search {
 	margin-bottom: 16px;
 }
 
-section.menu section.search .search_auto {
+section.menu section.search .search_auto_box {
 	float: left;
 	width: 415px;
 	height: 100%;
-	background: grey;
+	border-radius: 15px;
 	margin-right: 16px;
 	margin-left: 3px;
+	-webkit-box-shadow: 3px 3px 5px 1px rgba(153,153,153,1);
+	-moz-box-shadow: 3px 3px 5px 1px rgba(153,153,153,1);
+	box-shadow: 3px 3px 5px 1px rgba(153,153,153,1);
 }
 
-section.menu section.search .search_tires {
+section.menu section.search .search_tires_box {
 	margin-right: 11px;
 	float: left;
 	width: 192px;
-	background: #c1c1c1;
 	height: 100%;
+	border-radius: 15px;
+	-webkit-box-shadow: 3px 3px 5px 1px rgba(153,153,153,1);
+	-moz-box-shadow: 3px 3px 5px 1px rgba(153,153,153,1);
+	box-shadow: 3px 3px 5px 1px rgba(153,153,153,1);
 }
 
-section.menu section.search .search_disks {
+section.menu section.search .search_disks_box {
 	float: left;
 	width: 266px;
-	background: #c9c9c9;
 	height: 100%;
+	border-radius: 15px;
+	-webkit-box-shadow: 3px 3px 5px 1px rgba(153,153,153,1);
+	-moz-box-shadow: 3px 3px 5px 1px rgba(153,153,153,1);
+	box-shadow: 3px 3px 5px 1px rgba(153,153,153,1);
+}
+
+.right_disk_column {
+	float: left;
+	width: 70%;
+}
+
+.right_disk_column .text {
+	width: 70px;
+	float: left;
+	margin-top: 4px;
+	margin-left: 16px;
+	margin-top: 11px;
+}
+
+.right_disk_column .inline {
+	display: inline-block;
+}
+
+.right_disk_column .grey_colored {
+	font-size: 8px;
+	color: #77858b;
+}
+
+.right_disk_column .selects {
+	width: 58px;
+	float: right;
+}
+
+.disks_header {
+	position: relative;
+	left: 20px;
+	top: 8px;	
+	float: left;
+	width: 20%;
+	color: #154468;
+	font-weight: bold;
+	font-size: 12px;
+}
+
+.tires_header {
+	position: relative;
+	right: -23px;
+	top: 4px;
+	float: right;
+	width: 20%;
+	color: #154468;
+	font-weight: bold;
+	font-size: 12px;
+}
+
+.search_by_auto_header {
+	position: relative;
+	top: 4px;
+	margin: 0 auto;
+	width: 50%;
+	color: #154468;
+	font-weight: bold;
+	font-size: 14px;
+	left: 14px;
+}
+
+.search_by_auto_form {
+	margin-top: 10px;
+}
+
+.search_by_auto_form .search_disks_form {
+	float: left;
+	margin-left: 16px;
+}
+
+.search_form .text {
+	width: 70px	;
+	float: left;
+	margin-top: 4px	;
+}
+
+.search_form .selects {
+	width: 100px;
+	float: right;
+	margin-left: -2px;
+}
+
+.search_form .selects select {
+	-webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+	height: 17px;
+	margin-bottom: 6px;
+	background: url(../img/select_arrow.png) 100% / 20% no-repeat;
+}
+
+.search_form .selects select.year_auto {
+	background: url(../img/select_arrow.png) 100% / 36% no-repeat;
+}
+
+.search_form .selects select::-ms-expand {
+    display: none;
+}
+
+.selection_text {
+	display: block;
+	font-family: Arial, sans-serif;
+	font-size: 10px;
+	margin-bottom: 7px;
+}
+
+.search_form .year_auto {
+	width: 56px;
+}
+
+.search_form .auto_type,
+.search_form .model_auto,
+.search_form .complect {
+	width: 100px;
+}
+
+.search_form .grey_colored {
+	font-size: 8px;
+	color: #77858b;
+}
+
+.search_form .new_line {
+	display: block;
+}
+
+.search_by_auto_form .search_tires_form {
+	float: right;
+	margin-right: 20px;
+}
+
+.submit_link {
+	font-family: Arial, sans-serif;
+	font-style: italic;
+  	background-color: transparent;
+  	text-transform: uppercase;
+  	color: #154467;
+  	cursor: pointer;
+	border: none;
+	float: right;
+	font-size: 10px;
+	text-decoration: underline;
+}
+
+.position_search_by_auto {
+	position: relative;
+  	right: 20px;
+	bottom: 3px;
+}
+
+.submi_link:focus {
+  outline: none;
+}
+
+.search_tires_header,
+.search_disks_header {
+	margin: 0 100% 0 0;
+	font-size: 12px;
+	text-transform: uppercase;
+}
+
+.search_by_tire_form .text {
+	width: 40px;
+	float: left;
+	margin-left: 13px;
+	margin-top: 18px;
+}
+
+.search_by_tire_form .selection_text {
+	margin-bottom: 11px;
+}
+
+.search_by_tire_form .selects .size_upper,
+.search_by_tire_form .selects .size_below {
+	width: 50px;
+	background: url(../img/select_arrow.png) 100% / 39% no-repeat;
+}
+
+.search_by_tire_form .selects {
+	width: 133px;
+	margin-top: 11px;
+}
+
+.search_by_tire_form .selects .R {
+	width: 41px;
+	background: url(../img/select_arrow.png) 100% / 43% no-repeat;
+}
+
+.search_by_tire_form .selects input[type=checkbox] {
+	display: none;
+}
+
+.search_by_tire_form .selects input[type=checkbox] + span {
+	display: inline-block;
+    width: 10px;
+    height: 10px;
+    border: 1px solid #345b79;
+    box-shadow: inset 1px 1px 0px 0px #afafaf;
+    margin-right: 2px;
+}
+
+.search_by_tire_form .selects input[type=checkbox]:checked + span:before {
+	content: '✓';
+    display: block;
+    width: 7px;
+    line-height: 8px;
+    text-align: center;
+}
+
+.search_by_tire_form .selects input[type=checkbox] + span + span {
+	font-size: 12px;
+}
+
+.search_tires_position {
+	float: right;
+	position: relative;
+	bottom: 3px;
+    right: 10px;
 }
 
 section.catalog {
@@ -407,6 +632,10 @@ section.catalog div.left_catalog dd>a:hover {
 section.catalog div.tires {
 	width: 527px;
 	float: left;
+	background: -webkit-linear-gradient(to bottom, #1e5799 0%,#207cca 0%,#e4e7e8 0%,#95a8b1 100%);
+	background: -moz-linear-gradient(to bottom, #1e5799 0%,#207cca 0%,#e4e7e8 0%,#95a8b1 100%);
+	background: -o-linear-gradient(to bottom, #1e5799 0%,#207cca 0%,#e4e7e8 0%,#95a8b1 100%);
+	background: -ms-linear-gradient(to bottom, #1e5799 0%,#207cca 0%,#e4e7e8 0%,#95a8b1 100%);
 	background: linear-gradient(to bottom, #1e5799 0%,#207cca 0%,#e4e7e8 0%,#95a8b1 100%);
 	border-radius: 2px;
 	margin-left: 8px;

@@ -47,9 +47,172 @@
 					</div>
 				</div>
 				<section class="search clearfix">
-					<div class="search_auto"></div>
-					<div class="search_tires"></div>
-					<div class="search_disks"></div>
+					<div class="search_auto_box">
+						<div class="clearfix">
+							<p class="disks_header">Диски:</p>
+							<p class="tires_header">Шины:</p>
+							<p class="search_by_auto_header">Поиск по автомобилю</p>
+						</div>
+						<form action="#" class="search_by_auto_form">
+							<div class="search_disks_form search_form">
+								<div class="text">
+										<p class="selection_text">Марка <span class="grey_colored">авто:</span></p>
+										<p class="selection_text">Модель <span class="grey_colored new_line">автомобиля:</span></p>
+										<p class="selection_text">Год выпуска <span class="grey_colored new_line">автомобиля:</span></p>
+										<p class="selection_text">Комлектация:</p>
+								</div>
+								<div class="selects">
+									<select class="auto_type" name="auto_type">
+										<option value=""></option>
+										<option value="BMW">BMW</option>
+										<option value="Mercedes">Mercedes</option>
+										<option value="Volvo">Volvo</option>
+									</select>
+									<select class="model_auto" name="model_auto">
+										<option value=""></option>
+										<option value="Hashback">Hashback</option>
+										<option value="Business">Business</option>
+										<option value="City">City</option>
+									</select>
+									<select class="year_auto" name="year_auto">
+										<option value=""></option>
+										<option value="2010">2010</option>
+										<option value="2011">2011</option>
+										<option value="2012">2012</option>
+									</select>
+									<select class="complect" name="complect">
+										<option value=""></option>
+										<option value="basic">basic</option>
+										<option value="enhanced">enhanced</option>
+										<option value="enhanced_plus">enhanced_plus</option>
+									</select>
+								</div>
+							</div>
+							<div class="search_tires_form search_form">
+								<div class="text">
+										<p class="selection_text">Марка <span class="grey_colored">авто:</span></p>
+										<p class="selection_text">Модель <span class="grey_colored new_line">автомобиля:</span></p>
+										<p class="selection_text">Год выпуска <span class="grey_colored new_line">автомобиля:</span></p>
+										<p class="selection_text">Комлектация:</p>
+								</div>
+								<div class="selects">
+									<select class="auto_type" name="auto_type">
+										<option value=""></option>
+										<option value="BMW">BMW</option>
+										<option value="Mercedes">Mercedes</option>
+										<option value="Volvo">Volvo</option>
+									</select>
+									<select class="model_auto" name="model_auto">
+										<option value=""></option>
+										<option value="Hashback">Hashback</option>
+										<option value="Business">Business</option>
+										<option value="City">City</option>
+									</select>
+									<select class="year_auto" name="year_auto">
+										<option value=""></option>
+										<option value="2010">2010</option>
+										<option value="2011">2011</option>
+										<option value="2012">2012</option>
+									</select>
+									<select class="complect" name="complect">
+										<option value=""></option>
+										<option value="basic">basic</option>
+										<option value="enhanced">enhanced</option>
+										<option value="enhanced_plus">enhanced_plus</option>
+									</select>
+								</div>
+							</div>
+							<input type="submit" class="submit_link position_search_by_auto" value="поиск...">
+						</form>
+					</div>
+
+					<div class="search_tires_box">
+						<div class="search_form clearfix">
+							<p class="search_by_auto_header search_tires_header">Поиск шин</p>
+							<form action="#" class="search_by_tire_form">
+								<div class="text">
+									<p class="selection_text">Размер:</p>
+									<p class="selection_text">R</p>
+									<p class="selection_text">Сезон:</p>
+								</div>
+								<div class="selects">
+									<select class="size_upper" name="size_upper">
+										<option value=""></option>
+										<option value="145">145</option>
+										<option value="140">140</option>
+										<option value="135">135</option>
+									</select>
+									/
+									<select class="size_below" name="size_below">
+										<option value=""></option>
+										<option value="9">9</option>
+										<option value="8">8</option>
+										<option value="7">7</option>
+									</select>
+									<div>
+										<select class="R" name="R">
+											<option value=""></option>
+											<option value="12">12</option>
+											<option value="13">13</option>
+											<option value="14">14</option>
+										</select>
+									</div>
+									<div>
+										<div>
+											<label for="season_ete">
+												<input type="checkbox" id="season_ete">
+												<span></span><span>лето</span>
+											</label>
+										</div>
+										<div>
+											<label for="hiver">
+												<input type="checkbox" id="season_hiver">
+												<span></span><span>зима</span>
+											</label>
+										</div>
+										<div>
+											<label for="all">
+												<input type="checkbox" id="season_all">
+												<span></span><span>всесез</span>
+											</label>	
+										</div>
+									</div>
+									<input type="submit" class="submit_link search_tires_position" value="поиск...">
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class="search_disks_box">
+						<p class="search_by_auto_header search_disks_header">поиск дисков</p>
+						<div class="right_disk_column">
+							<div class="text">
+								<p class="selection_text">Диаметр <span class="grey_colored inline">диска</span></p>
+								<p class="selection_text">Количество <span class="grey_colored">крепежных отверствий</span></p>
+								<p class="selection_text">Диаметр <span class="grey_colored">расположения крепежных отверствий</span></p>
+							</div>
+							<div class="selects">
+								<select class="diameter">
+									<option value=""></option>
+									<option value="14"></option>
+									<option value="13"></option>
+									<option value="12"></option>
+								</select>
+								<select class="quantity">
+									<option value=""></option>
+									<option value="3"></option>
+									<option value="4"></option>
+									<option value="5"></option>
+								</select>
+								<select class="diameter_holes">
+									<option value=""></option>
+									<option value="12"></option>
+									<option value="11"></option>
+									<option value="10"></option>
+								</select>
+							</div>
+						</div>
+						<div class="left_dis_column"></div>
+					</div>
 				</section>
 			</section>
 			<section class="catalog clearfix">
