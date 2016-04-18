@@ -16,37 +16,41 @@ ol {
 	margin-top: 10px;
 }
 
+
+input[type=checkbox]:not(:checked),
+input[type=checkbox]:checked {
+    position: absolute;
+  	left: -9999px;
+}
+
 label {
-	display: block;
+	display: table;
+	position: relative;
+	cursor: pointer;
 	font-weight: normal;
 }
-
-input[type=checkbox] {
-    display: none;
-}
-
 label span:before {
-	content: "";
 	display: inline-block;
-	height: 15px;
-	width: 15px;
-	background-color: #66ccff;
-    border-radius: 3px;
-    border: 1px solid black;
-    margin-right: 5px;
+ 	content: '';
+  	width: 17px; 
+  	height: 17px;
+  	background: #66ccff;
+  	border-radius: 3px;
+  	border: 3px solid black;
+  	margin-right: 5px;
 }
 
 input[type=checkbox]:checked + span:before {
-    content: "\2713";
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
-    font-size: 15px;
-    color: #f3f3f3;
-    text-align: center;
-    line-height: 15px;
+	content: '\2713';
+  	font-size: 17px;
+  	line-height: 1;
+  	color: black;
 }
 
 button[type=submit] {
 	display: block;
+	width: 250px;
 	margin: 0 auto;
 	background-color: #66ccff;
+	border: 3px solid black;
 }
