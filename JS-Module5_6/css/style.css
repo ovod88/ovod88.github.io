@@ -1,0 +1,71 @@
+.wrapper {
+	width: 85%;
+	height: 600px;
+	margin: 0 auto;
+}
+
+.clock {
+	height: 50%;
+	border: 10px solid black;
+	border-radius: 50px;
+	background: #e6fffa;
+}
+
+.counter {
+	position: relative;
+	top: 50%;
+	transform: translateY(-55%);
+	height: 80%;
+	width: 90%;
+	margin: 0 auto;
+}
+
+.numbers {
+	font-size: 155px;
+	text-align: center;
+}
+
+.miliseconds {
+	float: right;
+	margin-right: 200px;
+	margin-top: 23px;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.numbers span {
+	display: inline-block;
+}
+
+.minute,
+.sec {
+	margin-left: -47px;
+}
+
+.start, .clear {
+	margin-top: 80px;
+	font-size: 70px;
+	height: 150px;
+	float: left;
+	width: 400px;
+	border: 10px solid black;
+	border-radius: 30px;
+	background: #ccffcc;
+}
+
+.clear {
+	float: right;
+	background:  #ffddcc;
+}
+
+button:focus{
+    outline:none;
+}
+
+.pause {
+	background: #66ccff;
+}
+
+.continue {
+	background: green;
+}
