@@ -94,17 +94,16 @@ var pauseTimer = function() {
 }
 
 var stopTimer = function() {
-	console.log("------>", "stopCalled");
 	clearInterval(interval);
 	interval = null;
 	start.classList.remove('pause');
 	start.innerHTML = 'Start';
+	isRunning = false;
 }
 
 var startTimer = function() {
 	if (!interval) {
 		isRunning = true;
-		console.log("------>", "startCalled");
 		interval = setInterval( updateMiliseconds, 4);
 		updateMiliseconds();
 	} else {
@@ -113,15 +112,11 @@ var startTimer = function() {
 }
 
 
-
-// console.log(clock); 
-// console.log("----> ", clock.test);
 start.addEventListener('click', startTimer);
 start.addEventListener('click', changeStyleStart);
 clear.addEventListener('click', reset);
 clear.addEventListener('click', stopTimer);
 
-// clear.addListener();
 
 
 
