@@ -1,0 +1,69 @@
+body {
+	background: black;
+}
+
+.wrapper {
+	width: 600px;
+	height: 200px;
+	margin: 0 auto;
+	margin-top: 165px;
+}
+
+.clearfix:after {
+	content: '';
+	clear: both;
+	display: block;
+}
+
+.clock {
+	font-size: 84px;
+	text-align: center;
+	color: red;
+	font-weight: bolber;
+}
+
+.clock span {
+	float: left;
+}
+
+.clock span:first-child:after,
+.clock span:nth-child(2):after {
+	content: ":";
+}
+
+.clock span:last-child:before {
+	content: ".";
+}
+
+.oncenter {
+	margin: 0 auto;
+	width: 82%;
+}
+
+.buttons {
+	clear: both;
+	text-align: center;
+}
+
+button {
+	width: 80px;
+	height: 40px;
+	border-radius: 5px;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+button:active {
+	background: rgba(69,255,205,1);
+}
+
+.output {
+	width: 600px;
+	text-align: center;
+}
+
+.output span {
+	display: block;
+	font-size: 36px;
+	color: grey;
+}
