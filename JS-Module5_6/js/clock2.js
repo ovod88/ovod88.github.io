@@ -76,6 +76,7 @@ function updateMiliseconds() {
 	}
 
 	clock.milisec += BROWSER_DELAY;
+
 	if (clock.milisec >= 1000) {
 		clock.milisec = 0;
 		updateSeconds();
