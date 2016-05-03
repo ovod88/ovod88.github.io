@@ -1,0 +1,49 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.clearfix:after {
+	content: '';
+	clear: both;
+	display: block;
+}
+
+.wrapper {
+	width: 600px;
+	margin: 0 auto;
+	margin-top: 30px;
+}
+
+form>div {
+	float: left;
+}
+
+form>div:first-child {
+	margin-right: 10px;
+}
+
+form p {
+	margin-top: 20px;
+}
+
+form p:nth-child(3) {
+	margin-top: 22px;
+}
+
+form input {
+	margin-top: 20px;
+}
+
+button {
+	margin-top: 10px;
+	clear: both;
+}
+
+em {
+	display: none;
+	font-style: normal;
+	margin-left: 5px;
+	box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.75);
+	padding: 5px;
+}
