@@ -1,0 +1,73 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: #4E443C;
+}
+
+.jcarousel {
+	position: relative;
+	overflow: hidden;
+	margin: 0 auto;
+	margin-top: 20px;
+	width: 748px;
+	height: 300px;	
+	border: 10px solid white;
+	border-radius: 5px;
+}
+
+ul {
+	position: relative;
+	width: 20000px;
+	list-style: none;
+}
+
+ul li {
+	float: left;
+}
+
+.jcarousel-prev,
+.jcarousel-next {
+	display: block;
+	text-decoration: none;
+	color: white;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 30px; 
+	position: absolute;
+	right: 10px;
+	top: 50%;
+	width: 30px;
+	height: 30px;
+	background: #4E443C;
+	box-shadow: 0 0 4px #ff0000;
+	border-radius: 15px;
+}
+
+.jcarousel-prev {
+	left: 10px;
+}
+
+.jcarousel-pagination {
+	position: absolute;
+	bottom: 20px;
+	left: 50%;
+}
+
+.jcarousel-pagination a {
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	text-indent: -9999px;
+	margin-right: 7px;
+	background: white;
+	border-radius: 5px;
+	transform: translateX(-50%);
+}
+
+.jcarousel-pagination a.active {
+	background: #00ff00;
+	box-shadow: 0 0 2px white;
+}
