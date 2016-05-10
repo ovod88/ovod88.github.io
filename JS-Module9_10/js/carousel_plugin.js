@@ -4,7 +4,7 @@ $(function() {
     		wrap: 'circular'
 		})
 		.jcarouselAutoscroll({
-			interval: 5000
+			interval: 4000
 		});
 
 	$('.jcarousel-prev').click(function(e) {

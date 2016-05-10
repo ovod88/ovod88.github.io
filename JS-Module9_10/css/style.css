@@ -22,7 +22,7 @@ ul {
 	position: relative;
 	width: 20000px;
 	list-style: none;
-	margin-left: 0;
+	left: 0;
 }
 
 ul li {
