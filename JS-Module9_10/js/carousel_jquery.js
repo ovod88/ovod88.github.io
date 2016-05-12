@@ -1,86 +1,102 @@
 $(function() {
 	var carousel = $('.jcarousel');
 	var picture_index = 0;
+	var isAnimated = false;
 	var buttons = $('.jcarousel-pagination a');
 	var img_width = carousel.find('img').first().width();
 	var default_speed_scrolling  = 1000;
-	var speed_when_clicked = 500;
+	var clicked_speed_scrolling = 500;
 	var scroll_timer = 4000;
 	var scroll_interval = setInterval(function() {  scrollnext(default_speed_scrolling); }, 
 													scroll_timer);
 
-	buttons.on('click', function(e) {
-		clearInterval(scroll_interval);
-		var current_lis = $('.jcarousel li');
-		var new_picture_index = buttons.index(this);
-		var difference = Math.abs(new_picture_index - picture_index);
-		var $this = $(this);
-
-        if ($this.data('activated')) return false; 
-
-        $this.data('activated', true);
-        setTimeout(function() {
-            $this.data('activated', false)
-        }, default_speed_scrolling); 
-
-        if( new_picture_index > picture_index) {
-		    carousel.find('ul')
-					.animate({left: -difference * img_width}, 
-							speed_when_clicked, 
-							function() {
-					    		current_lis.slice(0, difference).insertAfter(current_lis.last());
-					    		$(this).css({left: 0});
-							});
-        } else if (new_picture_index < picture_index) {
-        	current_lis.slice(-difference).insertBefore(current_lis.first());
-        	carousel.find('ul').css({left: -difference * img_width});
-        	carousel.find('ul')
-        			.animate({left: 0}, 
-        				speed_when_clicked);
-        }
-		picture_index = new_picture_index;
-		activateButton();
-
-		setTimeout(scroll_interval = setInterval(function() {  scrollnext(default_speed_scrolling); }, 
-													scroll_timer),default_speed_scrolling);
-        e.preventDefault();
-    });
+	buttons.on('click', scrollMultiple);
+	$('.jcarousel-prev').on('click', moveBack);
+	$('.jcarousel-next').on('click', moveNext);
 
 
-	$('.jcarousel-prev').click(function(e) {
-		clearInterval(scroll_interval);
+	function scrollMultiple(e) {
+		if(!isAnimated) {
+			clearInterval(scroll_interval);
 
-		var $this = $(this);
-        if ($this.data('activated')) return false; 
+			var current_lis = $('.jcarousel li');
+			var new_picture_index = buttons.index(this);
+			var difference = Math.abs(new_picture_index - picture_index);
+			var $this = $(this);
 
-        $this.data('activated', true);
-        setTimeout(function() {
-            $this.data('activated', false)
-        }, default_speed_scrolling); 
+	        if ($this.data('activated')) return false; 
 
-		scrollprev(speed_when_clicked);
-		setTimeout(scroll_interval = setInterval(function() {  scrollnext(default_speed_scrolling); },
-													 scroll_timer), scroll_timer);
-    	e.preventDefault();
-	});
+	        $this.data('activated', true);
+	        setTimeout(function() {
+	            $this.data('activated', false)
+	        }, clicked_speed_scrolling); 
 
-	$('.jcarousel-next').click(function(e) {
-    	clearInterval(scroll_interval);
-    	
-    	var $this = $(this);
-        if ($this.data('activated')) return false; 
+	        if( new_picture_index > picture_index) {
+	        	isAnimated = true;
+			    carousel.find('ul')
+						.animate({left: -difference * img_width}, 
+								clicked_speed_scrolling, 
+								function() {
+						    		current_lis.slice(0, difference).insertAfter(current_lis.last());
+						    		$(this).css({left: 0});
+						    		isAnimated = false;
+								});
+	        } else if (new_picture_index < picture_index) {
+	        	current_lis.slice(-difference).insertBefore(current_lis.first());
+	        	carousel.find('ul').css({left: -difference * img_width});
+	        	isAnimated = true;
+	        	carousel.find('ul')
+	        			.animate({left: 0}, 
+	        				clicked_speed_scrolling, isAnimated = false);
+	        }
+			picture_index = new_picture_index;
+			activateButton();
 
-        $this.data('activated', true);
-        setTimeout(function() {
-            $this.data('activated', false)
-        }, default_speed_scrolling); 
+			setTimeout(scroll_interval = setInterval(function() {  scrollnext(default_speed_scrolling); }, 
+														scroll_timer), 4);
+	        e.preventDefault();
+	    }
+	}
 
-        scrollnext(speed_when_clicked);
 
-    	setTimeout(scroll_interval = setInterval(function() {  scrollnext(default_speed_scrolling); },
-    												 scroll_timer), scroll_timer);
-    	e.preventDefault();
-	});
+	function moveBack(e) {
+		if(!isAnimated) {
+			clearInterval(scroll_interval);
+
+			var $this = $(this);
+	        if ($this.data('activated')) return false; 
+
+	        $this.data('activated', true);
+	        setTimeout(function() {
+	            $this.data('activated', false)
+	        }, default_speed_scrolling); 
+
+			scrollprev(clicked_speed_scrolling);
+			setTimeout(scroll_interval = setInterval(function() {  scrollnext(default_speed_scrolling); },
+														 scroll_timer), scroll_timer);
+	    	e.preventDefault();
+	    }
+	}
+
+	function moveNext(e) {
+		if(!isAnimated) {
+	    	clearInterval(scroll_interval);
+	    	
+	    	var $this = $(this);
+	        if ($this.data('activated')) return false; 
+
+	        $this.data('activated', true);
+	        setTimeout(function() {
+	            $this.data('activated', false)
+	        }, default_speed_scrolling); 
+
+	        scrollnext(clicked_speed_scrolling);
+
+	    	setTimeout(scroll_interval = setInterval(function() {  scrollnext(default_speed_scrolling); },
+	    												 scroll_timer), scroll_timer);
+	    	e.preventDefault();
+	    }
+	}
 
 	function scrollnext(speed){
 		var current_lis = $('.jcarousel li');
@@ -92,12 +108,14 @@ $(function() {
 
 		activateButton();
     	
+    	isAnimated = true;
     	carousel.find('ul')
     			.animate({left: -img_width}, 
     					speed, 
     					function() {
 				    		current_lis.first().insertAfter(current_lis.last());
 				    		$(this).css({left: 0});
+				    		isAnimated = false;
 						});
 	}
 
@@ -114,9 +132,9 @@ $(function() {
 
 		current_lis.last().insertBefore(current_lis.first());
 		carousel.find('ul').css({left: -img_width});
+		isAnimated = true;
 		carousel.find('ul')
-    			.animate({left: 0}, speed
-    			)
+    			.animate({left: 0}, speed, isAnimated = false);
     };
 
     function activateButton() {
