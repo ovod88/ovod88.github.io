@@ -31,6 +31,12 @@ $(function() {
 					    		current_lis.slice(0, difference).insertAfter(current_lis.last());
 					    		$(this).css({left: 0});
 							});
+        } else if (new_picture_index < picture_index) {
+        	current_lis.slice(-difference).insertBefore(current_lis.first());
+        	carousel.find('ul').css({left: -difference * img_width});
+        	carousel.find('ul')
+        			.animate({left: 0}, 
+        				speed_when_clicked);
         }
 		picture_index = new_picture_index;
 		activateButton();
