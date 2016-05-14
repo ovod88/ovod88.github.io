@@ -5,6 +5,7 @@
 
 body {
 	background: #4E443C;
+	text-align: center;
 }
 
 .jcarousel {
@@ -21,6 +22,7 @@ body {
 .select_wrapper {
 	margin: 0 auto;
 	margin-top: 70px;
+	margin-bottom: 30px;
 	text-align: center;
 }
 
@@ -82,4 +84,48 @@ ul li {
 .jcarousel-pagination a.active {
 	background: #00ff00;
 	box-shadow: 0 0 2px white;
+}
+
+.checkboxes {
+	margin-top: 10px;
+}
+
+.niceCheck {
+	-webkit-user-select: none;  
+  	-moz-user-select: none;    
+  	-ms-user-select: none;      
+  	user-select: none;
+  	overflow: hidden;
+	width: 17px;
+	height: 17px;
+	display: inline-block;
+	cursor: pointer;
+	background: url(../img/checkbox.png);
+}
+
+.niceCheck input {
+	margin-left: -99999px;
+}
+
+.niceChecked {
+	background-position: 0 -17px;
+}
+
+.niceCheckDisabled {
+	background: url(../img/checkbox-disabled.png);
+	background-position:0 -17px;
+}
+
+.checkboxes label {
+	-webkit-user-select: none;  
+  	-moz-user-select: none;    
+  	-ms-user-select: none;      
+  	user-select: none;
+  	color: white;
+  	position: relative;
+  	bottom: 3px;
+}
+
+.checkboxes div {
+	margin-top: 10px;
 }

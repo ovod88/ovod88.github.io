@@ -9,6 +9,7 @@
 		<script src="js/jquery-migrate-1.2.1.js"></script>
 		<script src="js/cusel.min.js"></script>
 		<script src="js/cusel_init.js"></script>
+		<script src="js/checkbox.js"></script>
 		<link rel="stylesheet" href="css/style.css">
 		<link rel="stylesheet" href="css/cusel.css">
 	</head>
@@ -27,13 +28,35 @@
 				<a href="#3">3</a>
 			</p>
 		</div>
-			<div class="select_wrapper">
-				<select id="idSelect" name="nameSelect">
-					<option value="значение option 1">текст text 1</option>
-					<option value="значение option 2">текст text 2</option>
-					<option value="значение option 3">текст text 3</option>
-					<option value="значение option 4">текст text 4</option>
-				</select>
+		<div class="select_wrapper">
+			<select id="idSelect" name="nameSelect">
+				<option value="значение option 1">текст text 1</option>
+				<option value="значение option 2">текст text 2</option>
+				<option value="значение option 3">текст text 3</option>
+				<option value="значение option 4">текст text 4</option>
+			</select>
+		</div>
+		<div class="checkboxes">
+		With Query
+			<div>
+				<label for="ch1">
+					label 1
+				</label>
+				<input type="checkbox" class="niceCheck" name="ch1" id="ch1" checked="checked" />
 			</div>
+			<div>
+				<label for="ch2">
+					label 2
+				</label>
+				<input type="checkbox" class="niceCheck" name="ch2" id="ch2"/>
+			</div>
+			<div>
+				<label for="ch3">
+					label 3
+				</label>
+				<input type="checkbox" class="niceCheck" name="ch3" id="ch3" disabled="disabled" />
+			</div>
+			By CSS
+		</div>
 	</body>
 </html>
