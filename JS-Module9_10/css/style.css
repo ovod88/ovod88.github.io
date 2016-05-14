@@ -18,6 +18,17 @@ body {
 	border-radius: 5px;
 }
 
+.select_wrapper {
+	margin: 0 auto;
+	margin-top: 70px;
+	text-align: center;
+}
+
+#idSelect {
+	width: 150px;
+	background: #4E443C;
+}
+
 ul {
 	position: relative;
 	width: 20000px;
