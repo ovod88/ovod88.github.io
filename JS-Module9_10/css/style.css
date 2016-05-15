@@ -129,3 +129,32 @@ ul li {
 .checkboxes div {
 	margin-top: 10px;
 }
+
+.checkboxes_css input[type=checkbox] {
+	position: absolute;
+	clip: rect(0, 0, 0, 0);
+}
+
+.checkboxes_css label {
+    cursor: pointer;
+}
+
+.checkboxes_css label:after {
+    content: " ";
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    background: url(../img/checkbox.png);
+    position: relative;
+    top: 3px;
+    margin-left: 15px;
+}
+
+.checkboxes_css input:checked + label:after {
+	background-position: 0 -17px;
+}
+
+.checkboxes_css input.checkDisabled + label:after {
+	background: url(../img/checkbox-disabled.png);
+	background-position:0 -17px;
+}
