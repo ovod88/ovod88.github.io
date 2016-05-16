@@ -5,7 +5,7 @@
 .cuselFrameRight,
 .jScrollArrowUp,
 .jScrollArrowDown {
-	background: url(../img/select_bg.png) no-repeat;
+	background: url(../../img/carousel/select_bg.png) no-repeat;
 }
 .cusel { /* общий вид селекта включая стрелку справа */
 	height: 26px;
@@ -62,7 +62,7 @@
 .cusel:hover .cuselFrameRight,
 .cusel:focus,
 .cusel:focus .cuselFrameRight {
-	background-image: url(../img/select_bg_focus.png);
+	background-image: url(../../img/carousel/select_bg_focus.png);
 }
 
 
@@ -71,7 +71,7 @@
 */
 .cusel.classDisCusel,
 .cusel.classDisCusel .cuselFrameRight {
-	background-image: url(../img/select_bg.png);
+	background-image: url(../../img/carousel/select_bg.png);
   	filter: alpha(opacity=65);
   	opacity: .65;
 	cursor: default;

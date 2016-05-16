@@ -100,7 +100,7 @@ ul li {
 	height: 17px;
 	display: inline-block;
 	cursor: pointer;
-	background: url(../img/checkbox.png);
+	background: url(../../img/carousel/checkbox.png);
 }
 
 .niceCheck input {
@@ -112,7 +112,7 @@ ul li {
 }
 
 .niceCheckDisabled {
-	background: url(../img/checkbox-disabled.png);
+	background: url(../../img/carousel/checkbox-disabled.png);
 	background-position:0 -17px;
 }
 
@@ -144,7 +144,7 @@ ul li {
     display: inline-block;
     width: 17px;
     height: 17px;
-    background: url(../img/checkbox.png);
+    background: url(../../img/carousel/checkbox.png);
     position: relative;
     top: 3px;
     margin-left: 15px;
@@ -155,6 +155,6 @@ ul li {
 }
 
 .checkboxes_css input.checkDisabled + label:after {
-	background: url(../img/checkbox-disabled.png);
+	background: url(../../img/carousel/checkbox-disabled.png);
 	background-position:0 -17px;
 }
