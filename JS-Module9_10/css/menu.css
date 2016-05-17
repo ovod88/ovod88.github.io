@@ -34,8 +34,17 @@ ul {
 	position: absolute;
 	top: 42px;
 	left: 15px;
-	background: rgb(225,75,75);
 	width: 200px;
+}
+
+.test {
+	width: 200px;
+	height: 200px;
+	background-color: #aaa;
+}
+
+.submenu_level_1 {
+	background-color: rgb(100,75,75);
 }
 
 .submenu_level_1 ul {
