@@ -15,12 +15,14 @@ $(function(){
 	
 	$('.main_menu li').hover(
 		function() {
+			$(this).children('ul').css('background-color', ref_color);
 			ref_color = changeRed(ref_color, true);
-			$(this).children('ul').slideDown('fast').css('background-color', ref_color);
+			$(this).children('ul').slideDown('fast');
+			jQuery_1_3_2(this).children('ul').animate({backgroundColor : ref_color,}, 600);
 		},
 		function() {
 			ref_color = changeRed(ref_color, false);
-			$(this).children('ul').slideUp('fast').css('background-color', ref_color);
+			$(this).children('ul').slideUp('fast');
 		}
 	);
 
@@ -29,9 +31,9 @@ $(function(){
 		var new_red = +matched_red.split('(')[1];
 
 		if(new_red < 255 && flag) {
-			new_red = '(' + (new_red + 50);	
+			new_red = '(' + (new_red + 75);	
 		} else if (new_red > 0 && !flag) {
-			new_red = '(' + (new_red - 50);
+			new_red = '(' + (new_red - 75);
 		} else {
 			new_red = '(' + new_red;
 		}
