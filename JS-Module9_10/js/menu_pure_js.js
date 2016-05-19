@@ -1,16 +1,16 @@
 document.addEventListener( 'DOMContentLoaded', function () {
 	var main_menu = document.querySelector('.main_menu');
 	var main_lis = main_menu.children;
-	var span = document.createElement('span');
+	var lis = main_menu.querySelectorAll('li');
     var submenu1 = document.querySelector('.submenu_level_1');
-    var submenu2 = document.querySelector('.submenu_level_2');
-    var submenu3 = document.querySelector('.submenu_level_3');
+    var other_lis = submenu1.querySelectorAll('li');
     var ref_color;
 
     ref_color= window.getComputedStyle(submenu1, null).backgroundColor;
 
 	for (var i = 0; i < main_lis.length; i++) {
 		var li= main_lis[i];
+		var span = document.createElement('span');
 
 		if(li.querySelector("ul")) {
 			span.innerHTML = '';
@@ -20,10 +20,20 @@ document.addEventListener( 'DOMContentLoaded', function () {
 
 	};
 
-	addEventListenerNodeList(main_lis, "mouseenter", hoverDisplay);
-	addEventListenerNodeList(main_lis, "mouseleave", hoverHide);
+	for (var j = 0; j < other_lis.length; j++) {
+		var li= other_lis[j];
+		var span = document.createElement('span');
 
+		if(li.querySelector("ul")) {
+			span.innerHTML = '';
+			span.innerHTML = '&#9658;';
+			li.querySelector("a").appendChild(span);
+		}
 
+	};
+
+	addEventListenerNodeList(lis, "mouseenter", hoverMainDisplay);
+	addEventListenerNodeList(lis, "mouseleave", hoverMainHide);
 
 	function addEventListenerNodeList(list, event, fn) {
     	for (var i = 0, len = list.length; i < len; i++) {
@@ -31,29 +41,26 @@ document.addEventListener( 'DOMContentLoaded', function () {
     	}
 	}
 
-	function hoverDisplay(event) {
-		console.log('TARGET SHOWN', event.target);
+	function hoverMainDisplay(event) {
 		var ul = event.target.querySelector("ul");
 		if(ul) {
 			ul.style.backgroundColor = ref_color;
-			ref_color = changeRed(ref_color, true);
 			animateMenu(ul);
+			ref_color = changeRed(ref_color, true);
 		}
 	}
 
-	function hoverHide(event) {
-		console.log('TARGET HIDEN', event.target);
-		var ul = event.target.parentNode.querySelector("ul"); 
+	function hoverMainHide(event) {
+		var ul = event.target.querySelector("ul"); 
 		if(ul) {
-			ref_color = changeRed(ref_color, false);
 			ul.style.display = 'none';
+			ref_color = changeRed(ref_color, false);
 		}
 	}
 
 	function animateMenu(el) {
 		var menu_height = 225;
 		el.style.height = 0;
-		el.style.display = "block";
 
 		function linear(timeFraction) {
   			return timeFraction;
@@ -64,6 +71,9 @@ document.addEventListener( 'DOMContentLoaded', function () {
 	        timing: linear,
 	        draw: function(progress) {
 	          el.style.height = menu_height * progress + 'px';
+	          if(progress > 0.7) {
+				el.style.display = "block";
+	          }
 	        }
       	});
 	}
@@ -73,13 +83,12 @@ document.addEventListener( 'DOMContentLoaded', function () {
 		var new_red = +matched_red.split('(')[1];
 
 		if(new_red < 255 && flag) {
-			new_red = '(' + Math.min(new_red + 75, 255);	
+			new_red = '(' + Math.min(new_red + 55, 255);	
 		} else if (new_red > 0 && !flag) {
-			new_red = '(' + Math.min(new_red - 75, 0);
+			new_red = '(' + Math.max(new_red - 55, 0);
 		} else {
 			new_red = '(' + new_red;
 		}
-		console.log(rgb_color.replace(matched_red, new_red));
 		return rgb_color.replace(matched_red, new_red);
 	}
 }, false );
