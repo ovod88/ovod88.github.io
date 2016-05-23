@@ -1,0 +1,61 @@
+div#wrapper {
+	background: #FCF5F5;
+	width: 90%;
+	height: 100%;
+	margin: 0 auto;
+	box-shadow: 0px 0px 20px rgba(92, 150, 150, 0.96);
+}
+
+/*HEADER*/
+h2 {
+	margin-bottom: 20px;
+	margin-top: 10px;
+	text-align: center;
+	font-family: 'Times New Roman', Times, serif;
+}
+
+img {
+	width: 25%;
+	margin: auto;
+	margin-bottom: 5px;
+	display: block;
+}
+
+/*BODY SECTION*/
+hr {
+	margin-left: 60px;
+	margin-right: 60px;
+	color: 	rgb(220,220,220);
+}
+
+div.links {
+	margin-top: 0;
+}
+
+ul {
+	padding-left: 30px;
+	margin-top: 25px;
+}
+
+p, 
+a, 
+ul {
+	margin-left: 75px;
+	margin-bottom: 0;
+}
+
+p,
+a, 
+li {
+	font: normal 1.1em/1.2em 'Times New Roman', Times, serif;
+}
+
+/*CONTACTS SECTION*/
+.contacts {
+	margin-bottom: 15px;
+}
+
+/*FOOTER*/
+.footer {
+	margin-bottom: 45px;
+}
