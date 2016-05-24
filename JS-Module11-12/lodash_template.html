@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<link rel="stylesheet" href="css/resig/style.css">
+		<script src="js/jquery-2.2.3.js"></script>
+		<script src="js/lodash_template/lodash.js"></script>
+		<script src="js/lodash_template/render.js"></script>
+	</head>
+	<body>
+		<script type="text/html" id='profile_tmpl'>
+			<div id="wrapper">
+				<div id="photo">
+					<h2><%= full_name %></h2>
+					<div id="photo_image">
+						<img src="<%= photo_path %>" alt="Мое_фото" title="Мое_фото">
+					</div>
+					<p><%= slogan %></p>
+				</div>
+				<hr>
+				<div class="motivation">
+					<p>Хочу учить фронтенд потому, что:</p>
+						<ul id="my_motives">
+							<% for ( var i = 0; i < motives.length; i++ ) { %>
+							<li><%= motives[i]%></li>
+							<% } %>
+						</ul>
+				</div>
+				<hr>
+				<div class="contacts">
+					<p>Мой телефон<br>
+					<span><%= phone %></span></p>
+					<p>Мой профиль в контакте</p>
+					<div class="links">
+						<a href="<%= vk_link %>" target="_blank">vk.com</a>
+					</div>
+				</div>
+				<hr>
+				<div class="footer">
+					<p>Мой фидбек:<br>
+					<%= feedback %> &#9786;</p>
+				</div>
+			</div>
+
+		</script>
+	</body>
+</html>
