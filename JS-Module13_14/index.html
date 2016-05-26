@@ -8,81 +8,29 @@
 	</head>
 	<body>
 
-	<script type="text/html" id="test_template">
-		<h3 class="questionnaire_header"><%= test_title %></h3>
-		<form action="#">
-			<ol class="questions">
-				<% for (var i=0; i < questions.length; i++) { %>
-					<li>
-						<% var question = questions[i]; %>
-						<%= question.question %>
-						<% var answers = question.answers; %>
-						<% for (var j = 0; j < answers.length; j++) { %>
-							<label>
-								<input type="checkbox">
-								<span><%= answers[j] %></span>
-							</label>
-						<% } %>
-					</li>
-				<% } %>
-			</ol>
-			<button type="submit" class="btn btn-primary">
-				Проверить результаты
-			</button>
-		</form>
-	</script>
-
-<!-- 		<h3 class="questionnaire_header">Тест по программированию</h3>
-		<form action="#">
-			<ol class="questions">
-	  			<li id="question_1">
-	  				Coffee
-	  				<label>
-	  					<input type="checkbox">
-	  					<span>Первый ответ</span>
-	  				</label>
-	  				<label>
-	  					<input type="checkbox">
-	  					<span>Первый ответ</span>
-	  				</label>
-	  				<label>
-	  					<input type="checkbox">
-	  					<span>Первый ответ</span>
-	  				</label>
-	  			</li>
-	  			<li id="question_2">
-	  				Tea
-	  				<label>
-	  					<input type="checkbox">
-	  					<span>Первый ответ</span>
-	  				</label>
-	  				<label>
-	  					<input type="checkbox">
-	  					<span>Первый ответ</span>
-	  				</label>
-	  				<label>
-	  					<input type="checkbox">
-	  					<span>Первый ответ</span>
-	  				</label>
-	  			</li>
-	  			<li id="question_3">
-	  				Milk
-	  				<label>
-	  					<input type="checkbox">
-	  					<span>Первый ответ</span>
-	  				</label>
-	  				<label>
-	  					<input type="checkbox">
-	  					<span>Первый ответ</span>
-	  				</label>
-	  				<label>
-	  					<input type="checkbox">
-	  					<span>Первый ответ</span>
-	  				</label>
-	  			</li>
-			</ol>
-			<button type="submit" class="btn btn-primary">Проверить результаты</button>
-		</form> -->
+		<script type="text/html" id="test_template">
+			<h3 class="questionnaire_header"><%= test_title %></h3>
+			<form action="#">
+				<ol class="questions">
+					<% for (var i=0; i < questions.length; i++) { %>
+						<li>
+							<% var question = questions[i]; %>
+							<%= question.question %>
+							<% var answers = question.answers; %>
+							<% for (var j = 0; j < answers.length; j++) { %>
+								<label>
+									<input type="checkbox">
+									<span><%= answers[j] %></span>
+								</label>
+							<% } %>
+						</li>
+					<% } %>
+				</ol>
+				<button type="submit" class="btn btn-primary">
+					Проверить результаты
+				</button>
+			</form>
+		</script>
 		<script src="js/lodash.js"></script>
 		<script src="js/generator.js"></script>
 	</body>
