@@ -1,44 +1,130 @@
 'use strict';
-var content = {
-	test_title : 'test',
-	questions : [
-		{
-			question : 'Сколько тебе лет?',
-			answers : ['I am 22 years old','I am 23 years old']
-		}, {
-			question : 'Сколько маме лет?',
-			answers : ['She is 40 years old', 'She is 41 years old', 'She is 42 years old', 'She is 43 years old']
-		}, {
-			question : 'Сколько брату лет?',
-			answers : ['He is 30','He is 31', 'He is 32', 'He is 33','He is 34','He is 35','He is 36']
-		}
-	]
-};
-
-
-(function(data, key){
-	var body = document.getElementsByTagName("body")[0];
-	var div = document.createElement('div');
-	var template_code = document.getElementById("test_template").innerHTML;
+function Test() {
+	var dbkey;
+	var questions;
+	var answers;
 	var content;
 
-	content = JSON.parse(checkStorage(key));
-	div.innerHTML = _.template(template_code) (content);
+	this.init = function(data, key) {
+		dbkey = key;
+		var body = document.getElementsByTagName("body")[0];
+		var div = document.createElement('div');
+		var template_code = document.getElementById("test_template").innerHTML;
+		var content;
 
-	while (div.children.length > 0) {
-    	body.appendChild(div.children[0]);
-  	}
+		content = JSON.parse(checkStorage(key));
+		div.innerHTML = _.template(template_code) (data);
 
-  	function checkStorage(key) {
-		if(!localStorage[key]) {
-			try {
-				localStorage.setItem(key, JSON.stringify(data));
-			} catch (err) {
-				alert('Write to localStorage denied : ' + err);
+		while (div.children.length > 0) {
+	    	body.appendChild(div.children[0]);
+	  	}
+
+	  	function checkStorage(key) {
+			if(!localStorage[key]) {
+				try {
+					localStorage.setItem(key, JSON.stringify(data));
+				} catch (err) {
+					alert('Write to localStorage denied : ' + err);
+				}
+			}
+
+			return localStorage[key];
+	  	} 
+	};
+
+	this.checkAnswers = function(e) {
+		e.preventDefault();
+		
+		content = getContentFromDB(dbkey);
+		var list = document.querySelector('.questions');
+		questions = list.getElementsByTagName("li");
+
+		if(content.type == 'single_answer') {
+			answers = singleChoices.call(this, questions);
+		} else if(content.type == 'multi') {
+
+		}
+
+		checkResults.call(this, answers);
+	}
+
+	function getContentFromDB(dbkey) {
+		return JSON.parse(localStorage[dbkey]);
+	}
+
+	function singleChoices (questions) {
+		var isReadyAnswered = false;
+		var answers = {};
+
+		for( var i = 0; i < questions.length; i++ ) {
+			var variants = questions[i].getElementsByTagName('label');
+			answers[i] = [];
+			for( var j = 0; j < variants.length; j++) {
+				if (variants[j].querySelector('input').checked) {
+					if(isReadyAnswered) {
+						alert('You picked more answers then allowed...');
+						this.reset();
+						return;
+					} else {
+						isReadyAnswered = true;
+						answers[i].push(j);
+					}
+				}
+			}
+			if( typeof answers[i] === 'undefined' || answers[i] === null ) {
+				alert('Some questions no answered!!');
+				this.reset(questions);
+				return;
+			}
+			isReadyAnswered = false;
+		}
+		return answers;
+	}
+
+	function checkResults() {
+		var correctAnswers = 0;
+		var wrongAnswers = 0;
+		var isOk = true;
+
+		for( var key in answers) {
+			var length = answers[key].length;
+			for(var i = 0; i < length; i++) {
+				if(answers[key][i] == content.questions[key].correct_answer[i]) {
+					correctAnswers++;
+				} else {
+					wrongAnswers++;
+				}
 			}
 		}
 
-		return localStorage[key];
-  	} 
+		if (wrongAnswers) {
+			isOk = false;
+		}
+		if(isOk) {
+			alert('It is ok!\n' + 'Correct answers: ' + correctAnswers + '\n' 
+							+ 'Wrong answers: ' + wrongAnswers);
+		} else {
+			alert('It is wrong!\n' + 'Correct answers: ' + correctAnswers + '\n' 
+							+ 'Wrong answers: ' + wrongAnswers);
+		}
 
-})(content, 'test_content');
+		this.reset();
+	}
+
+	this.clear = function() {
+		localStorage.removeItem(dbkey);
+	}
+
+	this.reset = function() {
+		for( var i = 0; i < questions.length; i++ ) {
+			var variants = questions[i].getElementsByTagName('label');
+
+			for( var j = 0; j < variants.length; j++) {
+				var input = variants[j].querySelector('input');
+				if (input.checked) {
+					input.checked = false;
+				}
+			}
+		}
+	}	
+}
