@@ -1,0 +1,99 @@
+.vClavier {
+	background: white;
+	height: auto;
+	position: absolute;
+	top: 100%;
+	right: 0;
+	padding: 10px;
+	box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+	font-size: 14px;
+	opacity: 0.667;
+}
+
+.vClavier-line {
+	white-space: nowrap;
+}
+
+.vClavier-lines--header {
+	height: 24px;
+}
+
+.vClaviername {
+	float: left;
+}
+
+.vClavier-closebutton {
+	margin-right: 20px;
+	width: 13px;
+	height: 14px;
+	background-position: -668px -18px;
+	background-image: url('http://ssl.gstatic.com/inputtools/images/ita_sprite2.png');
+	float: right;
+}
+
+.padding-right {
+	padding-right: 20px;
+}
+
+.padding-left {
+	padding-left: 59px;
+}
+
+.clearfix:after {
+	content: '';
+	clear: both;
+	display: block;
+}
+
+.button-list {
+	line-height: 29px;
+	vertical-align: middle;
+	margin-top: 3px;
+}
+
+.vClavier li {
+	display: inline-block;
+	margin-left: 3px;
+	float: left;
+	background: #eee;
+	border-radius: 3px;
+}
+
+.letter {
+	width: 29px;
+	height: 29px;
+	border-radius: 2px;
+}
+
+.backline, .capslock {
+	width: 55px;
+	height: 29px;
+}
+
+.vClavier-icons {
+	display: block;
+	overflow: hidden;
+}
+
+.button-list li span {
+	position: relative;
+	top: 50%;
+    transform: translateY(-50%);
+    margin: 0 auto;
+}
+
+.backline span {
+	display: block;
+	height: 14px;
+	width: 23px;
+	background-image: url('http://ssl.gstatic.com/inputtools/images/ita_sprite2.png');
+	background-position: -714px -18px;
+}
+
+.capslock span {
+	display: block;
+	height: 19px;
+	width: 23px;
+	background-image: url('http://ssl.gstatic.com/inputtools/images/ita_sprite2.png');
+	background-position: -613px -65px;
+}

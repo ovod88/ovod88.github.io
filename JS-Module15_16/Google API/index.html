@@ -4,8 +4,9 @@
 		<meta charset="UTF-8">
 		<title>Google API</title>
 		<link rel="stylesheet" href="css/style.css">
-		<script src=""></script>
-		<script src=""></script>
+		<link rel="stylesheet" href="css/vClavier.css">
+		<script src="js/jquery-2.2.3.js"></script>
+		<script src="js/script.js"></script>
 	</head>
 	<body>
 		<div id="default_search">
@@ -15,14 +16,82 @@
 			</div>
 			<div class="search_box">
 				<div class="search_line">
-					<input type="text">
+					<input type="text" autofocus>
 				</div>
 				<div class="clavier">
-					
+					<span class="transliteracja">
+						<a href="javascript:void(0)"></a>
+						<em class="explain_transliteration">
+							Транслітерація
+							<div class="arrow-up"></div>
+						</em>
+					</span>
 				</div>
 			</div>
 			<div class="buttons">
 				<button>Search Google</button>
+			</div>
+
+			<div class="vClavier">
+				<div class="vClavier-lines">
+					<div class="vClavier-line vClavier-lines--header">
+						<p class="vClaviername">Екранна клавіатура</p>
+						<div class="vClavier-closebutton"></div>
+					</div>
+					<div class="vClavier-line">
+						<ul class="button-list clearfix">
+							<li class="letter">'</li>
+							<li class="letter">1</li>
+							<li class="letter">2</li>
+							<li class="letter">3</li>
+							<li class="letter">4</li>
+							<li class="letter">5</li>
+							<li class="letter">6</li>
+							<li class="letter">7</li>
+							<li class="letter">8</li>
+							<li class="letter">9</li>
+							<li class="letter">0</li>
+							<li class="letter">-</li>
+							<li class="letter">=</li>
+							<li class="vClavier-icons backline"><span></span></li>
+						</ul>
+					</div>
+					<div class="vClavier-line padding-left">
+						<ul class="button-list clearfix">
+							<li class="letter">й</li>
+							<li class="letter">ц</li>
+							<li class="letter">у</li>
+							<li class="letter">к</li>
+							<li class="letter">е</li>
+							<li class="letter">н</li>
+							<li class="letter">г</li>
+							<li class="letter">ш</li>
+							<li class="letter">щ</li>
+							<li class="letter">з</li>
+							<li class="letter">х</li>
+							<li class="letter">ї</li>
+							<li class="letter">ґ</li>
+						</ul>
+					</div>
+					<div class="vClavier-line">
+						<ul class="button-list clearfix">
+							<li class="vClavier-icons capslock"><span></span></li>
+							<li class="letter">ф</li>
+							<li class="letter">і</li>
+							<li class="letter">в</li>
+							<li class="letter">а</li>
+							<li class="letter">п</li>
+							<li class="letter">р</li>
+							<li class="letter">о</li>
+							<li class="letter">л</li>
+							<li class="letter">д</li>
+							<li class="letter">ж</li>
+							<li class="letter">є</li>
+						</ul>
+					</div>
+					<div class="vClavier-line"></div>
+					<div class="vClavier-line"></div>
+				</div>
 			</div>
 		</div>
 	</body>
