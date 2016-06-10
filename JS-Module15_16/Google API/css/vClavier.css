@@ -16,6 +16,8 @@
 
 .vClavier-lines--header {
 	height: 24px;
+	cursor: move;
+	border: none !important;
 }
 
 .vClaviername {
@@ -29,6 +31,12 @@
 	background-position: -668px -18px;
 	background-image: url('../img/ita_sprite2.png');
 	float: right;
+	cursor: pointer;
+	opacity: 0.667;
+}
+
+.vClavier-closebutton:hover {
+	opacity: 1;
 }
 
 .padding-right {

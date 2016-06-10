@@ -30,12 +30,15 @@ $(function() {
         	$(this).find("em").hide();
     });
 
-	$('.transliteracja a').click(function() {
+	$('.transliteracja a').click(function(event) {
+		event.stopPropagation();
 		var clavier = new VirtualClavier('uk');
 		clavier.init();		
 	});
 
     function VirtualClavier(language) {
+    	var isCapslockOn = false;
+    	var isShiftOn = false;
 
     	var content = {
     		'name': 'Екранна клавіатура',
@@ -44,13 +47,42 @@ $(function() {
 
     	}
     	if(language == 'uk') {
-    		content['second_line'] = ['й', 'ц', 'у', 'к', 'е', 'н', 'г', 'ш', 'щ', 'з', 'х', 'ї'];
+    		content['second_line'] = ['й', 'ц', 'у', 'к', 'е', 'н', 'г', 'ш', 'щ', 'з', 'х', 'ї', 'ґ'];
     		content['third_line'] = ['ф', 'і', 'в', 'а', 'п', 'р', 'о', 'л', 'д', 'ж', 'є'];
     		content['fourth_line'] = ['я', 'ч', 'с', 'м', 'и', 'т', 'ь', 'б', 'ю', '.'];
     	}
 
     	this.init = function() {
     		$('body').append(_.template($('#clavier_template').html()) (content));
+    		$('<link rel="stylesheet" href="css/vClavier.css" type="text/css" />').insertAfter($('link'));
+
+    		launchHandlers();
+    	}
+
+    	function launchHandlers() {	
+    		$('.vClavier-line').click(function(event) {
+    			event.stopPropagation();
+    			var $this = $(event.target), character;
+    			$this.mousedown(function() {
+        				$this.css('border', '1px inset #aaa'); 
+        			}).mouseup(function() {
+        				$this.css('border', '1px solid #aaa'); 
+        		});
+        		if($this.is('li.letter') && $search_box.hasClass('highlighted')) {
+        			character = $.trim($this.html());
+					$search_input.val( $search_input.val() + character );
+        		}
+			});
+
+			$('.vClavier-closebutton').click(function() {
+				$(this).parents('.vClavier').remove();
+			});
+
+			$('.vClavier-lines--header').hover(function() {
+				$(this).parents('.vClavier').draggable(
+					{containment: 'window'}
+				);
+			});
     	}
     }
 })
