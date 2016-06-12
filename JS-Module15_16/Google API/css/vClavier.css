@@ -20,6 +20,10 @@
 	border: none !important;
 }
 
+.vClavier-lines {
+	border: none !important;
+}
+
 .vClaviername {
 	float: left;
 }
