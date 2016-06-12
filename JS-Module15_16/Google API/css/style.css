@@ -4,6 +4,12 @@
 	font-family: Arial, sans-serif;
 }
 
+.clearfix:after {
+	content: '';
+	clear: both;
+	display: block;
+}
+
 #default_search {
 	position: absolute;
 	width: 50%;
@@ -11,10 +17,10 @@
   	left: 50%;
   	transform: translate(-50%, -50%);
 	text-align: center;
-	height: 200px;
+	height: auto;
 }
 
-.search_box {
+#default_search .search_box {
 	display: inline-block;
 	width: 80%;
 	height: 36px;
@@ -23,11 +29,13 @@
 	border-radius: 2px;
 }
 
-.search_box.highlighted {
+#default_search .search_box.highlighted,
+#search .search_box.highlighted {
 	border: 1px solid #00CCFF;
 }
 
-.search_box.hovered {
+#default_search .search_box.hovered,
+#search .search_box.hovered {
 	border: 1px solid #B0B0B0;
 }
 
@@ -124,4 +132,96 @@
   	border-left: 5px solid transparent;
   	border-right: 5px solid transparent;
   	border-bottom: 5px solid black;
+}
+
+#search {
+	width: 100%;
+	background-color: #f1f1f1;
+	border-color: #e5e5e5;
+	border-bottom: 1px solid #667;
+	height: 40px;
+}
+
+#search .logo {
+	display: inline-block;
+	width: 95px;
+    height: 40px;
+    margin-left: 20px;
+    overflow: hidden;
+    background-image: url(../img/nav_logo242.png);
+    background-position: 1px -37px;
+}
+
+#search .search_box, #search .logo, #search .buttons {
+	float: left;
+}
+
+#search .search_box {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	height: 30px;
+    width: 500px;
+    background: white;
+    margin-left: 20px;
+	border: 1px solid rgb(229, 229, 229);
+}
+
+#search .search_line {
+	position: static;
+	transform: none;
+}
+
+#search .transliteracja {
+	transform: translate(50%, -50%);
+}
+
+#search .clavier {
+	height: 30px;
+}
+
+#search .buttons {
+	height: 35px;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+#search .buttons button {
+	background-color: #4285f4;
+	margin: 0;
+	margin-left: -1px;
+	padding: 0;
+	width: 30px;
+}
+
+#search .buttons button span{
+	margin-left: 3px;
+	display: block;
+	height: 24px;
+    width: 24px;
+	background: url(../img/nav_logo242.png) no-repeat -107px -55px;
+}
+
+ul {
+	list-style: none;
+	margin-left: 40px;
+}
+
+ul li {
+	margin-top: 20px;
+}
+
+li .title {
+	color: #1a0dab;
+	line-height: 1.2;
+}
+
+li .url {
+	color: #006621;
+	font-size: 14px;
+}
+
+li .description {
+	font-size: 12px;
 }
