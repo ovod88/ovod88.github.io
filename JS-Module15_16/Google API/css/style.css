@@ -203,7 +203,7 @@
 	background: url(../img/nav_logo242.png) no-repeat -107px -55px;
 }
 
-ul {
+ul.result {
 	list-style: none;
 	margin-left: 40px;
 }

@@ -10,7 +10,9 @@ $(function() {
 		$search_box.removeClass('hovered');
 		e.stopPropagation();
 	};
-	
+
+	var clavier;
+	var watchInputInterval = setInterval(watchTextbox, 300);
 
 	$search_input.click(activateSearchLine).focus(activateSearchLine);
 
@@ -31,6 +33,7 @@ $(function() {
 	function askBing() {
 		var azureKey = btoa(':8IyMlq81z0M+RY63ZD4TyXP2Il8Fye8c83AgkXxM1NE');
     	var myUrl = 'https://api.datamarket.azure.com/Bing/Search/v1/Web?Query=%27' + $search_input.val() + '%27' + '&$format=json';
+
     	if($search_input.val() && $search_input.val().trim().length) {
 			$.ajax({
 	      		method: 'post',
