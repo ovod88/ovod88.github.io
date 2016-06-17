@@ -1,2 +1,5 @@
 *.psd
+
 tests/*
+
+JS_module17-18/node_modules/*
