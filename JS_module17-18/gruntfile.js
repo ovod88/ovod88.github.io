@@ -8,7 +8,8 @@ module.exports = function(grunt) {
             	options: {
           			separator: ';',
         		},
-        		src: ['Google API/js/libs/lodash/.js', 'Google API/js/libs/*.js', 'Google API/js/src//script.js'],
+        		src: ['Google API/js/libs/lodash/.js', 'Google API/js/libs/jquery-2.2.3.js',
+                        'Google API/js/libs/jquery-ui.js', 'Google API/js/src/npscript.js'],
         		dest: 'Google API/js/dist/script.min.js'
     		},
             css : {

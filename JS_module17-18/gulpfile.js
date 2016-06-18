@@ -2,10 +2,11 @@ var gulp = require('gulp');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify'); 
 var concatCss = require('gulp-concat-css');
-var uglifyCss = require('gulp-minify-css'); 
- 
+var uglifyCss = require('gulp-minify-css');
+
 gulp.task('javascript', function() {
-  return gulp.src(['Google API/js/libs/lodash/.js', 'Google API/js/libs/*.js', 'Google API/js/src//script.js'])
+  return gulp.src(['Google API/js/libs/lodash/.js', 'Google API/js/libs/jquery-2.2.3.js',
+                        'Google API/js/libs/jquery-ui.js','Google API/js/src/script.js'])
       	.pipe(concat('script.min.js', {newLine: ';'}))
       	.pipe(uglify())
     	.pipe(gulp.dest('Google API/js/dist/'));
