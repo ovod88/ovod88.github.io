@@ -3,6 +3,7 @@
 tests/*
 
 JS_module17-18/node_modules/*
+JS-Module19-20/node_modules/*
 **/**/dist/*
 *.iml
 .idea/*
