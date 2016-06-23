@@ -1,3 +1,37 @@
-* {
-  font-family: Ubuntu, Arial, sans-serif;
+header {
+  @extend %center;
+}
+.top {
+  margin-top: 38px;
+  @extend %clearfix;
+}
+
+.logo_text {
+  float: left;
+  margin-left: -6px;
+
+  p {
+    margin: 0;
+  }
+
+  .logo_line1 {
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: -5px;
+  }
+
+  .logo_line2 {
+    font-size: 12px;
+    margin-left: 2px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+
+  .logo_img {
+    float: left;
+  }
+}
+
+.social-nav {
+  float: right;
 }

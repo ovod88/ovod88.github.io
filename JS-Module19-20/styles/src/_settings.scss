@@ -1,4 +1,26 @@
 @import "mixins";
 
-@include font-face(Ubuntu, "../../fonts/dist/", ubuntu-l-webfont, normal, normal);
-@include font-face(Ubuntu, "../../fonts/dist/", ubuntu-m-webfont, bold, normal);
+$content-size: 1160px;
+$top-height: 36px;
+
+
+@include font-face(Ubuntu, "fonts/dist/", ubuntu-l-webfont, normal, normal);
+@include font-face(Ubuntu, "fonts/dist/", ubuntu-m-webfont, bold, normal);
+
+body {
+	font-family: Ubuntu, Arial, sans-serif;
+}
+
+%center {
+	width: $content-size;
+	margin: 0 auto;
+}
+
+%clearfix {
+	&:after {
+		content: '';
+		clear: both;
+		display: block;
+	}
+}
+
