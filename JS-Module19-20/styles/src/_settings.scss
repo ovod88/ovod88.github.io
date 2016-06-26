@@ -1,14 +1,30 @@
 @import "mixins";
 
 $content-size: 1160px;
+
 $top-height: 36px;
 
+$site-navigation-height: 55px;
+$site-navigation-box-color: #2a2d32;
+$site-navigation-text-hover-color: #f4b60d;
+$site-navigation-link-first-color: #248cec;
+$site-navigation-link-text-color: white;
+
+$site-navigation-search-box-height: 35px;
+$site-navigation-search-line-width: 240px;
+$site-navigation-search-line-color: #35383c;
+$site-navigation-box-border-color: #181a1d;
+$site-navigation-search-icon-color: #595b5e;
 
 @include font-face(Ubuntu, "fonts/dist/", ubuntu-l-webfont, normal, normal);
 @include font-face(Ubuntu, "fonts/dist/", ubuntu-m-webfont, bold, normal);
 
 body {
 	font-family: Ubuntu, Arial, sans-serif;
+}
+
+nav {
+	list-style: none;
 }
 
 %center {
