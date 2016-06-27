@@ -1,0 +1,14 @@
+{
+  "name": "js_module19_20",
+  "description": "Bower json file",
+  "main": "index.js",
+  "authors": [
+    "Vova Khrystenko"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/ovod88/GoIT_Frontend",
+  "dependencies": {
+    "jquery": "^3.0.0",
+    "jcarousel": "https://github.com/jsor/jcarousel.git#^0.3.4"
+  }
+}

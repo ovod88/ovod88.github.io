@@ -16,6 +16,11 @@ $site-navigation-search-line-color: #35383c;
 $site-navigation-box-border-color: #181a1d;
 $site-navigation-search-icon-color: #595b5e;
 
+$slider-height: 470px;
+$slider-pagination-color: white;
+$slider-pagination-active-color: #001d1d;
+$slider-pagination-border-color: white;
+
 @include font-face(Ubuntu, "fonts/dist/", ubuntu-l-webfont, normal, normal);
 @include font-face(Ubuntu, "fonts/dist/", ubuntu-m-webfont, bold, normal);
 
