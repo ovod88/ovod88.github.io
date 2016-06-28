@@ -10,7 +10,7 @@ gulp.task('sass', function() {
 });
 
 gulp.task('concatCss', ['sass'], function () {
-    return gulp.src(['styles/dist/reset.css', 'styles/dist/core.css' ])
+    return gulp.src(['styles/dist/reset.css', 'styles/dist/bootstrap.css', 'styles/dist/core.css' ])
         .pipe(concatCss("styles/dist/style.css"))
         .pipe(gulp.dest('./'));
 });
