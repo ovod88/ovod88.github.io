@@ -21,6 +21,13 @@ $slider-pagination-color: white;
 $slider-pagination-active-color: #001d1d;
 $slider-pagination-border-color: white;
 
+$read-more-number-size: 90px;
+$read-more-number-color: #efeff0;
+$read-more-text-left-margin: 120px;
+$read_more_article_header_size:20px;
+$read_more_article_link_size: 13px;
+$read_more_article_link_color_hover: #248cec;
+
 @include font-face(Ubuntu, "fonts/dist/", ubuntu-l-webfont, normal, normal);
 @include font-face(Ubuntu, "fonts/dist/", ubuntu-m-webfont, bold, normal);
 
@@ -35,6 +42,11 @@ nav {
 %center {
 	width: $content-size;
 	margin: 0 auto;
+}
+
+%capitalise_bold {
+	text-transform: capitalize;
+	font-weight: bold;
 }
 
 %clearfix {

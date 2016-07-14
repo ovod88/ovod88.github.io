@@ -21,10 +21,10 @@ gulp.task('watch-sass',function() {
 
 gulp.task('sprite', function() {
     var spriteData =
-        gulp.src('img/sprite-social-src/*.*')
+        gulp.src('img/src/*.*')
             .pipe(sprite({
-                imgName: 'img/sprite-social-dist/social-icons.png',
-                cssName: '_sprite-social-icons.scss',
+                imgName: 'icons.png',
+                cssName: '_sprite-icons.scss',
                 cssFormat: 'scss',
                 algorithm: 'binary-tree',
                 padding: 1,
@@ -44,7 +44,7 @@ gulp.task('sprite', function() {
                 }
             }));
 
-    spriteData.img.pipe(gulp.dest('img/sprite-social-dist/'));
+    spriteData.img.pipe(gulp.dest('img/sprite-dist/'));
     spriteData.css.pipe(gulp.dest('styles/src/'));
 });
 
