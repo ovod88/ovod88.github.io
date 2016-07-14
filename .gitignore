@@ -5,6 +5,7 @@ tests/*
 JS_module17-18/node_modules/*
 JS-Module19-20/node_modules/*
 **/**/dist/*
+**/**/sprite-dist/*
 **/bower_components/*
 bash.exe.*
 *.iml
