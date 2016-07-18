@@ -1,6 +1,6 @@
 @import "sprite-icons";
 
-header, .content {
+header, .header_content, .services_content, .news_banners_data {
   @extend %center;
 }
 
@@ -11,69 +11,170 @@ header, .content {
 
 @import "slider";
 
-.read_more_section {
-  margin-top: 80px;
-}
+@import "read_more_section";
 
-.read_more_article {
+@import "services";
 
-  padding-left: 23px;
-  padding-right: 23px;
+.news_banners {
+  @extend %clearfix;
+  background: $news-banners-color;
 
-  &:first-child {
-    padding-left: 0;
+  .news_banners_data {
+    @extend %clearfix;
+    padding: 60px 0 80px 0;
   }
 
-  &:last-child {
-    padding-right: 0;
+  h3 {
+    color: black;
+    text-transform: capitalize;
+    padding-bottom: 50px;
   }
 
-
-
-  .read_more_article_number {
-    position: absolute;
-    font-size: $read-more-number-size;
-    font-weight: bold;
-    color: $read-more-number-color;
-    line-height: $read-more-number-size - 30px;
+  .news {
+    &:first-child {
+      padding-left: 0;
+      padding-right: 30px;
+    }
+    h3 {
+      padding-left: 5px;
+    }
   }
+  .banners {
+    padding: 0;
 
-  .read_more_article_text_block {
-    float: right;
-    margin-left: $read-more-text-left-margin;
-
-    .read_more_article_header {
-      font-size: $read_more_article_header_size;
-      line-height : $read_more_article_header_size;
-      @extend %capitalise_bold;
-      padding: 12px 0 22px 0;
+    h3 {
+      font-weight: bold;
     }
 
-    .read_more_article_text {
-      padding-bottom: 20px;
-    }
+    .accordions {
+      width: 100%;
+      @extend %clearfix;
 
-    .read_more_article_link {
-      @extend %capitalise_bold;
+      li {
+        display: block;
+        @extend %clearfix;
+        &:hover {
+          cursor: pointer;
+        }
+
+
+        &:first-child{
+          margin-top: 0;
+        }
+        margin-top: 5px;
+
+        div {
+          display: inline-block;
+          height: 40px;
+          line-height: 40px;
+          vertical-align: middle;
+          background-color: white;
+          border: 1px solid #e8e8e8;
+
+          &.activated {
+            background: $news-banners-accordions-clicked-background-color;
+            color: $news-banners-accordions-clicked-color;
+          }
+        }
+        p {
+          display: none;
+          clear: both;
+          padding: 25px 0 25px 30px;
+          color: $new-banners-text-color;
+        }
+      }
+
+      .sign {
+        float: left;
+        text-align: center;
+        width: 40px;
+        font-size: 16px;
+      }
+
+      .accordion {
+        float: left;
+        width: 93%;
+        text-transform: uppercase;
+        padding-left: 10px;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .new {
+    width: 100%;
+    display: inline-block;
+    position: relative;
+    padding-bottom: 25px;
+
+    .cropper2 {
+      width: $news-banners-new-img-size;
+      height: $news-banners-new-img-size;
       display: inline-block;
-      color: black;
-      &:hover {
-        color: $read_more_article_link_color_hover;
-      }
-      span:first-child:after {
-        display: inline-block;
-        content: '';
-        margin-left: 5px;
-        @extend .arrow;
-      }
+      float: left;
+      @extend %cropping;
     }
-    span {
-      display: block;
+
+    .day, .month {
+      width: $news-banners-new-img-size-date;
+      height: $news-banners-new-img-size-date;
+      line-height: $news-banners-new-img-size-date;
+      text-align: center;
+      vertical-align: middle;
+      position: absolute;
+      left: -3%;
+      z-index: 2;
+    }
+
+    .month {
+      background: $news-banners-new-img-date-month-background-color;
+      color: $news-banners-new-img-date-month-color;
+      top: 10%;
+    }
+
+    .day {
+      background: $news-banners-new-img-date-day-background-color;
+      color: $news-banners-new-img-date-day-color;
+      font-weight: bold;
+      top: 31%;
+    }
+
+    .new_text {
+      float: left;
+      display: inline-block;
+      padding-left: 35px;
+      width: 70%;
+
+      a {
+        text-transform: capitalize;
+        font-size: 17px;
+        font-weight: bold;
+        color: black;
+
+        &:hover {
+          color: $new-banners-new-text-color-link-hover;
+        }
+      }
+      p {
+        color: $new-banners-text-color;
+        span {
+          color: $new-banners-new-text-color-author;
+        }
+      }
+
+      .text {
+        padding-top: 25px;
+      }
     }
   }
 
-  .read_more_article_icon {
-    display: block;
+  #circules {
+    left: -73%;
+    top: 0;
+  }
+
+  #engineer {
+    left: -5%;
+    top: -18px;
   }
 }
-
