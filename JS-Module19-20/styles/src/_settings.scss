@@ -52,6 +52,13 @@ $news-banners-new-img-date-day-color: black;
 $news-banners-accordions-clicked-background-color: #f4b60d;
 $news-banners-accordions-clicked-color: white;
 
+
+$footer-background: #2a2d32;
+$footer-links-border-color: #393c40;
+$footer-links-color: #828385;
+$footer-links-hover-color: #248cec;
+$footer-bottom-background: #35383c;
+
 @include font-face(Ubuntu, "fonts/dist/", ubuntu-l-webfont, normal, normal);
 @include font-face(Ubuntu, "fonts/dist/", ubuntu-m-webfont, bold, normal);
 
