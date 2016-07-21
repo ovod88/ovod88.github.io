@@ -77,17 +77,17 @@ $-r-b-p-total-width: 328px;
 $-r-b-p-total-height: 227px;
 $-r-b-p-image: 'icons.png';
 $-r-b-p: (0px, 128px, 0px, -128px, 143px, 62px, 328px, 227px, 'icons.png', 'RBP', );
-$arrow-name: 'arrow';
-$arrow-x: 316px;
-$arrow-y: 178px;
-$arrow-offset-x: -316px;
-$arrow-offset-y: -178px;
-$arrow-width: 10px;
-$arrow-height: 9px;
-$arrow-total-width: 328px;
-$arrow-total-height: 227px;
-$arrow-image: 'icons.png';
-$arrow: (316px, 178px, -316px, -178px, 10px, 9px, 328px, 227px, 'icons.png', 'arrow', );
+$arrow-hover-name: 'arrow:hover';
+$arrow-hover-x: 316px;
+$arrow-hover-y: 178px;
+$arrow-hover-offset-x: -316px;
+$arrow-hover-offset-y: -178px;
+$arrow-hover-width: 10px;
+$arrow-hover-height: 9px;
+$arrow-hover-total-width: 328px;
+$arrow-hover-total-height: 227px;
+$arrow-hover-image: 'icons.png';
+$arrow-hover: (316px, 178px, -316px, -178px, 10px, 9px, 328px, 227px, 'icons.png', 'arrow:hover', );
 $arrow-name: 'arrow';
 $arrow-x: 305px;
 $arrow-y: 178px;
@@ -289,7 +289,7 @@ $twitter: (70px, 191px, -70px, -191px, 16px, 16px, 328px, 227px, 'icons.png', 't
 $spritesheet-width: 328px;
 $spritesheet-height: 227px;
 $spritesheet-image: 'icons.png';
-$spritesheet-sprites: ($-atx, $-crave, $-cruiser, $-g-e-a-r, $-m-o-t-o, $-r-b-p, $arrow, $arrow, $email, $facebook-hover, $facebook, $iphone, $linkedin-hover, $linkedin, $location, $logoicon, $params, $rss-hover, $rss, $settings, $skype-hover, $skype, $truck, $twitter-hover, $twitter, );
+$spritesheet-sprites: ($-atx, $-crave, $-cruiser, $-g-e-a-r, $-m-o-t-o, $-r-b-p, $arrow-hover, $arrow, $email, $facebook-hover, $facebook, $iphone, $linkedin-hover, $linkedin, $location, $logoicon, $params, $rss-hover, $rss, $settings, $skype-hover, $skype, $truck, $twitter-hover, $twitter, );
 $spritesheet: (328px, 227px, 'icons.png', $spritesheet-sprites, );
 
 /*
