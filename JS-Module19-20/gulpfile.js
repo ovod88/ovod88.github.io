@@ -2,6 +2,9 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var concatCss = require('gulp-concat-css');
 var sprite = require('gulp.spritesmith');
+var cleanCSS = require('gulp-clean-css');
+var sourcemaps = require('gulp-sourcemaps');
+var rename = require("gulp-rename");
 
 gulp.task('sass', function() {
     return gulp.src('styles/src/core.scss')
@@ -11,7 +14,8 @@ gulp.task('sass', function() {
 
 gulp.task('concatCss', ['sass'], function () {
     return gulp.src(['styles/dist/reset.css', 'styles/dist/bootstrap.css', 'styles/dist/core.css' ])
-        .pipe(concatCss("styles/dist/style.css"))
+        .pipe(concatCss("styles/dist/style.min.css"))
+        .pipe(cleanCSS({compatibility: 'ie8'}))
         .pipe(gulp.dest('./'));
 });
 
