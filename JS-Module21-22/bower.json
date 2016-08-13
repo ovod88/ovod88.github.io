@@ -1,0 +1,14 @@
+{
+  "name": "js-module21-22",
+  "description": "",
+  "main": "hello.js",
+  "authors": [
+    "Khrystenko Volodymyr"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "private": true,
+  "dependencies": {
+    "jquery": "^3.1.0"
+  }
+}
