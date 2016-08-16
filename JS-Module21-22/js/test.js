@@ -32,7 +32,7 @@ function Test() {
 		if(answers) {
 			checkResults.call(this, answers);	
 		}
-	}
+	};
 
 	function multiChoices(questions) {
 		var answers = {};
@@ -190,7 +190,7 @@ function Test() {
 
 	this.clear = function(dbkey) {
 		localStorage.removeItem(dbkey);
-	}
+	};
 
 	this.reset = function() {
 		for( var i = 0; i < questions.length; i++ ) {
