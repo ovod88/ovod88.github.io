@@ -1,0 +1,2 @@
+To launch optimisation from root directory:
+node r.js -o build.js
