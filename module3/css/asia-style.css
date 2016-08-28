@@ -4,7 +4,7 @@ html {
   	-moz-background-size: cover;
   	-o-background-size: cover;
   	background-size: cover; 
-  	font-family: Tahoma;
+  	font-family: Tahoma, Arial, sans-serif;
 }
 
 .wrapper {
@@ -12,26 +12,19 @@ html {
 	margin: 0 auto;
 }
 
-.inline { 
-    display: inline-block; 
-}
-
 header {
-	overflow: hidden;
-	margin-bottom: 0;
+	height: 147px;
 }
 
 .logo {
 	position: relative;
 	float: left;
     width: 276px;
-    height: 147px;
 }
 
 /* resize images */
 .logo img {
     width: 100%;
-    height: 147px;
 }
 
 .logo p {
@@ -39,23 +32,19 @@ header {
 	color: white;
 	position: absolute;
 	bottom: 10px;
-	margin: 0px 0 0 -25%;
+	transform: translateX(-50%);
   	left: 50%;
 }
 
 header .contacts {
 	float: right;
 	height: 147px;
-	width: 276px;
-	position: relative;
+	line-height: 147px;
 }
 
-
 header .contacts .text {
-	position: absolute;
-	width: auto;
-	bottom: 10px;
-	right: 0;
+	display: inline-block;
+	vertical-align: bottom;
 }
 
 header .contacts p span {
@@ -71,7 +60,7 @@ header .contacts p {
 	margin-top: 14px;
 	clear:both;
 	overflow: hidden;
-	margin-bottom: 20%;
+	margin-bottom: 200px;
 }
 
 .item {
@@ -100,7 +89,6 @@ header .contacts p {
 	transform: translateX(5px);
 }
 
-
 .photo img {
 	box-sizing: border-box;
 	width: 100%;
@@ -109,71 +97,46 @@ header .contacts p {
 
 footer {
 	margin-bottom: 40px;
-}
-
-footer p {
 	color: white;
 	text-align: center;
 }
 
-
-@media screen and (max-width:770px) {
-	header .contacts {
-		width: 117px;
-		float:right;
-	}
-
-}
-
-
-	
-@media screen and (max-width:530px) {
+@media screen and (max-width: 481px) {
 	header {
-		text-align: center;
-	}
-	
-	.item {
-		width: 50%;
-		padding-bottom: 50%;
+		height: 100%;
 	}
 
-	.inline {
-		display: inline-block;
+	.logo {
+		width: 100%;
 		float: none;
-		margin-top: -2px;
-		margin-bottom: -2px;
+	}
+
+	header .contacts {
+		line-height: 100%;
+		height: 100%;
+		width: 100%;
+		text-align: center;
+		overflow: hidden;
+		float: none;
+	}
+
+	.content {
+		margin-bottom: 50px;
 	}
 
 	.first {
-		transform: translateX(0px);
+		transform: none;
 	}
-
-	.third {
-		transform: translateX(0px);
-	}
-
-
-	header .contacts {
-		width: 276px;
-		height: 70px;
-		float: none;
-	}
-
-}
-
-@media screen and (max-width: 480px) {
-	.logo {
-		width: 218px;
-	}
-
-	header .contacts {
-		width: 218px;
+	
+	.photo {
+		position: static;
 	}
 
 	.item {
 		display: block;
 		width: 100%;
-		margin-bottom: 25%;
+		margin-bottom: 50px;
+		padding-bottom: 0;
 	}
 }
 
