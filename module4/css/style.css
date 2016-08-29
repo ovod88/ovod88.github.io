@@ -28,7 +28,6 @@ body {
   	height: 134px;
 	width: 100%;
 	background-image: linear-gradient(#17cee2, white);
-	z-index: 1;
 }
 
 .wrapper {
@@ -52,6 +51,7 @@ header .logo {
 	float: left;
 	width: 283px;
     height: 164px;
+	left: 20px;
 }
 
 header .logo img {
@@ -91,7 +91,6 @@ header .contacts p span {
 
 header .contacts ul {
 	position: absolute;
-	width: 355px;
 	bottom: 10px;
 }
 
@@ -185,7 +184,6 @@ ul.submenu>li>a {
 	width: 100%;
 	overflow: hidden;
 	color: #424c43;
-	z-index: 1;
 }
 
 .colons>div {
@@ -218,14 +216,14 @@ ul.submenu>li>a {
 
 .colons .centerColumn {
 	width: 60%;
-	float: left;
+	margin-left: 20%;
+	margin-right: 20%;
 }
 
 .colons .rightColumn {
-	float: left;
+	float: right;
 	width: 20%;
 	background: #edeef0;
-	margin-left: -1px;
 	border-left: 1px solid #c7cacf;
 }
 
