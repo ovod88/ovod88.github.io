@@ -15,7 +15,6 @@ body, html {
 
 main {
 	width: 909px;
-	height: 1310px;
 	margin: 0 auto;
 	margin-top: 23px;
 }
@@ -23,39 +22,38 @@ main {
 main>header {
 	width: 100%;
 	padding-left: 8px;
-	height: 27px;
 	line-height: 27px;;
 }
 
-main>header>p.tel_number {
+.tel_number {
 	color: #5e696d;
-	font-family: Arial;
+	font-family: Arial, sans-serif;
 	padding-right: 17px;
 	float: left;
 	font-size: 18px;
 }
 
-main>header>p.tel_number>img {
+.tel_number>img {
 	vertical-align: middle;
 }
 
-main>header>p.tel_number>span {
+.tel_number>span {
 	vertical-align: middle;
-	font-family: Arial;
+	font-family: Arial, sans-serif;
 	margin-left: -2px;
 }
 
-main>header>p.tel_number>span>span#first {;
+.tel_number #first {;
 	margin-left: -4px;
 	
 }
 
-main>header>p.tel_number>span>span#second {
+.tel_number #second {
 	padding-left: 4px;
 
 }
 
-main>header section.login {
+.login {
 	border-radius: 3px;
 	float: left;
 	background: linear-gradient(to bottom, #1e5799 0%,#207cca 0%,#1e6383 0%,#0d365a 100%);
@@ -64,14 +62,14 @@ main>header section.login {
 	margin-left: 1px;
 }
 
-main>header section.login img {
+.login img {
 	float: left;
 	padding-top: 4px;
 	padding-left: 6px;
 	padding-right: 5px;
 }
 
-main>header section.login input[type=text] {
+.login input[type=text] {
 	float: left;
 	max-width: 113px;
 	max-height: 16px;
@@ -81,7 +79,7 @@ main>header section.login input[type=text] {
 	margin-right: 7px;
 }
 
-main>header section.login .vl {
+.login .vl {
 	float: left;
 	width: 1px;
 	height: 40%;
@@ -91,7 +89,7 @@ main>header section.login .vl {
 	margin-top: 7px;
 }
 
-main>header section.login a.regitration {
+.login .regitration {
 	font-size: 11px;
 	float: left;
 	color: white;
@@ -100,7 +98,7 @@ main>header section.login a.regitration {
     bottom: 2px;
 }
 
-main>header section.login a.forget_password {
+.login .forget_password {
 	color: #bfbfbf;
 	font-size: 12px;
 	text-decoration: underline;
@@ -110,7 +108,7 @@ main>header section.login a.forget_password {
 	margin-top: -2px;
 }
 
-main>header section.common_links {
+.common_links {
 	float: left;
 	width: 76px;
 	border: 1px solid #c1c8cb;
@@ -119,7 +117,7 @@ main>header section.common_links {
 	border-radius: 12px;
 }
 
-main>header section.common_links a {
+.common_links a {
 	float: left;
 	width: 33%;
 	height: 100%;
@@ -127,7 +125,7 @@ main>header section.common_links a {
 	position: relative;
 }
 
-main>header section.common_links img {
+.common_links img {
 	position: absolute;
 	left: 0;
 	right: 0;
@@ -136,26 +134,26 @@ main>header section.common_links img {
 	margin: auto;
 }
 
-main>header section.common_links img#home_icon {
+.common_links #home_icon {
 	top: -4px;
 }
 
-main>header section.common_links img#scheme_icon {
+.common_links #scheme_icon {
 	left: -6px;
 }
 
-main>header section.common_links img#letter_icon {
+.common_links #letter_icon {
 	right: 11px;
 	top: -1px;
 }
 
-section.menu>img {
+.menu>img {
 	margin-left: 0;
 	margin-top: 9px;
 	margin-bottom: 5px;
 }
 
-section.menu div.main_menu {
+.menu .main_menu {
 	width: 100%;
 	height: 35px;
 	border-radius: 4px;
@@ -163,79 +161,72 @@ section.menu div.main_menu {
 	margin-bottom: 9px;
 }
 
-section.menu div.main_menu nav.left_list {
+.main_menu .left_list {
 	float: left;
 	line-height: 34px;
-	height: 34px;
 	margin-left: 125px;
 }
 
-section.menu div.main_menu nav.left_list a {
+.main_menu .left_list a {
 	text-transform: uppercase;
 	font-size: 13px;
-	display: inline-block;
-	height: 26px;
 	line-height: 26px;
 	color: #b1bcc0;
 	padding-right: 16px;
 	padding-left: 16px;
-	vertical-align: middle;
 	position: relative;
 	bottom: 1px;
 }
 
-section.menu div.main_menu nav.left_list a:hover {
+.main_menu .left_list a:hover {
 	background: blue;
 	border-radius: 17px;
-	vertical-align: middle;
 	color: white;
 }
 
-section.menu div.main_menu div.right_list {
+.main_menu .right_list {
 	float: right;
 	margin-right: 13px;
 }
 
-section.menu div.main_menu div.right_list nav.right_list {
+.main_menu .right_nav {
 	float: left;
-	height: 34px;
 	line-height: 34px;
 }
 
-section.menu div.main_menu div.right_list nav.right_list * {
+.main_menu .right_nav * {
 	vertical-align: middle;
 	display: inline-block;
 }
 
-section.menu div.main_menu div.right_list nav.right_list p {
+.main_menu .right_nav p {
 	color: #929b9f;
 	font-size: 10px;
 }
 
-section.menu div.main_menu div.right_list nav.right_list span {
+.main_menu .right_nav span {
 	color: #0d5a8f;
 }
 
-section.menu section.search {
-	width: 100%;
+.menu .search {
 	height: 132px;
 	margin-bottom: 16px;
 }
 
-section.menu section.search .search_auto_box {
+.search .search_auto_box {
 	float: left;
 	width: 415px;
 	height: 100%;
 	border-radius: 15px;
-	margin-right: 16px;
+	margin-right: 19px;
 	margin-left: 3px;
 	-webkit-box-shadow: 3px 3px 5px 1px rgba(153,153,153,1);
 	-moz-box-shadow: 3px 3px 5px 1px rgba(153,153,153,1);
 	box-shadow: 3px 3px 5px 1px rgba(153,153,153,1);
 }
 
-section.menu section.search .search_tires_box {
-	margin-right: 11px;
+.search .search_tires_box {
+	margin-right: 14px;
 	float: left;
 	width: 192px;
 	height: 100%;
@@ -245,7 +236,7 @@ section.menu section.search .search_tires_box {
 	box-shadow: 3px 3px 5px 1px rgba(153,153,153,1);
 }
 
-section.menu section.search .search_disks_box {
+.search .search_disks_box {
 	float: left;
 	width: 266px;
 	height: 100%;
@@ -401,7 +392,7 @@ select.ET {
 	background: url(../img/select_arrow.png) 100% / 20% no-repeat;
 }
 
-.search_form .selects select.year_auto {
+.search_form .selects .year_auto {
 	background: url(../img/select_arrow.png) 100% / 36% no-repeat;
 }
 
@@ -531,28 +522,29 @@ select.ET {
     right: 10px;
 }
 
-section.catalog {
+.catalog {
 	overflow: hidden;
 	margin-bottom: 27px;
 }
 
-section.catalog>div {
+.catalog>div,
+.catalog>aside{
 	padding-bottom: 20000px;
 	margin-bottom: -20000px;
 }
 
-section.catalog div.left_catalog,
-section.catalog div.right_catalog {
+.catalog .left_catalog,
+.catalog .right_catalog {
 	width: 181px;
 	float: left;
 }
 
-section.catalog div.right_catalog {
+.catalog .right_catalog {
 	margin-left: 7px;
 }
 
-section.catalog div.left_catalog div.product,
-section.catalog div.right_catalog div.product {
+.catalog .left_catalog .product,
+.catalog .right_catalog .product {
 	border: 1px solid #909ba0;
 	height: 25px;
 	line-height: 25px;
@@ -565,26 +557,26 @@ section.catalog div.right_catalog div.product {
 	width: 178px;
 }
 
-section.catalog div.left_catalog div.product *,
-section.catalog div.right_catalog div.product * {
+.catalog .left_catalog .product *,
+.catalog .right_catalog .product * {
 	float: left;
 }
 
-section.catalog div.left_catalog div.product>img,
-section.catalog div.right_catalog div.product>img {
+.catalog .left_catalog .product>img,
+.catalog .right_catalog .product>img {
 	margin-left: 1px;
 	margin-top: 1px;
 }
 
-section.catalog div.left_catalog div.product>p,
-section.catalog div.right_catalog div.product>p {
+.catalog .left_catalog .product>p,
+.catalog .right_catalog .product>p {
 	margin-top: 1px;
 	letter-spacing: 0.5px;
 	padding-left: 3px;
 }
 
-section.catalog div.left_catalog dt,
-section.catalog div.right_catalog dt {
+.catalog .left_catalog dt,
+.catalog .right_catalog dt {
 	width: 137px;
 	height: 25px;
 	line-height: 25px;
@@ -594,23 +586,23 @@ section.catalog div.right_catalog dt {
 	margin-top: -4px;;
 }
 
-section.catalog div.right_catalog dt {
+.catalog .right_catalog dt {
 	margin-left: 16px;
 }
 
-section.catalog div.left_catalog dt *,
-section.catalog div.right_catalog dt * {
+.catalog .left_catalog dt *,
+.catalog .right_catalog dt * {
 	float: left;
 }
 
-section.catalog div.left_catalog dt>img,
-section.catalog div.right_catalog dt>img {
+.catalog .left_catalog dt>img,
+.catalog .right_catalog dt>img {
 	margin-left: 6px;
 	margin-top: 1px;
 }
 
-section.catalog div.left_catalog dt>p,
-section.catalog div.right_catalog dt>p {
+.catalog .left_catalog dt>p,
+.catalog .right_catalog dt>p {
 	font-size: 14px;
 	margin-top: 1px;
 	margin-left: 5px;
@@ -618,8 +610,8 @@ section.catalog div.right_catalog dt>p {
 	text-transform: uppercase;
 }
 
-section.catalog div.left_catalog dd,
-section.catalog div.right_catalog dd {
+.catalog .left_catalog dd,
+.catalog .right_catalog dd {
 	display: list-item;
 	list-style-type: circle;
 	font-size: 13px;
@@ -627,28 +619,28 @@ section.catalog div.right_catalog dd {
 	margin-left: 53px;
 }
 
-section.catalog div.right_catalog dl {
+.catalog .right_catalog dl {
 	margin-bottom: 12px;
 }
 
-section.catalog div.right_catalog dd {
+.catalog .right_catalog dd {
 	margin-left: 23px;
 	list-style-type: none;
 	font-size: 13px;
 	line-height: 2;
 }
 
-section.catalog div.left_catalog dd>a {
+.catalog .left_catalog dd>a {
 	position: relative;
 	left: -6px;
 	color: #465961;
 }
 
-section.catalog div.right_catalog dd input[type=checkbox] {
+.catalog .right_catalog dd input[type=checkbox] {
 	display: none;
 }
 
-section.catalog div.right_catalog dd input[type=checkbox] + span {
+.catalog .right_catalog dd input[type=checkbox] + span {
 	display: inline-block;
 	width: 8px;
 	height: 8px;
@@ -659,7 +651,7 @@ section.catalog div.right_catalog dd input[type=checkbox] + span {
 	margin-left: 5px;
 }
 
-section.catalog div.right_catalog dd input[type=checkbox]:checked + span:before {
+.catalog .right_catalog dd input[type=checkbox]:checked + span:before {
 	content: '✓';
 	display: block;
 	width: 7px;
@@ -667,7 +659,7 @@ section.catalog div.right_catalog dd input[type=checkbox]:checked + span:before 
 	text-align: center;
 }
 
-section.catalog div.right_catalog input[type=submit] {
+.catalog .right_catalog input[type=submit] {
 	background: #0e3a5e;
 	height: 26px;
 	width: 80px;
@@ -676,9 +668,10 @@ section.catalog div.right_catalog input[type=submit] {
 	border-radius: 12px;
 	border: none;
 	margin-top: 6px;
+	outline: none;
 }
 
-section.catalog div.left_catalog dd>a:hover {
+.catalog .left_catalog dd>a:hover {
 	color: #0c3256;
 	text-decoration: underline;
 	font-size: 14px;
@@ -687,7 +680,7 @@ section.catalog div.left_catalog dd>a:hover {
 	font-family: "Arial Bold", sans-serif;
 }
 
-section.catalog div.tires {
+.catalog .tires {
 	width: 527px;
 	float: left;
 	background: -webkit-linear-gradient(to bottom, #1e5799 0%,#207cca 0%,#e4e7e8 0%,#95a8b1 100%);
@@ -699,47 +692,47 @@ section.catalog div.tires {
 	margin-left: 8px;
 }
 
-section.catalog div.tires div.tires_internal {
+.catalog .tires_internal {
 	margin-left: 24px;
 	margin-top: 15px;
 	margin-bottom: 30px;
 }
 
-section.catalog div.tires figure {
+.catalog .tires figure {
 	float: left;
 	text-align: center;
 	margin-left: 30px;
 	margin-bottom: 48px;
 }
 
-section.catalog div.tires figure figcaption>p.head {
+.catalog .tires figure figcaption>.head {
 	font-size: 12px;
 	text-transform: capitalize;
 }
 
-section.catalog div.tires figure figcaption>p.head>span {
+.catalog .tires figure figcaption>.head>span {
 	text-transform: capitalize;
 	font-size: 15px;
 	color: #206988;
 	font-weight: bold;
 }
 
-section.catalog div.tires figure.left {
+.catalog .tires figure.left {
 	margin-left: 0;
 }
 
-section.catalog div.tires figure div {
+.catalog .tires figure div {
 	width: 137px;
 	height: 127px;
 	background: white;
 	border-radius: 5px;
 }
 
-section.catalog div.tires figure div p {
+.catalog .tires figure p {
 	padding-top: 4px;
 }
 
-section.catalog div.tires figure div p a {
+.catalog .tires figure p a {
 	font-size: 17px;
 	color: #114165;
 	font-weight: bold;
@@ -748,81 +741,85 @@ section.catalog div.tires figure div p a {
 	position: relative;	
 }
 
-section.catalog div.tires figure div p a img {
+.catalog .tires figure a img {
 	display: block;
 	margin: 0 auto;
 	padding-bottom: 13px;
 }
 
-section.catalog div.tires figure div p span {
+.catalog .tires figure p span {
 	font-size: 12px;
 }
 
-section.catalog div.tires figure div p a:visited {
+.catalog .tires figure p a:visited {
 	color: #95a8b1;
 }
 
-section.catalog div.tires figure div p a:hover img {
+.catalog .tires figure p a:hover img {
 	padding-bottom: 20px;
 }
 
-footer div.partners {
+footer .partners {
 	text-align: center;
 }
 
-footer div.partners span {
+footer .partners span {
 	margin-left: -18px;
 }
 
-footer div.partners img {
+footer .partners img {
 	padding-left: 8px;
 }
 
-footer div.partners {
+footer .partners {
 	margin-bottom: 27px;
 }
 
-footer div.footer_links {
+footer .footer_links {
 	height: 100px;
 	width: 100%;
 	background: #213a4d;
 	text-align: center;
 }
 
-footer div.footer_links ul {
+footer ul {
 	padding-top: 5px;
 	padding-left: 22px;
 }
 
-footer div.footer_links ul li{
+footer ul li{
 	display: inline;
 }
 
-footer div.footer_links ul li>a {
+footer ul li>a {
 	color: white;
 	padding-left: 12px;
 	padding-right: 12px;
 }
 
-footer div.footer_links ul li:before {
+footer ul li:before {
 	content: "|";
 	color: white;
 }
 
-footer div.footer_links ul li:first-child:before {
+footer ul li:first-child:before {
 	content: "";
 }
 
-footer div.footer_links ul li>a {
+footer ul li>a {
 	font-size: 12px;
 }
 
-footer div.footer_links ul li>a:hover {
+footer ul li>a:hover {
 	color: #52abcb;
 }
 
-footer div.footer_links p {
+footer p {
 	margin-top: 19px;
 	color: #7f4740;
 	font-size: 10px;
+}
+
+footer {
+	margin-bottom: 15px;
 }
