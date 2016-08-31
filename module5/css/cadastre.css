@@ -9,7 +9,6 @@
     font-style: normal;
 }
 
-
 body, html {
 	font-family: "Helvetica", Arial, sans-serif;
 }
@@ -24,90 +23,73 @@ input, textarea {
 	display: block;
 }
 
-footer {
+header {
 	width: 100%;
 	background: #085291;
 }
 
-footer ul.mainMenu {
-	height: 100%;
+.mainMenu {
 	float: right;
-	margin-right: 20px;
 	margin-right: 15px;
 }
 
-footer ul.mainMenu li {
-	height: 100%;
+.mainMenu li {
 	float: left;
-	vertical-align: middle;
-	text-align: center;
 }
 
-footer ul.mainMenu li>a {
-	height: 100%;
+.mainMenu li>a {
 	line-height: 35px;
 	color: #60b5ed;
 	display: block;
-	box-sizing: content-box;
 	padding-left: 10px;
 	padding-right: 10px;
 }
 
-footer ul.mainMenu li>a:hover {
+.mainMenu li>a:hover {
 	background-color: #4eabda;
 	color: white;
 }
 
-footer ul li.vl {
-	position: relative;
+.vl {
 	padding-left: 15px;
 	padding-right: 15px;
 	height: 35px;
 }
 
-footer ul li.vl .vertical_line {
+.vertical_line {
 	width: 1px;
 	height: 32px;
 	background: #56a2dc;
-	position: absolute;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	top: 0;
-	
-	margin: auto;
 }
 
-footer ul.mainMenu li.img_link img,
-footer ul.mainMenu li.img_link a {
+.mainMenu .img_link *{
 	display: inline-block;
 	height: 100%;
 	vertical-align: middle;
 }
 
-footer ul.mainMenu li.img_link a {
+.mainMenu .img_link a {
 	padding-left: 5px;
 }
 
-footer ul.mainMenu li>p {
+.mainMenu p {
 	padding-right: 15px;
 	padding-left: 15px;
 	background: linear-gradient(to right, rgba(248,80,50,1) 0%, rgba(241,111,92,1) 0%, rgba(246,41,12,1) 0%, rgba(79,175,219,1) 0%, rgba(46,121,196,1) 100%);
 }
 
-footer ul.mainMenu li>p,
-footer ul.mainMenu li>p a{
+.mainMenu p,
+.mainMenu p a{
 	line-height: 35px;
 	color: white;
 }
 
-footer ul.mainMenu li>p a {
+.mainMenu p a {
 	text-decoration: underline;
 }
 
 .bg {
-	width: 100%;
-	height: 1028px;
+	height: 800px;
 	background: url("../img/Cadastre-bg.png") no-repeat center center fixed;
 	background-size: cover;
 	position: relative;
@@ -128,8 +110,6 @@ footer ul.mainMenu li>p a {
 
 
 .central_block .head {
-	width: 100%;
-	height: 55px;
 	border-bottom: 1px solid #c3c7c6;
 	line-height: 55px;
 }
@@ -137,74 +117,65 @@ footer ul.mainMenu li>p a {
 .central_block .head p {
 	color: white;
 	font-size: 1.5em;
-	margin: 0 auto;
-	vertical-align: middle;
 }
 
 .central_block .form {
-	text-align: center;
 	margin: 0 auto;
 	width: 50%;
 	margin-top: 20px;
 }
 
-.central_block .form .facebook {
-	overflow: hidden;
-	border-radius: 3px;
+.facebook {
 	background: linear-gradient(to bottom, #1e5799 0%,#207cca 0%,#3e5598 0%,#2e4579 100%);
 }
 
-.central_block .form .facebook div {
+.facebook div {
 	float: left;
 	height: 30px;
 }
 
-.central_block .form .facebook .logo {
+.facebook .logo {
 	box-sizing: border-box;
 	width: 15%;
 	border-right: 1px solid #213b6c;
 	border-top: 1px solid #7889b7;
 }
 
-.central_block .form .facebook .logo p {
-	height: 30px;
-}
-
-.central_block .form .facebook .logo p img {
+.facebook .logo p img {
 	margin-top: 4px;
 }
 
-.central_block .form .facebook .logo p a {
+.facebook .logo p a {
 	display: block;
 }
 
-.central_block .form .facebook .link {
+.facebook .link {
 	box-sizing: border-box;
 	width: 85%;
 	border-top: 1px solid #7889b7;
 	border-left: 1px solid #7889b7;
 }
 
-.central_block .form .facebook .link p {
+.facebook .link p {
 	height: 30px;
 	margin-top: 5px;
 }
 
-.central_block .form .facebook .link a:after {
+.facebook .link a:after {
 	content: url(../img/facebook-arrow.png);
 	margin-left: 25px;
 }
 
-.central_block .form .facebook .link p span {
+.facebook .link p span {
 	font-weight: bold;
 }
 
-.central_block .form .facebook .link p a {
+.facebook .link p a {
 	color: white;
 	display: block;
 }
 
-.central_block p.lined_text {
+.central_block .lined_text {
 	clear: both;
 	margin-top: 20px;
 	color: #666666;
@@ -212,8 +183,8 @@ footer ul.mainMenu li>p a {
 	overflow: hidden;
 }
 
-.central_block p.lined_text:before,
-.central_block p.lined_text:after {
+.central_block .lined_text:before,
+.central_block .lined_text:after {
 	border-top: 1px solid #666666;
 	content: "";
 	position: absolute;
@@ -222,20 +193,20 @@ footer ul.mainMenu li>p a {
 	box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.75); 
 }
 
-.central_block p.lined_text:before {
+.central_block .lined_text:before {
 	margin-left: -50%;
 }
 
-.central_block p.lined_text span {
+.central_block .lined_text span {
 	padding-left: 10px;
 	padding-right: 10px;
 }
 
-.central_block form {
+form {
 	margin-top: 20px;
 }
 
-.central_block form>input {
+form>input {
 	width: 100%;
 	box-sizing: border-box;
 	height: 30px;
@@ -246,28 +217,28 @@ footer ul.mainMenu li>p a {
 	padding-left: 15px;
 }
 
-.central_block form>input:focus {
+form>input:focus {
 	background: #1b5288;
 	-webkit-box-shadow: 0px 0px 7px 3px rgba(6,137,188,1);
 	-moz-box-shadow: 0px 0px 7px 3px rgba(6,137,188,1);
 	box-shadow: 0px 0px 7px 3px rgba(6,137,188,1);
 }
 
-.central_block form>input:focus::-webkit-input-placeholder {
+form>input:focus::-webkit-input-placeholder {
 	color: white;
 }
 
-.central_block form input[type=checkbox] {
+form input[type=checkbox] {
 	margin-left: -15px;
 }
 
-.central_block form input[type=checkbox]+span { 
+form input[type=checkbox]+span {
 	font-size: 14px;
 	color: #cccccc;
 }
 
 
-.central_block form input[type=submit] {
+form input[type=submit] {
 	margin-top: 15px;
 	background: linear-gradient(to bottom, #1e5799 0%,#207cca 0%,#4faddb 0%,#2f7bc5 100%);
 	letter-spacing: 0.1px;
@@ -278,16 +249,16 @@ footer ul.mainMenu li>p a {
 	transition: box-shadow 0.7s ease-out;
 }
 
-.central_block form input[type=submit]:hover:not(:active) {
+form input[type=submit]:hover:not(:active) {
 	box-shadow: 0px 0px 3px 3px rgba(69,255,205,1);
 }
 
-.central_block form input[type=submit]:active {
+form input[type=submit]:active {
 	background: #1b5288;
 	box-shadow: 0px 0px 7px 3px rgba(6,137,188,1);
 }
 
-.central_block p.policy {
+.policy {
 	color: white;
 	font-size: 0.75em;
 	width: 60%;
