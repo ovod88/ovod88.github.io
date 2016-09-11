@@ -56,24 +56,24 @@ var generator_quetionnaire_obj = {
 }
 /*TO TEST THE SCRIPT*/
 
-// generator_quetionnaire_obj.generate_skeleton("test");
-// var question = generator_quetionnaire_obj.generate_question("Сколько тебе лет?");
-// generator_quetionnaire_obj.generate_answer( question, "I am 22 years old");
-// generator_quetionnaire_obj.generate_answer( question, "I am 23 years old");
-
-// question = generator_quetionnaire_obj.generate_question("Сколько маме лет?");
-// generator_quetionnaire_obj.generate_answer( question, "She is 40 years old");
-// generator_quetionnaire_obj.generate_answer( question, "She is 41 years old");
-// generator_quetionnaire_obj.generate_answer( question, "She is 42 years old");
-// generator_quetionnaire_obj.generate_answer( question, "She is 43 years old");
-
-// question = generator_quetionnaire_obj.generate_question("Сколько брату лет?");
-// generator_quetionnaire_obj.generate_answer( question, "He is 30");
-// generator_quetionnaire_obj.generate_answer( question, "He is 31");
-// generator_quetionnaire_obj.generate_answer( question, "He is 32");
-// generator_quetionnaire_obj.generate_answer( question, "He is 33");
-// generator_quetionnaire_obj.generate_answer( question, "He is 34");
-// generator_quetionnaire_obj.generate_answer( question, "He is 35");
-// generator_quetionnaire_obj.generate_answer( question, "He is 36");
-// generator_quetionnaire_obj.generate_answer( question, "He is 37");
-// console.log('QUESTION  ', question);
+ //generator_quetionnaire_obj.generate_skeleton("test");
+ //var question = generator_quetionnaire_obj.generate_question("Сколько тебе лет?");
+ //generator_quetionnaire_obj.generate_answer( question, "I am 22 years old");
+ //generator_quetionnaire_obj.generate_answer( question, "I am 23 years old");
+ //
+ //question = generator_quetionnaire_obj.generate_question("Сколько маме лет?");
+ //generator_quetionnaire_obj.generate_answer( question, "She is 40 years old");
+ //generator_quetionnaire_obj.generate_answer( question, "She is 41 years old");
+ //generator_quetionnaire_obj.generate_answer( question, "She is 42 years old");
+ //generator_quetionnaire_obj.generate_answer( question, "She is 43 years old");
+ //
+ //question = generator_quetionnaire_obj.generate_question("Сколько брату лет?");
+ //generator_quetionnaire_obj.generate_answer( question, "He is 30");
+ //generator_quetionnaire_obj.generate_answer( question, "He is 31");
+ //generator_quetionnaire_obj.generate_answer( question, "He is 32");
+ //generator_quetionnaire_obj.generate_answer( question, "He is 33");
+ //generator_quetionnaire_obj.generate_answer( question, "He is 34");
+ //generator_quetionnaire_obj.generate_answer( question, "He is 35");
+ //generator_quetionnaire_obj.generate_answer( question, "He is 36");
+ //generator_quetionnaire_obj.generate_answer( question, "He is 37");
+ //console.log('QUESTION  ', question);
