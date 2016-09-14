@@ -26,12 +26,17 @@ function gameView (model){
     this.start = function(figureName) {
         var structure = model.getStructure(figureName);
 
-        canvasElem.setAttribute('width', drawingWidth + 'px');
-        canvasElem.setAttribute('height', drawingHeight + 'px');
+        drawContext.beginPath();
+
+        if(!canvasElem.hasAttribute('width')) {
+            canvasElem.setAttribute('width', drawingWidth);
+        }
+        if(!canvasElem.hasAttribute('height')) {
+            canvasElem.setAttribute('height', drawingHeight);
+        }
+
         drawContext.strokeStyle = '#000';
         drawContext.fillStyle = '#000';
-
-        drawContext.clearRect(0, 0, drawingWidth, drawingHeight);
 
         for (var i = 0; i < structure.length; i++) {
             var block = structure[i];

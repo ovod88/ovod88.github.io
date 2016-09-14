@@ -4,7 +4,7 @@ function FormsModel() {
         linesNumber = 15;
 
     var static_structures = {
-        'heart' :[
+        'heart': [
             {x: -6 * elem_size, y: 2 * elem_size, quantity: 3},
             {x: -8 * elem_size, y: 3 * elem_size, quantity: 6},
             {x: -9 * elem_size, y: 4 * elem_size, quantity: 7},
@@ -20,7 +20,8 @@ function FormsModel() {
             {x: -4 * elem_size, y: 14 * elem_size, quantity: 4},
             {x: -3 * elem_size, y: 15 * elem_size, quantity: 3},
             {x: -1 * elem_size, y: 16 * elem_size, quantity: 1}
-        ]
+        ],
+        'racket': [{x: -3 * elem_size, y: 27 * elem_size, quantity: 3}]
     };
 
     function getRandomArbitary(min, max) {
