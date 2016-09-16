@@ -1,11 +1,8 @@
 function FormsModel() {
-    var elem_size = 15,
-        inner_elem_size = 5,
-        linesNumber = 15;
+    var elem_size = this.elem_size;
 
-    var drawnObjects =[];
 
-    var static_structures = {
+    var structures = {
         'heart': [
             {x: -6 * elem_size, y: 2 * elem_size, quantity: 3},
             {x: -8 * elem_size, y: 3 * elem_size, quantity: 6},
@@ -33,44 +30,51 @@ function FormsModel() {
             }
 
             return random_structure;
-        })(),
-        'racket': [{x: -3 * elem_size, y: 27 * elem_size, quantity: 3}]
+        })()
+        //'racket': [{x: -3 * elem_size, y: 27 * elem_size, quantity: 3}]
     };
 
     function getRandomArbitary(min, max) {
-
         return Math.floor(Math.random() * (max - min)) + min;
     }
 
-
-    this.size = {
-        ELEMENT_SIZE : elem_size,
-        CENTRAL_ELEM_SIZE : inner_elem_size
-    };
-
     this.getStructure = function(name) {
 
-        return static_structures[name];
+        return structures[name];
     };
 
-    this.addStructure = function(structure) {
-      if(!haveSameKeys(static_structures, structure)) {
-          static_structures.push(structure);
-      }
-    };
 
-    function haveSameKeys(a, b) {
-        var aKeys = Object.keys(a).sort();
-        var bKeys = Object.keys(b).sort();
+    //var drawnObjects =[];
 
-        return JSON.stringify(aKeys) === JSON.stringify(bKeys);
-    }
 
-    this.addDrawnObject = function(structure) {
-        drawnObjects.push(structure);
-    };
-
-    this.updateDrawedObject = function() {
-
-    };
+    //
+    //
+    //this.size = {
+    //    ELEMENT_SIZE : elem_size,
+    //    CENTRAL_ELEM_SIZE : inner_elem_size
+    //};
+    //
+    //
+    //this.addStructure = function(structure) {
+    //  if(!haveSameKeys(static_structures, structure)) {
+    //      static_structures.push(structure);
+    //  }
+    //};
+    //
+    //function haveSameKeys(a, b) {
+    //    var aKeys = Object.keys(a).sort();
+    //    var bKeys = Object.keys(b).sort();
+    //
+    //    return JSON.stringify(aKeys) === JSON.stringify(bKeys);
+    //}
+    //
+    //this.addDrawnObject = function(structure) {
+    //    drawnObjects.push(structure);
+    //};
+    //
+    //this.updateDrawedObject = function() {
+    //
+    //};
 }
+
+FormsModel.prototype = Model;
