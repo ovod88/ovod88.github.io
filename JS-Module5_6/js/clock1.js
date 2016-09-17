@@ -13,7 +13,7 @@ var clock = {
 	min: 0,
 	sec: 0,
 	milisec: 0
-}
+};
 
 var	changeStyleStart = function() {
 	if(isRunning) {
@@ -23,7 +23,7 @@ var	changeStyleStart = function() {
 		this.classList.remove('pause');
 		this.innerHTML = "Cont..";
 	}
-}
+};
 
 var updateMiliseconds = function() {
 	milisecondsBox.innerHTML = clock.milisec;
@@ -32,7 +32,7 @@ var updateMiliseconds = function() {
 		clock.milisec = 0;
 		updateSeconds();
 	}
-}
+};
 
 var updateSeconds = function() {
 	clock.sec++;
@@ -46,7 +46,7 @@ var updateSeconds = function() {
 	} else {
 		secondsBox.innerHTML = clock.sec;
 	}
-}
+};
 
 var updateMinutes = function() {
 	clock.min++;
@@ -61,7 +61,7 @@ var updateMinutes = function() {
 	} else {
 		minutesBox.innerHTML = clock.min;
 	}
-}
+};
 
 var updateHours = function() {
 	clock.hour++;
@@ -75,7 +75,7 @@ var updateHours = function() {
 	} else {
 		hoursBox.innerHTML = clock.hour;
 	}
-}
+};
 
 function reset() {
 	clock.sec = 0;
@@ -91,7 +91,7 @@ var pauseTimer = function() {
 	clearInterval(interval);
 	interval = null;
 	isRunning = false;
-}
+};
 
 var stopTimer = function() {
 	clearInterval(interval);
@@ -99,7 +99,7 @@ var stopTimer = function() {
 	start.classList.remove('pause');
 	start.innerHTML = 'Start';
 	isRunning = false;
-}
+};
 
 var startTimer = function() {
 	if (!interval) {
@@ -109,7 +109,7 @@ var startTimer = function() {
 	} else {
 		pauseTimer();
 	}
-}
+};
 
 
 start.addEventListener('click', startTimer);

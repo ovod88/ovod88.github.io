@@ -18,7 +18,7 @@ var clock = {
 	min: 0,
 	sec: 0,
 	milisec: 0
-}
+};
 
 var clockSnapshot = {
 	hour: 0,
@@ -31,7 +31,7 @@ var clockSnapshot = {
 		this.sec = clock.sec;
 		this.milisec = clock.milisec;
 	}
-}
+};
 
 function timeObjectToMiliseconds(object) {
 	return object.milisec + object.sec * 1000 + object.min * 60 * 1000 + object.hour * 60 * 60 * 1000;
@@ -189,7 +189,6 @@ function clear() {
 	textBox.innerHTML = '';
 	stopTimer();
 	wrapperBox.setAttribute('style', 'margin-top:' + textBoxInitialPosition + 'px');
-	console.log("RUNNING --> ", isRunning);
 	changeStyleStart();
 	milisecondsBox.innerHTML = '000';
 	secondsBox.innerHTML = '00';
