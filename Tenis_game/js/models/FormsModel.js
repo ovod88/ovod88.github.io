@@ -39,6 +39,9 @@ function FormsModel() {
     }
 
     this.getStructure = function(name) {
+        if(!name) {
+            return Object.keys(structures);
+        }
 
         return structures[name];
     };

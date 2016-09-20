@@ -1,19 +1,44 @@
 function TenisController(view, models) {
+    var gameIsOn = false;
+
     this.startGame = function() {
-        init();
+        view.fillSelect(models.figurePicture.getStructure());
 
-
+        view.elements.submitBtn.addEventListener('click', init);
     };
 
     function init () {
-        var figure_name = 'heart';
-        var form = models.figure.getStructure(figure_name);//TODO: ADD SELECT FOR NAME
-        var elem_size = models.figure.elem_size,
-            inner_elem_size = models.figure.inner_elem_size,
-            middleX = view.size.middleX,
+        if(!gameIsOn) {
+            var select = view.elements.select;
+            var selectedFigureName = select.options[select.selectedIndex].value || 'heart';
+
+            var formObj = convertStructureToObject({
+                structure: models.figurePicture.getStructure(selectedFigureName),
+                elem_size: models.figurePicture.elem_size,
+                inner_elem_size: models.figurePicture.inner_elem_size,
+                middleX: view.size.middleX
+            });
+
+            view.draw(formObj);
+            view.elements.submitBtn.innerHTML = "Pause game";
+            gameIsOn = true;
+        } else {
+            pauseGame();
+        }
+    }
+    function pauseGame() {
+        view.elements.submitBtn.innerHTML = "Continue game";
+        gameIsOn = false;
+    }
+
+    function convertStructureToObject(figureModel) {
+        var form = figureModel.structure,
+            middleX = figureModel.middleX,
+            elem_size = figureModel.elem_size,
+            inner_elem_size = figureModel.inner_elem_size,
             formObj = {};
 
-        formObj = {};
+
         formObj.externalBlock = [];
         formObj.internalBlock = [];
         formObj.elem_size = elem_size;
@@ -30,10 +55,11 @@ function TenisController(view, models) {
 
                 formObj.externalBlock.push.apply(formObj.externalBlock, [{x: pX, y: pY}, {x: nX, y: nY}]);
                 formObj.internalBlock.push.apply(formObj.internalBlock,
-                                                                [{x: pX + inner_elem_size, y: pY + inner_elem_size},
-                                                                    {x: nX + inner_elem_size, y: nY + inner_elem_size}]);
+                    [{x: pX + inner_elem_size, y: pY + inner_elem_size},
+                        {x: nX + inner_elem_size, y: nY + inner_elem_size}]);
             }
         }
-        view.draw(formObj);
+
+        return formObj;
     }
 }
