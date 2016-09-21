@@ -1,0 +1,9 @@
+*.psd
+
+tests/*
+
+JS_module17-18/node_modules/*
+JS-Module19-20/node_modules/*
+bash.exe.*
+*.iml
+.idea/*
