@@ -1,7 +1,6 @@
 function FormsModel() {
     var elem_size = this.elem_size;
 
-
     var structures = {
         'heart': [
             {x: -6 * elem_size, y: 2 * elem_size, quantity: 3},
@@ -23,18 +22,17 @@ function FormsModel() {
         'random' : (function() {
             var random_structure = [];
             for(var i = 0; i < 15; i++) {
-                var randNum = getRandomArbitary( -15, 0);
+                var randNum = getRandomArbitrary( -15, 0);
                 random_structure.push({
-                    x: randNum * elem_size, y: (2 + i) * elem_size, quantity: getRandomArbitary(1, Math.abs(randNum) + 1)
+                    x: randNum * elem_size, y: (2 + i) * elem_size, quantity: getRandomArbitrary(1, Math.abs(randNum) + 1)
                 });
             }
 
             return random_structure;
         })()
-        //'racket': [{x: -3 * elem_size, y: 27 * elem_size, quantity: 3}]
     };
 
-    function getRandomArbitary(min, max) {
+    function getRandomArbitrary(min, max) {
         return Math.floor(Math.random() * (max - min)) + min;
     }
 
@@ -43,11 +41,12 @@ function FormsModel() {
             return Object.keys(structures);
         }
 
-        return structures[name];
+
+        var result = structures[name] || structures['heart'];
+        return result;
     };
 
 
-    //var drawnObjects =[];
 
 
     //
@@ -71,9 +70,6 @@ function FormsModel() {
     //    return JSON.stringify(aKeys) === JSON.stringify(bKeys);
     //}
     //
-    //this.addDrawnObject = function(structure) {
-    //    drawnObjects.push(structure);
-    //};
     //
     //this.updateDrawedObject = function() {
     //

@@ -1,8 +1,13 @@
 function TenisController(view, models) {
     var gameIsOn = false;
+    var gameIsPaused = false;
+    var elem_size = Model.elem_size,
+        inner_elem_size = Model.inner_elem_size,
+        middleX = view.size.middleX;
+
 
     this.startGame = function() {
-        view.fillSelect(models.figurePicture.getStructure());
+        view.fillSelect(models.figure.getStructure());
 
         view.elements.submitBtn.addEventListener('click', init);
     };
@@ -13,13 +18,27 @@ function TenisController(view, models) {
             var selectedFigureName = select.options[select.selectedIndex].value || 'heart';
 
             var formObj = convertStructureToObject({
-                structure: models.figurePicture.getStructure(selectedFigureName),
-                elem_size: models.figurePicture.elem_size,
-                inner_elem_size: models.figurePicture.inner_elem_size,
-                middleX: view.size.middleX
+                structure: models.figure.getStructure(selectedFigureName)
             });
 
+            var racketObj = convertStructureToObject({
+                structure: models.racket.structure
+            });
+
+            var ballObj = convertStructureToObject({
+                structure: models.ball.structure
+            });
+            ballObj.externalBlock = ballObj.externalBlock.slice(0, 1);
+            ballObj.internalBlock = ballObj.internalBlock.slice(0, 1);
+            console.log(ballObj);
+
             view.draw(formObj);
+            view.draw(racketObj);
+            view.draw(ballObj);
+            models.figure.addDrawnObject(formObj);
+            models.racket.addDrawnObject(racketObj);
+            models.ball.addDrawnObject(ballObj);
+
             view.elements.submitBtn.innerHTML = "Pause game";
             gameIsOn = true;
         } else {
@@ -27,15 +46,17 @@ function TenisController(view, models) {
         }
     }
     function pauseGame() {
-        view.elements.submitBtn.innerHTML = "Continue game";
-        gameIsOn = false;
+        if(!gameIsPaused) {
+            gameIsPaused = true;
+            view.elements.submitBtn.innerHTML = "Continue game";
+        } else {
+            gameIsPaused = false;
+            view.elements.submitBtn.innerHTML = "Pause game";
+        }
     }
 
     function convertStructureToObject(figureModel) {
         var form = figureModel.structure,
-            middleX = figureModel.middleX,
-            elem_size = figureModel.elem_size,
-            inner_elem_size = figureModel.inner_elem_size,
             formObj = {};
 
 

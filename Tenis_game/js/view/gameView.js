@@ -30,12 +30,11 @@ function gameView (){
 
     this.elements = {
       submitBtn:   document.querySelector('button'),
-        select: document.querySelector('select')
+      select: document.querySelector('select')
     };
 
     function drawElement(extList, innerList, ext_size, inner_size) {
         var length = extList.length;
-        console.log(innerList);
 
         for(var i = 0; i < length; i++) {
             drawContext.rect(extList[i].x, extList[i].y, ext_size, ext_size);
