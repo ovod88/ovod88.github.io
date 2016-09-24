@@ -30,7 +30,8 @@ function gameView (){
 
     this.elements = {
       submitBtn:   document.querySelector('button'),
-      select: document.querySelector('select')
+      select: document.querySelector('select'),
+        document : document
     };
 
     function drawElement(extList, innerList, ext_size, inner_size) {
@@ -44,21 +45,22 @@ function gameView (){
 
         drawContext.stroke();
     }
+    this.clear = function() {
+        drawContext.clearRect(0, 0, parseInt(drawingWidth), parseInt(drawingHeight));
+    };
 
     this.draw = function(obj) {
 
         var elem_size = obj.elem_size,
             inner_elem_size = obj.inner_elem_size;
 
-        drawContext.clearRect(0, 0, drawingWidth, drawingHeight);
-
         drawContext.beginPath();
         drawContext.strokeStyle = '#000';
         drawContext.fillStyle = '#000';
-
         drawElement(obj.externalBlock, obj.internalBlock, elem_size, inner_elem_size);
 
         drawContext.stroke();
+        drawContext.closePath();
     };
 
 

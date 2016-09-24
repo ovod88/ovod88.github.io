@@ -1,8 +1,7 @@
 function BallModel() {
-    var elem_size = this.elem_size;
     var ballObj;
 
-    var structure = [{x: elem_size, y: 26 * elem_size, quantity: 1}];
+    var structure = [{x: this.elem_size, y: 26 * this.elem_size, quantity: 1}];
 
     this.getStructure = function() {
 
