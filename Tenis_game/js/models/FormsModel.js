@@ -1,5 +1,6 @@
 function FormsModel() {
     var elem_size = this.elem_size;
+    var formObj;
 
     var structures = {
         'heart': [
@@ -41,9 +42,11 @@ function FormsModel() {
             return Object.keys(structures);
         }
 
+        if(!formObj) {
+            formObj = this.convert(structures[name]);
+        }
 
-        var result = structures[name] || structures['heart'];
-        return result;
+        return formObj;
     };
 
 
