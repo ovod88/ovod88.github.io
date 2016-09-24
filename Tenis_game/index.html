@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>TenisGame</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <div class="game_field">
+            <canvas>
+
+            </canvas>
+        </div>
+
+        <form action="#">
+            <div>
+                <span>Figure to draw:&nbsp</span>
+                <select name="form" id="select_form">
+                    <option value=""></option>
+                </select>
+            </div>
+            <button type="submit" onclick="event.preventDefault();">Start Game</button>
+        </form>
+        <script src="js/view/gameView.js"></script>
+        <script src="js/models/Model.js"></script>
+        <script src="js/models/FormsModel.js"></script>
+        <script src="js/models/BallModel.js"></script>
+        <script src="js/models/RacketModel.js"></script>
+        <script SRC="js/controller/TenisController.js"></script>
+        <script src="js/game.js"></script>
+    </body>
+</html>
