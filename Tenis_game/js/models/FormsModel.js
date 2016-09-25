@@ -45,9 +45,43 @@ function FormsModel() {
         if(!formObj) {
             formObj = this.convert(structures[name]);
         }
+        formObj.update = function(ball) {
+            var hitedElements;
+        };
+
+        formObj.remove = function(elems) {
+
+        };
 
         return formObj;
     };
+
+    function checkIfHittedBall(ball) {
+        var ballCorners = getElementCorners({x: ball.externalBlock[0].x, y: ball.externalBlock[0].y});
+
+        for(var i = 0; i < formObj.externalBlock.length; i++) {
+            var blockCorners = getElementCorners({x: formObj.externalBlock[i].x, y: formObj.externalBlock[i].y});
+
+            if(ifEqualCoords(ballCorners, blockCorners)) {
+
+            }
+        }
+    }
+
+    function getElementCorners(point) {
+        var pointCorners = [];
+
+        pointCorners.push({x: point.x, y: point.y});
+        pointCorners.push({x: point.x + elem_size, y: point.y});
+        pointCorners.push({x: point.x + elem_size, y: point.y + elem_size});
+        pointCorners.push({x: point.x, y: point.y + elem_size});
+
+        return pointCorners;
+    }
+
+    function ifEqualCoords(first, second) {
+
+    }
 }
 
 FormsModel.prototype = Model;

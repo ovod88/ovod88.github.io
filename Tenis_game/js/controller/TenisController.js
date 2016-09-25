@@ -34,7 +34,7 @@ function TenisController(view, models) {
                     timeoutRacket = -1;
                 }
                 keyPressed = !keyPressed;
-            })
+            });
             moveBall();
         } else {
             if(gameIsPaused) {

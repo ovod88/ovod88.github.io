@@ -41,6 +41,17 @@ function BallModel() {
             directions[this.direction].apply(ballObj);
         };
 
+        ballObj.mirrorDirection = function() {
+            if(this.direction == 'eastN') {
+                this.direction = 'westN';
+            } else if(ballObj.direction == 'westN') {
+                this.direction = 'westS';
+            } else {
+                this.direction = 'eastS';
+            }
+        }
+
+
         return ballObj;
     };
 
@@ -49,23 +60,8 @@ function BallModel() {
             leftY = ballObj.externalBlock[0].y - elem_size,
             rightX = ballObj.externalBlock[0].x + elem_size;
 
-        //console.log('leftX -->', leftX);
-        //console.log('leftY -->', leftY);
-        //console.log('rightX -->', rightX);
-
         if(leftX < 0 || leftY < 0 || rightX > view.size.maxX ) {
-            //console.log('CALLED');
-            mirrorDirection();
-        }
-    }
-
-    function mirrorDirection() {
-        if(ballObj.direction == 'eastN') {
-            ballObj.direction = 'westN';
-        } else if(ballObj.direction == 'westN') {
-            ballObj.direction = 'westS';
-        } else {
-            ballObj.direction = 'eastS';
+            ballObj.mirrorDirection();
         }
     }
 }
