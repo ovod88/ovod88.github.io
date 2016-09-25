@@ -10,7 +10,7 @@ function RacketModel() {
             racketObj = this.convert(structure);
         }
 
-        racketObj.update = function() {
+        racketObj.move = function() {
             if(!isWallReached()) {
                 if(this.direction === 'left' ) {
                     for( var i = 0; i < racketObj.externalBlock.length; i++) {
