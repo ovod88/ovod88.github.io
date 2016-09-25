@@ -48,35 +48,6 @@ function FormsModel() {
 
         return formObj;
     };
-
-
-
-
-    //
-    //
-    //this.size = {
-    //    ELEMENT_SIZE : elem_size,
-    //    CENTRAL_ELEM_SIZE : inner_elem_size
-    //};
-    //
-    //
-    //this.addStructure = function(structure) {
-    //  if(!haveSameKeys(static_structures, structure)) {
-    //      static_structures.push(structure);
-    //  }
-    //};
-    //
-    //function haveSameKeys(a, b) {
-    //    var aKeys = Object.keys(a).sort();
-    //    var bKeys = Object.keys(b).sort();
-    //
-    //    return JSON.stringify(aKeys) === JSON.stringify(bKeys);
-    //}
-    //
-    //
-    //this.updateDrawedObject = function() {
-    //
-    //};
 }
 
 FormsModel.prototype = Model;

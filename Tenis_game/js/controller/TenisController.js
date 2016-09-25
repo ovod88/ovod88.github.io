@@ -4,7 +4,7 @@ function TenisController(view, models) {
     var keyPressed = false;
     var objects = {};
 
-    var timeout;
+    var timeoutRacket, timeoutBall;
     this.startGame = function() {
 
         view.fillSelect(models.figure.getStructure());
@@ -17,7 +17,6 @@ function TenisController(view, models) {
             var selectedFigureName = select.options[select.selectedIndex].value || 'heart';
 
             objects.form = models.figure.getStructure(selectedFigureName);
-            console.log(objects.form);
             objects.racket = models.racket.getStructure();
             objects.ball = models.ball.getStructure();
             objects.ball.externalBlock = objects.ball.externalBlock.slice(0, 1);
@@ -31,11 +30,12 @@ function TenisController(view, models) {
             view.elements.document.addEventListener('keydown', moveRacket);
             view.elements.document.addEventListener('keyup', function(e) {
                 if(e.keyCode == 37 || e.keyCode == 39) {
-                    clearTimeout(timeout);
-                    timeout = -1;
+                    clearTimeout(timeoutRacket);
+                    timeoutRacket = -1;
                 }
                 keyPressed = !keyPressed;
             })
+            moveBall();
         } else {
             if(gameIsPaused) {
                 resumeGame();
@@ -49,12 +49,14 @@ function TenisController(view, models) {
         gameIsPaused = true;
         view.elements.document.removeEventListener('keydown', moveRacket);
         view.elements.submitBtn.innerHTML = "Continue game";
+        clearTimeout(timeoutBall);
     }
 
     function resumeGame() {
         gameIsPaused = false;
         view.elements.document.addEventListener('keydown', moveRacket);
         view.elements.submitBtn.innerHTML = "Pause game";
+        moveBall();
     }
 
     function redraw() {
@@ -72,15 +74,26 @@ function TenisController(view, models) {
                 } else if(e.keyCode == 39) {
                     objects.racket.direction = 'right';
                 }
-                objects.racket.update();
+                objects.racket.move();
                 redraw();
-                timeout = setTimeout(function moveRacket() {
-                    objects.racket.update();
+                timeoutRacket = setTimeout(function moveRacket() {
+                    objects.racket.move();
                     redraw();
-                    timeout = setTimeout(moveRacket, 50);
+                    timeoutRacket = setTimeout(moveRacket, 50);
                 }, 400);
             }
             keyPressed = !keyPressed;
         }
+    }
+
+    function moveBall() {
+        objects.ball.direction = 'eastN';
+        objects.ball.move();
+        redraw();
+        timeoutBall = setTimeout(function moveBall() {
+            objects.ball.move();
+            redraw();
+            timeoutBall = setTimeout(moveBall, 800);
+        }, 800);
     }
 }

@@ -25,7 +25,9 @@ function gameView (){
     };
 
     this.size = {
-      middleX : middleLineX
+      middleX : middleLineX,
+      maxX: parseInt(drawingWidth),
+      maxY: parseInt(drawingHeight)
     };
 
     this.elements = {
