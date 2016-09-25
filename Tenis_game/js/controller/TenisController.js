@@ -17,7 +17,6 @@ function TenisController(view, models) {
             var selectedFigureName = select.options[select.selectedIndex].value || 'heart';
 
             objects.form = models.figure.getStructure(selectedFigureName);
-            console.log(objects.form);
             objects.racket = models.racket.getStructure();
             objects.ball = models.ball.getStructure();
             objects.ball.externalBlock = objects.ball.externalBlock.slice(0, 1);
