@@ -1,7 +1,4 @@
 ;$(function() {
-	var $inputs = $('.inputs input');
-	var $paragraphs = $('.text p');
-
 	$('input').on('mouseover', function() {
 		$(this).next('em').animate({ opacity: "show" }, "slow");
 	});
