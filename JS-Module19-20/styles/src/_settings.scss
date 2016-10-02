@@ -59,8 +59,8 @@ $footer-links-color: #828385;
 $footer-links-hover-color: #248cec;
 $footer-bottom-background: #35383c;
 
-@include font-face(Ubuntu, "fonts/dist/", ubuntu-l-webfont, normal, normal);
-@include font-face(Ubuntu, "fonts/dist/", ubuntu-m-webfont, bold, normal);
+@include font-face(Ubuntu, "fonts/src/", Ubuntu-L, normal, normal);
+@include font-face(Ubuntu, "fonts/src/", Ubuntu-B, bold, normal);
 
 body {
 	font-family: Ubuntu, Arial, sans-serif;
