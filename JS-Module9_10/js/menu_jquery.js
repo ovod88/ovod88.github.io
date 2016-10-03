@@ -2,9 +2,7 @@ $(function(){
 	var $submenu1 = $('.submenu_level_1');
 	var $submenu2 = $('.submenu_level_2');
 	var $submenu3 = $('.submenu_level_3');
-	var ref_color;
-
-	ref_color = $submenu1.css('background-color');
+	var ref_color = $submenu1.css('background-color');
 
 	$('.main_menu>li').each(function() {
 		$(this).has('ul').children('a').append('<span>&#9660;</span>');
