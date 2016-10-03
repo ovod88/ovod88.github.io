@@ -70,7 +70,7 @@
 }
 
 #time_marks {
-    padding-left: 211px;
+    padding-left: 213px;
     position: absolute;
 }
 
@@ -78,6 +78,13 @@ b {
     border: solid 0 #222;
     border-width: 20px 0;
     width: 5px;
+}
+
+i {
+    border: solid 0 rgba(0,0,0,0.5);
+    border-width: 20px 0;
+    width: 2px;
+    margin-top: -20px;
 }
 
 b, i {
@@ -114,4 +121,29 @@ b, i {
     transform:rotate(150deg);
     -ms-transform:rotate(150deg);
     -webkit-transform:rotate(150deg);
+}
+
+#time_marks i:first-child {
+    transform:rotate(6deg);
+    -ms-transform:rotate(6deg);
+    -webkit-transform:rotate(6deg);
+}
+
+#time_marks i:nth-child(2) {
+    transform:rotate(12deg);
+    -ms-transform:rotate(12deg);
+    -webkit-transform:rotate(12deg);
+}
+
+
+#time_marks i:nth-child(3) {
+    transform:rotate(18deg);
+    -ms-transform:rotate(18deg);
+    -webkit-transform:rotate(18deg);
+}
+
+#time_marks i:nth-child(4) {
+    transform:rotate(24deg);
+    -ms-transform:rotate(24deg);
+    -webkit-transform:rotate(24deg);
 }
