@@ -158,3 +158,175 @@ b, i {
     top: 23px;
     box-shadow: inset 0 0 115px greenyellow;
 }
+
+#time_numbers {
+    text-align: left;
+    font-size: 55px;
+}
+
+#time_numbers span {
+    letter-spacing: -13px;
+    display: block;
+    font-family: 'Ubuntu';
+}
+
+#left_numbers {
+    padding-top: 15px;
+}
+#left_numbers span {
+    padding-bottom: 10px;
+}
+
+
+.left_numbers-first {
+    padding-left: 86px;
+}
+
+.left_numbers-first:first-child {
+    position: relative;
+    bottom: 4px;
+    left: -5px;
+}
+
+.left_numbers-first:last-child {
+    position: relative;
+    bottom: 4px;
+    left: 4px;
+}
+
+.left_numbers-second {
+    padding-left: 25px;
+}
+
+.left_numbers-second:nth-child(2) {
+    position: relative;
+    bottom: 14px;
+    left: -4px;
+}
+
+.left_numbers-second:nth-child(4) {
+    position: relative;
+    bottom: -7px;
+}
+
+.left_numbers-second:last-child {
+    position: relative;
+    bottom: 2px;
+    left: 2px;
+}
+
+#center_numbers {
+    text-align: center;
+    margin-top: -389px;
+}
+
+#center_numbers span:first-child {
+    position: relative;
+    left: -5px;
+    top: -2px;
+}
+
+#center_numbers span:last-child {
+    margin-top: 271px;
+    position: relative;
+    left: -7px;
+}
+
+#right_numbers {
+    text-align: right;
+    margin-top: -389px;
+}
+
+#right_numbers span {
+    padding-bottom: 10px;
+}
+
+.right_numbers-first:first-child,
+.right_numbers-first:last-child {
+    position: relative;
+    padding-right: 100px;
+    top: 12px;
+}
+
+.right_numbers-second:nth-child(2) {
+    position: relative;
+    padding-right: 33px;
+    top: 5px;
+}
+
+#right_numbers span:nth-child(3) {
+    position: relative;
+    top: 11px;
+    left: -11px;
+}
+
+.right_numbers-second:nth-child(4) {
+    position: relative;
+    top: 19px;
+    left: -35px;
+}
+
+#hour,
+#minute,
+#second {
+    position: absolute;
+    height: 380px;
+    width: 381px;
+    top: 21px;
+    left: 22px;
+}
+
+#hour_center {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 23px;
+    height: 23px;
+    background: LimeGreen;
+    border-radius: 50%;
+    transform: translate(-9px, -9px);
+}
+
+#hour_arrow {
+    width: 10px;
+    height: 45%;
+    background: LimeGreen;
+    position: relative;
+    left: 50%;
+    top: 35px;
+    transform: translateX(-3px);
+}
+
+#minute_arrow {
+    width: 6px;
+    height: 50%;
+    background: blue;
+    background: blue;
+    position: relative;
+    left: 50%;
+    top: 35px;
+    transform: translateX(-1px);
+    /*transform: rotate(10deg);*/
+    /*display: none;*/
+}
+
+#second_center {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 15px;
+    height: 15px;
+    background: Crimson;
+    border-radius: 50%;
+    transform: translate(-5px, -6px);
+}
+
+#second_arrow {
+    width: 3px;
+    height: 65%;
+    background: Crimson;
+    position: relative;
+    left: 50%;
+    top: -12px;
+    transform: translateX(1px);
+}
