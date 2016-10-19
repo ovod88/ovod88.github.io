@@ -8,13 +8,27 @@
                 padding: 0;
                 margin: 0;
             }
+
+
+            @-webkit-keyframes rotate {
+                0% {
+                    -webkit-transform: rotate(0deg);
+                }
+                100% {
+                    -webkit-transform: rotate(360deg);
+                }
+            }
+
             div {
                 border: solid 2px red;
                 width: 300px;
                 margin-top: 60px;
                 margin-left: 60px;
 
-                transform: rotate(20deg) ;
+                -webkit-animation-name:             rotate;
+                -webkit-animation-duration:         6s;
+                -webkit-animation-timing-function:  linear;
+                transform-origin: 50% 0%;
             }
         </style>
     </head>
