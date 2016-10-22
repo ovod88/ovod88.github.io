@@ -273,30 +273,41 @@ b, i {
     height: 380px;
     width: 381px;
     top: 22px;
-    left: 25px;
+    left: 24px;
 }
 
 #hour_center {
-    display: none;
     position: relative;
+    /* display: none; */
     top: 50%;
     left: 50%;
-    width: 23px;
-    height: 23px;
+    width: 25px;
+    height: 25px;
     background: LimeGreen;
     border-radius: 50%;
-    transform: translate(-9px, -9px);
+    transform: translate(-11px, -11px);
 }
 
 #hour_arrow {
-    display: none;
-    width: 10px;
-    height: 45%;
+    /*display: none;*/
+    width: 7px;
+    height: 146px;
     background: LimeGreen;
     position: relative;
-    left: 50%;
-    top: 35px;
-    transform: translateX(-3px);
+    left: 188px;
+    top: 36px;
+    animation: spin2 20s linear infinite;
+    transform-origin: center 130px;
+}
+
+#hour_arrow div {
+    width: 3px;
+    height: 3px;
+    background: black;
+    position: relative;
+    left: 2px;
+    top: 129px;
+    z-index: 1000;
 }
 
 #minute_arrow {
@@ -309,12 +320,11 @@ b, i {
     left: 50%;
     top: 35px;
     transform: translateX(-1px);
-    /*transform: rotate(10deg);*/
-    /*display: none;*/
 }
 
 #second_center {
     position: relative;
+    /*display: none;*/
     top: 50%;
     left: 50%;
     width: 15px;
@@ -325,27 +335,24 @@ b, i {
 }
 
 #second_arrow {
+    /*display: none;*/
     width: 3px;
     height: 240px;
     background: Crimson;
     position: relative;
     left: 50%;
     top: -13px;
-    animation: spin 10s linear infinite;
+    animation: spin 25s linear infinite;
     transform-origin: center 190px;
 }
 
-#second_arrow div {
-    width: 3px;
-    height: 3px;
-    background: black;
-    position: relative;
-    left: 0px;
-    top: 100px;
+@keyframes spin {
+    100% { transform:rotate(360deg); }
 }
 
-@keyframes spin {
-    100% { transform:rotate(180deg); }
+@keyframes spin2 {
+    0% { transform:rotate(0deg);  }
+    100% { transform:rotate(360deg); }
 }
 
 button {
