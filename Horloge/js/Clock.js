@@ -26,13 +26,13 @@ function Clock(arrows) {
     function setArrows() {
         var currentDate = new Date();
         currentTime = Date.now();
-        arrows.seconds.rotate(currentDate.getSeconds() * SECDEGREE);
-        arrows.minutes.rotate(currentDate.getMinutes() * MINDEGREE + (currentDate.getSeconds()/60) * MINDEGREE);
+        arrows.seconds.rotate({endDeg: currentDate.getSeconds() * SECDEGREE});
+        arrows.minutes.rotate({endDeg: currentDate.getMinutes() * MINDEGREE + (currentDate.getSeconds()/60) * MINDEGREE});
         var hours = currentDate.getHours();
         if( hours > 12) {
             hours -= 12;
         }
-        arrows.hours.rotate(hours * HOURDEGREE + (currentDate.getMinutes()/60) * HOURDEGREE);
+        arrows.hours.rotate({endDeg: hours * HOURDEGREE + (currentDate.getMinutes()/60) * HOURDEGREE});
     }
 
     function stop() {
