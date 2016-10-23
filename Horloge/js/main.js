@@ -5,9 +5,14 @@ $(function() {
             minutes: $('#minute_arrow'),
             hours: $('#hour_arrow')
         }
-    )
+    );
 
     $('button').click(function () {
-        clock.start();
+        clock.toggle();
+        if(clock.isRunning()) {
+            $(this).html('Stop');
+        } else {
+            $(this).html('Start');
+        }
     })
 });

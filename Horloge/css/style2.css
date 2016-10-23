@@ -278,7 +278,6 @@ b, i {
 
 #hour_center {
     position: relative;
-    /* display: none; */
     top: 50%;
     left: 50%;
     width: 25px;
@@ -289,42 +288,40 @@ b, i {
 }
 
 #hour_arrow {
-    /*display: none;*/
     width: 7px;
-    height: 146px;
+    height: 135px;
     background: LimeGreen;
     position: relative;
     left: 188px;
-    top: 36px;
-    animation: spin2 20s linear infinite;
-    transform-origin: center 130px;
-}
-
-#hour_arrow div {
-    width: 3px;
-    height: 3px;
-    background: black;
-    position: relative;
-    left: 2px;
-    top: 129px;
-    z-index: 1000;
+    top: 56px;
+    /*animation: spin2 20s linear infinite;*/
+    transform-origin: center 110px;
 }
 
 #minute_arrow {
-    display: none;
-    width: 6px;
-    height: 50%;
+    width: 5px;
+    height: 155px;
     background: blue;
     background: blue;
     position: relative;
-    left: 50%;
-    top: 35px;
-    transform: translateX(-1px);
+    left: 189px;
+    top: 61px;
+    /*animation: spin3 30s linear infinite;*/
+    transform-origin: center 130px;
 }
+
+/*#second_arrow div {*/
+    /*width: 3px;*/
+    /*height: 3px;*/
+    /*background: black;*/
+    /*position: relative;*/
+    /*left: 1px;*/
+    /*top: 129px;*/
+    /*z-index: 1000;*/
+/*}*/
 
 #second_center {
     position: relative;
-    /*display: none;*/
     top: 50%;
     left: 50%;
     width: 15px;
@@ -335,14 +332,13 @@ b, i {
 }
 
 #second_arrow {
-    /*display: none;*/
     width: 3px;
     height: 240px;
     background: Crimson;
     position: relative;
     left: 50%;
     top: -13px;
-    animation: spin 25s linear infinite;
+    /*animation: spin 25s linear infinite;*/
     transform-origin: center 190px;
 }
 
@@ -351,6 +347,11 @@ b, i {
 }
 
 @keyframes spin2 {
+    0% { transform:rotate(0deg);  }
+    100% { transform:rotate(360deg); }
+}
+
+@keyframes spin3 {
     0% { transform:rotate(0deg);  }
     100% { transform:rotate(360deg); }
 }
