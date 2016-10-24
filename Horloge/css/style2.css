@@ -342,19 +342,19 @@ b, i {
     transform-origin: center 190px;
 }
 
-@keyframes spin {
-    100% { transform:rotate(360deg); }
-}
+/*@keyframes spin {*/
+    /*100% { transform:rotate(360deg); }*/
+/*}*/
 
-@keyframes spin2 {
-    0% { transform:rotate(0deg);  }
-    100% { transform:rotate(360deg); }
-}
+/*@keyframes spin2 {*/
+    /*0% { transform:rotate(0deg);  }*/
+    /*100% { transform:rotate(360deg); }*/
+/*}*/
 
-@keyframes spin3 {
-    0% { transform:rotate(0deg);  }
-    100% { transform:rotate(360deg); }
-}
+/*@keyframes spin3 {*/
+    /*0% { transform:rotate(0deg);  }*/
+    /*100% { transform:rotate(360deg); }*/
+/*}*/
 
 button {
     width: 50px;

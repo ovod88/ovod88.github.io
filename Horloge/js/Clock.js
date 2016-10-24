@@ -26,7 +26,10 @@ function Clock(arrows) {
     function setArrows() {
         var currentDate = new Date();
         currentTime = Date.now();
-        arrows.seconds.rotate({endDeg: currentDate.getSeconds() * SECDEGREE});
+        arrows.seconds.rotate({
+            endDeg: currentDate.getSeconds() * SECDEGREE,
+            easing: 'easeInOutElastic'
+        });
         arrows.minutes.rotate({endDeg: currentDate.getMinutes() * MINDEGREE + (currentDate.getSeconds()/60) * MINDEGREE});
         var hours = currentDate.getHours();
         if( hours > 12) {

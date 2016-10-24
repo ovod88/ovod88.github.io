@@ -3,6 +3,8 @@ $.fn.rotate = function(options) {
         settings = $.extend({
         startDeg: false,
         endDeg: 360,
+        duration: 1,
+        animate: {},
         easing: 'linear'
     }, options),
         prefixes=['-Webkit-', '-Moz-', '-O-', '-ms-', ''];
@@ -22,10 +24,40 @@ $.fn.rotate = function(options) {
     supports.transform = supports('Transform');
     supports.transition = supports('Transition');
 
+    function prefixed(prop, value) {
+        var css={};
+        if (!supports.transform) {
+            return css;
+        }
+        $.each(prefixes, function(i, prefix) {
+            css[prefix.toLowerCase()+prop]=value || '';
+        });
+        return css;
+    }
 
+    if(supports.transform) {
+        if (settings.startDeg===false) {
+            settings.startDeg=$this.data('rotated') || 0;
+        }
+        settings.animate.perc=100;
+        console.log(settings.animate);
 
-
-    $this.css({'transform' : 'rotate('+ settings.endDeg +'deg)'});
+        $this.animate(settings.animate, {
+            duration: settings.duration*100,
+            easing: settings.easing,
+            step: function(perc, fx) {
+                console.log('PERC', perc);
+                var deg;
+                if (fx.prop==='perc') {
+                    deg=settings.startDeg+(settings.endDeg-settings.startDeg)*perc/100;
+                    $this.css(prefixed('transform', 'rotate('+deg+'deg)'));
+                }
+            },
+            complete: function() {
+                $this.css('perc', 0).data('rotated', settings.endDeg);
+            }
+        });
+    }
 
     return $this;
 };
