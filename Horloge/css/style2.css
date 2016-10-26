@@ -171,18 +171,6 @@ b, i {
     font-family: 'Ubuntu';
 }
 
-/*#left_numbers {*/
-    /*padding-top: 15px;*/
-/*}*/
-/*#left_numbers span {*/
-    /*padding-bottom: 10px;*/
-/*}*/
-
-
-/*.left_numbers-first {*/
-    /*padding-left: 86px;*/
-/*}*/
-
 .left_numbers-first:first-child {
     position: relative;
     bottom: -9px;
@@ -191,8 +179,8 @@ b, i {
 
 .left_numbers-first:last-child {
     position: relative;
-    bottom: -44px;
-    left: 91px;
+    bottom: -52px;
+    left: 89px;
 }
 
 .left_numbers-second {
@@ -212,7 +200,7 @@ b, i {
 
 .left_numbers-second:nth-child(4) {
     position: relative;
-    bottom: -43px;
+    bottom: -52px;
 }
 
 .left_numbers-second:last-child {
@@ -233,7 +221,7 @@ b, i {
 }
 
 #center_numbers span:last-child {
-    top: 325px;
+    top: 337px;
     position: relative;
     left: -7px;
 }
@@ -253,7 +241,7 @@ b, i {
 .right_numbers-first:last-child {
     position: absolute;
     left: 12px;
-    top: 238px;
+    top: 251px;
 }
 
 .right_numbers-second:nth-child(2) {
@@ -264,14 +252,14 @@ b, i {
 
 #right_numbers span:nth-child(3) {
     position: absolute;
-    top: 94px;
-    left: 99px;
+    top: 105px;
+    left: 102px;
 }
 
 .right_numbers-second:nth-child(4) {
     position: absolute;
-    top: 178px;
-    left: 70px;
+    top: 185px;
+    left: 79px;
 }
 
 #hour,
@@ -371,4 +359,31 @@ button {
     left: 50%;
     transform: translateX(-50%);
     bottom: 30px;
+}
+
+
+@-moz-document url-prefix() {
+    .left_numbers-third:nth-child(3) {
+        right: 2px;
+    }
+
+    .left_numbers-second:nth-child(4) {
+        right: 2px;
+        top: 43px;
+    }
+
+    .left_numbers-first:last-child {
+        bottom: -43px;
+    }
+    #center_numbers span:first-child {
+        top: 51px;
+    }
+
+    #center_numbers span:last-child {
+        top: 324px;
+    }
+
+    #right_numbers {
+        top: 51px;
+    }
 }
