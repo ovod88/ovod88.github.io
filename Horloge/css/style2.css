@@ -162,6 +162,7 @@ b, i {
 #time_numbers {
     text-align: left;
     font-size: 55px;
+    position: relative;
 }
 
 #time_numbers span {
@@ -170,28 +171,28 @@ b, i {
     font-family: 'Ubuntu';
 }
 
-#left_numbers {
-    padding-top: 15px;
-}
-#left_numbers span {
-    padding-bottom: 10px;
-}
+/*#left_numbers {*/
+    /*padding-top: 15px;*/
+/*}*/
+/*#left_numbers span {*/
+    /*padding-bottom: 10px;*/
+/*}*/
 
 
-.left_numbers-first {
-    padding-left: 86px;
-}
+/*.left_numbers-first {*/
+    /*padding-left: 86px;*/
+/*}*/
 
 .left_numbers-first:first-child {
     position: relative;
-    bottom: 4px;
-    left: -5px;
+    bottom: -9px;
+    left: 85px;
 }
 
 .left_numbers-first:last-child {
     position: relative;
-    bottom: 4px;
-    left: 4px;
+    bottom: -44px;
+    left: 91px;
 }
 
 .left_numbers-second {
@@ -200,13 +201,18 @@ b, i {
 
 .left_numbers-second:nth-child(2) {
     position: relative;
-    bottom: 14px;
+    bottom: -9px;
     left: -4px;
+}
+
+.left_numbers-third:nth-child(3) {
+    position: relative;
+    bottom: -29px;
 }
 
 .left_numbers-second:nth-child(4) {
     position: relative;
-    bottom: -7px;
+    bottom: -43px;
 }
 
 .left_numbers-second:last-child {
@@ -223,47 +229,49 @@ b, i {
 #center_numbers span:first-child {
     position: relative;
     left: -5px;
-    top: -2px;
+    top: 62px;
 }
 
 #center_numbers span:last-child {
-    margin-top: 271px;
+    top: 325px;
     position: relative;
     left: -7px;
 }
 
 #right_numbers {
+    position: absolute;
     text-align: right;
-    margin-top: -389px;
+    left: 250px;
 }
 
-#right_numbers span {
-    padding-bottom: 10px;
+.right_numbers-first:first-child{
+    position: absolute;
+    top: -42px;
+    left: 13px;
 }
 
-.right_numbers-first:first-child,
 .right_numbers-first:last-child {
-    position: relative;
-    padding-right: 100px;
-    top: 12px;
+    position: absolute;
+    left: 12px;
+    top: 238px;
 }
 
 .right_numbers-second:nth-child(2) {
-    position: relative;
-    padding-right: 33px;
-    top: 5px;
+    position: absolute;
+    left: 71px;
+    top: 14px;
 }
 
 #right_numbers span:nth-child(3) {
-    position: relative;
-    top: 11px;
-    left: -11px;
+    position: absolute;
+    top: 94px;
+    left: 99px;
 }
 
 .right_numbers-second:nth-child(4) {
-    position: relative;
-    top: 19px;
-    left: -35px;
+    position: absolute;
+    top: 178px;
+    left: 70px;
 }
 
 #hour,
@@ -358,9 +366,9 @@ b, i {
 
 button {
     width: 50px;
-    height: 20px;
+    height: 25px;
     position: absolute;
     left: 50%;
-    top: 660px;
     transform: translateX(-50%);
+    bottom: 30px;
 }
