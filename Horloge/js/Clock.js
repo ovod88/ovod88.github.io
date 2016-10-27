@@ -30,12 +30,12 @@ function Clock(arrows) {
             endDeg: currentDate.getSeconds() * SECDEGREE,
             easing: 'easeInOutElastic'
         });
-        arrows.minutes.rotate({endDeg: currentDate.getMinutes() * MINDEGREE + (currentDate.getSeconds()/60) * MINDEGREE});
-        var hours = currentDate.getHours();
-        if( hours > 12) {
-            hours -= 12;
-        }
-        arrows.hours.rotate({endDeg: hours * HOURDEGREE + (currentDate.getMinutes()/60) * HOURDEGREE});
+        //arrows.minutes.rotate({endDeg: currentDate.getMinutes() * MINDEGREE + (currentDate.getSeconds()/60) * MINDEGREE});
+        //var hours = currentDate.getHours();
+        //if( hours > 12) {
+        //    hours -= 12;
+        //}
+        //arrows.hours.rotate({endDeg: hours * HOURDEGREE + (currentDate.getMinutes()/60) * HOURDEGREE});
     }
 
     function stop() {
@@ -46,7 +46,7 @@ function Clock(arrows) {
     function update() {
         var nextTime = Date.now();
 
-        if( nextTime - currentTime > 1000 ) {
+        if( nextTime - currentTime >= 1000 ) {
             setArrows();
         }
         interval = setTimeout(update, 250);
