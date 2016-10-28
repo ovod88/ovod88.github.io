@@ -8,8 +8,7 @@ $.fn.rotate = function(options) {
         easing: 'linear'
     }, options),
         prefixes=['-Webkit-', '-Moz-', '-O-', '-ms-', ''];
-    console.log('CURRENT DEG -->', settings.endDeg);
-    console.log('@@@@@@@@@@@@');
+
     function supports(prop) {
         var isSupport=false,
             style=document.createElement('div').style;
@@ -51,7 +50,7 @@ $.fn.rotate = function(options) {
         }
 
         $this.animate(settings.animate, {
-            duration: settings.duration*100,
+            duration: settings.duration*400,
             easing: settings.easing,
             step: function(perc, fx) {
                 var deg;
