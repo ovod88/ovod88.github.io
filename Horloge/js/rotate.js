@@ -41,12 +41,8 @@ $.fn.rotate = function(options) {
         }
         settings.animate.perc=100;
 
-        if(settings.startDeg >= 360) {
-            settings.startDeg = 0;
-        }
-
-        if(settings.startDeg == 354) {
-            settings.endDeg = 360;
+        if(settings.endDeg == 0 && settings.startDeg != 0) {
+            settings.startDeg -= 360;
         }
 
         $this.animate(settings.animate, {
