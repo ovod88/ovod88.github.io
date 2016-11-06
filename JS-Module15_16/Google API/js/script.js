@@ -11,9 +11,6 @@ $(function() {
 		e.stopPropagation();
 	};
 
-	var clavier;
-	var watchInputInterval = setInterval(watchTextbox, 300);
-
 	$search_input.click(activateSearchLine).focus(activateSearchLine);
 
 	$(window).click(function() {
@@ -42,26 +39,35 @@ $(function() {
 		        	'Authorization': 'Basic ' + azureKey
 		      	},
 		      	success: function(data) {
-		      		var ul;
+		      		var ul, results = data.d.results;
 
 		      		if($('.result').length) {
 		      			ul = $('.result');
 		      			ul.html('');
 		      			ul = ul[0];
 		      		} else {
-			        	ul = document.createElement("ul");
-			        	ul.className = 'result';
-		      		}
-				    $.each(data.d.results, function(i, val){
-				            var li = document.createElement("li");
-				            li.innerHTML = '<p class="title">' + '<a href="' + val.Url + '">'+ val.Title +
-				            			'</a>' + '</p>' + '<p class = "url">' + 
-				            				val.Url +'</p>' + '<p class="description">' + val.Description + '</p>';                         
-				            ul.appendChild(li);
-				    });
-				    $('body').append(ul);
-		      	}
-		    });
+						ul = document.createElement("ul");
+						ul.className = 'result';
+					}
+					if(results.length) {
+
+						$.each(data.d.results, function(i, val){
+							var li = document.createElement("li");
+							li.innerHTML = '<p class="title">' + '<a href="' + val.Url + '">'+ val.Title +
+									'</a>' + '</p>' + '<p class = "url">' +
+									val.Url +'</p>' + '<p class="description">' + val.Description + '</p>';
+
+							ul.appendChild(li);
+						});
+						$('#nothing').remove();
+						$('body').append(ul);
+
+					} else {
+						$('body').append('<span id="nothing"> Nothing found </span>');
+					}
+
+				}
+			});
     	}
 	}
 
@@ -92,102 +98,8 @@ $(function() {
 
 	$('.transliteracja a').click(function(event) {
 		event.stopPropagation();
-		clavier = new VirtualClavier('uk');
-		clavier.init();		
+		if(!$('.vClavier').length) {
+			new VirtualClavier($search_input, $search_box, 'uk').init();
+		}
 	});
-
-    function VirtualClavier(language) {
-    	var isCapslockOn = false;
-    	var isShiftOn = false;
-
-    	var content = {
-    		'name': 'Екранна клавіатура',
-    		'line_first' : ["'", 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, '-', '='],
-    		'line1_first_alt' : ["₴", '!', '"', '№',';', '%', ':', '?', '*', '(', ')', '_', '+']
-
-    	}
-    	if(language == 'uk') {
-    		content['second_line'] = ['й', 'ц', 'у', 'к', 'е', 'н', 'г', 'ш', 'щ', 'з', 'х', 'ї', 'ґ'];
-    		content['third_line'] = ['ф', 'і', 'в', 'а', 'п', 'р', 'о', 'л', 'д', 'ж', 'є'];
-    		content['fourth_line'] = ['я', 'ч', 'с', 'м', 'и', 'т', 'ь', 'б', 'ю', '.'];
-    	}
-
-    	this.init = function() {
-    		$('body').append(_.template($('#clavier_template').html()) (content));
-    		$('<link rel="stylesheet" href="css/vClavier.css" type="text/css" />').insertAfter($('link'));
-
-    		launchHandlers(this);
-    	}
-
-    	function launchHandlers(instance) {	
-    		$('.vClavier-line').click(function(event) {
-    			event.stopPropagation();
-    			var $this = $(event.target).is('li') ? $(event.target) : $(event.target).parent(), character;
-    			$this.mousedown(function() {
-        				$this.css('border', '1px inset #aaa'); 
-        			}).mouseup(function() {
-        				$this.css('border', '1px solid #aaa'); 
-        		});
-        		if($this.is('li.letter') && $search_box.hasClass('highlighted')) {
-        			character = $.trim($this.html());
-					$search_input.val( $search_input.val() + character );
-        		}
-        		if($this.is('li.capslock')) {
-        			if(!isCapslockOn) {
-        				$this.css('border', '1px inset #aaa'); 
-        				isCapslockOn = true;
-        				$this.parents('.vClavier').find('li.letter').each(function() {
-        					$(this).text($(this).text().toUpperCase());
-        				});
-        			} else {
-        				$this.css('border', '1px solid #aaa');
-        				$this.parents('.vClavier').find('li.letter').each(function() {
-        					$(this).text($(this).text().toLowerCase());
-        				});
-        				isCapslockOn = false;
-        			}
-        		}
-        		if($this.is('li.shift')) {
-        			if(!isShiftOn) {
-        				$this.css('border', '1px inset #aaa'); 
-        				isShiftOn = true;
-        				$this.parents('.vClavier').find('li.letter').each(function() {
-        					$(this).text($(this).text().toUpperCase());
-        				});
-        				$(this).parents('.vClavier')
-        									.find('.vClavier-line')
-        									.eq(1).find('li.letter')
-        									.each(function(index) {
-        										$(this).html(content['line1_first_alt'][index]);
-        									});
-        			} else {
-        				$this.css('border', '1px solid #aaa');
-        				$this.parents('.vClavier').find('li.letter').each(function() {
-        					$(this).text($(this).text().toLowerCase());
-        				});
-        				isShiftOn = false;
-        				$(this).parents('.vClavier')
-        									.find('.vClavier-line')
-        									.eq(1).find('li.letter')
-        									.each(function(index) {
-        										$(this).html(content['line_first'][index]);
-        									});
-        			}
-        		}
-        		if($this.is('.space')) {
-        			$search_input.val( $search_input.val() + ' ' );
-        		}
-			});
-
-			$('.vClavier-closebutton').click(function() {
-				$(this).parents('.vClavier').remove();
-			});
-
-			$('.vClavier-lines--header').hover(function() {
-				$(this).parents('.vClavier').draggable(
-					{containment: 'window'}
-				);
-			});
-    	}
-    }
-})
+});

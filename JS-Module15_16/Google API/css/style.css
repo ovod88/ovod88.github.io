@@ -10,6 +10,10 @@
 	display: block;
 }
 
+#language {
+	display: block;
+}
+
 #default_search {
 	position: absolute;
 	width: 50%;
