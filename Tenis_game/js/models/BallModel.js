@@ -37,33 +37,35 @@ function BallModel() {
         }
 
         ballObj.move = function() {
-            checkWallReached();
             directions[this.direction].apply(ballObj);
         };
 
         ballObj.mirrorDirection = function() {
             if(this.direction == 'eastN') {
                 this.direction = 'westN';
-            } else if(ballObj.direction == 'westN') {
+            } else if(this.direction == 'westN') {
                 this.direction = 'westS';
             } else {
                 this.direction = 'eastS';
             }
-        }
+        };
+
+        ball.oppositeDirection = function () {
+            if(this.direction == 'eastN') {
+                this.direction = 'westS';
+            } else if(ballObj.direction == 'westN') {
+                this.direction = 'eastS';
+            } else if(this.direction = 'eastS' ) {
+                this.direction == 'westN'
+            } else {
+                this.direction == 'eastN';
+            }
+
+        };
 
 
         return ballObj;
     };
-
-    function checkWallReached() {
-        var leftX = ballObj.externalBlock[0].x - elem_size,
-            leftY = ballObj.externalBlock[0].y - elem_size,
-            rightX = ballObj.externalBlock[0].x + elem_size;
-
-        if(leftX < 0 || leftY < 0 || rightX > view.size.maxX ) {
-            ballObj.mirrorDirection();
-        }
-    }
 }
 
 BallModel.prototype = Model;

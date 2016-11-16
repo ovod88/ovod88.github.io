@@ -3,6 +3,8 @@ function TenisController(view, models) {
     var gameIsPaused = false;
     var keyPressed = false;
     var objects = {};
+    var figure = [];
+    var ball;
 
     var timeoutRacket, timeoutBall;
     this.startGame = function() {
@@ -22,6 +24,9 @@ function TenisController(view, models) {
             objects.ball.externalBlock = objects.ball.externalBlock.slice(0, 1);
 
             objects.ball.internalBlock = objects.ball.internalBlock.slice(0, 1);
+
+            //console.log('RACKET -->', objects.racket.externalBlock);
+            //console.log('BALL -->', objects.ball.externalBlock);
 
             redraw();
             view.elements.submitBtn.innerHTML = "Pause game";
@@ -87,13 +92,49 @@ function TenisController(view, models) {
     }
 
     function moveBall() {
-        objects.ball.direction = 'eastN';
-        objects.ball.move();
+        if(!objects.ball.direction) {
+            objects.ball.direction = 'eastN';
+        }
+        checkIfBallReachedWall();
+        checkBallHitsFigure();
         redraw();
-        timeoutBall = setTimeout(function moveBall() {
-            objects.ball.move();
-            redraw();
-            timeoutBall = setTimeout(moveBall, 800);
-        }, 800);
+        objects.ball.move();
+        timeoutBall = setTimeout(moveBall, 600);
+    }
+
+    function checkIfBallReachedWall() {
+        var leftX = objects.ball.externalBlock[0].x - objects.ball.elem_size,
+            leftY = objects.ball.externalBlock[0].y - objects.ball.elem_size,
+            rightX = objects.ball.externalBlock[0].x + objects.ball.elem_size;
+
+        if(leftX < 0 || leftY < 0 || rightX > view.size.maxX ) {
+            objects.ball.mirrorDirection();
+        }
+    }
+
+    function checkBallHitsFigure() {
+        if (!figure.length) {
+            generateFullFigure();
+        }
+        generateFullBall();
+
+        for(var i = 0; i < figure.length; i++) {
+            var result = Model.compareObjects(ball, figure[i]);
+
+            if( result.bottom ) {
+                console.log("BOTOOM HITED!!!");
+            }
+        }
+    }
+
+    function generateFullFigure() {
+        for( var i = 0; i < objects.form.externalBlock.length; i++) {
+            figure.push(Model.transformToBlockObj(objects.form.externalBlock[i]));
+        }
+        //console.log('Figure --> ', figure);
+    }
+
+    function generateFullBall() {
+        ball = Model.transformToBlockObj(objects.ball.externalBlock[0]);
     }
 }
