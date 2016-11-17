@@ -42,21 +42,18 @@ var Model = {
         //console.log("Figure block ", JSON.stringify(p2.bottomright));
         //console.log("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
 
-        function comparePoints(p1, p2) {
-            return p1.x == p2.x && p1.y == p2.y;
-        }
-
         return {
-            'left': comparePoints(ball.topleft, figure_element.topright) && comparePoints(ball.bottomleft, figure_element.bottomright),
-            'right':  comparePoints(ball.topright, figure_element.topleft) && comparePoints(ball.bottomright, figure_element.bottomleft),
-            'bottom': comparePoints(ball.topleft, figure_element.bottomleft) && comparePoints(ball.topright, figure_element.bottomright),
-            'top': comparePoints(ball.bottomleft, figure_element.topleft) && comparePoints(ball.bottomright, figure_element.topright),
-            'left_top_corner': comparePoints(ball.bottomright, figure_element.topleft),
-            'left_bottom_corner': comparePoints(ball.topright, figure_element.bottomleft),
-            'right_top_corner': comparePoints(ball.bottomleft, figure_element.topright),
-            'right_bottom_corner': comparePoints(ball.topleft, figure_element.bottomright)
+            'left': this.comparePoints(ball.topleft, figure_element.topright) && this.comparePoints(ball.bottomleft, figure_element.bottomright),
+            'right':  this.comparePoints(ball.topright, figure_element.topleft) && this.comparePoints(ball.bottomright, figure_element.bottomleft),
+            'bottom': this.comparePoints(ball.topleft, figure_element.bottomleft) && this.comparePoints(ball.topright, figure_element.bottomright),
+            'top': this.comparePoints(ball.bottomleft, figure_element.topleft) && this.comparePoints(ball.bottomright, figure_element.topright),
+            'left_top_corner': this.comparePoints(ball.bottomright, figure_element.topleft),
+            'left_bottom_corner': this.comparePoints(ball.topright, figure_element.bottomleft),
+            'right_top_corner': this.comparePoints(ball.bottomleft, figure_element.topright),
+            'right_bottom_corner': this.comparePoints(ball.topleft, figure_element.bottomright)
         }
-
-
+    },
+    comparePoints: function(p1, p2) {
+        return p1.x == p2.x && p1.y == p2.y;
     }
 };

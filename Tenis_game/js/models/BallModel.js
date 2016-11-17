@@ -34,6 +34,7 @@ function BallModel() {
 
         if(!ballObj) {
             ballObj = this.convert(structure);
+            ballObj.counterclock = true;
         }
 
         ballObj.move = function() {
@@ -41,16 +42,37 @@ function BallModel() {
         };
 
         ballObj.mirrorDirection = function() {
-            if(this.direction == 'eastN') {
-                this.direction = 'westN';
-            } else if(this.direction == 'westN') {
-                this.direction = 'westS';
+            if(this.counterclock) {
+                switch (this.direction) {
+                    case 'eastN':
+                        //console.log('THIS IS CALLED');
+                        this.direction = 'westN';
+                        break;
+                    case 'westN':
+                        this.direction = 'westS';
+                        break;
+                    case 'westS':
+                        this.direction = 'eastS';
+                        break;
+                }
             } else {
-                this.direction = 'eastS';
+                switch (this.direction) {
+                    case 'eastN':
+                        this.direction = 'eastS';
+                        break;
+                    case 'westN':
+                        this.direction = 'eastN';
+                        break;
+                    case 'eastS':
+                        this.direction = 'westS';
+                        break;
+                }
             }
         };
 
-        ball.oppositeDirection = function () {
+        ballObj.oppositeDirection = function () {
+            this.counterclock = !this.counterclock;
+
             if(this.direction == 'eastN') {
                 this.direction = 'westS';
             } else if(ballObj.direction == 'westN') {
