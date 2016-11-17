@@ -4,7 +4,7 @@ function FormsModel() {
 
     var structures = {
         'heart': [
-            {x: -6 * elem_size, y: 2 * elem_size, quantity: 3}
+            {x: -3 * elem_size, y: 1 * elem_size, quantity: 1}
             //{x: -8 * elem_size, y: 3 * elem_size, quantity: 6},
             //{x: -9 * elem_size, y: 4 * elem_size, quantity: 8},
             //{x: -9 * elem_size, y: 5 * elem_size, quantity: 9},

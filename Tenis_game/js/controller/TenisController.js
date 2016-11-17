@@ -115,7 +115,7 @@ function TenisController(view, models) {
     function checkBallHitsFigure() {
         var hits = {};
         hits.borders_ids;
-        hits.corners_ids = [];
+        hits.corners_ids;
 
         if (!figure.length) {
             generateFullFigure();
@@ -128,10 +128,14 @@ function TenisController(view, models) {
             if( result.bottom || result.top || result.left || result.right ) {
                 console.log('CALLED MIRRORING');
                 hits.borders_ids = figure[i].topleft;
-            } else if(result.left_bottom_corner || result.left_top_corner ||
-                                    result.right_bottom_corner || result.right_top_corner) {
-                console.log('CALLED OPPOSITING');
-                hits.corners_ids.push(figure[i].topleft);
+                continue;
+            }
+
+            if((result.left_bottom_corner && objects.ball.direction == 'eastN') ||
+                (result.left_top_corner && objects.ball.direction == 'westS') ||
+                (result.right_bottom_corner && objects.ball.direction == 'westN') ||
+                (result.right_top_corner && objects.ball.direction == 'eastS')) {
+                hits.corners_ids = figure[i].topleft;
             }
         }
 
@@ -150,18 +154,16 @@ function TenisController(view, models) {
                 }
             }
         }
-        if(hits.corners_ids.length) {
+        if(hits.corners_ids) {
             objects.ball.oppositeDirection();
-            for (var i = 0; i < hits.corners_ids.length; i++) {
                 for (var j = 0; j < objects.form.externalBlock.length; j++) {
-                    if (objects.form.externalBlock[j].x == hits.corners_ids[i].x &&
-                        objects.form.externalBlock[j].y == hits.corners_ids[i].y) {
+                    if (objects.form.externalBlock[j].x == hits.corners_ids.x &&
+                        objects.form.externalBlock[j].y == hits.corners_ids.y) {
                         objects.form.externalBlock.splice(j, 1);
                         objects.form.internalBlock.splice(j, 1);
                         return;
                     }
                 }
-            }
         }
     }
 
