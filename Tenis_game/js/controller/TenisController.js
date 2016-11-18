@@ -4,7 +4,7 @@ function TenisController(view, models) {
     var keyPressed = false;
     var objects = {};
     var figure = [];
-    var ball;
+    var ball, racket;
 
     var timeoutRacket, timeoutBall;
     this.startGame = function() {
@@ -97,6 +97,7 @@ function TenisController(view, models) {
         }
         checkIfBallReachedWall();
         checkBallHitsFigure();
+        //checkBallHitsRacket();
         redraw();
         objects.ball.move();
         timeoutBall = setTimeout(moveBall, 600);
@@ -113,33 +114,35 @@ function TenisController(view, models) {
     }
 
     function checkBallHitsFigure() {
-        var hits = {};
-        hits.borders_ids;
-        hits.corners_ids;
 
         if (!figure.length) {
             generateFullFigure();
         }
         generateFullBall();
+        for( var i = 0; i < figure.length; i++ ) {
+            var hits = checkObjectsCollapsed(ball, figure[i]);
+            console.log("HITS --> ", hits);
 
-        for(var i = 0; i < figure.length; i++) {
-            var result = Model.compareObjects(ball, figure[i]);
-
-            if( result.bottom || result.top || result.left || result.right ) {
-                console.log('CALLED MIRRORING');
-                hits.borders_ids = figure[i].topleft;
-                continue;
-            }
-
-            if((result.left_bottom_corner && objects.ball.direction == 'eastN') ||
-                (result.left_top_corner && objects.ball.direction == 'westS') ||
-                (result.right_bottom_corner && objects.ball.direction == 'westN') ||
-                (result.right_top_corner && objects.ball.direction == 'eastS')) {
-                hits.corners_ids = figure[i].topleft;
-            }
+            processHit(hits);
         }
+    }
 
-        processHit(hits);
+    function checkObjectsCollapsed(ball, target) {
+        var hits= {};
+        var result = Model.compareObjects(ball, target);
+        //console.log("BALL --> ", ball);
+        //console.log("FIGURE ELEMENT --> ", target);
+        //console.log("RESULT --> ", result);
+
+        if( result.bottom || result.top || result.left || result.right ) {
+            hits.borders_ids = target.topleft;
+        } else if((result.left_bottom_corner && objects.ball.direction == 'eastN') ||
+            (result.left_top_corner && objects.ball.direction == 'westS') ||
+            (result.right_bottom_corner && objects.ball.direction == 'westN') ||
+            (result.right_top_corner && objects.ball.direction == 'eastS')) {
+            hits.corners_ids = target.topleft;
+        }
+        return hits;
     }
 
     function processHit(hits) {//TODO rewrite this method
@@ -156,14 +159,14 @@ function TenisController(view, models) {
         }
         if(hits.corners_ids) {
             objects.ball.oppositeDirection();
-                for (var j = 0; j < objects.form.externalBlock.length; j++) {
-                    if (objects.form.externalBlock[j].x == hits.corners_ids.x &&
-                        objects.form.externalBlock[j].y == hits.corners_ids.y) {
-                        objects.form.externalBlock.splice(j, 1);
-                        objects.form.internalBlock.splice(j, 1);
-                        return;
-                    }
+            for (var j = 0; j < objects.form.externalBlock.length; j++) {
+                if (objects.form.externalBlock[j].x == hits.corners_ids.x &&
+                    objects.form.externalBlock[j].y == hits.corners_ids.y) {
+                    objects.form.externalBlock.splice(j, 1);
+                    objects.form.internalBlock.splice(j, 1);
+                    return;
                 }
+            }
         }
     }
 
@@ -171,7 +174,6 @@ function TenisController(view, models) {
         for( var i = 0; i < objects.form.externalBlock.length; i++) {
             figure.push(Model.transformToBlockObj(objects.form.externalBlock[i]));
         }
-        //console.log('Figure --> ', figure);
     }
 
     function generateFullBall() {

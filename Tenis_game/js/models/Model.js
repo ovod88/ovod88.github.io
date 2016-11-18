@@ -38,9 +38,6 @@ var Model = {
         }
     },
     compareObjects: function(ball, figure_element) {
-        //console.log("Ball  ", JSON.stringify(p1.bottomright));
-        //console.log("Figure block ", JSON.stringify(p2.bottomright));
-        //console.log("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
 
         return {
             'left': this.comparePoints(ball.topleft, figure_element.topright) && this.comparePoints(ball.bottomleft, figure_element.bottomright),
