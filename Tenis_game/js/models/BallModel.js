@@ -45,7 +45,6 @@ function BallModel() {
             if(this.counterclock) {
                 switch (this.direction) {
                     case 'eastN':
-                        //console.log('THIS IS CALLED');
                         this.direction = 'westN';
                         break;
                     case 'westN':
@@ -53,6 +52,9 @@ function BallModel() {
                         break;
                     case 'westS':
                         this.direction = 'eastS';
+                        break;
+                    case 'eastS':
+                        this.direction = 'eastN';
                         break;
                 }
             } else {
@@ -65,6 +67,9 @@ function BallModel() {
                         break;
                     case 'eastS':
                         this.direction = 'westS';
+                        break;
+                    case 'westS':
+                        this.direction = 'westN';
                         break;
                 }
             }

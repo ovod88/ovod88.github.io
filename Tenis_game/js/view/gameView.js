@@ -15,7 +15,7 @@ function gameView (){
         canvasElem.setAttribute('height', drawingHeight);
     }
 
-    this.fillSelect= function(options) {
+    this.fillSelect = function(options) {
         for( var i = 0; i < options.length; i++) {
             var opt = document.createElement('option');
             opt.innerHTML = options[i];
@@ -31,8 +31,8 @@ function gameView (){
     };
 
     this.elements = {
-      submitBtn:   document.querySelector('button'),
-      select: document.querySelector('select'),
+        submitBtn:   document.querySelector('button'),
+        select: document.querySelector('select'),
         document : document
     };
 
@@ -47,8 +47,14 @@ function gameView (){
 
         drawContext.stroke();
     }
-    this.clear = function() {
-        drawContext.clearRect(0, 0, parseInt(drawingWidth), parseInt(drawingHeight));
+    this.clear = function(obj) {
+        if(obj) {
+            for(var i = 0; i < obj.externalBlock.length; i++) {
+                drawContext.clearRect(obj.externalBlock[i].x, obj.externalBlock[i].y, obj.elem_size + 0.5, obj.elem_size + 0.5);
+            }
+        } else {
+            drawContext.clearRect(0, 0, parseInt(drawingWidth), parseInt(drawingHeight));
+        }
     };
 
     this.draw = function(obj) {

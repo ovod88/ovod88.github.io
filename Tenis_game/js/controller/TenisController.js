@@ -1,10 +1,7 @@
 function TenisController(view, models) {
-    var gameIsOn = false;
-    var gameIsPaused = false;
-    var keyPressed = false;
-    var objects = {};
-    var figure = [];
-    var ball, racket;
+    var gameIsOn = false, gameIsPaused = false,
+        keyPressed = false, objects = {},
+        figure = [], ball, racket = [], redrawTimer;
 
     var timeoutRacket, timeoutBall;
     this.startGame = function() {
@@ -25,13 +22,10 @@ function TenisController(view, models) {
 
             objects.ball.internalBlock = objects.ball.internalBlock.slice(0, 1);
 
-            //console.log('RACKET -->', objects.racket.externalBlock);
-            //console.log('BALL -->', objects.ball.externalBlock);
-
-            redraw();
-            view.elements.submitBtn.innerHTML = "Pause game";
-
+            redrawTimer = setInterval(redraw, 20);
             gameIsOn = true;
+
+            view.elements.submitBtn.innerHTML = "Pause game";
             view.elements.document.addEventListener('keydown', moveRacket);
             view.elements.document.addEventListener('keyup', function(e) {
                 if(e.keyCode == 37 || e.keyCode == 39) {
@@ -55,10 +49,12 @@ function TenisController(view, models) {
         view.elements.document.removeEventListener('keydown', moveRacket);
         view.elements.submitBtn.innerHTML = "Continue game";
         clearTimeout(timeoutBall);
+        clearInterval(redrawTimer);
     }
 
     function resumeGame() {
         gameIsPaused = false;
+        redrawTimer = setInterval(redraw, 20);
         view.elements.document.addEventListener('keydown', moveRacket);
         view.elements.submitBtn.innerHTML = "Pause game";
         moveBall();
@@ -67,8 +63,8 @@ function TenisController(view, models) {
     function redraw() {
         view.clear();
         view.draw(objects.form);
-        view.draw(objects.racket);
         view.draw(objects.ball);
+        view.draw(objects.racket);
     }
 
     function moveRacket(e) {
@@ -80,12 +76,10 @@ function TenisController(view, models) {
                     objects.racket.direction = 'right';
                 }
                 objects.racket.move();
-                redraw();
                 timeoutRacket = setTimeout(function moveRacket() {
                     objects.racket.move();
-                    redraw();
                     timeoutRacket = setTimeout(moveRacket, 50);
-                }, 400);
+                }, 200);
             }
             keyPressed = !keyPressed;
         }
@@ -95,12 +89,11 @@ function TenisController(view, models) {
         if(!objects.ball.direction) {
             objects.ball.direction = 'eastN';
         }
-        checkIfBallReachedWall();
-        checkBallHitsFigure();
-        //checkBallHitsRacket();
-        redraw();
         objects.ball.move();
-        timeoutBall = setTimeout(moveBall, 600);
+        //checkIfBallReachedWall();
+        //checkBallHitsFigure();
+        //checkBallHitsRacket();
+        timeoutBall = setTimeout(moveBall, 500);
     }
 
     function checkIfBallReachedWall() {
@@ -111,6 +104,8 @@ function TenisController(view, models) {
         if(leftX < 0 || leftY < 0 || rightX > view.size.maxX ) {
             objects.ball.mirrorDirection();
         }
+
+        //TODO if reached bottom wall -- stop game!!!
     }
 
     function checkBallHitsFigure() {
@@ -120,19 +115,21 @@ function TenisController(view, models) {
         }
         generateFullBall();
         for( var i = 0; i < figure.length; i++ ) {
-            var hits = checkObjectsCollapsed(ball, figure[i]);
-            console.log("HITS --> ", hits);
+            processHit(checkObjectsCollapsed(ball, figure[i]));
+        }
+    }
+    function checkBallHitsRacket() {
+        generateFullBall();
+        generateFullRacket();
 
-            processHit(hits);
+        for( var i = 0; i < racket.length; i++ ) {
+            processRacketHit(checkObjectsCollapsed(ball, racket[i]));
         }
     }
 
     function checkObjectsCollapsed(ball, target) {
         var hits= {};
         var result = Model.compareObjects(ball, target);
-        //console.log("BALL --> ", ball);
-        //console.log("FIGURE ELEMENT --> ", target);
-        //console.log("RESULT --> ", result);
 
         if( result.bottom || result.top || result.left || result.right ) {
             hits.borders_ids = target.topleft;
@@ -170,6 +167,15 @@ function TenisController(view, models) {
         }
     }
 
+    function processRacketHit(hits) {
+        if(hits.borders_ids) {
+            objects.ball.mirrorDirection();
+        }
+        if(hits.corners_ids) {
+            objects.ball.oppositeDirection();
+        }
+    }
+
     function generateFullFigure() {
         for( var i = 0; i < objects.form.externalBlock.length; i++) {
             figure.push(Model.transformToBlockObj(objects.form.externalBlock[i]));
@@ -178,5 +184,11 @@ function TenisController(view, models) {
 
     function generateFullBall() {
         ball = Model.transformToBlockObj(objects.ball.externalBlock[0]);
+    }
+
+    function generateFullRacket() {
+        for( var i = 0; i < objects.racket.externalBlock.length; i++) {
+            racket.push(Model.transformToBlockObj(objects.racket.externalBlock[i]));
+        }
     }
 }
