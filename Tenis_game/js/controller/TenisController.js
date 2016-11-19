@@ -90,22 +90,45 @@ function TenisController(view, models) {
             objects.ball.direction = 'eastN';
         }
         objects.ball.move();
-        //checkIfBallReachedWall();
-        //checkBallHitsFigure();
+        checkIfBallReachedWall();
+        checkBallHitsFigure();
         //checkBallHitsRacket();
-        timeoutBall = setTimeout(moveBall, 500);
+        timeoutBall = setTimeout(moveBall, 200);
     }
 
     function checkIfBallReachedWall() {
         var leftX = objects.ball.externalBlock[0].x - objects.ball.elem_size,
             leftY = objects.ball.externalBlock[0].y - objects.ball.elem_size,
-            rightX = objects.ball.externalBlock[0].x + objects.ball.elem_size;
-
-        if(leftX < 0 || leftY < 0 || rightX > view.size.maxX ) {
+            rightX = objects.ball.externalBlock[0].x + objects.ball.elem_size,
+            rightY = objects.ball.externalBlock[0].y + objects.ball.elem_size;//TODO if reached bottom wall -- stop game!!!
+        console.log('RIGHT Y --> ', rightY);
+        console.log('OBJECT DIRECTION -->', objects.ball.direction);
+        if(leftX < 0 && objects.ball.direction == 'westS') {
+            objects.ball.counterclock = true;
+            objects.ball.mirrorDirection();
+            console.log('LEFT X');
+        } else if(leftX < 0 && objects.ball.direction == 'westN') {
+            objects.ball.counterclock = false;
+            objects.ball.mirrorDirection();
+        } else if(leftY < 0 && objects.ball.direction == 'westN') {
+            objects.ball.counterclock = true;
+            objects.ball.mirrorDirection();
+        } else if(leftY < 0 && objects.ball.direction == 'eastN') {
+            objects.ball.counterclock = false;
+            objects.ball.mirrorDirection();
+        } else if(rightX > view.size.maxX && objects.ball.direction == 'eastN' ) {
+            objects.ball.counterclock = true;
+            objects.ball.mirrorDirection();
+        } else if(rightX > view.size.maxX && objects.ball.direction == 'eastS') {
+            objects.ball.counterclock = false;
+            objects.ball.mirrorDirection();
+        } else if (rightY > view.size.maxY && objects.ball.direction == 'westS') {
+            objects.ball.counterclock = false;
+            objects.ball.mirrorDirection();
+        } else if(rightY > view.size.maxY && objects.ball.direction == 'eastS') {
+            objects.ball.counterclock = true;
             objects.ball.mirrorDirection();
         }
-
-        //TODO if reached bottom wall -- stop game!!!
     }
 
     function checkBallHitsFigure() {
@@ -128,40 +151,43 @@ function TenisController(view, models) {
     }
 
     function checkObjectsCollapsed(ball, target) {
-        var hits= {};
         var result = Model.compareObjects(ball, target);
 
-        if( result.bottom || result.top || result.left || result.right ) {
-            hits.borders_ids = target.topleft;
+
+        if( (result.bottom && objects.ball.direction == 'westN') ||
+            (result.right && objects.ball.direction == 'westS') ||
+            (result.left && objects.ball.direction == 'eastN') ||
+            (result.top && objects.ball.direction == 'eastS')) {
+            objects.ball.mirrorDirection();
+            //console.log('Normal mirroring worked');
+            return target.topleft;
+        } else if( (result.bottom && objects.ball.direction == 'eastN') ||
+            (result.right && objects.ball.direction == 'westN') ||
+            (result.left && objects.ball.direction == 'eastS') ||
+            (result.top && objects.ball.direction == 'westS')) {
+            //console.log('CLOCK DIRECTION --> ', objects.ball.counterclock);
+            objects.ball.counterclock = !objects.ball.counterclock;
+            objects.ball.mirrorDirection();
+            return target.topleft;
         } else if((result.left_bottom_corner && objects.ball.direction == 'eastN') ||
             (result.left_top_corner && objects.ball.direction == 'westS') ||
             (result.right_bottom_corner && objects.ball.direction == 'westN') ||
             (result.right_top_corner && objects.ball.direction == 'eastS')) {
-            hits.corners_ids = target.topleft;
+            objects.ball.oppositeDirection();
+            return target.topleft;
         }
-        return hits;
+        return false;
     }
 
-    function processHit(hits) {//TODO rewrite this method
-        if(hits.borders_ids) {
-            objects.ball.mirrorDirection();
+    function processHit(hit) {
+        //console.log('HIT --> ', hit);
+        if(hit) {
             for(var j = 0; j < objects.form.externalBlock.length; j++) {
-                if(objects.form.externalBlock[j].x == hits.borders_ids.x &&
-                    objects.form.externalBlock[j].y == hits.borders_ids.y) {
+                if(objects.form.externalBlock[j].x == hit.x &&
+                    objects.form.externalBlock[j].y == hit.y) {
                     objects.form.externalBlock.splice(j, 1);
                     objects.form.internalBlock.splice(j, 1);
-                    return;
-                }
-            }
-        }
-        if(hits.corners_ids) {
-            objects.ball.oppositeDirection();
-            for (var j = 0; j < objects.form.externalBlock.length; j++) {
-                if (objects.form.externalBlock[j].x == hits.corners_ids.x &&
-                    objects.form.externalBlock[j].y == hits.corners_ids.y) {
-                    objects.form.externalBlock.splice(j, 1);
-                    objects.form.internalBlock.splice(j, 1);
-                    return;
+                    figure = [];
                 }
             }
         }

@@ -40,8 +40,8 @@ var Model = {
     compareObjects: function(ball, figure_element) {
 
         return {
-            'left': this.comparePoints(ball.topleft, figure_element.topright) && this.comparePoints(ball.bottomleft, figure_element.bottomright),
-            'right':  this.comparePoints(ball.topright, figure_element.topleft) && this.comparePoints(ball.bottomright, figure_element.bottomleft),
+            'left': this.comparePoints(ball.topright, figure_element.topleft) && this.comparePoints(ball.bottomright, figure_element.bottomleft),
+            'right':  this.comparePoints(ball.topleft, figure_element.topright) && this.comparePoints(ball.bottomleft, figure_element.bottomright),
             'bottom': this.comparePoints(ball.topleft, figure_element.bottomleft) && this.comparePoints(ball.topright, figure_element.bottomright),
             'top': this.comparePoints(ball.bottomleft, figure_element.topleft) && this.comparePoints(ball.bottomright, figure_element.topright),
             'left_top_corner': this.comparePoints(ball.bottomright, figure_element.topleft),
