@@ -38,7 +38,7 @@ describe("Testing the Test object with single option", function() {
             .text();
 
         try {
-            expect(body.find('ol.questions').length > 0).toBe(true);
+            expect(body.find('ol.questions').length > 0).toBe(true);//should divide this test to two tests
             expect($.trim(li_to_test_question_text)).toEqual('question2?');
         } catch (e) {
             console.log("Exception is ---> ", e);
