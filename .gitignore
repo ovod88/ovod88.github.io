@@ -2,7 +2,7 @@
 
 tests/*
 
-nodejs/**/node_modules
+/nodejs/**/node_modules/
 **/**/dist/*
 **/**/sprite-dist/*
 **/bower_components/*
