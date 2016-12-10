@@ -2,10 +2,11 @@
 
 tests/*
 
-node_modules/
+nodejs/**/node_modules
 **/**/dist/*
 **/**/sprite-dist/*
 **/bower_components/*
 bash.exe.*
+
 *.iml
 .idea/*
