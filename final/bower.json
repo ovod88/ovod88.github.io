@@ -1,0 +1,15 @@
+{
+  "name": "final",
+  "description": "Final",
+  "main": "index.js",
+  "authors": [
+    "Vova Khrystenko"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "final",
+    "exam"
+  ],
+  "homepage": "https://github.com/ovod88/GoIT_Frontend",
+  "private": true
+}
