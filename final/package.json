@@ -14,6 +14,7 @@
   "license": "ISC",
   "devDependencies": {
     "bower": "^1.8.0",
+    "breakpoint-sass": "^2.7.1",
     "gulp": "^3.9.1",
     "gulp-compass": "^2.1.0"
   }

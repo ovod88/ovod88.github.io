@@ -1,0 +1,7 @@
+
+header {
+  background: url(../../img/src/Header_pic.jpg) center center;
+  @include breakpoint($mobile) {
+    width: $mobile;
+  }
+}

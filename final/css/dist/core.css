@@ -1,3 +1,85 @@
-body {
-  background: green;
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url('../../fonts/Montserrat/Montserrat-Regular.eot?1481532510');
+  src: url('../../fonts/Montserrat/Montserrat-Regular.eot?&1481532510#iefix') format('embedded-opentype'), url('../../fonts/Montserrat/Montserrat-Regular.woff?1481532510') format('woff'), url('../../fonts/Montserrat/Montserrat-Regular.ttf?1481414690') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url('../../fonts/Montserrat/Montserrat-Bold.eot?1481533698');
+  src: url('../../fonts/Montserrat/Montserrat-Bold.eot?&1481533698#iefix') format('embedded-opentype'), url('../../fonts/Montserrat/Montserrat-Bold.woff?1481533698') format('woff'), url('../../fonts/Montserrat/Montserrat-Bold.ttf?1481414600') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url('../../fonts/Roboto/Roboto-Light.eot?1481533892');
+  src: url('../../fonts/Roboto/Roboto-Light.eot?&1481533892#iefix') format('embedded-opentype'), url('../../fonts/Roboto/Roboto-Light.woff?1481533892') format('woff'), url('../../fonts/Roboto/Roboto-Light.ttf?1481414784') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+header {
+  background: url(../../img/src/Header_pic.jpg) center center;
+}
+@media (min-width: 320px) {
+  header {
+    width: 320px;
+  }
 }

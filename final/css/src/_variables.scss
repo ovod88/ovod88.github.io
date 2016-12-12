@@ -1,1 +1,19 @@
-$body-color: green;
+
+%clearfix {
+  &:after {
+    content: '';
+    clear: both;
+    display: block;
+  }
+}
+
+%roboto-light {
+  font-family: Roboto;
+}
+
+%montserrat-bold {
+  font-family: Montserrat;
+  font-weight: bold;
+}
+
+$mobile: 320px;
