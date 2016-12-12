@@ -3,7 +3,6 @@
 tests/*
 
 /nodejs/**/node_modules/
-**/**/dist/*
 **/**/sprite-dist/*
 **/bower_components/*
 bash.exe.*
