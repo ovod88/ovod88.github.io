@@ -1,7 +1,43 @@
 
 header {
-  background: url(../../img/src/Header_pic.jpg) center center;
-  @include breakpoint($mobile) {
-    width: $mobile;
+  @include breakpoint($mobile-width) {
+    width: $mobile-width;
   }
+  height: $header-image-height;
+  position: relative;
+  background: url(../../img/src/Header_pic.jpg) center center;
+  @extend %montserrat-bold;
+
+  &:before {
+    content: '';
+    display: block;
+    z-index: 0;
+    background: #000;
+    opacity: 0.1;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+  }
+}
+
+.register {
+  margin-left: 85px;
+  margin-top: 20px;
+  position: absolute;
+  z-index: 1;
+}
+
+.register__login {
+  @extend %header-link-style;
+}
+
+.register__signup {
+  @extend %header-link-style;
+  margin-left: $header-register-signup-margin-left;
+  padding: $header-register-signup-internal-padding-below $header-register-signup-internal-padding-aside
+            $header-register-signup-internal-padding-below $header-register-signup-internal-padding-aside;
+  @include border-radius($header-register-signup-internal-padding-aside);
+  border: $header-register-signup-border-color solid $header-register-signup-border-px;
 }

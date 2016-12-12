@@ -16,4 +16,22 @@
   font-weight: bold;
 }
 
-$mobile: 320px;
+/*FOR MEDIA QUERIES*/
+$mobile-width: 320px;
+
+/*HEADER*/
+$header-image-height: 552px;
+$header-register-font-size: 15px;
+$header-register-font-color: white;
+
+%header-link-style {
+  color: white;
+  display: inline-block;
+  font-size: $header-register-font-size;
+}
+
+$header-register-signup-margin-left: 18px;
+$header-register-signup-internal-padding-aside: 17px;
+$header-register-signup-internal-padding-below: 7px;
+$header-register-signup-border-color: white;
+$header-register-signup-border-px: 2px;

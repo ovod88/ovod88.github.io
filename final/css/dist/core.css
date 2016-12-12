@@ -76,10 +76,57 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   font-style: normal;
 }
 header {
+  font-family: Montserrat;
+  font-weight: bold;
+}
+
+/*FOR MEDIA QUERIES*/
+/*HEADER*/
+.register__login, .register__signup {
+  color: white;
+  display: inline-block;
+  font-size: 15px;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  height: 552px;
+  position: relative;
   background: url(../../img/src/Header_pic.jpg) center center;
 }
 @media (min-width: 320px) {
   header {
     width: 320px;
   }
+}
+header:before {
+  content: '';
+  display: block;
+  z-index: 0;
+  background: #000;
+  opacity: 0.1;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+}
+
+.register {
+  margin-left: 85px;
+  margin-top: 20px;
+  position: absolute;
+  z-index: 1;
+}
+
+.register__signup {
+  margin-left: 18px;
+  padding: 7px 17px 7px 17px;
+  -moz-border-radius: 17px;
+  -webkit-border-radius: 17px;
+  border-radius: 17px;
+  border: white solid 2px;
 }
