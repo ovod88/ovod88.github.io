@@ -5,7 +5,8 @@ header {
   }
   height: $header-image-height;
   position: relative;
-  background: url(../../img/src/Header_pic.jpg) center center;
+  background: url(../../img/src/Header_pic.jpg) center center no-repeat;
+  color: $header-color;
   @extend %montserrat-bold;
 
   &:before {
@@ -23,14 +24,17 @@ header {
 }
 
 .register {
-  margin-left: 85px;
+  @extend  %header-content-position;
   margin-top: 20px;
-  position: absolute;
-  z-index: 1;
+  left: 50%;
+  @include transform(translateX(-50%));
 }
+
+
 
 .register__login {
   @extend %header-link-style;
+  @include transform(translateY(50%));
 }
 
 .register__signup {
@@ -39,5 +43,57 @@ header {
   padding: $header-register-signup-internal-padding-below $header-register-signup-internal-padding-aside
             $header-register-signup-internal-padding-below $header-register-signup-internal-padding-aside;
   @include border-radius($header-register-signup-internal-padding-aside);
-  border: $header-register-signup-border-color solid $header-register-signup-border-px;
+  border: $header-color solid $header-register-signup-border-px;
+  float: right;
+
+  &:hover {
+    background: $header-link-hover-color;
+  }
+}
+
+.main {
+  @extend %header-content-position;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  @include transform(translateY(-50%));
+}
+
+.main__p1 {
+  text-transform: uppercase;
+  font-size: $header-main-p1-font-size;
+}
+
+.main__p2 {
+  padding-top: 40px;
+  text-transform: uppercase;
+  font-size: $header-main-p2-font-size;
+  line-height: $header-main-p2-font-line-height;
+}
+
+.main__p3 {
+  @extend %roboto-light;
+  padding-top: 20px;
+  opacity: $header-main-p3-font-opacity;
+  width: 70%;
+  margin: 0 auto;
+  font-size: $header-main-p3-font-size;
+  line-height: $header-main-p3-font-size + 5px;
+}
+
+.main__p4 {
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+  height: $header-main-p4-height;
+  color: $header-color;
+  line-height: $header-main-p4-height;
+  vertical-align: middle;
+  margin-top: 20px;
+  font-size: $header-main-p4-font-size;
+  background: $header-main-p4-background-color;
+  @include border-radius($header-main-p4-height/2);
+  &:hover {
+    background: $header-link-hover-color;
+  }
 }

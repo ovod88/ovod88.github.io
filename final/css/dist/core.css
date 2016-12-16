@@ -75,6 +75,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   font-weight: 300;
   font-style: normal;
 }
+.main__p3 {
+  font-family: Roboto;
+}
+
 header {
   font-family: Montserrat;
   font-weight: bold;
@@ -88,6 +92,11 @@ header {
   font-size: 15px;
 }
 
+.register, .main {
+  position: absolute;
+  z-index: 1;
+}
+
 a {
   text-decoration: none;
 }
@@ -95,7 +104,8 @@ a {
 header {
   height: 552px;
   position: relative;
-  background: url(../../img/src/Header_pic.jpg) center center;
+  background: url(../../img/src/Header_pic.jpg) center center no-repeat;
+  color: white;
 }
 @media (min-width: 320px) {
   header {
@@ -116,10 +126,19 @@ header:before {
 }
 
 .register {
-  margin-left: 85px;
   margin-top: 20px;
-  position: absolute;
-  z-index: 1;
+  left: 50%;
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.register__login {
+  -moz-transform: translateY(50%);
+  -ms-transform: translateY(50%);
+  -webkit-transform: translateY(50%);
+  transform: translateY(50%);
 }
 
 .register__signup {
@@ -129,4 +148,58 @@ header:before {
   -webkit-border-radius: 17px;
   border-radius: 17px;
   border: white solid 2px;
+  float: right;
+}
+.register__signup:hover {
+  background: #33ff66;
+}
+
+.main {
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.main__p1 {
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+.main__p2 {
+  padding-top: 40px;
+  text-transform: uppercase;
+  font-size: 30px;
+  line-height: 35px;
+}
+
+.main__p3 {
+  padding-top: 20px;
+  opacity: 0.9;
+  width: 70%;
+  margin: 0 auto;
+  font-size: 18px;
+  line-height: 23px;
+}
+
+.main__p4 {
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+  height: 40px;
+  color: white;
+  line-height: 40px;
+  vertical-align: middle;
+  margin-top: 20px;
+  font-size: 14px;
+  background: #ff4e50;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+}
+.main__p4:hover {
+  background: #33ff66;
 }

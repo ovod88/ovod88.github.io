@@ -30,8 +30,22 @@ $header-register-font-color: white;
   font-size: $header-register-font-size;
 }
 
+%header-content-position {
+  position: absolute;
+  z-index: 1;
+}
+
 $header-register-signup-margin-left: 18px;
 $header-register-signup-internal-padding-aside: 17px;
 $header-register-signup-internal-padding-below: 7px;
-$header-register-signup-border-color: white;
+$header-color: white;
 $header-register-signup-border-px: 2px;
+$header-main-p1-font-size: 20px;
+$header-main-p2-font-size: 30px;
+$header-main-p2-font-line-height: $header-main-p2-font-size + 5px;
+$header-main-p3-font-size: 18px;
+$header-main-p3-font-opacity: 0.9;
+$header-main-p4-height: 40px;
+$header-main-p4-font-size: 14px;
+$header-main-p4-background-color: #ff4e50;
+$header-link-hover-color: #33ff66;
