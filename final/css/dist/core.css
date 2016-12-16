@@ -151,7 +151,7 @@ header:before {
   float: right;
 }
 .register__signup:hover {
-  background: #33ff66;
+  background: rgba(51, 255, 102, 0.3);
 }
 
 .main {
@@ -195,11 +195,15 @@ header:before {
   vertical-align: middle;
   margin-top: 20px;
   font-size: 14px;
-  background: #ff4e50;
+  background: rgba(51, 255, 102, 0.3);
   -moz-border-radius: 20px;
   -webkit-border-radius: 20px;
   border-radius: 20px;
+  -moz-transition: background 0.5s linear;
+  -o-transition: background 0.5s linear;
+  -webkit-transition: background 0.5s linear;
+  transition: background 0.5s linear;
 }
 .main__p4:hover {
-  background: #33ff66;
+  background: rgba(51, 255, 102, 0.5);
 }

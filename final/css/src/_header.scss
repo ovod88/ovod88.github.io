@@ -47,7 +47,7 @@ header {
   float: right;
 
   &:hover {
-    background: $header-link-hover-color;
+    background: rgba($header-link-hover-color, 0.3);
   }
 }
 
@@ -91,9 +91,12 @@ header {
   vertical-align: middle;
   margin-top: 20px;
   font-size: $header-main-p4-font-size;
-  background: $header-main-p4-background-color;
+  background: rgba($header-link-hover-color, 0.3);
   @include border-radius($header-main-p4-height/2);
+
+  @include transition(background 0.5s linear);
+
   &:hover {
-    background: $header-link-hover-color;
+    background: rgba($header-link-hover-color, 0.5);
   }
 }
