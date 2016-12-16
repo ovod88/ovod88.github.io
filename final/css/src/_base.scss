@@ -2,5 +2,11 @@
 a {
   text-decoration: none;
 }
+body {
+  @include breakpoint($mobile-width) {
+    width: $mobile-width;
+  }
+}
 
 @import 'header';
+@import "how_it_works";

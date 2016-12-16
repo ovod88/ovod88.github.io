@@ -1,8 +1,5 @@
 
 header {
-  @include breakpoint($mobile-width) {
-    width: $mobile-width;
-  }
   height: $header-image-height;
   position: relative;
   background: url(../../img/src/Header_pic.jpg) center center no-repeat;
@@ -46,9 +43,9 @@ header {
   border: $header-color solid $header-register-signup-border-px;
   float: right;
 
-  &:hover {
-    background: rgba($header-link-hover-color, 0.3);
-  }
+    &:hover {
+      background: rgba($header-link-hover-color, 0.3);
+    }
 }
 
 .main {
@@ -96,7 +93,7 @@ header {
 
   @include transition(background 0.5s linear);
 
-  &:hover {
-    background: rgba($header-link-hover-color, 0.5);
-  }
+    &:hover {
+      background: rgba($header-link-hover-color, 0.5);
+    }
 }

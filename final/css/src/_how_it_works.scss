@@ -1,0 +1,22 @@
+.how_it_works {
+  @extend %clearfix;
+  width: 100%;
+}
+
+.how_it_works__picture_block {
+  margin: 10px;
+  border-radius: 5px;
+  height: 100px;
+}
+
+.how_it_works__picture_block:first-child {
+  background-color: #0e3a5e;
+}
+
+.how_it_works__picture_block:nth-child(2) {
+  background: red;
+}
+
+.how_it_works__picture_block:last-child {
+  background: green;
+}

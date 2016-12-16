@@ -75,6 +75,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   font-weight: 300;
   font-style: normal;
 }
+.how_it_works:after {
+  content: '';
+  clear: both;
+  display: block;
+}
+
 .main__p3 {
   font-family: Roboto;
 }
@@ -101,16 +107,17 @@ a {
   text-decoration: none;
 }
 
+@media (min-width: 320px) {
+  body {
+    width: 320px;
+  }
+}
+
 header {
   height: 552px;
   position: relative;
   background: url(../../img/src/Header_pic.jpg) center center no-repeat;
   color: white;
-}
-@media (min-width: 320px) {
-  header {
-    width: 320px;
-  }
 }
 header:before {
   content: '';
@@ -206,4 +213,26 @@ header:before {
 }
 .main__p4:hover {
   background: rgba(51, 255, 102, 0.5);
+}
+
+.how_it_works {
+  width: 100%;
+}
+
+.how_it_works__picture_block {
+  margin: 10px;
+  border-radius: 5px;
+  height: 100px;
+}
+
+.how_it_works__picture_block:first-child {
+  background-color: #0e3a5e;
+}
+
+.how_it_works__picture_block:nth-child(2) {
+  background: red;
+}
+
+.how_it_works__picture_block:last-child {
+  background: green;
 }
