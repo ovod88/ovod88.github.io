@@ -39,6 +39,7 @@ function BallModel() {
 
         ballObj.move = function() {
             directions[this.direction].apply(ballObj);
+            console.log('BALL DIRECTION --> ', this.direction);
         };
 
         ballObj.mirrorDirection = function() {
@@ -77,15 +78,15 @@ function BallModel() {
 
         ballObj.oppositeDirection = function () {
             this.counterclock = !this.counterclock;
-
+            console.log('OPPOSITING');
             if(this.direction == 'eastN') {
                 this.direction = 'westS';
-            } else if(ballObj.direction == 'westN') {
+            } else if(this.direction == 'westN') {
                 this.direction = 'eastS';
-            } else if(this.direction = 'eastS' ) {
-                this.direction == 'westN'
+            } else if(this.direction == 'eastS' ) {
+                this.direction = 'westN';
             } else {
-                this.direction == 'eastN';
+                this.direction = 'eastN';
             }
 
         };
