@@ -70,9 +70,9 @@ function TenisController(view, models) {
     function moveRacket(e) {
         if(!keyPressed) {
             if(e.keyCode == 37 || e.keyCode == 39) {
-                if(e.keyCode == 37) {
+                if (e.keyCode == 37) {
                     objects.racket.direction = 'left';
-                } else if(e.keyCode == 39) {
+                } else if (e.keyCode == 39) {
                     objects.racket.direction = 'right';
                 }
                 objects.racket.move();
@@ -90,12 +90,12 @@ function TenisController(view, models) {
             objects.ball.direction = 'eastN';
         }
         objects.ball.move();
-        //console.log("BALL DIRECTION ", objects.ball.direction);
 
         checkIfBallReachedWall();
         checkBallHitsFigure();
+        checkBallHitsRacket();
 
-        timeoutBall = setTimeout(moveBall, 500);
+        timeoutBall = setTimeout(moveBall, 150);
     }
 
     function checkIfBallReachedWall() {
@@ -104,37 +104,34 @@ function TenisController(view, models) {
             rightX = objects.ball.externalBlock[0].x + objects.ball.elem_size,
             rightY = objects.ball.externalBlock[0].y + objects.ball.elem_size;//TODO if reached bottom wall -- stop game!!!
 
-        if(leftX < 0 && objects.ball.direction == 'westS') {
-            objects.ball.counterclock = true;
+        if(leftX < 0) {
+            if(objects.ball.direction == 'westS') {
+                objects.ball.counterclock = true;
+            } else if(objects.ball.direction == 'westN') {
+                objects.ball.counterclock = false;
+            }
             wall = {};
             wall.left_wall = true;
             objects.ball.mirrorDirection();
-        } else if(leftX < 0 && objects.ball.direction == 'westN') {
-            objects.ball.counterclock = false;
-            wall = {};
-            wall.left_wall = true;
-            objects.ball.mirrorDirection();
-        } else if(leftY < 0 && objects.ball.direction == 'westN') {
-            objects.ball.counterclock = true;
-            wall = {};
-            wall.top_wall = true;
-            objects.ball.mirrorDirection();
-        } else if(leftY < 0 && objects.ball.direction == 'eastN') {
-            objects.ball.counterclock = false;
+        }  else if(leftY < 0) {
+            if(objects.ball.direction == 'westN') {
+                objects.ball.counterclock = true;
+            } else if(objects.ball.direction == 'eastN') {
+                objects.ball.counterclock = false;
+            }
             wall = {};
             wall.top_wall = true;
             objects.ball.mirrorDirection();
-        } else if(rightX > view.size.maxX && objects.ball.direction == 'eastN' ) {
-            objects.ball.counterclock = true;
+        }  else if(rightX > view.size.maxX ) {
+            if(objects.ball.direction == 'eastN') {
+                objects.ball.counterclock = true;
+            } else if(objects.ball.direction == 'eastS') {
+                objects.ball.counterclock = false;
+            }
             wall = {};
             wall.right_wall = true;
             objects.ball.mirrorDirection();
-        } else if(rightX > view.size.maxX && objects.ball.direction == 'eastS') {
-            objects.ball.counterclock = false;
-            wall = {};
-            wall.right_wall = true;
-            objects.ball.mirrorDirection();
-        } else if (rightY > view.size.maxY && objects.ball.direction == 'westS') {
+        }  else if (rightY > view.size.maxY && objects.ball.direction == 'westS') {//TODO delete this part since it is End of Game
             objects.ball.counterclock = false;
         } else if(rightY > view.size.maxY && objects.ball.direction == 'eastS') {
             objects.ball.counterclock = true;
@@ -148,12 +145,12 @@ function TenisController(view, models) {
         }
         generateFullBall();
 
-        //console.log('BALL is ', ball);
         for( var i = 0; i < figure.length; i++ ) {
-            //console.log('FIGURE is ', figure[i]);
             checkObjectsCollapsed(ball, figure[i]);
         }
-        analiseHittedElements();
+        analiseHitedElements(objects.form);
+        hits = {};
+        figure = [];
     }
 
     function checkBallHitsRacket() {
@@ -161,8 +158,11 @@ function TenisController(view, models) {
         generateFullRacket();
 
         for( var i = 0; i < racket.length; i++ ) {
-            processRacketHit(checkObjectsCollapsed(ball, racket[i]));
+            checkObjectsCollapsed(ball, racket[i]);
         }
+        analiseHitedElements(objects.racket);
+        hits = {};
+        racket = [];
     }
 
     function checkObjectsCollapsed(ball, target) {
@@ -176,25 +176,26 @@ function TenisController(view, models) {
         }
     }
 
-    function analiseHittedElements() {
-        var hitsSided = {}, hitsCornered = {};
+    function analiseHitedElements(target) {
 
         if(Object.keys(hits).length !== 0) {
+            var hitsSided = {}, hitsCornered = {};
             for(var key in hits) {
                 if(key === 'right' || key === 'left' || key === 'top' || key === 'bottom') {
                     hitsSided[key] = hits[key];
                 } else {
-                    console.log('HIT corner happened!!!');
-                    console.log('KEY --> ', key);
-                    console.log('-------------------------');
                     hitsCornered[key] = hits[key];
                 }
             }
-            hits = {};
 
             if(Object.keys(hitsSided).length !== 0) {
                 for( var key in hitsSided) {
+
+                    if(Object.keys(hitsSided).length == 2) {
+                        console.log('KEY', key);
+                    }
                     if (key === 'right' && wall.right_wall) {
+                        console.log('TOOK CHANGING OF COUNTERCLOCK');
                         objects.ball.counterclock = !objects.ball.counterclock;
                     }
                     if (key === 'left' && wall.left_wall) {
@@ -204,50 +205,40 @@ function TenisController(view, models) {
                         objects.ball.counterclock = !objects.ball.counterclock;
                     }
                     objects.ball.mirrorDirection();
-                    //console.log('Ball direction --> ', objects.ball.direction);
-                    redrawHittedFigure(hitsSided[key]);
+                    wall = {};
+                    if(target === objects.form) {
+                        redrawHitedTarget(hitsSided[key], target);
+                    }
                 }
-
             } else {
                 if(Object.keys(hitsCornered).length !== 0) {
-                    console.log('CORNER HIT PROCESSING!!! --> ', objects.ball.direction);
+                    console.log('CORNERED LAUNCHED');
                     for( var key in hitsCornered) {
-                        console.log('CORNER HIT KEY!!! --> ', key);
                         if ((key === 'left_top_corner' && objects.ball.direction === 'eastS') ||
                             (key === 'left_bottom_corner' && objects.ball.direction === 'eastN') ||
                             (key === 'right_top_corner' && objects.ball.direction === 'westS') ||
                             (key === 'right_bottom_corner' && objects.ball.direction === 'westN')) {
-                            //console.log('CORNER HIT!!!');
                             objects.ball.oppositeDirection();
-                            redrawHittedFigure(hitsCornered[key]);
+                            if (target === objects.form) {
+                                redrawHitedTarget(hitsCornered[key], target);
+                            }
                         }
                     }
-                    console.log('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@');
                 }
 
             }
-            figure = [];
         }
     }
 
-    function redrawHittedFigure(element) {
+    function redrawHitedTarget(element, target) {
         if(element) {
-            for(var j = 0; j < objects.form.externalBlock.length; j++) {
-                if(objects.form.externalBlock[j].x == element.x &&
-                    objects.form.externalBlock[j].y == element.y) {
-                    objects.form.externalBlock.splice(j, 1);
-                    objects.form.internalBlock.splice(j, 1);
+            for(var j = 0; j < target.externalBlock.length; j++) {
+                if(target.externalBlock[j].x == element.x &&
+                    target.externalBlock[j].y == element.y) {
+                    target.externalBlock.splice(j, 1);
+                    target.internalBlock.splice(j, 1);
                 }
             }
-        }
-    }
-
-    function processRacketHit(hits) {
-        if(hits.borders_ids) {
-            objects.ball.mirrorDirection();
-        }
-        if(hits.corners_ids) {
-            objects.ball.oppositeDirection();
         }
     }
 
