@@ -5,12 +5,78 @@
 
 .how_it_works__picture_block {
   margin: 10px;
+  height: 236px;
+  position: relative;
+  overflow: hidden;
   border-radius: 5px;
-  height: 100px;
+
+    img {
+      border-radius: 5px;
+      position: absolute;
+      left: -65px;
+      top: -25px;
+    }
+
+    &:before {
+      content: '';
+      display: block;
+      border-radius: 5px;
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      @include background-image(linear-gradient(white, black));
+      opacity: .3;
+    }
+}
+
+.how_it_works__picture_block_content {
+  margin-left: 20px;
+}
+
+.how_it_works__h5 {
+  margin-top: 75px;
+  display: inline-block;
+  padding: 6px 12px 4px 12px;
+  color: white;
+  text-transform: uppercase;
+  font-size: 9px;
+  font-family: Montserrat;
+  background: red;
+  border-radius: 10px;
+  letter-spacing: 2px;
+}
+
+.how_it_works__h2 {
+  font-family: Montserrat;
+  font-weight: bold;
+  font-size: 20px;
+  color: white;
+  margin-top: 15px;
+  line-height: 25px;
+  letter-spacing: 1px;
+}
+
+.how_it_works__text {
+  font-family: Roboto;
+  line-height: 17px;
+  color: white;
+  opacity: 0.8;
+  font-size: 14px;
+  padding-right: 15px;
+  margin-top: 10px;
+}
+
+.how_it_works__picture_block_text--position-modifier {
+  position: absolute;
+  z-index: 1;
 }
 
 .how_it_works__picture_block:first-child {
-  background-color: #0e3a5e;
+  //background: url('../../img/src/How_works_step1_img.jpg') no-repeat center center;
+  //background-size: cover;
 }
 
 .how_it_works__picture_block:nth-child(2) {
