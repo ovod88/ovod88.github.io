@@ -1,17 +1,26 @@
+.how_it_works__header {
+  color: black;
+  font-family: Montserrat;
+  font-weight: bold;
+  font-size: $how-it-works-section-header-font-size;
+  margin: $how-it-works-section-header-margins;
+  text-align: center;
+}
+
 .how_it_works {
   @extend %clearfix;
   width: 100%;
 }
 
 .how_it_works__picture_block {
-  margin: 10px;
-  height: 236px;
+  margin: $how-it-works-section-picture-block-margins;
+  height: $how-it-works-section-picture-block-height;
   position: relative;
   overflow: hidden;
-  border-radius: 5px;
+  @extend %how-it-works-section-picture-block-radius;
 
     img {
-      border-radius: 5px;
+      @extend %how-it-works-section-picture-block-radius;
       position: absolute;
       left: -65px;
       top: -25px;
@@ -20,69 +29,57 @@
     &:before {
       content: '';
       display: block;
-      border-radius: 5px;
+      @extend %how-it-works-section-picture-block-radius;
       position: absolute;
       z-index: 1;
       top: 0;
       right: 0;
       bottom: 0;
       left: 0;
-      @include background-image(linear-gradient(white, black));
-      opacity: .3;
+      @include background-image(linear-gradient($how-it-works-section-picture-block-cover-start-color,
+                                                $how-it-works-section-picture-block-cover-end-color));
+      opacity: $how-it-works-section-picture-block-cover-opacity
     }
 }
 
 .how_it_works__picture_block_content {
-  margin-left: 20px;
+  margin-left: $how-it-works-section-picture-content-margin-left;
 }
 
 .how_it_works__h5 {
-  margin-top: 75px;
+  margin-top: $how-it-works-section-picture-content-h5-margin-top;
   display: inline-block;
-  padding: 6px 12px 4px 12px;
-  color: white;
+  padding: $how-it-works-section-picture-content-h5-paddings;
+  color: $how-it-works-section-picture-content-h5-color;
   text-transform: uppercase;
-  font-size: 9px;
+  font-size: $how-it-works-section-picture-content-h5-font-size;
   font-family: Montserrat;
-  background: red;
-  border-radius: 10px;
-  letter-spacing: 2px;
+  background: $how-it-works-section-picture-content-h5-background-color;
+  border-radius: $how-it-works-section-picture-content-h5-border-radius;
+  letter-spacing: $how-it-works-section-picture-content-h5-letter-spacing;
 }
 
 .how_it_works__h2 {
   font-family: Montserrat;
   font-weight: bold;
-  font-size: 20px;
-  color: white;
-  margin-top: 15px;
-  line-height: 25px;
-  letter-spacing: 1px;
+  font-size: $how-it-works-section-picture-content-h2-font-size;
+  color: $how-it-works-section-picture-content-h2-color;
+  margin-top: $how-it-works-section-picture-content-h2-margin-top;
+  line-height: $how-it-works-section-picture-content-h2-line-height;
+  letter-spacing: $how-it-works-section-picture-content-h2-letter-spacing;
 }
 
 .how_it_works__text {
   font-family: Roboto;
-  line-height: 17px;
-  color: white;
-  opacity: 0.8;
-  font-size: 14px;
-  padding-right: 15px;
-  margin-top: 10px;
+  line-height: $how-it-works-section-picture-content-text-line-height;
+  color: $how-it-works-section-picture-content-text-color;
+  opacity: $how-it-works-section-picture-content-text-opacity;
+  font-size: $how-it-works-section-picture-content-text-font-size;
+  padding-right: $how-it-works-section-picture-content-text-padding-right;
+  margin-top: $how-it-works-section-picture-content-text-margin-top;
 }
 
 .how_it_works__picture_block_text--position-modifier {
   position: absolute;
   z-index: 1;
-}
-
-.how_it_works__picture_block:first-child {
-  //background: url('../../img/src/How_works_step1_img.jpg') no-repeat center center;
-  //background-size: cover;
-}
-
-.how_it_works__picture_block:nth-child(2) {
-  background: red;
-}
-
-.how_it_works__picture_block:last-child {
-  background: green;
 }

@@ -48,3 +48,39 @@ $header-main-p3-font-opacity: 0.9;
 $header-main-p4-height: 40px;
 $header-main-p4-font-size: 14px;
 $header-link-hover-color: rgb(51,255,102);
+
+/*HOW IT WORKS SECTION */
+$how-it-works-section-header-font-size: 21px;
+$how-it-works-section-header-margins: 35px auto 15px auto;
+$how-it-works-section-picture-block-margins: 10px;
+$how-it-works-section-picture-block-height: 236px;
+$how-it-works-section-picture-block-border-radius: 5px;
+
+%how-it-works-section-picture-block-radius {
+  border-radius: 5px;
+}
+
+$how-it-works-section-picture-block-cover-start-color: white;
+$how-it-works-section-picture-block-cover-end-color: black;
+$how-it-works-section-picture-block-cover-opacity: .3;
+$how-it-works-section-picture-content-margin-left: 20px;
+$how-it-works-section-picture-content-h5-margin-top: 75px;
+$how-it-works-section-picture-content-h5-paddings: 6px 12px 4px 12px;
+$how-it-works-section-picture-content-h5-color: white;
+$how-it-works-section-picture-content-h5-font-size: 9px;
+$how-it-works-section-picture-content-h5-background-color: red;
+$how-it-works-section-picture-content-h5-border-radius: 10px;
+$how-it-works-section-picture-content-h5-letter-spacing: 2px;
+
+$how-it-works-section-picture-content-h2-font-size: 20px;
+$how-it-works-section-picture-content-h2-color: white;
+$how-it-works-section-picture-content-h2-margin-top: 15px;
+$how-it-works-section-picture-content-h2-line-height: 25px;
+$how-it-works-section-picture-content-h2-letter-spacing: 1px;
+
+$how-it-works-section-picture-content-text-font-size: 14px;
+$how-it-works-section-picture-content-text-line-height: 17px;
+$how-it-works-section-picture-content-text-color: white;
+$how-it-works-section-picture-content-text-opacity: .8;
+$how-it-works-section-picture-content-text-padding-right: 15px;
+$how-it-works-section-picture-content-text-margin-top: 10px;
