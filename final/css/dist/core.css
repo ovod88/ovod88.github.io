@@ -81,11 +81,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
-.main__p3, .discover_holiday_search_box__text, .discover_holiday_search_box__input {
+.main__p3, .discover_holiday_search_box__text, .discover_holiday_search_box__input, .footer_navigation_list__item {
   font-family: Roboto;
 }
 
-header, .discover_holiday_header, .discover_holiday_search_box__link {
+header, .discover_holiday_header, .discover_holiday_search_box__link, .footer_header, .footer_navigation h2, .footer_footer, .footer_logo_text {
   font-family: Montserrat;
   font-weight: bold;
 }
@@ -118,6 +118,7 @@ header, .discover_holiday_header, .discover_holiday_search_box__link {
   border-radius: 5px;
 }
 
+/*FOOTER*/
 a {
   text-decoration: none;
 }
@@ -552,4 +553,52 @@ header:before {
   border: none;
   margin-left: 1px;
   margin-right: 1px;
+}
+
+footer {
+  text-align: center;
+}
+
+.footer_header {
+  font-size: 16px;
+  color: red;
+  text-transform: uppercase;
+  margin-top: 20px;
+}
+
+.footer_navigation h2 {
+  margin-top: 20px;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.footer_navigation_list__item {
+  display: inline-block;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.footer_navigation_list__item__link {
+  font-size: 14px;
+}
+
+.footer_footer {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.footer_logo_text {
+  letter-spacing: 1px;
+  margin: 10px;
+  text-transform: uppercase;
+  font-size: 10px;
+  color: grey;
+}
+
+.footer_logo {
+  display: block;
+  height: 24px;
+  width: 110px;
+  background: url("../../img/src/icons/Designer_logo_pic.png");
+  margin: 10px auto 20px auto;
 }
