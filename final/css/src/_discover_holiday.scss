@@ -2,6 +2,13 @@
   width: 100%;
 }
 
+.discover_holiday_header {
+  text-align: center;
+  @extend %montserrat-bold;
+  font-size: 22px;
+  margin: 35px 15px 20px 15px;
+}
+
 .discover_holiday_block {
   margin: 10px;
   height: 126px;
@@ -26,13 +33,45 @@
   &:hover:before {
     opacity: 0.1;
   }
+}
+.discover_holiday_block_img {
+  position: absolute;
+  @extend %discover-holiday-radius;
+}
 
-  img {
-    position: absolute;
-    left: -3px;
-    top: -28px;
-    @extend %discover-holiday-radius;
-  }
+.discover_holiday_block_img--first {
+  left: -3px;
+  top: -28px;
+}
+
+.discover_holiday_block_img--second {
+   left: -3px;
+   top: -122px;
+ }
+
+.discover_holiday_block_img--third {
+  left: -331px;
+  top: -86px;
+}
+
+.discover_holiday_block_img--fourth {
+  left: -77px;
+  top: -147px;
+}
+
+.discover_holiday_block_img--fifth {
+  left: -10px;
+  top: -68px;
+}
+
+.discover_holiday_block_img--sixth {
+  left: -10px;
+  top: -23px;
+}
+
+.discover_holiday_block_img--seventh {
+  left: -231px;
+  top: -63px;
 }
 
 .discover_holiday_block__text {
@@ -48,4 +87,58 @@
   top: 50%;
   transform: translateY(-50%);
 }
+
+.discover_holiday_search_box {
+  text-align: center;
+}
+
+.discover_holiday_search_box__text {
+  font-size: 17px;
+  @extend %roboto-light;
+}
+
+.discover_holiday_search_box__input_wrap {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.discover_holiday_search_box__input {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  height: 40px;
+  border: 1px solid grey;
+  @include border-radius(4px);
+  width: 100%;
+  color: grey;
+  padding-left: 15px;
+  @extend %roboto-light;
+
+  &:focus {
+    outline-width: 0px;
+    @include box-shadow(0px 0px 3px 0px rgba(0,240,64,1));
+  }
+}
+
+.discover_holiday_search_box__link {
+  display:  block;
+  height: 30px;
+  color: white;
+  background: red;
+  font-size: 14px;
+  @include border-radius(15px);
+  line-height: 30px;
+  vertical-align: middle;
+  margin: 0px 20px 40px 20px;
+  @extend %montserrat-bold;
+}
+
+.discover_holiday_search_box__line {
+  background: red;
+  height: 4px;
+  border: none;
+  margin-left: 1px;
+  margin-right: 1px;
+}
+
 
