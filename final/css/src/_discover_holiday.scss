@@ -5,13 +5,13 @@
 .discover_holiday_header {
   text-align: center;
   @extend %montserrat-bold;
-  font-size: 22px;
-  margin: 35px 15px 20px 15px;
+  font-size: $discover-holiday-header-font-size;
+  margin: $discover-holiday-header-margin;
 }
 
 .discover_holiday_block {
-  margin: 10px;
-  height: 126px;
+  margin: $discover-holiday-block-margin;
+  height: $discover-holiday-block-height;
   position: relative;
   overflow: hidden;
   @extend %discover-holiday-radius;
@@ -25,13 +25,13 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background: black;
-    opacity: 0.2;
+    background: $discover-holiday-block-cover-color;
+    opacity: $discover-holiday-block-cover-opacity;
     @extend %discover-holiday-radius;
   }
 
   &:hover:before {
-    opacity: 0.1;
+    opacity: $discover-holiday-block-cover-hover-opacity;
   }
 }
 .discover_holiday_block_img {
@@ -75,13 +75,13 @@
 }
 
 .discover_holiday_block__text {
-  color: white;
+  color: $discover-holiday-block-text-color;
   text-align: center;
   display: block;
   width: 100%;
   font-family: Montserrat;
   font-weight: bold;
-  font-size: 28px;
+  font-size: $discover-holiday-block-text-font-size;
   position: absolute;
   z-index: 1;
   top: 50%;
@@ -98,44 +98,44 @@
 }
 
 .discover_holiday_search_box__input_wrap {
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: $discover-holiday-search-box-input-wrap-padding;
+  padding-right: $discover-holiday-search-box-input-wrap-padding;
 }
 
 .discover_holiday_search_box__input {
-  margin-top: 20px;
-  margin-bottom: 10px;
+  margin-top: $discover-holiday-search-box-input-margin-top;
+  margin-bottom: $discover-holiday-search-box-input-margin-bottom;
   box-sizing: border-box;
-  height: 40px;
-  border: 1px solid grey;
-  @include border-radius(4px);
+  height: $discover-holiday-search-box-input-height;
+  border: $discover-holiday-search-box-input-border;
+  @include border-radius($discover-holiday-search-box-input-border-radius);
   width: 100%;
-  color: grey;
-  padding-left: 15px;
+  color: $discover-holiday-search-box-input-color;
+  padding-left: $discover-holiday-search-box-input-padding-left;
   @extend %roboto-light;
 
   &:focus {
     outline-width: 0px;
-    @include box-shadow(0px 0px 3px 0px rgba(0,240,64,1));
+    @include box-shadow($discover-holiday-search-box-input-focus-shadow);
   }
 }
 
 .discover_holiday_search_box__link {
   display:  block;
-  height: 30px;
-  color: white;
-  background: red;
-  font-size: 14px;
-  @include border-radius(15px);
-  line-height: 30px;
+  height: $discover-holiday-search-box-link-height;
+  color: $discover-holiday-search-box-link-color;
+  background: $discover-holiday-search-box-link-background;
+  font-size: $discover-holiday-search-box-link-font-size;
+  @include border-radius($discover-holiday-search-box-link-border-radius);
+  line-height: $discover-holiday-search-box-link-height;
   vertical-align: middle;
-  margin: 0px 20px 40px 20px;
+  margin: $discover-holiday-search-box-link-margin;
   @extend %montserrat-bold;
 }
 
 .discover_holiday_search_box__line {
-  background: red;
-  height: 4px;
+  background: $discover-holiday-search-box-line-background-color;
+  height: $discover-holiday-search-box-line-height;
   border: none;
   margin-left: 1px;
   margin-right: 1px;
