@@ -57,7 +57,7 @@ $how-it-works-section-picture-block-height: 236px;
 $how-it-works-section-picture-block-border-radius: 5px;
 
 %how-it-works-section-picture-block-radius {
-  border-radius: 5px;
+  @include border-radius-compass(5px);
 }
 
 $how-it-works-section-picture-block-cover-start-color: white;
@@ -84,3 +84,30 @@ $how-it-works-section-picture-content-text-color: white;
 $how-it-works-section-picture-content-text-opacity: .8;
 $how-it-works-section-picture-content-text-padding-right: 15px;
 $how-it-works-section-picture-content-text-margin-top: 10px;
+
+/*PARTNERS*/
+$partners-margin-top: 30px;
+$partners-header-font-size: 25px;
+$partners-view-margin-top: 15px;
+$partners-view-signature1-margin-top: 15px;
+$partners-view-signature1-font-size: 14px;
+$partners-view-signature2-margin: 20px auto 0px auto;
+$partners-view-signature2-font-size: 14px;
+$partners-view-signature2-width: 65%;
+$partners-view-signature2-line-height: 18px;
+$partners-view-icon-background-size: 40px;
+$partners-view-icon-background-color: white;
+$partners-view-icon-size: 33px;
+$partners-view-icon-position: 4px 0 0 3px;
+$partners-search-line-position: 30px 15px 20px 15px;
+$partners-search-line-height: 35px;
+$partners-search-line-color: red;
+$partners-search-line-border-radius: 20px;
+$partners-search-line-border: 2px solid red;
+$partners-search-line-hover-box-shadow: 0px 0px 4px 0px red;
+
+/*DISCOVER HOLIDAY ACTIVITY SECTION*/
+
+%discover-holiday-radius {
+  @include border-radius-compass(5px);
+}

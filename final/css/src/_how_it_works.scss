@@ -55,7 +55,7 @@
   font-size: $how-it-works-section-picture-content-h5-font-size;
   font-family: Montserrat;
   background: $how-it-works-section-picture-content-h5-background-color;
-  border-radius: $how-it-works-section-picture-content-h5-border-radius;
+  @include border-radius($how-it-works-section-picture-content-h5-border-radius);
   letter-spacing: $how-it-works-section-picture-content-h5-letter-spacing;
 }
 

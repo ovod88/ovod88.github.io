@@ -1,0 +1,51 @@
+.discover_holiday {
+  width: 100%;
+}
+
+.discover_holiday_block {
+  margin: 10px;
+  height: 126px;
+  position: relative;
+  overflow: hidden;
+  @extend %discover-holiday-radius;
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: black;
+    opacity: 0.2;
+    @extend %discover-holiday-radius;
+  }
+
+  &:hover:before {
+    opacity: 0.1;
+  }
+
+  img {
+    position: absolute;
+    left: -3px;
+    top: -28px;
+    @extend %discover-holiday-radius;
+  }
+}
+
+.discover_holiday_block__text {
+  color: white;
+  text-align: center;
+  display: block;
+  width: 100%;
+  font-family: Montserrat;
+  font-weight: bold;
+  font-size: 28px;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
+}
+

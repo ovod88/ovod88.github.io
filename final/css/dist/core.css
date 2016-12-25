@@ -105,6 +105,16 @@ header {
 
 /*HOW IT WORKS SECTION */
 .how_it_works__picture_block, .how_it_works__picture_block img, .how_it_works__picture_block:before {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
+/*PARTNERS*/
+/*DISCOVER HOLIDAY ACTIVITY SECTION*/
+.discover_holiday_block, .discover_holiday_block:before, .discover_holiday_block img {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
   border-radius: 5px;
 }
 
@@ -275,6 +285,8 @@ header:before {
   font-size: 9px;
   font-family: Montserrat;
   background: red;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
   border-radius: 10px;
   letter-spacing: 2px;
 }
@@ -302,4 +314,147 @@ header:before {
 .how_it_works__picture_block_text--position-modifier {
   position: absolute;
   z-index: 1;
+}
+
+.partners {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.partners__header {
+  font-family: Montserrat;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.partner__view {
+  margin-top: 15px;
+}
+
+.partner__view_picture_block {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.partner__view_picture {
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  display: block;
+}
+
+.partner__view_signature1 {
+  font-family: Montserrat;
+  font-weight: bold;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.partner__view_signature2 {
+  font-family: Roboto;
+  margin: 20px auto 0px auto;
+  font-size: 14px;
+  width: 65%;
+  line-height: 18px;
+}
+
+.partner__view_icon {
+  display: block;
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  background: white;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+.partner__view_icon:after {
+  display: block;
+  content: '';
+  margin: 4px 0 0 3px;
+  width: 33px;
+  height: 33px;
+}
+
+.partner__view_icon--partner1:after {
+  background: url("../../img/src/icons/Partner1_icon.png") no-repeat;
+}
+
+.partner__view_icon--partner2:after {
+  background: url("../../img/src/icons/Partner2_icon.png") no-repeat;
+}
+
+.partner__view_icon--partner3:after {
+  background: url("../../img/src/icons/Partner3_icon.png") no-repeat;
+}
+
+.partner__view_icon--partner4:after {
+  background: url("../../img/src/icons/Partner4_icon.png") no-repeat;
+}
+
+.partners__search {
+  font-family: Montserrat;
+  font-weight: bold;
+  margin: 30px 15px 20px 15px;
+  display: block;
+  height: 35px;
+  line-height: 35px;
+  vertical-align: middle;
+  color: red;
+  border-radius: 20px;
+  border: 2px solid red;
+}
+.partners__search:hover {
+  -moz-box-shadow: 0px 0px 4px 0px red;
+  -webkit-box-shadow: 0px 0px 4px 0px red;
+  box-shadow: 0px 0px 4px 0px red;
+}
+
+.discover_holiday {
+  width: 100%;
+}
+
+.discover_holiday_block {
+  margin: 10px;
+  height: 126px;
+  position: relative;
+  overflow: hidden;
+}
+.discover_holiday_block:before {
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: black;
+  opacity: 0.2;
+}
+.discover_holiday_block:hover:before {
+  opacity: 0.1;
+}
+.discover_holiday_block img {
+  position: absolute;
+  left: -3px;
+  top: -28px;
+}
+
+.discover_holiday_block__text {
+  color: white;
+  text-align: center;
+  display: block;
+  width: 100%;
+  font-family: Montserrat;
+  font-weight: bold;
+  font-size: 28px;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
 }
