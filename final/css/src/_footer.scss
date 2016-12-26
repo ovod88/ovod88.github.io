@@ -7,12 +7,13 @@ footer {
   font-size: $footer-header-font-size;
   color: $footer-header-color;
   text-transform: uppercase;
+  letter-spacing: $footer-header-letter-spacing;
   margin-top: $footer-header-margin-top;
 }
 
 .footer_navigation {
+  margin-top: $footer-navigation-margin-top;
   h2 {
-    margin-top: $footer-navigation-h2-margin-top;
     @extend %montserrat-bold;
     font-size: $footer-navigation-h2-font-size;
     margin-bottom: $footer-navigation-h2-margin-bottom;
@@ -24,6 +25,7 @@ footer {
   padding-left: $footer-navigation-list-item-padding;
   padding-right: $footer-navigation-list-item-padding;
   @extend %roboto-light;
+  color: $footer-navigation-list-item-color;
 }
 
 .footer_navigation_list__item__link {

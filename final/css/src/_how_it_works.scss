@@ -18,32 +18,31 @@
   position: relative;
   overflow: hidden;
   @extend %how-it-works-section-picture-block-radius;
-
     img {
       @extend %how-it-works-section-picture-block-radius;
-      position: absolute;
+      position: relative;
       left: -65px;
       top: -25px;
     }
 
-    &:before {
-      content: '';
-      display: block;
-      @extend %how-it-works-section-picture-block-radius;
-      position: absolute;
-      z-index: 1;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      @include background-image(linear-gradient($how-it-works-section-picture-block-cover-start-color,
-                                                $how-it-works-section-picture-block-cover-end-color));
-      opacity: $how-it-works-section-picture-block-cover-opacity
-    }
+    //&:before {
+    //  content: '';
+    //  display: block;
+    //  @extend %how-it-works-section-picture-block-radius;
+    //  position: absolute;
+    //  z-index: 1;
+    //  top: 0;
+    //  right: 0;
+    //  bottom: 0;
+    //  left: 0;
+    //  @include background-image(linear-gradient($how-it-works-section-picture-block-cover-start-color,
+    //                                            $how-it-works-section-picture-block-cover-end-color));
+    //  opacity: $how-it-works-section-picture-block-cover-opacity
+    //}
 }
 
 .how_it_works__picture_block_content {
-  margin-left: $how-it-works-section-picture-content-margin-left;
+  padding-left: $how-it-works-section-picture-content-padding-left;
 }
 
 .how_it_works__h5 {
@@ -73,7 +72,6 @@
   font-family: Roboto;
   line-height: $how-it-works-section-picture-content-text-line-height;
   color: $how-it-works-section-picture-content-text-color;
-  opacity: $how-it-works-section-picture-content-text-opacity;
   font-size: $how-it-works-section-picture-content-text-font-size;
   padding-right: $how-it-works-section-picture-content-text-padding-right;
   margin-top: $how-it-works-section-picture-content-text-margin-top;
@@ -82,4 +80,8 @@
 .how_it_works__picture_block_text--position-modifier {
   position: absolute;
   z-index: 1;
+  top: 0;
+  height: 100%;
+  @include background(linear-gradient($how-it-works-section-picture-block-cover-start-color,
+          $how-it-works-section-picture-block-cover-end-color));
 }

@@ -16,6 +16,7 @@
   overflow: hidden;
   @extend %discover-holiday-radius;
 
+
   &:before {
     content: '';
     display: block;
@@ -25,13 +26,14 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background: $discover-holiday-block-cover-color;
-    opacity: $discover-holiday-block-cover-opacity;
+    @include background(linear-gradient($discover-holiday-block-cover-start-color,
+            $discover-holiday-block-cover-end-color));
     @extend %discover-holiday-radius;
   }
 
   &:hover:before {
-    opacity: $discover-holiday-block-cover-hover-opacity;
+    @include background(linear-gradient($discover-holiday-block-cover-start-color-hover,
+            $discover-holiday-block-cover-end-color-hover));
   }
 }
 .discover_holiday_block_img {
@@ -41,12 +43,12 @@
 
 .discover_holiday_block_img--first {
   left: -3px;
-  top: -28px;
+  top: -34px;
 }
 
 .discover_holiday_block_img--second {
    left: -3px;
-   top: -122px;
+   top: -126px;
  }
 
 .discover_holiday_block_img--third {
@@ -61,17 +63,17 @@
 
 .discover_holiday_block_img--fifth {
   left: -10px;
-  top: -68px;
+  top: -49px;
 }
 
 .discover_holiday_block_img--sixth {
   left: -10px;
-  top: -23px;
+  top: -28px;
 }
 
 .discover_holiday_block_img--seventh {
   left: -231px;
-  top: -63px;
+  top: -65px;
 }
 
 .discover_holiday_block__text {
@@ -93,7 +95,8 @@
 }
 
 .discover_holiday_search_box__text {
-  font-size: 17px;
+  font-size: $discover-holiday-search-box-text-font-size;
+  color: $discover-holiday-search-box-text-color;
   @extend %roboto-light;
 }
 
@@ -110,6 +113,7 @@
   border: $discover-holiday-search-box-input-border;
   @include border-radius($discover-holiday-search-box-input-border-radius);
   width: 100%;
+  font-size: $discover-holiday-search-box-input-font-size;
   color: $discover-holiday-search-box-input-color;
   padding-left: $discover-holiday-search-box-input-padding-left;
   @extend %roboto-light;
