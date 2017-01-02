@@ -15,7 +15,11 @@
   "devDependencies": {
     "bower": "^1.8.0",
     "breakpoint-sass": "^2.7.1",
-    "gulp": "^3.9.1",
-    "gulp-compass": "^2.1.0"
+    "del": "^2.2.2",
+    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-compass": "^2.1.0",
+    "gulp-debug": "^3.0.0",
+    "gulp-if": "^2.0.2",
+    "gulp-sourcemaps": "^1.9.1"
   }
 }
