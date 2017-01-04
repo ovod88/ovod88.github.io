@@ -9,7 +9,8 @@ const del = require('del');
 const newer = require('gulp-newer');
 const cached = require('gulp-cached');
 const path = require('path');
-const autoprefixer = require('gulp-autoprefixer');
+const autoprefixer = require('gulp-autoprefixer'),
+    sprite = require('gulp.spritesmith');
 //const watch = require('gulp-watch');
 const remember = require('gulp-remember');
 const imagemin = require('gulp-image');
@@ -30,6 +31,39 @@ gulp.task('compass', function() {//TODO Now this task takes 2s to complete
         //.pipe(remember('scss'))
         .pipe(gulp.dest('css/dist'));
         //.pipe(debug({title: 'COMPASS'}))
+});
+
+gulp.task('sprite', function() {
+    var spriteData =
+        gulp.src(['img/dist/icons/*.*', '!img/dist/icons/icons.png'], {since: gulp.lastRun('sprite')})
+            .pipe(debug({title: 'SPRITE'}))
+            .pipe(remember('sprite'))
+            .pipe(sprite({
+                imgName: 'icons.png',
+                cssName: '_sprite-icons.scss',
+                cssFormat: 'scss',
+                algorithm: 'binary-tree',
+                padding: 1
+                //cssVarMap: function(sprite) {
+                //    var temparray = sprite.name.split('-');
+                //
+                //    if(temparray[1] == 'blue') {
+                //        sprite.name = temparray[0] + ':hover';
+                //    } else {
+                //        sprite.name = temparray[0];
+                //    }
+                //},
+                //cssOpts: {
+                //    cssSelector: function (sprite) {
+                //        return '.' + sprite.name;
+                //    }
+                //}
+            }));
+
+    spriteData.img.pipe(gulp.dest('img/dist/icons/'));
+    spriteData.css.pipe(gulp.dest('css/src/'));
+
+    return spriteData;
 });
 
 gulp.task('make-img-prod', function () {
