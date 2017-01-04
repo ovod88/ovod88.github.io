@@ -2,7 +2,7 @@
 header {
   height: $header-image-height;
   position: relative;
-  background: url(../../img/src/Header_pic.jpg) center center no-repeat;
+  background: url(../../img/dist/Header_pic.jpg) center center no-repeat;
   background-position: $header-background-position;
   color: $header-color;
   @extend %montserrat-bold;
