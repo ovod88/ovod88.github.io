@@ -4,19 +4,20 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Final</title>
+        <script data-main="js/main" src="js/libs/require.js"></script>
         <link rel="stylesheet" href="css/dist/core.css">
     </head>
     <body>
         <header>
-            <div class="register">
-                <a class="register__login" href="#">Log in</a>
-                <a class="register__signup" href="#">Sign up</a>
+            <div class="header_register">
+                <a class="header_register__login" href="#">Log in</a>
+                <a class="header_register__signup" href="#">Sign up</a>
             </div>
-            <div class="main">
-                <p class="main__p1">urlaubsglück</p>
-                <p class="main__p2">Share your holiday dreams</p>
-                <p class="main__p3">And find the perfect partner to fulfill it</p>
-                <a href="#" class="main__p4">Find your holiday partner</a>
+            <div class="header_main">
+                <p class="header_main__p1">urlaubsglück</p>
+                <p class="header_main__p2">Share your holiday dreams</p>
+                <p class="header_main__p3">And find the perfect partner to fulfill it</p>
+                <a href="#" class="header_main__p4">Find your holiday partner</a>
             </div>
         </header>
         <section class="how_it_works">
@@ -52,54 +53,62 @@
             </div>
         </section>
         <section class="partners">
-        <p class="partners__header">
-            Meet a partner for your best holiday
-        </p>
-        <figure class="partner__view">
-            <div class="partner__view_picture_block">
-                <img src="img/dist/Partner1.jpg" alt="" class="partner__view_picture">
-                <span class="partner__view_icon partner__view_icon--partner1"></span><!--TODO CHANGE TO SPRITE-->
-            </div>
-            <figcaption class="partner__view_signature1">Brandley Hunter</figcaption>
-            <figcaption class="partner__view_signature2">
-                Based in Chicago. I love playing tennis and loud music
-            </figcaption>
-        </figure>
-        <figure class="partner__view">
-            <div class="partner__view_picture_block">
-                <img src="img/dist/Partner2.jpg" alt="" class="partner__view_picture">
-                <span class="partner__view_icon partner__view_icon--partner2"></span><!--TODO CHANGE TO SPRITE-->
-            </div>
-            <figcaption class="partner__view_signature1">Lucas Marsha</figcaption>
-            <figcaption class="partner__view_signature2">
-                I get my inspiration from nature and objects around me. I have a passion to colours,
-                typography and skateboards.
-            </figcaption>
-        </figure>
-        <figure class="partner__view">
-            <div class="partner__view_picture_block">
-                <img src="img/dist/Partner3.jpg" alt="" class="partner__view_picture">
-                <span class="partner__view_icon partner__view_icon--partner3"></span><!--TODO CHANGE TO SPRITE-->
-            </div>
-            <figcaption class="partner__view_signature1">Heather Walker</figcaption>
-            <figcaption class="partner__view_signature2">
-                I'm a happy person that loves cats and climbing on mountains.
-            </figcaption>
-        </figure>
-        <figure class="partner__view">
-            <div class="partner__view_picture_block">
-                <img src="img/dist/Partner4.jpg" alt="" class="partner__view_picture">
-                <span class="partner__view_icon partner__view_icon--partner4"></span><!--TODO CHANGE TO SPRITE-->
-            </div>
-            <figcaption class="partner__view_signature1">Brandley Hunter</figcaption>
-            <figcaption class="partner__view_signature2">
-                Based in Chicago. I love playing tennis and loud music
-            </figcaption>
-        </figure>
-        <a href="#" class="partners__search">
-            See other partners
-        </a>
-    </section>
+            <p class="partners__header">
+                Meet a partner for your best holiday
+            </p>
+            <figure class="partner__view">
+                <div class="partner__view_picture_block">
+                    <img src="img/dist/Partner1.jpg" alt="" class="partner__view_picture">
+                    <div class="partner__view_icon">
+                        <div class="partner__view_icon_picture partner__view_icon_picture--partner1"></div>
+                    </div>
+                </div>
+                <figcaption class="partner__view_signature1">Brandley Hunter</figcaption>
+                <figcaption class="partner__view_signature2">
+                    Based in Chicago. I love playing tennis and loud music
+                </figcaption>
+            </figure>
+            <figure class="partner__view">
+                <div class="partner__view_picture_block">
+                    <img src="img/dist/Partner2.jpg" alt="" class="partner__view_picture">
+                    <div class="partner__view_icon">
+                        <div class="partner__view_icon_picture partner__view_icon_picture--partner2"></div>
+                    </div>
+                </div>
+                <figcaption class="partner__view_signature1">Lucas Marsha</figcaption>
+                <figcaption class="partner__view_signature2">
+                    I get my inspiration from nature and objects around me. I have a passion to colours,
+                    typography and skateboards.
+                </figcaption>
+            </figure>
+            <figure class="partner__view">
+                <div class="partner__view_picture_block">
+                    <img src="img/dist/Partner3.jpg" alt="" class="partner__view_picture">
+                    <div class="partner__view_icon">
+                        <div class="partner__view_icon_picture partner__view_icon_picture--partner3"></div>
+                    </div>
+                </div>
+                <figcaption class="partner__view_signature1">Heather Walker</figcaption>
+                <figcaption class="partner__view_signature2">
+                    I'm a happy person that loves cats and climbing on mountains.
+                </figcaption>
+            </figure>
+            <figure class="partner__view">
+                <div class="partner__view_picture_block">
+                    <img src="img/dist/Partner4.jpg" alt="" class="partner__view_picture">
+                    <div class="partner__view_icon">
+                        <div class="partner__view_icon_picture partner__view_icon_picture--partner4"></div>
+                    </div>
+                </div>
+                <figcaption class="partner__view_signature1">Brandley Hunter</figcaption>
+                <figcaption class="partner__view_signature2">
+                    Based in Chicago. I love playing tennis and loud music
+                </figcaption>
+            </figure>
+            <a href="#" class="partners__search">
+                See other partners
+            </a>
+        </section>
         <section class="discover_holiday">
             <h2 class="discover_holiday_header">
                 Discover holiday activity ideas
@@ -187,7 +196,7 @@
             <p class="footer_logo_text">
                 Designed by
             </p>
-            <span class="footer_logo"></span>
+            <span class="footer_logo_designer"></span>
         </footer>
     </body>
 </html>

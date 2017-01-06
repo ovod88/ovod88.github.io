@@ -2,11 +2,9 @@
 a {
   text-decoration: none;
 }
-body {
-  @include breakpoint($mobile-width) {
-    width: $mobile-width;
-  }
-}
+
+@import 'sprite-icons';
+@include sprites($spritesheet-sprites);
 
 @import 'header';
 @import "how_it_works";

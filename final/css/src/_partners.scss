@@ -53,38 +53,10 @@
   height: $partners-view-icon-background-size;
   background: $partners-view-icon-background-color;
   @include border-radius(50%);
-
-    &:after {
-      display: block;
-      content: '';
-      margin: $partners-view-icon-position;
-      width: $partners-view-icon-size;
-      height: $partners-view-icon-size;
-    }
 }
 
-.partner__view_icon--partner1 {
-  &:after {
-    background: url("../../img/src/icons/Partner1_icon.png") no-repeat;
-  }
-}
-
-.partner__view_icon--partner2 {
-  &:after {
-    background: url("../../img/src/icons/Partner2_icon.png") no-repeat;
-  }
-}
-
-.partner__view_icon--partner3 {
-  &:after {
-    background: url("../../img/src/icons/Partner3_icon.png") no-repeat;
-  }
-}
-
-.partner__view_icon--partner4 {
-  &:after {
-    background: url("../../img/src/icons/Partner4_icon.png") no-repeat;
-  }
+.partner__view_icon_picture {
+    margin: 4px 0 0 3px;
 }
 
 .partners__search {

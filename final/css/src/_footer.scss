@@ -47,10 +47,7 @@ footer {
   color: $footer-logo-text-color;
 }
 
-.footer_logo {
-  display: block;
-  height: $footer-logo-height;
-  width: $footer-logo-width;
-  background: url("../../img/src/icons/Designer_logo_pic.png");
+.footer_logo_designer {
+  display: inline-block;
   margin: $footer-logo-margin;
 }

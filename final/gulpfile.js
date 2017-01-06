@@ -18,16 +18,15 @@ const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'developm
 
 
 gulp.task('compass', function() {//TODO Now this task takes 2s to complete
-    return gulp.src('css/src/core.scss',{since: gulp.lastRun('compass')})
+    return gulp.src('css/src/core.scss')
         //.pipe(cached('scss'))
-        //.pipe(debug({title: 'SCSS'}))
+        .pipe(debug({title: 'SCSS'}))
         .pipe(compass({
             config_file: './config.rb',
             sourcemap: isDevelopment,//NODE_ENV=production gulp compass will not create source maps
             css: 'css/dist',
             sass: 'css/src'
-        })).
-        pipe(autoprefixer())
+        }))
         //.pipe(remember('scss'))
         .pipe(gulp.dest('css/dist'));
         //.pipe(debug({title: 'COMPASS'}))
@@ -40,24 +39,21 @@ gulp.task('sprite', function() {
             .pipe(remember('sprite'))
             .pipe(sprite({
                 imgName: 'icons.png',
+                imgPath: '../../img/dist/icons/icons.png',
                 cssName: '_sprite-icons.scss',
                 cssFormat: 'scss',
                 algorithm: 'binary-tree',
-                padding: 1
-                //cssVarMap: function(sprite) {
-                //    var temparray = sprite.name.split('-');
-                //
-                //    if(temparray[1] == 'blue') {
-                //        sprite.name = temparray[0] + ':hover';
-                //    } else {
-                //        sprite.name = temparray[0];
-                //    }
-                //},
-                //cssOpts: {
-                //    cssSelector: function (sprite) {
-                //        return '.' + sprite.name;
-                //    }
-                //}
+                padding: 1,
+                cssVarMap: function(sprite) {
+                    var temparray = sprite.name.split('_'),
+                        tempName = temparray[0].toLowerCase();
+
+                    if(tempName.indexOf('partner') != -1) {
+                        sprite.name = 'partner__view_icon_picture--' + tempName;
+                    } else {
+                        sprite.name = 'footer_logo_' + tempName;
+                    }
+                }
             }));
 
     spriteData.img.pipe(gulp.dest('img/dist/icons/'));
@@ -90,6 +86,6 @@ gulp.task('watch',function() {
         //});
 });
 
-gulp.task('build', gulp.series('clean', gulp.parallel('compass', 'make-img-prod')));//gulp.parallel(task1, task2)
+gulp.task('build', gulp.series('clean', 'make-img-prod', 'sprite', 'compass'));//gulp.parallel(task1, task2)
 
 gulp.task('default',gulp.series('compass'));

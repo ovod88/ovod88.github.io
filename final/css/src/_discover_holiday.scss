@@ -38,42 +38,9 @@
 }
 .discover_holiday_block_img {
   position: absolute;
+  width: 100%;
+  height: 100%;
   @extend %discover-holiday-radius;
-}
-
-.discover_holiday_block_img--first {
-  left: -3px;
-  top: -34px;
-}
-
-.discover_holiday_block_img--second {
-   left: -3px;
-   top: -126px;
- }
-
-.discover_holiday_block_img--third {
-  left: -331px;
-  top: -86px;
-}
-
-.discover_holiday_block_img--fourth {
-  left: -77px;
-  top: -147px;
-}
-
-.discover_holiday_block_img--fifth {
-  left: -10px;
-  top: -49px;
-}
-
-.discover_holiday_block_img--sixth {
-  left: -10px;
-  top: -28px;
-}
-
-.discover_holiday_block_img--seventh {
-  left: -231px;
-  top: -65px;
 }
 
 .discover_holiday_block__text {

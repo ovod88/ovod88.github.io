@@ -21,24 +21,9 @@
     img {
       @extend %how-it-works-section-picture-block-radius;
       position: relative;
-      left: -65px;
-      top: -25px;
+      width: 100%;
+      height: 100%;
     }
-
-    //&:before {
-    //  content: '';
-    //  display: block;
-    //  @extend %how-it-works-section-picture-block-radius;
-    //  position: absolute;
-    //  z-index: 1;
-    //  top: 0;
-    //  right: 0;
-    //  bottom: 0;
-    //  left: 0;
-    //  @include background-image(linear-gradient($how-it-works-section-picture-block-cover-start-color,
-    //                                            $how-it-works-section-picture-block-cover-end-color));
-    //  opacity: $how-it-works-section-picture-block-cover-opacity
-    //}
 }
 
 .how_it_works__picture_block_content {

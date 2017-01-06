@@ -17,7 +17,10 @@
 }
 
 /*FOR MEDIA QUERIES*/
-$mobile-width: 320px;
+$mobile: 320px 480px;
+$mobile-tablet: 794px;
+
+
 
 /*HEADER*/
 $header-image-height: 541px;
@@ -39,7 +42,6 @@ $header-register-signup-margin-left: 18px;
 $header-register-signup-internal-padding-aside: 17px;
 $header-register-signup-internal-padding-below: 7px;
 $header-color: white;
-$header-background-position: -425px -10px;
 $header-register-signup-border-px: 2px;
 $header-main-p1-font-size: 20px;
 $header-main-p2-font-size: 30px;
@@ -99,8 +101,6 @@ $partners-view-signature2-line-height: 18px;
 $partners-view-signature2-color: #666666;
 $partners-view-icon-background-size: 40px;
 $partners-view-icon-background-color: white;
-$partners-view-icon-size: 33px;
-$partners-view-icon-position: 4px 0 0 3px;
 $partners-search-font-size: 14px;
 $partners-search-line-position: 30px 15px 20px 15px;
 $partners-search-line-height: 40px;

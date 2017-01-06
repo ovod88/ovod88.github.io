@@ -1,9 +1,9 @@
 
 header {
   height: $header-image-height;
+  text-align: center;
   position: relative;
   background: url(../../img/dist/Header_pic.jpg) center center no-repeat;
-  background-position: $header-background-position;
   color: $header-color;
   @extend %montserrat-bold;
 
@@ -21,7 +21,7 @@ header {
   }
 }
 
-.register {
+.header_register {
   @extend  %header-content-position;
   margin-top: 20px;
   left: 50%;
@@ -30,12 +30,12 @@ header {
 
 
 
-.register__login {
+.header_register__login {
   @extend %header-link-style;
   @include transform(translateY(50%));
 }
 
-.register__signup {
+.header_register__signup {
   @extend %header-link-style;
   margin-left: $header-register-signup-margin-left;
   padding: $header-register-signup-internal-padding-below $header-register-signup-internal-padding-aside
@@ -49,27 +49,26 @@ header {
     }
 }
 
-.main {
+.header_main {
   @extend %header-content-position;
   top: 50%;
   width: 100%;
-  text-align: center;
   @include transform(translateY(-50%));
 }
 
-.main__p1 {
+.header_main__p1 {
   text-transform: uppercase;
   font-size: $header-main-p1-font-size;
 }
 
-.main__p2 {
+.header_main__p2 {
   padding-top: 40px;
   text-transform: uppercase;
   font-size: $header-main-p2-font-size;
   line-height: $header-main-p2-font-line-height;
 }
 
-.main__p3 {
+.header_main__p3 {
   @extend %roboto-light;
   padding-top: 20px;
   opacity: $header-main-p3-font-opacity;
@@ -79,7 +78,7 @@ header {
   line-height: $header-main-p3-font-size + 5px;
 }
 
-.main__p4 {
+.header_main__p4 {
   display: block;
   width: 90%;
   margin: 0 auto;
