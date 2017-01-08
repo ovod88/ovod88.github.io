@@ -11,5 +11,10 @@
     "exam"
   ],
   "homepage": "https://github.com/ovod88/GoIT_Frontend",
-  "private": true
+  "private": true,
+  "devDependencies": {
+    "masonry": "^4.1.1",
+    "jquery": "^3.1.1",
+    "jquery-bridget": "^2.0.1"
+  }
 }

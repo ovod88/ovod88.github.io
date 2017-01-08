@@ -1,17 +1,26 @@
 .discover_holiday {
-  width: 100%;
+  text-align: center;
 }
 
-.discover_holiday_header {
-  text-align: center;
-  @extend %montserrat-bold;
-  font-size: $discover-holiday-header-font-size;
-  margin: $discover-holiday-header-margin;
+.grid_size {
+  width: 33.3%;
+}
+.discover_holiday_blocks {
+  box-sizing: border-box;
 }
 
 .discover_holiday_block {
-  margin: $discover-holiday-block-margin;
   height: $discover-holiday-block-height;
+  width: 100%;
+  margin-bottom: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.discover_holiday_block_content {
+  height: 100%;
+  margin-left: 10px;
+  margin-right: 10px;
   position: relative;
   overflow: hidden;
   @extend %discover-holiday-radius;
@@ -36,8 +45,37 @@
             $discover-holiday-block-cover-end-color-hover));
   }
 }
+
+.discover_holiday_block_img--first {
+  background: url("../../img/dist/Sport_and_avctivity_pic.jpg") no-repeat center center;
+}
+
+.discover_holiday_block_img--second {
+  background: url("../../img/dist/Welness_and_health_pic.jpg") no-repeat center center;
+}
+
+.discover_holiday_block_img--third {
+  background: url("../../img/dist/Extreme_sports_expeditions_pic.jpg") no-repeat center center;
+}
+
+.discover_holiday_block_img--fourth {
+  background: url("../../img/dist/Games_pic.jpg") no-repeat center center;
+}
+
+.discover_holiday_block_img--fifth {
+  background: url("../../img/dist/Culture_education_pic.jpg") no-repeat center center;
+}
+
+.discover_holiday_block_img--sixth {
+  background: url("../../img/dist/Relaxation.jpg") no-repeat center center;
+}
+
+.discover_holiday_block_img--seventh {
+  background: url("../../img/dist/Travelling.jpg") no-repeat center center;
+
+}
+
 .discover_holiday_block_img {
-  position: absolute;
   width: 100%;
   height: 100%;
   @extend %discover-holiday-radius;
@@ -56,6 +94,14 @@
   top: 50%;
   transform: translateY(-50%);
 }
+
+.discover_holiday_header {
+  text-align: center;
+  @extend %montserrat-bold;
+  font-size: $discover-holiday-header-font-size;
+  margin: $discover-holiday-header-margin;
+}
+
 
 .discover_holiday_search_box {
   text-align: center;

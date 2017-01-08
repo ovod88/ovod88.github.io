@@ -1,13 +1,22 @@
 requirejs.config ({
+    baseUrl: 'bower_components',
     paths: {
-        'jquery': 'https://code.jquery.com/jquery-3.1.1'
+        'jquery': 'jquery/dist/jquery',
+        'jquery.masonry': 'masonry/masonry',//TODO version 3 for IE8,
+        'jquery.bridget': 'jquery-bridget/jquery-bridget'
     }
 });
 
 
-require(['jquery'], function($) {
+require(['jquery', 'jquery.masonry', 'jquery.bridget'], function($, Masonry, jQueryBridget) {
     $(document).ready(function() {
-        console.log(window.innerWidth);//TODO add condition for slider if mobile
+        //console.log(window.innerWidth);//TODO add condition for slider if mobile
+        jQueryBridget( 'masonry', Masonry, $ );
+        $('.discover_holiday_blocks').masonry({
+            itemSelector: '.discover_holiday_block',
+            columnWidth: '.grid_size',
+            percentPosition: true
+        });
     });
 });
 
