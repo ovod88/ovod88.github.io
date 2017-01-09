@@ -15,6 +15,7 @@
   margin-bottom: 10px;
   position: relative;
   overflow: hidden;
+  display: none;
 }
 
 .discover_holiday_block_content {
@@ -44,35 +45,6 @@
     @include background(linear-gradient($discover-holiday-block-cover-start-color-hover,
             $discover-holiday-block-cover-end-color-hover));
   }
-}
-
-.discover_holiday_block_img--first {
-  background: url("../../img/dist/Sport_and_avctivity_pic.jpg") no-repeat center center;
-}
-
-.discover_holiday_block_img--second {
-  background: url("../../img/dist/Welness_and_health_pic.jpg") no-repeat center center;
-}
-
-.discover_holiday_block_img--third {
-  background: url("../../img/dist/Extreme_sports_expeditions_pic.jpg") no-repeat center center;
-}
-
-.discover_holiday_block_img--fourth {
-  background: url("../../img/dist/Games_pic.jpg") no-repeat center center;
-}
-
-.discover_holiday_block_img--fifth {
-  background: url("../../img/dist/Culture_education_pic.jpg") no-repeat center center;
-}
-
-.discover_holiday_block_img--sixth {
-  background: url("../../img/dist/Relaxation.jpg") no-repeat center center;
-}
-
-.discover_holiday_block_img--seventh {
-  background: url("../../img/dist/Travelling.jpg") no-repeat center center;
-
 }
 
 .discover_holiday_block_img {

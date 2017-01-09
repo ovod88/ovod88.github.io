@@ -1,3 +1,5 @@
+'use strict';
+
 requirejs.config ({
     baseUrl: 'bower_components',
     paths: {
@@ -8,16 +10,10 @@ requirejs.config ({
 });
 
 
-require(['jquery', 'jquery.masonry', 'jquery.bridget'], function($, Masonry, jQueryBridget) {
-    $(document).ready(function() {
-        //console.log(window.innerWidth);//TODO add condition for slider if mobile
-        jQueryBridget( 'masonry', Masonry, $ );
-        $('.discover_holiday_blocks').masonry({
-            itemSelector: '.discover_holiday_block',
-            columnWidth: '.grid_size',
-            percentPosition: true
-        });
-    });
+require(['jquery', '../js/scripts/loadImages'], function($) {
+    //$(document).ready(function() {
+    //    //console.log(window.innerWidth);//TODO add condition for slider if mobile
+    //});
 });
 
 
