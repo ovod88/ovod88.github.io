@@ -1,31 +1,30 @@
 define(['jquery', '../scripts/initMasonry'], function($, initMasonry) {
-    let ajaxRequests = [];
+    let ajaxRequests = [],
+        activeRequests = 0;
 
-    console.log('LOAD inited');
     $('.discover_holiday_block_content').each(function() {
         let $imageBlock = $(this),
             category = $(this).data('category'),
             ajaxRequest;
 
         ajaxRequest = $.ajax({
-            url: `https://pixabay2.com/api/?key=4214596-4796665cc8384e50741647005&q=${category}
+            url: `https://pixabay.com/api/?key=4214596-4796665cc8384e50741647005&q=${category}
                                                                                 &image_type=photo&per_page=10`,
             dataType: 'json'
         });
         ajaxRequests.push(ajaxRequest);
+        activeRequests++;
 
 
         ajaxRequest.then(function (data) {
-                $imageBlock.parent().css('display', 'block');
                 $imageBlock.css({
                     'background': `url(${data.hits[Math.floor((Math.random() * 10))].webformatURL}) no-repeat center center`,
                     'background-size': 'cover'
                 });
+                $imageBlock.parent().css('display', 'block');
+                syncMasonry(--activeRequests);
             },
             function () {
-                console.log('Failed function loaded');
-                $imageBlock.parent().css('display', 'block');
-
                 switch (category) {
                     case 'sport':
                         $imageBlock.css({
@@ -70,10 +69,14 @@ define(['jquery', '../scripts/initMasonry'], function($, initMasonry) {
                         });
                         break;
                 }
+                $imageBlock.parent().css('display', 'block');
+                syncMasonry(--activeRequests);
             });
     });
-    //$.when(...ajaxRequests).always(function() {//TODO
-    //    console.log('HERE');
-    //   initMasonry();
-    //});
+
+    function syncMasonry(activeSessions) {
+        if(!activeSessions) {
+            initMasonry();
+        }
+    }
 });
