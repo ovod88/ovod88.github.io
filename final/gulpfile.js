@@ -2,6 +2,7 @@
 
 const gulp = require('gulp');
 const compass = require('gulp-compass');
+//const sass = require('gulp-sass');
 const debug = require('gulp-debug');
 //const sourcemaps = require('gulp-sourcemaps');
 const gulpif = require('gulp-if');
@@ -14,6 +15,7 @@ const autoprefixer = require('gulp-autoprefixer'),
 //const watch = require('gulp-watch');
 const remember = require('gulp-remember');
 const imagemin = require('gulp-image');
+const browserSync = require('browser-sync').create();
 const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development';
 
 
@@ -74,8 +76,12 @@ gulp.task('make-img-prod', function () {
        .pipe(gulp.dest('img/dist'));
 });
 
-gulp.task('clean', function() {
+gulp.task('cleanAll', function() {
    return del(['css/dist', 'img/dist']);
+});
+
+gulp.task('cleanCSS', function() {
+    return del(['css/dist']);
 });
 
 gulp.task('watch',function() {
@@ -86,6 +92,18 @@ gulp.task('watch',function() {
         //});
 });
 
-gulp.task('build', gulp.series('clean', 'make-img-prod', 'sprite', 'compass'));//gulp.parallel(task1, task2)
+gulp.task('browser-sync', function() {
+    browserSync.init({
+       server: {
+           baseDir: './'//IF NO BACKEND SERVER AVAILABLE
+       }
+    });
+
+    browserSync.watch(['css/dist/*.*', 'img/dist/**/*.*']).on('change', browserSync.reload);
+});
+
+gulp.task('build', gulp.series('cleanAll', 'make-img-prod', 'sprite', 'compass'));//gulp.parallel(task1, task2)
+
+gulp.task('dev', gulp.series('cleanCSS', 'compass', gulp.parallel('watch', 'browser-sync')));
 
 gulp.task('default',gulp.series('compass'));

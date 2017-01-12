@@ -2,6 +2,7 @@
 
 requirejs.config ({
     baseUrl: 'bower_components',
+    waitSeconds: 200,
     paths: {
         'jquery': 'jquery/dist/jquery',
         'jquery.masonry': 'masonry/masonry',//TODO version 3 for IE8,
