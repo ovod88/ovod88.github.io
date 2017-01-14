@@ -16,27 +16,41 @@ const autoprefixer = require('gulp-autoprefixer'),
 const remember = require('gulp-remember');
 const imagemin = require('gulp-image');
 const browserSync = require('browser-sync').create();
+const notify = require('gulp-notify');
+const plumber = require('gulp-plumber');
 const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development';
 
 
 gulp.task('compass', function() {//TODO Now this task takes 2s to complete
     return gulp.src('css/src/core.scss')
-        //.pipe(cached('scss'))
-        .pipe(debug({title: 'SCSS'}))
+        .pipe(plumber({
+            errorHandler: notify.onError(function(err) {
+                return {
+                    title: 'Compass compilation',
+                    message: err.message
+                };
+            })
+        }))
         .pipe(compass({
             config_file: './config.rb',
             sourcemap: isDevelopment,//NODE_ENV=production gulp compass will not create source maps
             css: 'css/dist',
             sass: 'css/src'
         }))
-        //.pipe(remember('scss'))
         .pipe(gulp.dest('css/dist'));
-        //.pipe(debug({title: 'COMPASS'}))
 });
 
 gulp.task('sprite', function() {
     var spriteData =
         gulp.src(['img/dist/icons/*.*', '!img/dist/icons/icons.png'], {since: gulp.lastRun('sprite')})
+            .pipe(plumber({
+                errorHandler: notify.onError(function(err) {
+                    return {
+                        title: 'Sprite compilation',
+                        message: err.message
+                    };
+                })
+            }))
             .pipe(debug({title: 'SPRITE'}))
             .pipe(remember('sprite'))
             .pipe(sprite({
@@ -70,6 +84,14 @@ gulp.task('make-img-prod', function () {
            console.log(file.relative);
            // here you can filter all your file depends on name/path/etc.
        })
+       .pipe(plumber({
+           errorHandler: notify.onError(function(err) {
+               return {
+                   title: 'Image minifying and coping',
+                   message: err.message
+               };
+           })
+       }))
        .pipe(newer('img/dist'))
        .pipe(imagemin())
        .pipe(debug({title: 'copying images to production'}))
@@ -86,10 +108,6 @@ gulp.task('cleanCSS', function() {
 
 gulp.task('watch',function() {
     gulp.watch('css/src/**/*.*', gulp.series('compass'));
-        //.on('unlink', function (filepath) {
-            //remember.forget('scss', path.resolve(filepath));
-            //delete cached.caches.scss[path.resolve(filepath)];
-        //});
 });
 
 gulp.task('browser-sync', function() {
