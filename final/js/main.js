@@ -5,16 +5,23 @@ requirejs.config ({
     waitSeconds: 200,
     paths: {
         'jquery': 'jquery/dist/jquery',
+        'lodash': '../js/libs/lodash',
         'jquery.masonry': 'masonry/masonry',//TODO version 3 for IE8,
         'jquery.bridget': 'jquery-bridget/jquery-bridget'
     }
 });
 
 
-require(['jquery', '../js/scripts/loadImages'], function($) {
-    //$(document).ready(function() {
-    //    //console.log(window.innerWidth);//TODO add condition for slider if mobile
-    //});
+require(['jquery', '../js/scripts/initImages'], function($, initImages) {
+    $(function() {
+        //console.log(window.innerWidth);//TODO add condition for slider if mobile
+        let categories = [{'sport' : 'Sport and Activity'}, {'health': 'Wellness and Health'},
+            {'extreme': 'Extreme Sports and Expeditions'}, {'games': 'Games'},
+            {'culture': 'Culture and Education'}, {'relaxation': 'Relaxation'}, {'travelling': 'Travelling'}];
+
+        initImages(categories);
+        //TODO add listener to the button
+    });
 });
 
 
