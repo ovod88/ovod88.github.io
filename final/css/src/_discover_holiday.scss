@@ -80,6 +80,8 @@
   text-align: center;
 }
 
+
+
 .discover_holiday_search_box__text {
   font-size: $discover-holiday-search-box-text-font-size;
   color: $discover-holiday-search-box-text-color;
@@ -108,6 +110,15 @@
     outline-width: 0px;
     @include box-shadow($discover-holiday-search-box-input-focus-shadow);
   }
+}
+
+.discover_holiday_search_box__link__error {
+  display: none;
+  font-family: Roboto;
+  font-size: 20px;
+  font-weight: bold;
+  color: green;
+  margin-bottom: 10px;
 }
 
 .discover_holiday_search_box__link {

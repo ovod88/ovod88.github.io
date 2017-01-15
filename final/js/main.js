@@ -12,15 +12,25 @@ requirejs.config ({
 });
 
 
-require(['jquery', '../js/scripts/initImages'], function($, initImages) {
+require(['../js/scripts/globals' ,'jquery', '../js/scripts/loadImages'], function(globals, $, loadImages) {
     $(function() {
         //console.log(window.innerWidth);//TODO add condition for slider if mobile
         let categories = [{'sport' : 'Sport and Activity'}, {'health': 'Wellness and Health'},
             {'extreme': 'Extreme Sports and Expeditions'}, {'games': 'Games'},
             {'culture': 'Culture and Education'}, {'relaxation': 'Relaxation'}, {'travelling': 'Travelling'}];
 
-        initImages(categories);
-        //TODO add listener to the button
+        loadImages(categories);
+        console.log('PAGE  LOADED ' + new Date().toString());
+
+        $('.discover_holiday_search_box__link').on('click', function(e) {
+            let $this = $('.discover_holiday_search_box__input');
+            e.preventDefault();
+
+            if($this.val()) {
+                loadImages($this.val());
+            }
+            $this.val('');
+        });
     });
 });
 

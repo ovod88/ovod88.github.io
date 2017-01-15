@@ -1,6 +1,7 @@
 define([], function() {
     return {
-        imageNumbers: 3
+        imageNumbers: 10,
+        maxImagesNumber: 7
     }
 });
 
