@@ -17,10 +17,11 @@
 }
 
 /*FOR MEDIA QUERIES*/
-$mobile: 320px 480px;
-$mobile-tablet: 794px;
-
-
+$breakpoints:  (
+  'mobile': 320px 480px,
+  'retina': min-resolution 1.5dppx,
+  'mobile-tablet': 794px
+);
 
 /*HEADER*/
 $header-image-height: 541px;

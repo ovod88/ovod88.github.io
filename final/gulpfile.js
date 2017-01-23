@@ -14,6 +14,7 @@ const autoprefixer = require('gulp-autoprefixer'),
     sprite = require('gulp.spritesmith');
 //const watch = require('gulp-watch');
 const remember = require('gulp-remember');
+//const retinize = require('gulp-retinize');
 const imagemin = require('gulp-image');
 const browserSync = require('browser-sync').create();
 const notify = require('gulp-notify');
@@ -78,6 +79,22 @@ gulp.task('sprite', function() {
     return spriteData;
 });
 
+//gulp.task('retinize', function() {
+//    return gulp.src('img/dist/*.{png,jpeg,jpg}')
+//        .pipe(plumber({
+//            errorHandler: notify.onError(function(err) {
+//                return {
+//                    title: 'Retinizer failed',
+//                    message: err.message
+//                };
+//            })
+//        }))
+//        .pipe(newer('img/dist/retina'))
+//        .pipe(debug({title: 'Retinising'}))
+//        .pipe(retinize())
+//        .pipe(gulp.dest('img/dist/retina'));
+//});
+
 gulp.task('make-img-prod', function () {
    return gulp.src('img/src/**/*.{png,jpeg,jpg}', {since: gulp.lastRun('make-img-prod')})
        .on("data", function(file){
@@ -100,6 +117,10 @@ gulp.task('make-img-prod', function () {
 
 gulp.task('cleanAll', function() {
    return del(['css/dist', 'img/dist']);
+});
+
+gulp.task('cleanImg', function() {
+    return del(['img/dist']);
 });
 
 gulp.task('cleanCSS', function() {
