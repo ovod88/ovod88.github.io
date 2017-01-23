@@ -1,4 +1,17 @@
-define(['../scripts/globals' , 'jquery', 'lodash','../scripts/initMasonry'], function(globals, $, _, initMasonry) {
+define(['../scripts/globals' , 'Modernizr', 'jquery', 'lodash','../scripts/initMasonry'], function(globals, Modernizr, $, _, initMasonry) {
+    Modernizr.addTest('retina', function() {
+        // starts with default value for modern browsers
+        var dpr = window.devicePixelRatio ||
+
+                // fallback for IE
+            (window.screen.deviceXDPI / window.screen.logicalXDPI) ||
+
+                // default value
+            1;
+
+        return !!(dpr > 1);
+    });
+
     let template = _.template($('#discover_holiday_block_template').html()),
         discoverHolidayBlocks = $('.discover_holiday_blocks'),
         atLeastOnePictureLoaded = true,
@@ -41,7 +54,9 @@ define(['../scripts/globals' , 'jquery', 'lodash','../scripts/initMasonry'], fun
                                         .css('display', 'block')
                                         .find('.discover_holiday_block_content')
                                         .css({
-                                            'background': 'url("img/dist/Sport_and_avctivity_pic.jpg") no-repeat center center',
+                                            'background': (Modernizr.retina ? 'url(img/dist/Sport_and_avctivity_pic@2x.jpg)' :
+                                                'url(img/dist/Sport_and_avctivity_pic.jpg)') +
+                                            ' no-repeat center center',
                                             'background-size': 'cover'
                                         });
                                     break;
@@ -53,7 +68,9 @@ define(['../scripts/globals' , 'jquery', 'lodash','../scripts/initMasonry'], fun
                                         .css('display', 'block')
                                         .find('.discover_holiday_block_content')
                                         .css({
-                                            'background': 'url("img/dist/Welness_and_health_pic.jpg") no-repeat center center',
+                                            'background': (Modernizr.retina ? 'url(img/dist/Welness_and_health_pic@2x.jpg)' :
+                                                                'url(img/dist/Welness_and_health_pic.jpg)') +
+                                                                    ' no-repeat center center',
                                             'background-size': 'cover'
                                         });
                                     break;
@@ -65,7 +82,9 @@ define(['../scripts/globals' , 'jquery', 'lodash','../scripts/initMasonry'], fun
                                         .css('display', 'block')
                                         .find('.discover_holiday_block_content')
                                         .css({
-                                            'background': 'url("img/dist/Extreme_sports_expeditions_pic.jpg") no-repeat center center',
+                                            'background': (Modernizr.retina ? 'url(img/dist/Extreme_sports_expeditions_pic@2x.jpg)' :
+                                                'url(img/dist/Extreme_sports_expeditions_pic.jpg)') +
+                                            ' no-repeat center center',
                                             'background-size': 'cover'
                                         });
                                     break;
@@ -77,7 +96,9 @@ define(['../scripts/globals' , 'jquery', 'lodash','../scripts/initMasonry'], fun
                                         .css('display', 'block')
                                         .find('.discover_holiday_block_content')
                                         .css({
-                                            'background': 'url("img/dist/Games_pic.jpg") no-repeat center center',
+                                            'background': (Modernizr.retina ? 'url(img/dist/Games_pic@2x.jpg)' :
+                                                'url(img/dist/Games_pic.jpg)') +
+                                            ' no-repeat center center',
                                             'background-size': 'cover'
                                         });
                                     break;
@@ -89,7 +110,9 @@ define(['../scripts/globals' , 'jquery', 'lodash','../scripts/initMasonry'], fun
                                         .css('display', 'block')
                                         .find('.discover_holiday_block_content')
                                         .css({
-                                            'background': 'url("img/dist/Culture_education_pic.jpg") no-repeat center center',
+                                            'background': (Modernizr.retina ? 'url(img/dist/Culture_education_pic@2x.jpg)' :
+                                                'url(img/dist/Culture_education_pic.jpg)') +
+                                            ' no-repeat center center',
                                             'background-size': 'cover'
                                         });
                                     break;
@@ -101,7 +124,9 @@ define(['../scripts/globals' , 'jquery', 'lodash','../scripts/initMasonry'], fun
                                         .css('display', 'block')
                                         .find('.discover_holiday_block_content')
                                         .css({
-                                            'background': 'url("img/dist/Relaxation.jpg") no-repeat center center',
+                                            'background': (Modernizr.retina ? 'url(img/dist/Relaxation@2x.jpg)' :
+                                                'url(img/dist/Relaxation.jpg)') +
+                                            ' no-repeat center center',
                                             'background-size': 'cover'
                                         });
                                     break;
@@ -113,7 +138,9 @@ define(['../scripts/globals' , 'jquery', 'lodash','../scripts/initMasonry'], fun
                                         .css('display', 'block')
                                         .find('.discover_holiday_block_content')
                                         .css({
-                                            'background': 'url("img/dist/Travelling.jpg") no-repeat center center',
+                                            'background': (Modernizr.retina ? 'url(img/dist/Travelling@2x.jpg)' :
+                                                'url(img/dist/Travelling.jpg)') +
+                                            ' no-repeat center center',
                                             'background-size': 'cover'
                                         });
                                     break;

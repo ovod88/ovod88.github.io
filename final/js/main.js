@@ -7,7 +7,13 @@ requirejs.config ({
         'jquery': 'jquery/dist/jquery',
         'lodash': '../js/libs/lodash',
         'jquery.masonry': 'masonry/masonry',//TODO version 3 for IE8,
-        'jquery.bridget': 'jquery-bridget/jquery-bridget'
+        'jquery.bridget': 'jquery-bridget/jquery-bridget',
+        'Modernizr':'../js/libs/modernizr-custom'
+    },
+    shim: {
+        'Modernizr': {
+            exports: 'Modernizr'
+        }
     }
 });
 
