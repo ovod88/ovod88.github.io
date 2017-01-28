@@ -1,5 +1,4 @@
 define(['jquery', 'jquery.masonry', 'jquery.bridget'], function($, Masonry, jQueryBridget) {
-    let isCleaned = false;
 
     jQueryBridget( 'masonry', Masonry, $ );
 

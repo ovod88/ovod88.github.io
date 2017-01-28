@@ -19,6 +19,9 @@ const imagemin = require('gulp-image');
 const browserSync = require('browser-sync').create();
 const notify = require('gulp-notify');
 const plumber = require('gulp-plumber');
+const through2 = require('through2').obj;
+const File = require('vinyl');
+const eslint = require('gulp-eslint');
 const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development';
 
 
@@ -79,6 +82,16 @@ gulp.task('sprite', function() {
     return spriteData;
 });
 
+gulp.task('lint', function() {
+    return gulp.src(['js/**/*.js', '!js/libs/**/*'])
+        .on("data", function(file){
+            console.log(file.relative);
+        })
+        .pipe(eslint())
+        .pipe(eslint.format())
+        .pipe(eslint.failAfterError());
+});
+
 //gulp.task('retinize', function() {
 //    return gulp.src('img/dist/*.{png,jpeg,jpg}')
 //        .pipe(plumber({
@@ -96,6 +109,9 @@ gulp.task('sprite', function() {
 //});
 
 gulp.task('make-img-prod', function () {
+
+    let mtimes = {};
+
    return gulp.src('img/src/**/*.{png,jpeg,jpg}', {since: gulp.lastRun('make-img-prod')})
        .on("data", function(file){
            console.log(file.relative);
@@ -112,7 +128,28 @@ gulp.task('make-img-prod', function () {
        .pipe(newer('img/dist'))
        .pipe(imagemin())
        .pipe(debug({title: 'copying images to production'}))
-       .pipe(gulp.dest('img/dist'));
+       .pipe(through2(
+           function(file, enc, callback) {
+               mtimes[file.relative] = file.stat.mtime;
+               callback(null, file);
+           }, function (callback) {
+               let manifest = new File({
+                   contents: new Buffer(JSON.stringify(mtimes)),
+                   base: process.cwd(),
+                   path: process.cwd() + '/manifest_img.json'
+               });
+               manifest.isManifest = true;
+               this.push(manifest);
+               callback();
+           }
+       ))
+       .pipe(gulp.dest(function (file) {
+           if(file.isManifest) {
+               return process.cwd();
+           } else {
+               return 'img/dist';
+           }
+       }));
 });
 
 gulp.task('cleanAll', function() {

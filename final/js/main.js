@@ -1,5 +1,3 @@
-'use strict';
-
 requirejs.config ({
     baseUrl: 'bower_components',
     waitSeconds: 200,
@@ -26,7 +24,6 @@ require(['../js/scripts/globals' ,'jquery', '../js/scripts/loadImages'], functio
             {'culture': 'Culture and Education'}, {'relaxation': 'Relaxation'}, {'travelling': 'Travelling'}];
 
         loadImages(categories);
-        console.log('PAGE  LOADED ' + new Date().toString());
 
         $('.discover_holiday_search_box__link').on('click', function(e) {
             let $this = $('.discover_holiday_search_box__input');
