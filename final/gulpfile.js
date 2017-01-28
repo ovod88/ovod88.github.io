@@ -1,5 +1,6 @@
 'use strict';
 
+const fs = require('fs');
 const gulp = require('gulp');
 const compass = require('gulp-compass');
 //const sass = require('gulp-sass');
@@ -22,6 +23,7 @@ const plumber = require('gulp-plumber');
 const through2 = require('through2').obj;
 const File = require('vinyl');
 const eslint = require('gulp-eslint');
+const combine = require('stream-combiner2').obj;
 const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development';
 
 
@@ -83,30 +85,63 @@ gulp.task('sprite', function() {
 });
 
 gulp.task('lint', function() {
-    return gulp.src(['js/**/*.js', '!js/libs/**/*'])
-        .on("data", function(file){
-            console.log(file.relative);
-        })
-        .pipe(eslint())
-        .pipe(eslint.format())
-        .pipe(eslint.failAfterError());
-});
+    let errorMessage = '',
+        esLintResults = {},
+        esLintCacheFile = process.cwd() + '/LintCache.json';
 
-//gulp.task('retinize', function() {
-//    return gulp.src('img/dist/*.{png,jpeg,jpg}')
-//        .pipe(plumber({
-//            errorHandler: notify.onError(function(err) {
-//                return {
-//                    title: 'Retinizer failed',
-//                    message: err.message
-//                };
-//            })
-//        }))
-//        .pipe(newer('img/dist/retina'))
-//        .pipe(debug({title: 'Retinising'}))
-//        .pipe(retinize())
-//        .pipe(gulp.dest('img/dist/retina'));
-//});
+    try {
+        esLintResults = JSON.parse(fs.readFileSync(esLintCacheFile));
+    } catch(e) {
+    }
+
+    return gulp.src(['js/**/*.js', '!js/libs/**/*'], {read: false})
+        .pipe(plumber({
+            errorHandler: notify.onError(function(err) {
+                return {
+                    title: 'JS lint checking',
+                    message: err.message
+                };
+            })
+        }))
+        .pipe(gulpif(function(file) {
+            return esLintResults[file.path] && esLintResults[file.path].mtime == file.stat.mtime.toJSON();
+        },
+        through2(function(file, enc, callback) {
+            file.eslint = esLintResults[file.path].eslint;
+            callback(null, file);
+        }),
+        combine(
+            through2(function(file, enc, callback) {
+                file.contents = fs.readFileSync(file.path);
+                callback(null, file);
+            }),
+            eslint(),
+            debug({title: 'eslinting'}),
+            through2(function(file, enc, callback) {
+                esLintResults[file.path] = {
+                    eslint: file.eslint,
+                    mtime: file.stat.mtime
+                };
+                callback(null, file);
+            })
+        )))
+        .pipe(through2(function(file, enc, callback) {
+            if(file.eslint.errorCount) {
+                errorMessage += `Lint detected ${file.eslint.errorCount} errors in ${file.relative}\n`;
+            }
+            callback(null, file);
+        },
+         function(callback) {
+             if(errorMessage.length) {
+                 this.emit('error', new Error(errorMessage));
+             }
+             callback();
+         }))
+        .pipe(eslint.format())
+        .on('end', function() {
+            fs.writeFileSync(esLintCacheFile, JSON.stringify(esLintResults));
+        })
+});
 
 gulp.task('make-img-prod', function () {
 
@@ -166,6 +201,7 @@ gulp.task('cleanCSS', function() {
 
 gulp.task('watch',function() {
     gulp.watch('css/src/**/*.*', gulp.series('compass'));
+    gulp.watch(['js/**/*.js', '!js/libs/**/*'], gulp.series('lint'));
 });
 
 gulp.task('browser-sync', function() {
