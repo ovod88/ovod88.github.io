@@ -3,10 +3,10 @@ requirejs.config ({
     waitSeconds: 200,
     paths: {
         'jquery': 'jquery/dist/jquery',
-        'lodash': '../js/libs/lodash',
+        'lodash': '../js/dist/libs/lodash',
         'jquery.masonry': 'masonry/masonry',//TODO version 3 for IE8,
         'jquery.bridget': 'jquery-bridget/jquery-bridget',
-        'Modernizr':'../js/libs/modernizr-custom'
+        'Modernizr':'../js/dist/libs/modernizr-custom'
     },
     shim: {
         'Modernizr': {
@@ -16,9 +16,9 @@ requirejs.config ({
 });
 
 
-require(['../js/scripts/globals' ,'jquery', '../js/scripts/loadImages'], function(globals, $, loadImages) {
+require(['../js/dist/scripts/globals' ,'jquery', '../js/dist/scripts/loadImages'], function(globals, $, loadImages) {
     $(function() {
-        //console.log(window.innerWidth);//TODO add condition for slider if mobile
+        console.log(window.innerWidth);//TODO add condition for slider if mobile
         let categories = [{'sport' : 'Sport and Activity'}, {'health': 'Wellness and Health'},
             {'extreme': 'Extreme Sports and Expeditions'}, {'games': 'Games'},
             {'culture': 'Culture and Education'}, {'relaxation': 'Relaxation'}, {'travelling': 'Travelling'}];
@@ -36,42 +36,3 @@ require(['../js/scripts/globals' ,'jquery', '../js/scripts/loadImages'], functio
         });
     });
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//requirejs.config({
-//    baseUrl: "js/app",
-//    paths: {
-//        resig: '../libs/tmpl',
-//        jquery: '../libs/jquery.min'
-//    },
-//    shim: {
-//        'resig': {
-//            exports: 'tmpl'
-//        }
-//    }
-//});
-//
-//
-//
-//require(['jquery', 'models/Modelul', 'views/View1' ,'controllers/Controller1'], function($, Model_UL, View1, Controller1) {
-//    $(document).ready(function() {
-//        var model_ul = new Model_UL(['Water is the best', 'Cidr is the best', 'Sport is the best']);
-//        var view = new View1(model_ul);
-//        var controller = new Controller1(model_ul, view);
-//    });
-//});
-

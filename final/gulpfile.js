@@ -24,6 +24,7 @@ const through2 = require('through2').obj;
 const File = require('vinyl');
 const eslint = require('gulp-eslint');
 const combine = require('stream-combiner2').obj;
+const babel = require('gulp-babel');
 const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development';
 
 
@@ -82,6 +83,22 @@ gulp.task('sprite', function() {
     spriteData.css.pipe(gulp.dest('css/src/'));
 
     return spriteData;
+});
+
+gulp.task('js', function() {
+    return gulp.src('js/src/**/*.*')
+        .pipe(newer('js/dist'))
+        .pipe(gulpif(function(file) {
+                return !!file.relative.indexOf('libs');
+            },
+            combine(
+                debug({title: 'babeling'}),
+                babel({
+                    presets: ['es2015']
+                })
+            )
+        ))
+        .pipe(gulp.dest('js/dist'));
 });
 
 gulp.task('lint', function() {
@@ -201,7 +218,7 @@ gulp.task('cleanCSS', function() {
 
 gulp.task('watch',function() {
     gulp.watch('css/src/**/*.*', gulp.series('compass'));
-    gulp.watch(['js/**/*.js', '!js/libs/**/*'], gulp.series('lint'));
+    gulp.watch(['js/src/**/*.js', '!js/src/libs/**/*'], gulp.series('lint', 'js'));
 });
 
 gulp.task('browser-sync', function() {
