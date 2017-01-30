@@ -1,4 +1,4 @@
-define(['../scripts/globals' , 'Modernizr', 'jquery', 'lodash','../scripts/initMasonry'], function(globals, Modernizr, $, _, initMasonry) {
+define(['globals' , 'Modernizr', 'jquery', 'lodash', 'masonry'], function(globals, Modernizr, $, _, initMasonry) {
     Modernizr.addTest('retina', function() {
         // starts with default value for modern browsers
         var dpr = window.devicePixelRatio ||

@@ -6,7 +6,10 @@ requirejs.config ({
         'lodash': '../js/dist/libs/lodash',
         'jquery.masonry': 'masonry/masonry',//TODO version 3 for IE8,
         'jquery.bridget': 'jquery-bridget/jquery-bridget',
-        'Modernizr':'../js/dist/libs/modernizr-custom'
+        'Modernizr':'../js/dist/libs/modernizr-custom',
+        'globals': '../js/dist/scripts/globals',
+        'images': '../js/dist/scripts/loadImages',
+        'masonry': '../js/dist/scripts/initMasonry'
     },
     shim: {
         'Modernizr': {
@@ -16,9 +19,9 @@ requirejs.config ({
 });
 
 
-require(['../js/dist/scripts/globals' ,'jquery', '../js/dist/scripts/loadImages'], function(globals, $, loadImages) {
+require(['globals' ,'jquery', 'images'], function(globals, $, loadImages) {
     $(function() {
-        console.log(window.innerWidth);//TODO add condition for slider if mobile
+        //console.log(window.innerWidth);//TODO add condition for slider if mobile
         let categories = [{'sport' : 'Sport and Activity'}, {'health': 'Wellness and Health'},
             {'extreme': 'Extreme Sports and Expeditions'}, {'games': 'Games'},
             {'culture': 'Culture and Education'}, {'relaxation': 'Relaxation'}, {'travelling': 'Travelling'}];

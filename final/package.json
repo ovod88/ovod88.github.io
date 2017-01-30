@@ -33,6 +33,8 @@
     "gulp-notify": "^2.2.0",
     "gulp-plumber": "^1.1.0",
     "gulp-remember": "^0.3.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-requirejs-optimize": "^1.2.0",
     "gulp-retinize": "git+https://github.com/mattidupre/gulp-retinize.git",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^1.9.1",

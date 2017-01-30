@@ -25,7 +25,27 @@ const File = require('vinyl');
 const eslint = require('gulp-eslint');
 const combine = require('stream-combiner2').obj;
 const babel = require('gulp-babel');
+const requirejsOptimize = require('gulp-requirejs-optimize');
+const rename = require('gulp-rename');
 const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development';
+
+
+let requireJsConfig = {
+    baseUrl: 'bower_components',
+    paths: {
+        'jquery': 'jquery/dist/jquery',
+        'lodash': '../js/dist/libs/lodash',
+        'jquery.masonry': 'masonry/masonry', //TODO version 3 for IE8,
+        'jquery.bridget': 'jquery-bridget/jquery-bridget',
+        'Modernizr': '../js/dist/libs/modernizr-custom',
+        'globals': '../js/dist/scripts/globals',
+        'images': '../js/dist/scripts/loadImages',
+        'masonry': '../js/dist/scripts/initMasonry'
+    },
+    name: '../js/dist/main',
+    mainConfigFile: "js/dist/main.js"
+};
+
 
 
 gulp.task('compass', function() {//TODO Now this task takes 2s to complete
@@ -45,6 +65,18 @@ gulp.task('compass', function() {//TODO Now this task takes 2s to complete
             sass: 'css/src'
         }))
         .pipe(gulp.dest('css/dist'));
+});
+
+gulp.task('cleanAll', function() {
+    return del(['css/dist', 'img/dist', 'js/dist']);
+});
+
+gulp.task('cleanJs', function() {
+    return del(['js/dist']);
+});
+
+gulp.task('cleanCSS', function() {
+    return del(['css/dist']);
 });
 
 gulp.task('sprite', function() {
@@ -96,7 +128,8 @@ gulp.task('js', function() {
                 babel({
                     presets: ['es2015']
                 })
-            )
+            ),
+            debug({title: 'copying'})
         ))
         .pipe(gulp.dest('js/dist'));
 });
@@ -111,7 +144,7 @@ gulp.task('lint', function() {
     } catch(e) {
     }
 
-    return gulp.src(['js/**/*.js', '!js/libs/**/*'], {read: false})
+    return gulp.src(['js/src/*.js', '!js/src/libs/**/*'], {read: false})
         .pipe(plumber({
             errorHandler: notify.onError(function(err) {
                 return {
@@ -160,6 +193,16 @@ gulp.task('lint', function() {
         })
 });
 
+gulp.task('js-optimize', function() {
+    return gulp.src('js/dist/main.js')
+        .pipe(requirejsOptimize(requireJsConfig))
+        .pipe(debug({title: 'require-optimiser'}))
+        .pipe(rename('main-opt.js'))
+        .pipe(gulp.dest('js/dist'));
+});
+
+gulp.task('build-js', gulp.series('cleanJs', 'lint', 'js', 'js-optimize'));
+
 gulp.task('make-img-prod', function () {
 
     let mtimes = {};
@@ -202,18 +245,6 @@ gulp.task('make-img-prod', function () {
                return 'img/dist';
            }
        }));
-});
-
-gulp.task('cleanAll', function() {
-   return del(['css/dist', 'img/dist']);
-});
-
-gulp.task('cleanImg', function() {
-    return del(['img/dist']);
-});
-
-gulp.task('cleanCSS', function() {
-    return del(['css/dist']);
 });
 
 gulp.task('watch',function() {
