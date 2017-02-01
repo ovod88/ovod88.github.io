@@ -1,0 +1,5 @@
+heroku login - logins local PC to remote server
+heroku create - creates apps on remote server
+heroku open - opens browser with your application
+heroku apps:destroy --app [app_name]
+heroku apps:rename [newname] --app [oldname]
