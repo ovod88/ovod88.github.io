@@ -3,7 +3,7 @@ var Model = {
     inner_elem_size: 5,
     linesNumber: 15,
 
-    convert: function (structure) {
+    convert: function (structure) {//OK
         var obj = {};
 
         obj.externalBlock = [];
@@ -29,6 +29,7 @@ var Model = {
 
         return obj;
     },
+
     transformToBlockObj: function(obj) {
         return {
             'topleft': {x: obj.x, y: obj.y},
