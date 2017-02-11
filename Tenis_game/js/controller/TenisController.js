@@ -1,7 +1,18 @@
 function TenisController(view, models) {
     var gameIsOn = false, gameIsPaused = false,
         keyPressed = false, objects = {},
-        figure = [], ball, racket = [], hits = {}, redrawTimer;
+        figure = [], ball, racket = [], hits = {}, redrawTimer, isRandom = false,
+        mappingFigureSize = {
+            'small': 10,
+            'normal': 12,
+            'big': 15
+        },
+        speeds = {
+            'slow': 300,
+            'normal': 200,
+            'fast': 100
+        }, selectedSpeed;
+
 
     var timeoutRacket, timeoutBall;
 
@@ -9,14 +20,35 @@ function TenisController(view, models) {
 
         view.fillSelect(models.figure.getStructure());
         view.elements.submitBtn.addEventListener('click', init);
+        view.elements.select.addEventListener('change', function () {
+            var selectedValue = this.options[this.selectedIndex].value;
+            if(selectedValue === 'random') {
+                view.elements.selectSize.style.visibility = 'visible';
+                isRandom = true;
+
+            } else {
+                view.elements.selectSize.style.visibility = 'hidden';
+                isRandom = false;
+            }
+        });
     };
 
     function init () {
         if(!gameIsOn) {
-            var select = view.elements.select;
-            var selectedFigureName = select.options[select.selectedIndex].value || 'heart';
+            var select = view.elements.select,
+                selectSpeed = view.elements.selectSpeed,
+                selectedFigureName = select.options[select.selectedIndex].value || 'heart';
+            selectedSpeed = selectSpeed.options[selectSpeed.selectedIndex].value;
+            console.log('SPEED ', selectedSpeed);
 
-            objects.form = models.figure.getStructure(selectedFigureName);
+            if(isRandom) {
+                var selectSize = view.elements.selectSize,
+                    selectedSize = selectSize.options[selectSize.selectedIndex].value;
+                objects.form = models.figure.getStructure({ name: selectedFigureName,
+                                                            size: mappingFigureSize[selectedSize] });
+            } else {
+                objects.form = models.figure.getStructure({ name: selectedFigureName, size: 0 });
+            }
             objects.racket = models.racket.getStructure();
             objects.ball = models.ball.getStructure();
             objects.ball.externalBlock = objects.ball.externalBlock.slice(0, 1);
@@ -35,7 +67,7 @@ function TenisController(view, models) {
                 }
                 keyPressed = !keyPressed;
             });
-            moveBall();
+            moveBall(speeds[selectedSpeed]);
         } else {
             if(gameIsPaused) {
                 resumeGame();
@@ -58,14 +90,14 @@ function TenisController(view, models) {
         redrawTimer = setInterval(redraw, 20);
         view.elements.document.addEventListener('keydown', moveRacket);
         view.elements.submitBtn.innerHTML = "Pause game";
-        moveBall();
+        moveBall(speeds[selectedSpeed]);
     }
 
     function redraw() {
         view.clear();
         view.draw(objects.form);
-        view.draw(objects.ball, 'green');
-        view.draw(objects.racket);
+        view.draw(objects.ball, 'blue');
+        view.draw(objects.racket, 'green');
     }
 
     function moveRacket(e) {
@@ -86,7 +118,8 @@ function TenisController(view, models) {
         }
     }
 
-    function moveBall() {
+    function moveBall(speed) {
+        console.log('PASSED SPEED', speed);
         if(!objects.ball.direction) {
             objects.ball.direction = 'eastN';
             objects.ball.counterclock = true;
@@ -97,7 +130,9 @@ function TenisController(view, models) {
         checkBallHitsFigure();
         checkBallHitsRacket();
 
-        timeoutBall = setTimeout(moveBall, 100);
+        timeoutBall = setTimeout(function () {
+            moveBall(speed);
+        }, speed);
     }
 
     function checkIfBallReachedWall() {//OK
@@ -106,7 +141,16 @@ function TenisController(view, models) {
             rightX = objects.ball.externalBlock[0].x + objects.ball.elem_size,
             rightY = objects.ball.externalBlock[0].y + objects.ball.elem_size;//TODO if reached bottom wall -- stop game!!!
 
-        if(leftX < 0) {
+
+        if( leftX < 0 && leftY < 0 ) {
+            if(objects.ball.direction == 'westN') {
+                objects.ball.oppositeDirection();
+            }
+        } else if(rightX > view.size.maxX && leftY < 0) {
+            if(objects.ball.direction == 'eastN') {
+                objects.ball.oppositeDirection();
+            }
+        } else if(leftX < 0) {
             if(objects.ball.direction == 'westS') {
                 objects.ball.counterclock = true;
             } else if(objects.ball.direction == 'westN') {
@@ -127,7 +171,8 @@ function TenisController(view, models) {
                 objects.ball.counterclock = false;
             }
             objects.ball.mirrorDirection();
-        }  else if (rightY > view.size.maxY && objects.ball.direction == 'westS') {//TODO delete this part since it is End of Game
+        }
+        else if (rightY > view.size.maxY && objects.ball.direction == 'westS') {//TODO delete this part since it is End of Game
             objects.ball.counterclock = false;
         } else if(rightY > view.size.maxY && objects.ball.direction == 'eastS') {
             objects.ball.counterclock = true;
@@ -225,28 +270,11 @@ function TenisController(view, models) {
                             (key === 'right_bottom_corner' && objects.ball.direction === 'westN')) {
                             objects.ball.oppositeDirection();
                             redrawHitedTarget(hitsCornered[key], target);
+                            checkIfBallReachedWall();
                         }
                     }
                     i++;
                 }
-
-                //if(Object.keys(hitsCornered).length !== 0 && Object.keys(hitsSided).length !== 0) {
-                //    for( var keySided in hitsSided) {
-                //        for( var keyCornered in hitsCornered) {
-                //            if((keySided === 'left' && (keyCornered === 'right_bottom_corner'
-                //                    || keyCornered === 'right_top_corner'))
-                //                || (keySided === 'right') && (keyCornered === 'left_bottom_corner'
-                //                    || keyCornered === 'left_top_corner')
-                //            || (keySided === 'top' && (keyCornered === 'right_bottom_corner'
-                //                    || keyCornered === 'left_bottom_corner'))
-                //                || (keySided === 'bottom' && (keyCornered === 'left_top_corner'
-                //                    || keyCornered === 'right_top_corner'))) {
-                //                objects.ball.oppositeDirection();
-                //                redrawHitedTarget(hitsCornered[keyCornered], target);
-                //            }
-                //        }
-                //    }
-                //}
             }
         }
         console.log('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@');

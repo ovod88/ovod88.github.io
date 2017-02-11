@@ -32,8 +32,10 @@ function gameView (){
 
     this.elements = {
         submitBtn:   document.querySelector('button'),
-        select: document.querySelector('select'),
-        document : document
+        select: document.querySelector('#select_form'),
+        document : document,
+        selectSize: document.querySelector('#select_size'),
+        selectSpeed: document.querySelector('#select_speed')
     };
 
     this.testingelements = {
