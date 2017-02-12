@@ -223,8 +223,20 @@ function TenisController(view, models) {
                     }
                     for( var key in hitsSided) {
                         if( key === 'top' ) {
-                            objects.ball.mirrorDirection();
+                            if( (objects.ball.direction === 'eastS' && !objects.ball.counterclock)
+                                || (objects.ball.direction === 'westS' && objects.ball.counterclock)) {
+                                objects.ball.counterclock = !objects.ball.counterclock;
+                            }
+                        } else if ( key === 'left') {
+                            if(objects.ball.direction === 'eastS' && objects.ball.counterclock) {
+                                objects.ball.counterclock = !objects.ball.counterclock;
+                            }
+                        } else if ( key === 'right') {
+                            if(objects.ball.direction === 'westS' && !objects.ball.counterclock) {
+                                objects.ball.counterclock = !objects.ball.counterclock;
+                            }
                         }
+                        objects.ball.mirrorDirection();
                     }
                 } else {
                     if(Object.keys(hitsCornered).length !== 0) {
