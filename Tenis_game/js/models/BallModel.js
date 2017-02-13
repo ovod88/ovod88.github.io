@@ -40,6 +40,7 @@ function BallModel() {
             directions[this.direction].apply(this);
             console.log('BALL DIRECTION IS ', this.direction);
             console.log('PROTIV STRELKI --> ', this.counterclock);
+            console.log('-----------------------------');
         };
 
         ballObj.mirrorDirection = function() {//OK
@@ -49,12 +50,10 @@ function BallModel() {
                         this.direction = 'westN';
                         break;
                     case 'westN':
-                        console.log('TOOK TO WEST SOUTH');
                         this.direction = 'westS';
                         break;
                     case 'westS':
                         this.direction = 'eastS';
-                        console.log('TOOK TO EAST SOUTH');
                         break;
                     case 'eastS':
                         this.direction = 'eastN';

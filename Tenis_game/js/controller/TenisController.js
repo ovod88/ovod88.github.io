@@ -39,7 +39,6 @@ function TenisController(view, models) {
                 selectSpeed = view.elements.selectSpeed,
                 selectedFigureName = select.options[select.selectedIndex].value || 'heart';
             selectedSpeed = selectSpeed.options[selectSpeed.selectedIndex].value;
-            console.log('SPEED ', selectedSpeed);
 
             if(isRandom) {
                 var selectSize = view.elements.selectSize,
@@ -119,7 +118,6 @@ function TenisController(view, models) {
     }
 
     function moveBall(speed) {
-        console.log('PASSED SPEED', speed);
         if(!objects.ball.direction) {
             objects.ball.direction = 'eastN';
             objects.ball.counterclock = true;
@@ -216,7 +214,6 @@ function TenisController(view, models) {
 
             if(target === objects.racket) {
                 if(Object.keys(hitsSided).length !== 0) {
-                    console.log('RACKET IS HOTED!!!!!!!!!');
                     if( (objects.ball.direction === 'eastS' && !objects.ball.counterclock)
                       || (objects.ball.direction === 'westS' && objects.ball.counterclock)) {
                         objects.ball.counterclock = !objects.ball.counterclock;
@@ -250,17 +247,15 @@ function TenisController(view, models) {
                 }
             } else {
                 if(Object.keys(hitsSided).length !== 0) {
-                    var isBottomCondition = (objects.ball.direction === 'eastN' && objects.ball.counterclock) ||
-                            (objects.ball.direction === 'westN' && !objects.ball.counterclock),
-                        isTopCondition = (objects.ball.direction === 'eastS' && !objects.ball.counterclock) ||
-                            (objects.ball.direction === 'westS' && objects.ball.counterclock),
-                        isLeftCondition = (objects.ball.direction === 'eastS' && objects.ball.counterclock) ||
-                            (objects.ball.direction === 'eastN' && !objects.ball.counterclock),
-                        isRightCondition = (objects.ball.direction === 'westS' && !objects.ball.counterclock) ||
-                            (objects.ball.direction === 'westN' && objects.ball.counterclock);
-
-                    console.log('HITSIDED');
                     for( var key in hitsSided) {
+                        var isBottomCondition = (objects.ball.direction === 'eastN' && objects.ball.counterclock) ||
+                                (objects.ball.direction === 'westN' && !objects.ball.counterclock),
+                            isTopCondition = (objects.ball.direction === 'eastS' && !objects.ball.counterclock) ||
+                                (objects.ball.direction === 'westS' && objects.ball.counterclock),
+                            isLeftCondition = (objects.ball.direction === 'eastS' && objects.ball.counterclock) ||
+                                (objects.ball.direction === 'eastN' && !objects.ball.counterclock),
+                            isRightCondition = (objects.ball.direction === 'westS' && !objects.ball.counterclock) ||
+                                (objects.ball.direction === 'westN' && objects.ball.counterclock);
                         if((key === 'bottom' && isBottomCondition)
                             || (key === 'top' && isTopCondition)
                             || (key === 'left' && isLeftCondition)
@@ -280,6 +275,7 @@ function TenisController(view, models) {
                             (key === 'left_bottom_corner' && objects.ball.direction === 'eastN') ||
                             (key === 'right_top_corner' && objects.ball.direction === 'westS') ||
                             (key === 'right_bottom_corner' && objects.ball.direction === 'westN')) {
+                            console.log('CORNER HITED!!!!!!!!!!!!!!!!');
                             objects.ball.oppositeDirection();
                             redrawHitedTarget(hitsCornered[key], target);
                             checkIfBallReachedWall();
@@ -289,7 +285,6 @@ function TenisController(view, models) {
                 }
             }
         }
-        console.log('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@');
         hits = {};
         figure = [];
     }
