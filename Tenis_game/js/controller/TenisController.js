@@ -11,41 +11,66 @@ function TenisController(view, models) {
             'slow': 300,
             'normal': 200,
             'fast': 100
-        }, selectedSpeed;
+        }, selectedSpeed,
+        _this = this;
 
 
     var timeoutRacket, timeoutBall;
 
+    function restartGame() {
+        view.clearSelects();
+        view.elements.startBtn.removeEventListener('click', init);
+        view.elements.select.removeEventListener('change', selectSizeButtonVisibility);
+        view.elements.document.removeEventListener('keydown', moveRacket);
+        view.elements.document.removeEventListener('keyup', stopRacket);
+        clearTimeout(timeoutBall);
+        clearTimeout(timeoutRacket);
+        clearInterval(redrawTimer);
+        view.clear();
+        models.ball.reset();
+        models.racket.reset();
+        ball = {};
+        racket = [];
+        gameIsOn = false;
+        gameIsPaused = false;
+        view.elements.startBtn.innerHTML = "Start game";
+        _this.startGame();
+    }
+
     this.startGame = function() {
-
         view.fillSelect(models.figure.getStructure());
-        view.elements.submitBtn.addEventListener('click', init);
-        view.elements.select.addEventListener('change', function () {
-            var selectedValue = this.options[this.selectedIndex].value;
-            if(selectedValue === 'random') {
-                view.elements.selectSize.style.visibility = 'visible';
-                isRandom = true;
-
-            } else {
-                view.elements.selectSize.style.visibility = 'hidden';
-                isRandom = false;
-            }
-        });
+        view.elements.selectSize.style.visibility = 'hidden';
+        view.elements.startBtn.addEventListener('click', init);
+        view.elements.select.addEventListener('change', selectSizeButtonVisibility);
     };
+
+    function selectSizeButtonVisibility() {
+        var selectedValue = view.elements.select.options[view.elements.select.selectedIndex].value;
+        if(selectedValue === 'random') {
+            view.elements.selectSize.style.visibility = 'visible';
+        } else {
+            view.elements.selectSize.style.visibility = 'hidden';
+        }
+    }
 
     function init () {
         if(!gameIsOn) {
             var select = view.elements.select,
                 selectSpeed = view.elements.selectSpeed,
                 selectedFigureName = select.options[select.selectedIndex].value || 'heart';
-            selectedSpeed = selectSpeed.options[selectSpeed.selectedIndex].value;
+                selectedSpeed = selectSpeed.options[selectSpeed.selectedIndex].value;
+
+                isRandom = (selectedFigureName === 'heart') ? false : true;
 
             if(isRandom) {
+                view.elements.selectSize.style.visibility = 'visible';
                 var selectSize = view.elements.selectSize,
                     selectedSize = selectSize.options[selectSize.selectedIndex].value;
+
                 objects.form = models.figure.getStructure({ name: selectedFigureName,
                                                             size: mappingFigureSize[selectedSize] });
             } else {
+                view.elements.selectSize.style.visibility = 'hidden';
                 objects.form = models.figure.getStructure({ name: selectedFigureName, size: 0 });
             }
             objects.racket = models.racket.getStructure();
@@ -53,19 +78,14 @@ function TenisController(view, models) {
             objects.ball.externalBlock = objects.ball.externalBlock.slice(0, 1);
 
             objects.ball.internalBlock = objects.ball.internalBlock.slice(0, 1);
-
             redrawTimer = setInterval(redraw, 20);
             gameIsOn = true;
 
-            view.elements.submitBtn.innerHTML = "Pause game";
+            view.elements.startBtn.innerHTML = "Pause game";
+            view.elements.restartBtn.style.visibility = 'visible';
+            view.elements.restartBtn.addEventListener('click', restartGame);
             view.elements.document.addEventListener('keydown', moveRacket);
-            view.elements.document.addEventListener('keyup', function(e) {
-                if(e.keyCode == 37 || e.keyCode == 39) {
-                    clearTimeout(timeoutRacket);
-                    timeoutRacket = -1;
-                }
-                keyPressed = !keyPressed;
-            });
+            view.elements.document.addEventListener('keyup', stopRacket);
             moveBall(speeds[selectedSpeed]);
         } else {
             if(gameIsPaused) {
@@ -79,7 +99,7 @@ function TenisController(view, models) {
     function pauseGame() {
         gameIsPaused = true;
         view.elements.document.removeEventListener('keydown', moveRacket);
-        view.elements.submitBtn.innerHTML = "Continue game";
+        view.elements.startBtn.innerHTML = "Continue game";
         clearTimeout(timeoutBall);
         clearInterval(redrawTimer);
     }
@@ -88,7 +108,7 @@ function TenisController(view, models) {
         gameIsPaused = false;
         redrawTimer = setInterval(redraw, 20);
         view.elements.document.addEventListener('keydown', moveRacket);
-        view.elements.submitBtn.innerHTML = "Pause game";
+        view.elements.startBtn.innerHTML = "Pause game";
         moveBall(speeds[selectedSpeed]);
     }
 
@@ -97,6 +117,14 @@ function TenisController(view, models) {
         view.draw(objects.form);
         view.draw(objects.ball, 'blue');
         view.draw(objects.racket, 'green');
+    }
+
+    function stopRacket(e) {
+        if(e.keyCode == 37 || e.keyCode == 39) {
+            clearTimeout(timeoutRacket);
+            timeoutRacket = -1;
+        }
+        keyPressed = !keyPressed;
     }
 
     function moveRacket(e) {
@@ -275,7 +303,6 @@ function TenisController(view, models) {
                             (key === 'left_bottom_corner' && objects.ball.direction === 'eastN') ||
                             (key === 'right_top_corner' && objects.ball.direction === 'westS') ||
                             (key === 'right_bottom_corner' && objects.ball.direction === 'westN')) {
-                            console.log('CORNER HITED!!!!!!!!!!!!!!!!');
                             objects.ball.oppositeDirection();
                             redrawHitedTarget(hitsCornered[key], target);
                             checkIfBallReachedWall();

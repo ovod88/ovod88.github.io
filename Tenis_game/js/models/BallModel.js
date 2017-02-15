@@ -30,6 +30,10 @@ function BallModel() {
 
     var structure = [{x: elem_size, y: 26 * elem_size, quantity: 1}];
 
+    this.reset = function () {
+        ballObj = null;
+    };
+
     this.getStructure = function() {
 
         if(!ballObj) {
@@ -38,9 +42,6 @@ function BallModel() {
 
         ballObj.move = function() {
             directions[this.direction].apply(this);
-            console.log('BALL DIRECTION IS ', this.direction);
-            console.log('PROTIV STRELKI --> ', this.counterclock);
-            console.log('-----------------------------');
         };
 
         ballObj.mirrorDirection = function() {//OK

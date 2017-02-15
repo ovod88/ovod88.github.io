@@ -24,6 +24,13 @@ function gameView (){
         }
     };
 
+    this.clearSelects = function() {
+        while(this.elements.select.lastChild.id != 'default') {
+            this.elements.select.removeChild(this.elements.select.lastChild);
+        }
+        this.elements.selectSpeed.selectedIndex = 0;
+    };
+
     this.size = {
       middleX : middleLineX,
       maxX: parseInt(drawingWidth),
@@ -31,7 +38,8 @@ function gameView (){
     };
 
     this.elements = {
-        submitBtn:   document.querySelector('button'),
+        startBtn:   document.querySelector('#start_game'),
+        restartBtn: document.querySelector('#restart_game'),
         select: document.querySelector('#select_form'),
         document : document,
         selectSize: document.querySelector('#select_size'),

@@ -16,7 +16,7 @@
             <div>
                 <span>Figure to draw:&nbsp</span>
                 <select name="form" id="select_form">
-                    <option value=""></option>
+                    <option value="" id="default">default (heart)</option>
                 </select>
                 <select name="size" id="select_speed">
                     <option value="slow" selected>speed level 1</option>
@@ -29,7 +29,8 @@
                     <option value="big">big size</option>
                 </select>
             </div>
-            <button type="submit" onclick="event.preventDefault();">Start Game</button>
+            <button id="start_game" type="submit" onclick="event.preventDefault();">Start Game</button>
+            <button id="restart_game" type="submit" onclick="event.preventDefault();">Restart Game</button>
         </form>
         <script src="js/view/gameView.js"></script>
         <script src="js/models/Model.js"></script>
