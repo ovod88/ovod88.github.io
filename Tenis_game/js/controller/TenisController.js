@@ -1,6 +1,6 @@
 function TenisController(view, models) {
     var gameIsOn = false, gameIsPaused = false,
-        keyPressed = false, objects = {},
+        isKeyPressed = false, wallReached = false, objects = {},
         figure = [], ball, racket = [], hits = {}, redrawTimer, isRandom = false,
         mappingFigureSize = {
             'small': 10,
@@ -12,7 +12,12 @@ function TenisController(view, models) {
             'normal': 200,
             'fast': 100
         }, selectedSpeed,
-        _this = this;
+        _this = this,
+        select = view.elements.select,
+        selectSpeed = view.elements.selectSpeed,
+        selectedSpeed,
+        selectedSize,
+        selectSize = view.elements.selectSize;
 
 
     var timeoutRacket, timeoutBall;
@@ -34,7 +39,20 @@ function TenisController(view, models) {
         gameIsOn = false;
         gameIsPaused = false;
         view.elements.startBtn.innerHTML = "Start game";
+        select.disabled = false;
+        selectSpeed.disabled = false;
+        selectSize.disabled = false;
         _this.startGame();
+    }
+
+    function winGame() {
+        restartGame();
+        alert('Congratulations! You won :-)');
+    }
+
+    function loseGame() {
+        restartGame();
+        alert('GameOver! Try again...');
     }
 
     this.startGame = function() {
@@ -55,17 +73,14 @@ function TenisController(view, models) {
 
     function init () {
         if(!gameIsOn) {
-            var select = view.elements.select,
-                selectSpeed = view.elements.selectSpeed,
-                selectedFigureName = select.options[select.selectedIndex].value || 'heart';
-                selectedSpeed = selectSpeed.options[selectSpeed.selectedIndex].value;
+            var selectedFigureName = select.options[select.selectedIndex].value || 'heart';
+                selectedSpeed = selectSpeed.options[selectSpeed.selectedIndex].value,
+                selectedSize = selectSize.options[selectSize.selectedIndex].value;
 
-                isRandom = (selectedFigureName === 'heart') ? false : true;
+            isRandom = (selectedFigureName === 'heart') ? false : true;
 
             if(isRandom) {
-                view.elements.selectSize.style.visibility = 'visible';
-                var selectSize = view.elements.selectSize,
-                    selectedSize = selectSize.options[selectSize.selectedIndex].value;
+                selectSize.style.visibility = 'visible';
 
                 objects.form = models.figure.getStructure({ name: selectedFigureName,
                                                             size: mappingFigureSize[selectedSize] });
@@ -86,6 +101,9 @@ function TenisController(view, models) {
             view.elements.restartBtn.addEventListener('click', restartGame);
             view.elements.document.addEventListener('keydown', moveRacket);
             view.elements.document.addEventListener('keyup', stopRacket);
+            select.disabled = true;
+            selectSpeed.disabled = true;
+            selectSize.disabled = true;
             moveBall(speeds[selectedSpeed]);
         } else {
             if(gameIsPaused) {
@@ -124,11 +142,11 @@ function TenisController(view, models) {
             clearTimeout(timeoutRacket);
             timeoutRacket = -1;
         }
-        keyPressed = !keyPressed;
+        isKeyPressed = !isKeyPressed;
     }
 
     function moveRacket(e) {
-        if(!keyPressed) {
+        if(!isKeyPressed) {
             if(e.keyCode == 37 || e.keyCode == 39) {
                 if (e.keyCode == 37) {
                     objects.racket.direction = 'left';
@@ -141,7 +159,7 @@ function TenisController(view, models) {
                     timeoutRacket = setTimeout(moveRacket, 50);
                 }, 200);
             }
-            keyPressed = !keyPressed;
+            isKeyPressed = !isKeyPressed;
         }
     }
 
@@ -157,7 +175,9 @@ function TenisController(view, models) {
         checkBallHitsRacket();
 
         timeoutBall = setTimeout(function () {
-            moveBall(speed);
+            if(gameIsOn) {
+                moveBall(speed);
+            }
         }, speed);
     }
 
@@ -165,7 +185,8 @@ function TenisController(view, models) {
         var leftX = objects.ball.externalBlock[0].x - objects.ball.elem_size,
             leftY = objects.ball.externalBlock[0].y - objects.ball.elem_size,
             rightX = objects.ball.externalBlock[0].x + objects.ball.elem_size,
-            rightY = objects.ball.externalBlock[0].y + objects.ball.elem_size;//TODO if reached bottom wall -- stop game!!!
+            rightY = objects.ball.externalBlock[0].y;
+        wallReached = false;
 
 
         if( leftX < 0 && leftY < 0 ) {
@@ -177,6 +198,7 @@ function TenisController(view, models) {
                 objects.ball.oppositeDirection();
             }
         } else if(leftX < 0) {
+            wallReached = true;
             if(objects.ball.direction == 'westS') {
                 objects.ball.counterclock = true;
             } else if(objects.ball.direction == 'westN') {
@@ -191,6 +213,7 @@ function TenisController(view, models) {
             }
             objects.ball.mirrorDirection();
         }  else if(rightX > view.size.maxX ) {
+            wallReached = true;
             if(objects.ball.direction == 'eastN') {
                 objects.ball.counterclock = true;
             } else if(objects.ball.direction == 'eastS') {
@@ -198,10 +221,8 @@ function TenisController(view, models) {
             }
             objects.ball.mirrorDirection();
         }
-        else if (rightY > view.size.maxY && objects.ball.direction == 'westS') {//TODO delete this part since it is End of Game
-            objects.ball.counterclock = false;
-        } else if(rightY > view.size.maxY && objects.ball.direction == 'eastS') {
-            objects.ball.counterclock = true;
+        else if (rightY > view.size.maxY) {
+            loseGame();
         }
     }
 
@@ -261,6 +282,13 @@ function TenisController(view, models) {
                                 objects.ball.counterclock = !objects.ball.counterclock;
                             }
                         }
+                        if((objects.ball.direction === 'westS' || objects.ball.direction === 'eastS')
+                            && isKeyPressed && objects.racket.direction === 'left') {
+                            objects.ball.moveSide('left');
+                        } else if((objects.ball.direction === 'eastS' || objects.ball.direction === 'westS')
+                            && isKeyPressed && objects.racket.direction === 'right') {
+                            objects.ball.moveSide('right');
+                        }
                         objects.ball.mirrorDirection();
                     }
                 } else {
@@ -270,6 +298,11 @@ function TenisController(view, models) {
                                 (key === 'right_top_corner' && objects.ball.direction === 'westS')) {
                                 objects.ball.oppositeDirection();
                             }
+                        }
+                        if(isKeyPressed && objects.racket.direction === 'left') {
+                            objects.ball.moveSide('left');
+                        } else if(isKeyPressed && objects.racket.direction === 'right') {
+                            objects.ball.moveSide('right');
                         }
                     }
                 }
@@ -297,7 +330,7 @@ function TenisController(view, models) {
                 var length = Object.keys(hitsCornered).length,
                     i = 0;
 
-                while(i < length) {
+                while(i < length && gameIsOn) {
                     for( var key in hitsCornered) {
                         if ((key === 'left_top_corner' && objects.ball.direction === 'eastS') ||
                             (key === 'left_bottom_corner' && objects.ball.direction === 'eastN') ||
@@ -341,8 +374,13 @@ function TenisController(view, models) {
     }
 
     function generateFullFigure() {
-        for( var i = 0; i < objects.form.externalBlock.length; i++) {
-            figure.push(Model.transformToBlockObj(objects.form.externalBlock[i]));
+        var length = objects.form.externalBlock.length;
+        if(length > 0) {
+            for( var i = 0; i < length; i++) {
+                figure.push(Model.transformToBlockObj(objects.form.externalBlock[i]));
+            }
+        } else {
+            winGame();
         }
     }
 

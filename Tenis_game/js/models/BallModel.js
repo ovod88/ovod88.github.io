@@ -25,6 +25,16 @@ function BallModel() {
                 this.internalBlock[0].x -= elem_size;
                 this.externalBlock[0].y += elem_size;
                 this.internalBlock[0].y += elem_size;
+        },
+        'left': function() {
+            console.log('MOVED LEFT');
+            this.externalBlock[0].x -= elem_size;
+            this.internalBlock[0].x -= elem_size;
+        },
+        'right': function() {
+            console.log('MOVED RIGHT');
+            this.externalBlock[0].x += elem_size;
+            this.internalBlock[0].x += elem_size;
         }
     };
 
@@ -42,6 +52,14 @@ function BallModel() {
 
         ballObj.move = function() {
             directions[this.direction].apply(this);
+        };
+
+        ballObj.moveSide = function (direction) {
+            if(this.direction === 'eastS') {
+                directions[direction].apply(this);
+            } else {
+                directions[direction].apply(this);
+            }
         };
 
         ballObj.mirrorDirection = function() {//OK
