@@ -27,12 +27,10 @@ function BallModel() {
                 this.internalBlock[0].y += elem_size;
         },
         'left': function() {
-            console.log('MOVED LEFT');
             this.externalBlock[0].x -= elem_size;
             this.internalBlock[0].x -= elem_size;
         },
         'right': function() {
-            console.log('MOVED RIGHT');
             this.externalBlock[0].x += elem_size;
             this.internalBlock[0].x += elem_size;
         }

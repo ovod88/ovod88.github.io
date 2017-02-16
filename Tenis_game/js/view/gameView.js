@@ -29,6 +29,8 @@ function gameView (){
             this.elements.select.removeChild(this.elements.select.lastChild);
         }
         this.elements.selectSpeed.selectedIndex = 0;
+        this.elements.selectRacketSize.selectedIndex = 0;
+        this.elements.selectSize.selectedIndex = 0;
     };
 
     this.size = {

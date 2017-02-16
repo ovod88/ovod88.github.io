@@ -83,7 +83,6 @@ function TenisController(view, models) {
         if(!gameIsOn) {
             var selectedFigureName = select.options[select.selectedIndex].value || 'heart',
                 selectedRacketSize = selectRacketSize.options[selectRacketSize.selectedIndex].value;
-            console.log(selectedRacketSize);
 
             selectedSpeed = selectSpeed.options[selectSpeed.selectedIndex].value,
             selectedSize = selectSize.options[selectSize.selectedIndex].value,
@@ -205,29 +204,29 @@ function TenisController(view, models) {
                 objects.ball.oppositeDirection();
             }
         } else if(rightX > view.size.maxX && leftY < 0) {
-            if(objects.ball.direction == 'eastN') {
+            if(objects.ball.direction === 'eastN') {
                 objects.ball.oppositeDirection();
             }
         } else if(leftX < 0) {
             wallReached = true;
-            if(objects.ball.direction == 'westS') {
+            if(objects.ball.direction === 'westS') {
                 objects.ball.counterclock = true;
-            } else if(objects.ball.direction == 'westN') {
+            } else if(objects.ball.direction === 'westN') {
                 objects.ball.counterclock = false;
             }
             objects.ball.mirrorDirection();
         }  else if(leftY < 0) {
-            if(objects.ball.direction == 'westN') {
+            if(objects.ball.direction === 'westN') {
                 objects.ball.counterclock = true;
-            } else if(objects.ball.direction == 'eastN') {
+            } else if(objects.ball.direction === 'eastN') {
                 objects.ball.counterclock = false;
             }
             objects.ball.mirrorDirection();
         }  else if(rightX > view.size.maxX ) {
             wallReached = true;
-            if(objects.ball.direction == 'eastN') {
+            if(objects.ball.direction === 'eastN') {
                 objects.ball.counterclock = true;
-            } else if(objects.ball.direction == 'eastS') {
+            } else if(objects.ball.direction === 'eastS') {
                 objects.ball.counterclock = false;
             }
             objects.ball.mirrorDirection();
@@ -294,10 +293,10 @@ function TenisController(view, models) {
                             }
                         }
                         if((objects.ball.direction === 'westS' || objects.ball.direction === 'eastS')
-                            && isKeyPressed && objects.racket.direction === 'left') {
+                            && isKeyPressed && objects.racket.direction === 'left' && !wallReached) {
                             objects.ball.moveSide('left');
                         } else if((objects.ball.direction === 'eastS' || objects.ball.direction === 'westS')
-                            && isKeyPressed && objects.racket.direction === 'right') {
+                            && isKeyPressed && objects.racket.direction === 'right' && !wallReached) {
                             objects.ball.moveSide('right');
                         }
                         objects.ball.mirrorDirection();
@@ -309,10 +308,20 @@ function TenisController(view, models) {
                                 (key === 'right_top_corner' && objects.ball.direction === 'westS')) {
                                 objects.ball.oppositeDirection();
                             }
+                            if (key === 'left_top_corner' && objects.ball.direction === 'westS') {
+                                objects.ball.counterclock = false;
+                                objects.ball.mirrorDirection();
+                                checkIfBallReachedWall();
+                            }
+                            if(key === 'right_top_corner' && objects.ball.direction === 'eastS') {
+                                objects.ball.counterclock = true;
+                                objects.ball.mirrorDirection();
+                                checkIfBallReachedWall();
+                            }
                         }
-                        if(isKeyPressed && objects.racket.direction === 'left') {
+                        if(isKeyPressed && objects.racket.direction === 'left' && !wallReached) {
                             objects.ball.moveSide('left');
-                        } else if(isKeyPressed && objects.racket.direction === 'right') {
+                        } else if(isKeyPressed && objects.racket.direction === 'right' && !wallReached) {
                             objects.ball.moveSide('right');
                         }
                     }
