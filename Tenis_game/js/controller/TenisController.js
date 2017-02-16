@@ -11,13 +11,20 @@ function TenisController(view, models) {
             'slow': 300,
             'normal': 200,
             'fast': 100
-        }, selectedSpeed,
+        },
+        racketSizes = {
+            'small': 2,
+            'normal': 3,
+            'big': 4
+        },
+        selectedSpeed,
         _this = this,
         select = view.elements.select,
         selectSpeed = view.elements.selectSpeed,
         selectedSpeed,
         selectedSize,
-        selectSize = view.elements.selectSize;
+        selectSize = view.elements.selectSize,
+        selectRacketSize = view.elements.selectRacketSize;
 
 
     var timeoutRacket, timeoutBall;
@@ -42,6 +49,7 @@ function TenisController(view, models) {
         select.disabled = false;
         selectSpeed.disabled = false;
         selectSize.disabled = false;
+        selectRacketSize.disabled = false;
         _this.startGame();
     }
 
@@ -73,10 +81,12 @@ function TenisController(view, models) {
 
     function init () {
         if(!gameIsOn) {
-            var selectedFigureName = select.options[select.selectedIndex].value || 'heart';
-                selectedSpeed = selectSpeed.options[selectSpeed.selectedIndex].value,
-                selectedSize = selectSize.options[selectSize.selectedIndex].value;
+            var selectedFigureName = select.options[select.selectedIndex].value || 'heart',
+                selectedRacketSize = selectRacketSize.options[selectRacketSize.selectedIndex].value;
+            console.log(selectedRacketSize);
 
+            selectedSpeed = selectSpeed.options[selectSpeed.selectedIndex].value,
+            selectedSize = selectSize.options[selectSize.selectedIndex].value,
             isRandom = (selectedFigureName === 'heart') ? false : true;
 
             if(isRandom) {
@@ -88,7 +98,7 @@ function TenisController(view, models) {
                 view.elements.selectSize.style.visibility = 'hidden';
                 objects.form = models.figure.getStructure({ name: selectedFigureName, size: 0 });
             }
-            objects.racket = models.racket.getStructure();
+            objects.racket = models.racket.getStructure(racketSizes[selectedRacketSize]);
             objects.ball = models.ball.getStructure();
             objects.ball.externalBlock = objects.ball.externalBlock.slice(0, 1);
 
@@ -104,6 +114,7 @@ function TenisController(view, models) {
             select.disabled = true;
             selectSpeed.disabled = true;
             selectSize.disabled = true;
+            selectRacketSize.disabled = true;
             moveBall(speeds[selectedSpeed]);
         } else {
             if(gameIsPaused) {

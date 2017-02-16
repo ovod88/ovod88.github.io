@@ -43,7 +43,8 @@ function gameView (){
         select: document.querySelector('#select_form'),
         document : document,
         selectSize: document.querySelector('#select_size'),
-        selectSpeed: document.querySelector('#select_speed')
+        selectSpeed: document.querySelector('#select_speed'),
+        selectRacketSize: document.querySelector('#select_racket_size')
     };
 
     this.testingelements = {
