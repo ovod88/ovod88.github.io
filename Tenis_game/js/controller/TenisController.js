@@ -272,104 +272,113 @@ function TenisController(view, models) {
             }
 
             if(target === objects.racket) {
-                if(Object.keys(hitsSided).length !== 0) {
-                    if( (objects.ball.direction === 'eastS' && !objects.ball.counterclock)
-                      || (objects.ball.direction === 'westS' && objects.ball.counterclock)) {
-                        objects.ball.counterclock = !objects.ball.counterclock;
-                    }
-                    for( var key in hitsSided) {
-                        if( key === 'top' ) {
-                            if( (objects.ball.direction === 'eastS' && !objects.ball.counterclock)
-                                || (objects.ball.direction === 'westS' && objects.ball.counterclock)) {
-                                objects.ball.counterclock = !objects.ball.counterclock;
-                            }
-                        } else if ( key === 'left') {
-                            if(objects.ball.direction === 'eastS' && objects.ball.counterclock) {
-                                objects.ball.counterclock = !objects.ball.counterclock;
-                            }
-                        } else if ( key === 'right') {
-                            if(objects.ball.direction === 'westS' && !objects.ball.counterclock) {
-                                objects.ball.counterclock = !objects.ball.counterclock;
-                            }
-                        }
-                        if((objects.ball.direction === 'westS' || objects.ball.direction === 'eastS')
-                            && isKeyPressed && objects.racket.direction === 'left' && !wallReached) {
-                            objects.ball.moveSide('left');
-                        } else if((objects.ball.direction === 'eastS' || objects.ball.direction === 'westS')
-                            && isKeyPressed && objects.racket.direction === 'right' && !wallReached) {
-                            objects.ball.moveSide('right');
-                        }
-                        objects.ball.mirrorDirection();
-                    }
-                } else {
-                    if(Object.keys(hitsCornered).length !== 0) {
-                        for( var key in hitsCornered) {
-                            if ((key === 'left_top_corner' && objects.ball.direction === 'eastS') ||
-                                (key === 'right_top_corner' && objects.ball.direction === 'westS')) {
-                                objects.ball.oppositeDirection();
-                            }
-                            if (key === 'left_top_corner' && objects.ball.direction === 'westS') {
-                                objects.ball.counterclock = false;
-                                objects.ball.mirrorDirection();
-                                checkIfBallReachedWall();
-                            }
-                            if(key === 'right_top_corner' && objects.ball.direction === 'eastS') {
-                                objects.ball.counterclock = true;
-                                objects.ball.mirrorDirection();
-                                checkIfBallReachedWall();
-                            }
-                        }
-                        if(isKeyPressed && objects.racket.direction === 'left' && !wallReached) {
-                            objects.ball.moveSide('left');
-                        } else if(isKeyPressed && objects.racket.direction === 'right' && !wallReached) {
-                            objects.ball.moveSide('right');
-                        }
-                    }
-                }
+                analiseRacketHited(hitsSided, hitsCornered);
             } else {
-                if(Object.keys(hitsSided).length !== 0) {
-                    for( var key in hitsSided) {
-                        var isBottomCondition = (objects.ball.direction === 'eastN' && objects.ball.counterclock) ||
-                                (objects.ball.direction === 'westN' && !objects.ball.counterclock),
-                            isTopCondition = (objects.ball.direction === 'eastS' && !objects.ball.counterclock) ||
-                                (objects.ball.direction === 'westS' && objects.ball.counterclock),
-                            isLeftCondition = (objects.ball.direction === 'eastS' && objects.ball.counterclock) ||
-                                (objects.ball.direction === 'eastN' && !objects.ball.counterclock),
-                            isRightCondition = (objects.ball.direction === 'westS' && !objects.ball.counterclock) ||
-                                (objects.ball.direction === 'westN' && objects.ball.counterclock);
-                        if((key === 'bottom' && isBottomCondition)
-                            || (key === 'top' && isTopCondition)
-                            || (key === 'left' && isLeftCondition)
-                            || (key === 'right' && isRightCondition)) {
-                            objects.ball.counterclock = !objects.ball.counterclock;
-                        }
-                        objects.ball.mirrorDirection();
-                        redrawHitedTarget(hitsSided[key], target);
-                    }
-                }
-                var length = Object.keys(hitsCornered).length,
-                    i = 0;
-
-                while(i < length && gameIsOn) {
-                    for( var key in hitsCornered) {
-                        if ((key === 'left_top_corner' && objects.ball.direction === 'eastS') ||
-                            (key === 'left_bottom_corner' && objects.ball.direction === 'eastN') ||
-                            (key === 'right_top_corner' && objects.ball.direction === 'westS') ||
-                            (key === 'right_bottom_corner' && objects.ball.direction === 'westN')) {
-                            objects.ball.oppositeDirection();
-                            redrawHitedTarget(hitsCornered[key], target);
-                            checkIfBallReachedWall();
-                        }
-                    }
-                    i++;
-                }
+                analiseFigureHited(target, hitsSided, hitsCornered);
             }
         }
         hits = {};
         figure = [];
     }
 
-    function redrawHitedTarget(element, target) {
+    function analiseRacketHited(hitsSided, hitsCornered) {
+        if(Object.keys(hitsSided).length !== 0) {
+            if( (objects.ball.direction === 'eastS' && !objects.ball.counterclock)
+                || (objects.ball.direction === 'westS' && objects.ball.counterclock)) {
+                objects.ball.counterclock = !objects.ball.counterclock;
+            }
+            for( var key in hitsSided) {
+                if( key === 'top' ) {
+                    if( (objects.ball.direction === 'eastS' && !objects.ball.counterclock)
+                        || (objects.ball.direction === 'westS' && objects.ball.counterclock)) {
+                        objects.ball.counterclock = !objects.ball.counterclock;
+                    }
+                } else if ( key === 'left') {
+                    if(objects.ball.direction === 'eastS' && objects.ball.counterclock) {
+                        objects.ball.counterclock = !objects.ball.counterclock;
+                    }
+                } else if ( key === 'right') {
+                    if(objects.ball.direction === 'westS' && !objects.ball.counterclock) {
+                        objects.ball.counterclock = !objects.ball.counterclock;
+                    }
+                }
+                if((objects.ball.direction === 'westS' || objects.ball.direction === 'eastS')
+                    && isKeyPressed && objects.racket.direction === 'left' && !wallReached) {
+                    objects.ball.moveSide('left');
+                } else if((objects.ball.direction === 'eastS' || objects.ball.direction === 'westS')
+                    && isKeyPressed && objects.racket.direction === 'right' && !wallReached) {
+                    objects.ball.moveSide('right');
+                }
+                objects.ball.mirrorDirection();
+            }
+        } else {
+            if(Object.keys(hitsCornered).length !== 0) {
+                for( var key in hitsCornered) {
+                    if ((key === 'left_top_corner' && objects.ball.direction === 'eastS') ||
+                        (key === 'right_top_corner' && objects.ball.direction === 'westS')) {
+                        checkIfBallReachedWall();
+                        objects.ball.oppositeDirection();
+                    }
+                    if (key === 'left_top_corner' && objects.ball.direction === 'westS') {
+                        objects.ball.counterclock = false;
+                        objects.ball.mirrorDirection();
+                        checkIfBallReachedWall();
+                    }
+                    if(key === 'right_top_corner' && objects.ball.direction === 'eastS') {
+                        objects.ball.counterclock = true;
+                        objects.ball.mirrorDirection();
+                        checkIfBallReachedWall();
+                    }
+                }
+                if(isKeyPressed && objects.racket.direction === 'left' && !wallReached) {
+                    objects.ball.moveSide('left');
+                } else if(isKeyPressed && objects.racket.direction === 'right' && !wallReached) {
+                    objects.ball.moveSide('right');
+                }
+            }
+        }
+    }
+
+    function analiseFigureHited(target, hitsSided, hitsCornered) {
+        if(Object.keys(hitsSided).length !== 0) {
+            for( var key in hitsSided) {
+                var isBottomCondition = (objects.ball.direction === 'eastN' && objects.ball.counterclock) ||
+                        (objects.ball.direction === 'westN' && !objects.ball.counterclock),
+                    isTopCondition = (objects.ball.direction === 'eastS' && !objects.ball.counterclock) ||
+                        (objects.ball.direction === 'westS' && objects.ball.counterclock),
+                    isLeftCondition = (objects.ball.direction === 'eastS' && objects.ball.counterclock) ||
+                        (objects.ball.direction === 'eastN' && !objects.ball.counterclock),
+                    isRightCondition = (objects.ball.direction === 'westS' && !objects.ball.counterclock) ||
+                        (objects.ball.direction === 'westN' && objects.ball.counterclock);
+                if((key === 'bottom' && isBottomCondition)
+                    || (key === 'top' && isTopCondition)
+                    || (key === 'left' && isLeftCondition)
+                    || (key === 'right' && isRightCondition)) {
+                    objects.ball.counterclock = !objects.ball.counterclock;
+                }
+                objects.ball.mirrorDirection();
+                redrawFigure(hitsSided[key], target);
+            }
+        }
+        var length = Object.keys(hitsCornered).length,
+            i = 0;
+
+        while(i < length && gameIsOn) {
+            for( var key in hitsCornered) {
+                if ((key === 'left_top_corner' && objects.ball.direction === 'eastS') ||
+                    (key === 'left_bottom_corner' && objects.ball.direction === 'eastN') ||
+                    (key === 'right_top_corner' && objects.ball.direction === 'westS') ||
+                    (key === 'right_bottom_corner' && objects.ball.direction === 'westN')) {
+                    objects.ball.oppositeDirection();
+                    redrawFigure(hitsCornered[key], target);
+                    checkIfBallReachedWall();
+                }
+            }
+            i++;
+        }
+    }
+
+    function redrawFigure(element, target) {
         if(element) {
             for(var j = 0; j < target.externalBlock.length; j++) {
                 if(target.externalBlock[j].x == element.x &&
