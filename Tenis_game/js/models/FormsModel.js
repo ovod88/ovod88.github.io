@@ -1,6 +1,5 @@
 function FormsModel() {
     var elem_size = this.elem_size;
-    var formObj;
 
     var structures = {
         'heart': [
@@ -20,33 +19,33 @@ function FormsModel() {
             {x: -3 * elem_size, y: 15 * elem_size, quantity: 3},
             {x: -1 * elem_size, y: 16 * elem_size, quantity: 1}
         ],
-        'random' : (function() {
+        'random' : function(size) {
             var random_structure = [];
-            for(var i = 0; i < 15; i++) {
-                var randNum = getRandomArbitrary( -15, 0);
+            for(var i = 0; i < size; i++) {
+                var randNum = getRandomArbitrary( -size, 0);
                 random_structure.push({
                     x: randNum * elem_size, y: (2 + i) * elem_size, quantity: getRandomArbitrary(1, Math.abs(randNum) + 1)
                 });
             }
 
             return random_structure;
-        })()
+        }
     };
 
     function getRandomArbitrary(min, max) {
         return Math.floor(Math.random() * (max - min)) + min;
     }
 
-    this.getStructure = function(name) {
-        if(!name) {
+    this.getStructure = function(options) {
+        if(options) {
+            if(options.size) {
+                return this.convert(structures[options.name](options.size));
+            } else {
+                return this.convert(structures[options.name]);
+            }
+        } else {
             return Object.keys(structures);
         }
-
-        if(!formObj) {
-            formObj = this.convert(structures[name]);
-        }
-
-        return formObj;
     };
 }
 

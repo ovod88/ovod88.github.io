@@ -2,12 +2,19 @@ function RacketModel() {
     var racketObj;
     var elem_size = this.elem_size;
 
-    var structure = [{x: -3 * elem_size, y: 27 * elem_size, quantity: 3}];
+    var structure = function(size) {
 
-    this.getStructure = function() {
+        return [{x: -size * elem_size, y: 27 * elem_size, quantity: size}];
+    };
+
+    this.reset = function () {
+        racketObj = null;
+    };
+
+    this.getStructure = function(size) {
 
         if(!racketObj) {
-            racketObj = this.convert(structure);
+            racketObj = this.convert(structure(size));
         }
 
         racketObj.move = function() {
