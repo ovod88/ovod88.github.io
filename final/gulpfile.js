@@ -78,7 +78,7 @@ gulp.task('build-js', gulp.series('cleanJs', 'lint', 'js', 'js-optimize'));
 
 gulp.task('cleanAll',  gulp.parallel('cleanJs', 'cleanCSS', 'cleanImg'));
 
-gulp.task('build', gulp.series('cleanAll', 'make-img-prod', 'sprite', 'compass'));//gulp.parallel(task1, task2)
+gulp.task('build', gulp.series('cleanAll', 'make-img-prod', 'sprite', gulp.parallel('compass', 'build-js')));//gulp.parallel(task1, task2)
 
 gulp.task('dev', gulp.series('cleanCSS', 'compass', gulp.parallel('watch', 'browser-sync')));
 

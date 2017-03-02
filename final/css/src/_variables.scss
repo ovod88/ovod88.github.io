@@ -18,7 +18,9 @@
 
 /*FOR MEDIA QUERIES*/
 $breakpoints:  (
-  'mobile': 320px 480px,
+  'mobile': 321px 480px,
+  'mobile-portrait': 321px 380px,
+  'mobile-landscape': 381px 480px,
   'retina': min-resolution 1.5dppx,
   'mobile-tablet': 794px
 );
