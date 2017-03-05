@@ -11,23 +11,33 @@
   @extend %clearfix;
   width: 100%;
 }
+.how_it_works__picture_block_inner {
+  @extend %how-it-works-section-picture-block-radius;
+  height: 100%;
+}
 
 .how_it_works__picture_block {
   margin: $how-it-works-section-picture-block-margins;
   height: $how-it-works-section-picture-block-height;
   overflow: hidden;
-  @extend %how-it-works-section-picture-block-radius;
+
     &:first-of-type {
+      .how_it_works__picture_block_inner {
         background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2)),
-                url(../../img/dist/How_works_step1_img.jpg) -75px -25px no-repeat;
+                    url(../../img/dist/How_works_step1_img.jpg) -75px -25px no-repeat;
+      }
     }
     &:nth-of-type(2) {
-      background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2)),
-                url(../../img/dist/How_works_step2_img.jpg) -65px -25px no-repeat;
+      .how_it_works__picture_block_inner {
+        background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2)),
+                    url(../../img/dist/How_works_step2_img.jpg) -65px -25px no-repeat;
+      }
     }
     &:last-of-type {
-      background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2)),
-                url(../../img/dist/How_works_step3_img.jpg) -65px -25px no-repeat;
+      .how_it_works__picture_block_inner {
+        background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2)),
+                    url(../../img/dist/How_works_step3_img.jpg) -65px -25px no-repeat;
+      }
     }
 }
 

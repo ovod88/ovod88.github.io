@@ -1,19 +1,25 @@
 @include respond-to(mobile) {
   .how_it_works__picture_block {
     &:first-of-type {
-      background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2)),
-      url(../../img/dist/How_works_step1_img.jpg) no-repeat;
-      background-size: 100% 100%;
+      .how_it_works__picture_block_inner  {
+        background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2)),
+        url(../../img/dist/How_works_step1_img.jpg) no-repeat;
+        background-size: 100% 100%;
+      }
     }
     &:nth-of-type(2) {
-      background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2)),
-      url(../../img/dist/How_works_step2_img.jpg) no-repeat;
-      background-size: 100% 100%;
+      .how_it_works__picture_block_inner  {
+        background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2)),
+        url(../../img/dist/How_works_step2_img.jpg) no-repeat;
+        background-size: 100% 100%;
+      }
     }
     &:last-of-type {
-      background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2)),
-      url(../../img/dist/How_works_step3_img.jpg) no-repeat;
-      background-size: 100% 100%;
+      .how_it_works__picture_block_inner  {
+        background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2)),
+        url(../../img/dist/How_works_step3_img.jpg) no-repeat;
+        background-size: 100% 100%;
+      }
     }
   }
 }
@@ -29,3 +35,37 @@
     margin: $how-it-works-section-picture-block-margins + 35px;
   }
 }
+
+@include respond-to(mobile-tablet) {
+  .header_main__p1 {
+    text-align: left;
+    padding-top: 20px;
+    padding-left: $header-register-padding;
+    margin-top: 0;
+  }
+  .header_register {
+    float: right;
+    padding-right: $header-register-padding;
+  }
+  .header_main__p2 {
+    padding-top: $header-main-p2-padding-top;
+    font-size: $header-main-p2-font-size2;
+    line-height: $header-main-p2-font-line-height2;
+    width: 75%;
+    margin: 0 auto;
+  }
+  .header_main__p4 {
+    font-size: $header-main-p4-font-size2;
+  }
+  .how_it_works__header {
+    font-size: 19px;
+  }
+  .how_it_works__picture_block {
+    width: 33%;
+    display: inline-block;
+    margin: 0;
+  }
+  .how_it_works__picture_block_inner {
+    margin: 10px;
+  }
+ }

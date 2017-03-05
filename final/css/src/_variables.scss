@@ -1,4 +1,3 @@
-
 %clearfix {
   &:after {
     content: '';
@@ -22,7 +21,8 @@ $breakpoints:  (
   'mobile-portrait': 321px 380px,
   'mobile-landscape': 381px 480px,
   'retina': min-resolution 1.5dppx,
-  'mobile-tablet': 794px
+  'mobile-tablet': 481px 768px,
+  'tablet': 1440px
 );
 
 /*HEADER*/
@@ -46,6 +46,7 @@ $header-register-signup-internal-padding-aside: 17px;
 $header-register-signup-internal-padding-below: 7px;
 $header-color: white;
 $header-register-signup-border-px: 2px;
+$header-main-p1-margin-top: 115px;
 $header-main-p1-font-size: 20px;
 $header-main-p2-font-size: 30px;
 $header-main-p2-font-line-height: $header-main-p2-font-size + 5px;

@@ -1,36 +1,18 @@
 header {
   height: $header-image-height;
   text-align: center;
-  position: relative;
-  background: linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)),
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
             url(../../img/dist/Header_pic.jpg) center center no-repeat;
   color: $header-color;
   @extend %montserrat-bold;
-
-  &:before {
-    content: '';
-    display: block;
-    z-index: 0;
-    background: #000;
-    opacity: 0.1;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    position: absolute;
-  }
 }
 
 .header_register {
-  @extend  %header-content-position;
-  margin-top: 20px;
-  left: 50%;
-  @include transform(translateX(-50%));
+  padding-top: 20px;
 }
 
 .header_register__login {
   @extend %header-link-style;
-  @include transform(translateY(50%));
 }
 
 .header_register__signup {
@@ -40,21 +22,14 @@ header {
             $header-register-signup-internal-padding-below $header-register-signup-internal-padding-aside;
   @include border-radius($header-register-signup-internal-padding-aside);
   border: $header-color solid $header-register-signup-border-px;
-  float: right;
 
     &:hover {
       background: rgba($header-link-hover-color, 0.3);
     }
 }
 
-.header_main {
-  @extend %header-content-position;
-  top: 50%;
-  width: 100%;
-  @include transform(translateY(-50%));
-}
-
 .header_main__p1 {
+  margin-top: $header-main-p1-margin-top;
   text-transform: uppercase;
   font-size: $header-main-p1-font-size;
 }
