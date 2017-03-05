@@ -34,9 +34,35 @@
   .how_it_works__picture_block {
     margin: $how-it-works-section-picture-block-margins + 35px;
   }
+  .header_main__p4 {
+    display: inline-block;
+    width: auto;
+    padding: 0 20px 0 20px;
+  }
 }
 
 @include respond-to(mobile-tablet) {
+  .how_it_works__picture_block {
+    &:first-of-type {
+      .how_it_works__picture_block_inner  {
+        background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2)),
+        url(../../img/dist/How_works_step1_img.jpg) -100px no-repeat;
+      }
+    }
+    &:nth-of-type(2) {
+      .how_it_works__picture_block_inner  {
+        background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2)),
+        url(../../img/dist/How_works_step2_img.jpg) -100px no-repeat;
+      }
+    }
+    &:last-of-type {
+      .how_it_works__picture_block_inner  {
+        background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2)),
+        url(../../img/dist/How_works_step3_img.jpg) -100px no-repeat;
+      }
+    }
+  }
+
   .header_main__p1 {
     text-align: left;
     padding-top: 20px;
@@ -56,16 +82,65 @@
   }
   .header_main__p4 {
     font-size: $header-main-p4-font-size2;
+    display: inline-block;
+    width: auto;
+    padding: 0 20px 0 20px;
   }
   .how_it_works__header {
-    font-size: 19px;
+    font-size: $how-it-works-section-header-font-size2;
   }
   .how_it_works__picture_block {
     width: 33%;
-    display: inline-block;
+    float: left;
     margin: 0;
   }
+
   .how_it_works__picture_block_inner {
-    margin: 10px;
+    margin: $how-it-works-section-picture-block-inner-margins
+  }
+  .how_it_works__h5 {
+    font-size:  $how-it-works-section-picture-content-h5-font-size2;
+  }
+
+  .how_it_works__h2 {
+    font-size: $how-it-works-section-picture-content-h2-font-size2;
+    letter-spacing: 0px;
+  }
+  .how_it_works__text {
+    font-size: $how-it-works-section-picture-content-text-font-size2;
+    line-height: $how-it-works-section-picture-content-text-line-height2;
+  }
+  .how_it_works__picture_block_content {
+    padding-left: $how-it-works-section-picture-content-text-padding-left;
+    width: 95%;
+  }
+
+  .partners__header {
+    font-size: $partners-header-font-size2;
+  }
+
+  .partner__views {
+      width: $partners-view-width * 2;
+      margin: 0 auto;
+  }
+
+  .partner__view {
+    margin: 40px 0 0 0;
+    float: left;
+  }
+
+  .partner__view_signature2 {
+    width: 100%;
+  }
+
+  .partners__search {
+    display: inline-block;
+    width: auto;
+    padding: 0 20px 0 20px;
+    font-size: $partners-search-font-size2;
+  }
+
+  .discover_holiday_header {
+    font-size: $discover-holiday-header-font-size2;
   }
  }

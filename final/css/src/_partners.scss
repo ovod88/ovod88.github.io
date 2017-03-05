@@ -12,8 +12,13 @@
   font-weight: bold;
 }
 
+.partner__views {
+  @extend %clearfix;
+}
+
 .partner__view {
-  margin-top: $partners-view-margin-top;
+  width: $partners-view-width;
+  margin: $partners-view-margin-top auto 0 auto;
 }
 
 .partner__view_picture_block {
