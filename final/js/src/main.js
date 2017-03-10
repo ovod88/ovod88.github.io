@@ -21,7 +21,7 @@ requirejs.config ({
 
 require(['globals' ,'jquery', 'images'], function(globals, $, loadImages) {
     $(function() {
-        console.log(window.innerWidth);//TODO add condition for slider if mobile. MINIMISE CSS
+        //console.log(window.innerWidth);//TODO add condition for slider if mobile. MINIMISE CSS
         let categories = [{'sport' : 'Sport and Activity'}, {'health': 'Wellness and Health'},
             {'extreme': 'Extreme Sports and Expeditions'}, {'games': 'Games'},
             {'culture': 'Culture and Education'}, {'relaxation': 'Relaxation'}, {'travelling': 'Travelling'}];

@@ -5,6 +5,7 @@
 .grid_size {
   width: 33.3%;
 }
+
 .discover_holiday_blocks {
   box-sizing: border-box;
 }
@@ -12,19 +13,14 @@
 .discover_holiday_block {
   height: $discover-holiday-block-height;
   width: 100%;
-  margin-bottom: 10px;
-  position: relative;
-  overflow: hidden;
-  display: none;
+  margin-bottom: $discover-holiday-block-content-margin;
 }
 
 .discover_holiday_block_content {
   display: block;
   height: 100%;
-  margin-left: 10px;
-  margin-right: 10px;
-  position: relative;
-  overflow: hidden;
+  margin-left: $discover-holiday-block-content-margin;
+  margin-right: $discover-holiday-block-content-margin;
   @extend %discover-holiday-radius;
 
 
@@ -34,9 +30,9 @@
     position: absolute;
     z-index: 1;
     top: 0;
-    right: 0;
+    right: $discover-holiday-block-content-margin;
     bottom: 0;
-    left: 0;
+    left: $discover-holiday-block-content-margin;
     @include background(linear-gradient($discover-holiday-block-cover-start-color,
             $discover-holiday-block-cover-end-color));
     @extend %discover-holiday-radius;
@@ -65,7 +61,8 @@
   position: absolute;
   z-index: 1;
   top: 50%;
-  transform: translateY(-50%);
+  right: 50%;
+  transform: translate(50%, -50%);
 }
 
 .discover_holiday_header {
@@ -115,10 +112,10 @@
 .discover_holiday_search_box__link__error {
   display: none;
   font-family: Roboto;
-  font-size: 20px;
+  font-size: $discover-holiday-search-box-link-error-font-size;
   font-weight: bold;
-  color: green;
-  margin-bottom: 10px;
+  color: $discover-holiday-search-box-link-error-font-color;
+  margin-bottom: $discover-holiday-search-box-link-error-margin-bottom;
 }
 
 .discover_holiday_search_box__link {

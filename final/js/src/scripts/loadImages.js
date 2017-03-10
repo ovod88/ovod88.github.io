@@ -31,6 +31,7 @@ define(['globals' , 'Modernizr', 'jquery', 'lodash', 'masonry'], function(global
                     .then(function (data) {
                             if (data.hits.length) {
                                 $(template({
+                                    id: i,
                                     category: category,
                                     text: categories[i][category]
                                 })).appendTo(discoverHolidayBlocks)
@@ -48,6 +49,7 @@ define(['globals' , 'Modernizr', 'jquery', 'lodash', 'masonry'], function(global
                             switch (category) {
                                 case 'sport':
                                     $(template({
+                                        id: i,
                                         category: category,
                                         text: categories[i][category]
                                     })).appendTo(discoverHolidayBlocks)
@@ -62,6 +64,7 @@ define(['globals' , 'Modernizr', 'jquery', 'lodash', 'masonry'], function(global
                                     break;
                                 case 'health':
                                     $(template({
+                                        id: i,
                                         category: category,
                                         text: categories[i][category]
                                     })).appendTo(discoverHolidayBlocks)
@@ -76,6 +79,7 @@ define(['globals' , 'Modernizr', 'jquery', 'lodash', 'masonry'], function(global
                                     break;
                                 case 'extreme':
                                     $(template({
+                                        id: i,
                                         category: category,
                                         text: categories[i][category]
                                     })).appendTo(discoverHolidayBlocks)
@@ -90,6 +94,7 @@ define(['globals' , 'Modernizr', 'jquery', 'lodash', 'masonry'], function(global
                                     break;
                                 case 'games':
                                     $(template({
+                                        id: i,
                                         category: category,
                                         text: categories[i][category]
                                     })).appendTo(discoverHolidayBlocks)
@@ -104,6 +109,7 @@ define(['globals' , 'Modernizr', 'jquery', 'lodash', 'masonry'], function(global
                                     break;
                                 case 'culture':
                                     $(template({
+                                        id: i,
                                         category: category,
                                         text: categories[i][category]
                                     })).appendTo(discoverHolidayBlocks)
@@ -118,6 +124,7 @@ define(['globals' , 'Modernizr', 'jquery', 'lodash', 'masonry'], function(global
                                     break;
                                 case 'relaxation':
                                     $(template({
+                                        id: i,
                                         category: category,
                                         text: categories[i][category]
                                     })).appendTo(discoverHolidayBlocks)
@@ -132,6 +139,7 @@ define(['globals' , 'Modernizr', 'jquery', 'lodash', 'masonry'], function(global
                                     break;
                                 case 'travelling':
                                     $(template({
+                                        id: i,
                                         category: category,
                                         text: categories[i][category]
                                     })).appendTo(discoverHolidayBlocks)
@@ -146,6 +154,7 @@ define(['globals' , 'Modernizr', 'jquery', 'lodash', 'masonry'], function(global
                                     break;
                                 default:
                                     $(template({
+                                        id: i,
                                         category: category,
                                         text: categories[i][category]
                                     })).appendTo(discoverHolidayBlocks)
@@ -179,6 +188,7 @@ define(['globals' , 'Modernizr', 'jquery', 'lodash', 'masonry'], function(global
                         }
                         for(let i = 0; i < globals.maxImagesNumber; i++) {
                             $(template({
+                                id: i,
                                 category: category,
                                 text: category
                             })).appendTo(discoverHolidayBlocks)

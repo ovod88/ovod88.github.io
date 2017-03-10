@@ -129,7 +129,7 @@
             <div class="discover_holiday_blocks">
                 <div class="grid_size"></div>
                 <script type="text/html" id="discover_holiday_block_template">
-                    <div class="discover_holiday_block">
+                    <div class="discover_holiday_block discover_holiday_block--<%= id %>">
                         <a href="#" class="discover_holiday_block_content"
                            data-category="<%= category %>">
                             <p class="discover_holiday_block__text"><%= text %></p>
@@ -155,8 +155,8 @@
                 urlaubsglück
             </p>
             <nav class="footer_navigation">
-                <h2>Company</h2>
                 <ul class="footer_navigation_list">
+                    <h2>Company</h2>
                     <li class="footer_navigation_list__item">
                         <a href="" class="footer_navigation_list__item__link">
                             About
@@ -182,10 +182,12 @@
             <p class="footer_footer">
                 Partners
             </p>
-            <p class="footer_logo_text">
-                Designed by
-            </p>
-            <span class="footer_logo_designer"></span>
+            <div class="foto_logo">
+                <p class="footer_logo_text">
+                    Designed by
+                </p>
+                <span class="footer_logo_designer"></span>
+            </div>
         </footer>
     </body>
 </html>

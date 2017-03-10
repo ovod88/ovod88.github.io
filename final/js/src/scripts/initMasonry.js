@@ -6,11 +6,12 @@ define(['jquery', 'jquery.masonry', 'jquery.bridget'], function($, Masonry, jQue
         if(option === 'init') {
             $('.discover_holiday_blocks').masonry({
                 itemSelector: '.discover_holiday_block',
-                columnWidth: '.grid_size',
                 percentPosition: true
             });
+            console.log('Masonry initiated');
         } else {
             $('.discover_holiday_blocks').masonry('destroy');
+            console.log('Masonry destroyed');
         }
     };
 });

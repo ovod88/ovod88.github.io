@@ -61,7 +61,7 @@ lazyTaskRequest('make-img-prod', './tasks/makeImgProd', {
 
 gulp.task('watch',function() {
     gulp.watch('css/src/**/*.*', gulp.series('compass'));
-    gulp.watch(['js/src/**/*.js', '!js/src/libs/**/*'], gulp.series('lint', 'js'));
+    gulp.watch(['js/src/**/*.js', '!js/src/libs/**/*'], gulp.series('build-js'));
 });
 
 gulp.task('browser-sync', function() {
@@ -71,7 +71,7 @@ gulp.task('browser-sync', function() {
        }
     });
 
-    browserSync.watch(['css/dist/*.*', 'img/dist/**/*.*']).on('change', browserSync.reload);
+    browserSync.watch(['css/dist/*.*', 'img/dist/**/*.*', 'js/src/**/*.js', '!js/src/libs/**/*']).on('change', browserSync.reload);
 });
 
 gulp.task('build-js', gulp.series('cleanJs', 'lint', 'js', 'js-optimize'));
