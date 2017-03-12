@@ -38,7 +38,7 @@ define(['globals' , 'Modernizr', 'jquery', 'lodash', 'masonry'], function(global
                                     .css('display', 'block')
                                     .find('.discover_holiday_block_content')
                                     .css({
-                                        'background': `url(${data.hits[Math.floor((Math.random() * globals.imageNumbers))].webformatURL})
+                                        'background': `url(${data.hits[Math.floor((Math.random() * data.hits.length))].webformatURL})
                                                                                                                         no-repeat center center`,
                                         'background-size': 'cover'
                                     });
@@ -186,7 +186,8 @@ define(['globals' , 'Modernizr', 'jquery', 'lodash', 'masonry'], function(global
                             $('.discover_holiday_block').remove();
                             atLeastOnePictureLoaded = false;
                         }
-                        for(let i = 0; i < globals.maxImagesNumber; i++) {
+                        for(let i = 0; i < data.hits.length; i++) {
+                            console.log(data.hits[i]);
                             $(template({
                                 id: i,
                                 category: category,

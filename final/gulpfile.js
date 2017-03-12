@@ -61,7 +61,7 @@ lazyTaskRequest('make-img-prod', './tasks/makeImgProd', {
 
 gulp.task('watch',function() {
     gulp.watch('css/src/**/*.*', gulp.series('compass'));
-    gulp.watch(['js/src/**/*.js', '!js/src/libs/**/*'], gulp.series('build-js'));
+    gulp.watch(['js/src/**/*.js', '!js/src/libs/**/*'], gulp.series('build-js-dev'));
 });
 
 gulp.task('browser-sync', function() {
@@ -75,11 +75,12 @@ gulp.task('browser-sync', function() {
 });
 
 gulp.task('build-js', gulp.series('cleanJs', 'lint', 'js', 'js-optimize'));
+gulp.task('build-js-dev', gulp.series('cleanJs', 'lint', 'js'));
 
 gulp.task('cleanAll',  gulp.parallel('cleanJs', 'cleanCSS', 'cleanImg'));
 
 gulp.task('build', gulp.series('cleanAll', 'make-img-prod', 'sprite', gulp.parallel('compass', 'build-js')));//gulp.parallel(task1, task2)
 
-gulp.task('dev', gulp.series('cleanCSS', 'compass', gulp.parallel('watch', 'browser-sync')));
+gulp.task('dev', gulp.series('cleanCSS', 'compass', 'build-js-dev', gulp.parallel('watch', 'browser-sync')));
 
 gulp.task('default',gulp.series('compass'));

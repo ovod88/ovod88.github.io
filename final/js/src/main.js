@@ -9,6 +9,7 @@ requirejs.config ({
         'Modernizr':'../js/dist/libs/modernizr-custom',
         'globals': '../js/dist/scripts/globals',
         'images': '../js/dist/scripts/loadImages',
+        'slider': '../js/dist/scripts/slider',
         'masonry': '../js/dist/scripts/initMasonry'
     },
     shim: {
@@ -19,12 +20,13 @@ requirejs.config ({
 });
 
 
-require(['globals' ,'jquery', 'images'], function(globals, $, loadImages) {
+require(['globals' ,'jquery', 'images', 'slider'], function(globals, $, loadImages, Slider) {
     $(function() {
-        //console.log(window.innerWidth);//TODO add condition for slider if mobile. MINIMISE CSS
+        //console.log(window.innerWidth);//TODO MINIMISE CSS
         let categories = [{'sport' : 'Sport and Activity'}, {'health': 'Wellness and Health'},
             {'extreme': 'Extreme Sports and Expeditions'}, {'games': 'Games'},
-            {'culture': 'Culture and Education'}, {'relaxation': 'Relaxation'}, {'travelling': 'Travelling'}];
+            {'culture': 'Culture and Education'}, {'relaxation': 'Relaxation'}, {'travelling': 'Travelling'}],
+            sliderLoaded = false, slider;
 
         loadImages(categories);
 
@@ -37,5 +39,22 @@ require(['globals' ,'jquery', 'images'], function(globals, $, loadImages) {
             }
             $this.val('');
         });
+        if(window.innerWidth > globals.sliderLoadMinWidth) {
+            slider = new Slider('.how_it_works__picture_block');
+            slider.start();
+            sliderLoaded = true;
+        }
+        $(window).resize(function () {
+            if(!sliderLoaded && window.innerWidth > globals.sliderLoadMinWidth) {
+                slider = new Slider('.how_it_works__picture_block');
+                slider.start();
+                sliderLoaded = true;
+            }
+            if(sliderLoaded && window.innerWidth <= globals.sliderLoadMinWidth){
+                slider.remove();
+                sliderLoaded = false;
+                slider = {};
+            }
+        })
     });
 });
