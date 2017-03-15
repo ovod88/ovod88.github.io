@@ -25,7 +25,7 @@ lazyTaskRequest('cleanImg', './tasks/cleanImg', {
     dst: 'img/dist'
 });
 
-lazyTaskRequest('js', './tasks/copyJsToDist', {
+lazyTaskRequest('js', './tasks/copyJsBabelToDist', {
     src: 'js/src/**/*.*',
     dst: 'js/dist'
 });

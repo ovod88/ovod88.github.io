@@ -187,7 +187,6 @@ define(['globals' , 'Modernizr', 'jquery', 'lodash', 'masonry'], function(global
                             atLeastOnePictureLoaded = false;
                         }
                         for(let i = 0; i < data.hits.length; i++) {
-                            console.log(data.hits[i]);
                             $(template({
                                 id: i,
                                 category: category,

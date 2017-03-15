@@ -67,21 +67,21 @@
   .how_it_works__picture_block--first {
     & .how_it_works__picture_block_inner {
       background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2)),
-      url(../../img/dist/How_works_step1_img.jpg) -100px no-repeat;
+      url(../../img/dist/How_works_step1_img.jpg) center center no-repeat;
     }
   }
 
   .how_it_works__picture_block--second {
     & .how_it_works__picture_block_inner {
       background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2)),
-      url(../../img/dist/How_works_step2_img.jpg) -100px no-repeat;
+      url(../../img/dist/How_works_step2_img.jpg) center center no-repeat;
     }
   }
 
   .how_it_works__picture_block--third {
     & .how_it_works__picture_block_inner {
       background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2)),
-      url(../../img/dist/How_works_step3_img.jpg) -100px no-repeat;
+      url(../../img/dist/How_works_step3_img.jpg) center center no-repeat;
     }
   }
 
