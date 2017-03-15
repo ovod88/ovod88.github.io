@@ -8,10 +8,8 @@ define(['jquery', 'jquery.masonry', 'jquery.bridget'], function($, Masonry, jQue
                 itemSelector: '.discover_holiday_block',
                 percentPosition: true
             });
-            console.log('ÍNIT MASONRY');
         } else {
             $('.discover_holiday_blocks').masonry('destroy');
-            console.log('DESTROY MASONRY');
         }
     };
 });

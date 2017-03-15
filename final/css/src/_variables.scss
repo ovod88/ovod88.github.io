@@ -21,8 +21,10 @@ $breakpoints:  (
   'mobile-portrait': 321px 380px,
   'mobile-landscape': 381px 480px,
   'retina': min-resolution 1.5dppx,
-  'mobile-tablet': 481px 768px,
-  'tablet': 1440px
+  'mobile-tablet': (min-width 481px),
+  'mobile-tablet-desktop-portrait': 481px 960px,
+  'tablet-portrait': (min-width 769px),
+  'tablet-desktop': (min-width 961px)
 );
 
 /*HEADER*/
