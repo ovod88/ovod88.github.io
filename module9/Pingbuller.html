@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8">
 		<title>Pingbuller</title>
 		<link rel="stylesheet" href="css/reset.css">
 		<![if !IE]><link rel="stylesheet" href="css/bootstrap.css"><![endif]>
@@ -104,9 +105,11 @@
 									<p class="article__text about_company__article--text_modifier">
 										Nunc turpis neque, feugiat eget eleifend et, lacinia non neque. Praesent rhoncus ultrices posuere. Pellentesque vel lacus eget nisi convallis auctor. Nam vitae 
 									</p>
-									<nav class="site_navigation about_company--navigation_modifier">
+									<![if !IE]><nav class="site_navigation about_company--navigation_modifier"><![endif]>
+									<!--[if gte IE 8]><ul class="site_navigation about_company--navigation_modifier"><![endif]-->
 										<a href="#">read more</a>
-									</nav>
+									<!--[if gte IE 8]></ul><![endif]-->
+									<![if !IE]></nav><![endif]>
 								</div>
 							<![if !IE]></article><![endif]>
 						</div>
@@ -118,9 +121,11 @@
 									<p class="article__text about_company__article--text_modifier">
 										Nunc turpis neque, feugiat eget eleifend et, lacinia non neque. Praesent rhoncus ultrices posuere. Pellentesque vel lacus eget nisi convallis auctor. Nam vitae 
 									</p>
-									<nav class="site_navigation about_company--navigation_modifier">
-										<a href="#">read more</a>
-									</nav>
+									<![if !IE]><nav class="site_navigation about_company--navigation_modifier"><![endif]>
+									<!--[if gte IE 8]><ul class="site_navigation about_company--navigation_modifier"><![endif]-->
+									<a href="#">read more</a>
+									<!--[if gte IE 8]></ul><![endif]-->
+									<![if !IE]></nav><![endif]>
 								</div>
 							<![if !IE]></article><![endif]>
 						</div>
@@ -132,9 +137,11 @@
 									<p class="article__text about_company__article--text_modifier">
 										Nunc turpis neque, feugiat eget eleifend et, lacinia non neque. Praesent rhoncus ultrices posuere. Pellentesque vel lacus eget nisi convallis auctor. Nam vitae 
 									</p>
-									<nav class="site_navigation about_company--navigation_modifier">
-										<a href="#">read more</a>
-									</nav>
+									<![if !IE]><nav class="site_navigation about_company--navigation_modifier"><![endif]>
+									<!--[if gte IE 8]><ul class="site_navigation about_company--navigation_modifier"><![endif]-->
+									<a href="#">read more</a>
+									<!--[if gte IE 8]></ul><![endif]-->
+									<![if !IE]></nav><![endif]>
 								</div>
 							<![if !IE]></article><![endif]>
 						</div>
@@ -204,10 +211,12 @@
 								<![if !IE]></article><![endif]>
 							</div>
 						</div>
-						<nav class="site_navigation updates_navigation">
+						<![if !IE]><nav class="site_navigation updates_navigation"><![endif]>
+						<!--[if gte IE 8]><ul class="site_navigation updates_navigation"><![endif]-->
 							<span class="updates_default_text"><a href="#">read more here</a></span>
 							<![if !IE]><span class="updates_text_mobile"><a href="#">more blog posts</a></span><![endif]>
-						</nav>
+						<!--[if gte IE 8]></ul><![endif]-->
+						<![if !IE]></nav><![endif]>
 					</div>
 
 				</div>
@@ -304,8 +313,9 @@
 			</div>
 			<div class="center_content clearfix">
 				<div class="footer__content_centering">
-					<nav class="site_navigation footer__links clearfix">
-						<ul class="clearfix">
+					<![if !IE]><nav class="site_navigation footer__links clearfix"><![endif]>
+					<!--[if gte IE 8]><ul class="site_navigation footer__links clearfix"><![endif]-->
+						<ul>
 							<li><a href="#">home</a></li>
 							<li><a href="#">about</a></li>
 							<li><a href="#">blog</a></li>
@@ -313,7 +323,8 @@
 							<li><a href="#">lorem ipsum</a></li>
 							<li><a href="#">dolores sit amet</a></li>
 						</ul>
-					</nav>
+						<!--[if gte IE 8]></ul><![endif]-->
+					<![if !IE]></nav><![endif]>
 					<p class="design">Designed by <span>Pingbull AS</span></p>
 				</div>
 			</div>
