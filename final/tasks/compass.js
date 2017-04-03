@@ -19,6 +19,7 @@ module.exports = function(options) {
                 css: options.dst,
                 sass: options.src
             }))
+            .pipe($.cleanCss())//Leads to sourcemap destroy
             .pipe(gulp.dest(options.dst));
     }
 };
